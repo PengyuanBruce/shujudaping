@@ -338,14 +338,14 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1790688262';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1790688493';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
+  // 单一共享口令（管理员口径：可查看全部销售明细）。
+  // 如需按人隔离视图，在这里追加 '姓名': '口令' 行即可，前端会自动只显示该销售。
   const PASSWORDS = {
-    admin: '【管理员口令】',
-    /* 每个销售一行：'姓名': '个人口令' */
-    '【姓名1】': '【口令1】'
+    admin: 'pengyuan'
   };
   const ADMIN = 'admin';
   const LS_KEY = 'dash_role_v1';
