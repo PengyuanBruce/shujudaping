@@ -1,0 +1,173 @@
+{
+  "month": "2026-09",
+  "update_time": "2026-09-29 20:59",
+  "source_file": "数据罗盘（拍档系统）·客户明细TOP20",
+  "scope": "TOP20（按信保实收GMV降序，财年口径）",
+  "sales": [
+    {
+      "name": "李彬",
+      "role": "销售",
+      "month_target": null,
+      "gmv_month": 66554888.27,
+      "share_pct": null,
+      "customers": [
+        {
+          "id": "426725",
+          "name": "东方丝路（深圳）科技有限公司",
+          "gmv_month": 29585587.26,
+          "share_pct": null
+        },
+        {
+          "id": "798010",
+          "name": "深圳市鑫锦泰贸易有限公司",
+          "gmv_month": 13930501.28,
+          "share_pct": null
+        },
+        {
+          "id": "649773",
+          "name": "广东德星微电子有限公司",
+          "gmv_month": 4805750.56,
+          "share_pct": null
+        },
+        {
+          "id": "413443",
+          "name": "深圳市福瑞诺科技有限公司",
+          "gmv_month": 4500328.24,
+          "share_pct": null
+        },
+        {
+          "id": "178171",
+          "name": "深圳市视壮科技有限公司",
+          "gmv_month": 4451468.65,
+          "share_pct": null
+        },
+        {
+          "id": "364379",
+          "name": "深圳蓝丰电子有限公司",
+          "gmv_month": 3505095.5,
+          "share_pct": null
+        },
+        {
+          "id": "402879",
+          "name": "深圳市天德普储能科技有限公司",
+          "gmv_month": 3129277.57,
+          "share_pct": null
+        },
+        {
+          "id": "415786",
+          "name": "深圳市充向未来科技有限公司",
+          "gmv_month": 2646879.21,
+          "share_pct": null
+        }
+      ]
+    },
+    {
+      "name": "陈建国",
+      "role": "销售",
+      "month_target": null,
+      "gmv_month": 19692161.19,
+      "share_pct": null,
+      "customers": [
+        {
+          "id": "242180",
+          "name": "深圳亿上光科技有限公司",
+          "gmv_month": 6635939.08,
+          "share_pct": null
+        },
+        {
+          "id": "766663",
+          "name": "东莞博格斯科技有限公司",
+          "gmv_month": 4550582.41,
+          "share_pct": null
+        },
+        {
+          "id": "387799",
+          "name": "深圳彩虹源科技有限责任公司",
+          "gmv_month": 2970444.47,
+          "share_pct": null
+        },
+        {
+          "id": "189534",
+          "name": "深圳市鸿泰门窗有限公司",
+          "gmv_month": 2933769.2,
+          "share_pct": null
+        },
+        {
+          "id": "187277",
+          "name": "深圳市鑫莱特照明有限公司",
+          "gmv_month": 2601426.03,
+          "share_pct": null
+        }
+      ]
+    },
+    {
+      "name": "蒋汶桃",
+      "role": "销售",
+      "month_target": null,
+      "gmv_month": 10709924.68,
+      "share_pct": null,
+      "customers": [
+        {
+          "id": "416059",
+          "name": "深圳市立泰能源科技有限公司",
+          "gmv_month": 4250977.42,
+          "share_pct": null
+        },
+        {
+          "id": "379950",
+          "name": "深圳市迈斯奇科技有限公司",
+          "gmv_month": 3329408.67,
+          "share_pct": null
+        },
+        {
+          "id": "164593",
+          "name": "深圳牧人行智能制造有限公司",
+          "gmv_month": 3129538.59,
+          "share_pct": null
+        }
+      ]
+    },
+    {
+      "name": "汪伟",
+      "role": "销售",
+      "month_target": null,
+      "gmv_month": 9208908.99,
+      "share_pct": null,
+      "customers": [
+        {
+          "id": "505659",
+          "name": "深圳拉米酷科技有限公司",
+          "gmv_month": 3163156.09,
+          "share_pct": null
+        },
+        {
+          "id": "412335",
+          "name": "利辛实业(深圳)有限公司",
+          "gmv_month": 3159270.88,
+          "share_pct": null
+        },
+        {
+          "id": "384183",
+          "name": "深圳市明昌光电科技有限公司",
+          "gmv_month": 2886482.02,
+          "share_pct": null
+        }
+      ]
+    },
+    {
+      "name": "夏锐",
+      "role": "销售",
+      "month_target": null,
+      "gmv_month": 3141102.41,
+      "share_pct": null,
+      "customers": [
+        {
+          "id": "411036",
+          "name": "深圳市中和盛科技有限公司",
+          "gmv_month": 3141102.41,
+          "share_pct": null
+        }
+      ]
+    }
+  ]
+}
