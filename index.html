@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>公司经营数据大屏</title>
+<!--
+  数据来源：data_cur.json / data_prev.json（同源优先，raw.githubusercontent 备用）
+  首屏数据由 renderAll(data) 统一渲染；所有月份/季度标签都走 id，禁止硬编码月份。
+  口令为前端隔离（非服务端鉴权），涉敏客户明细切不可只依赖它。
+-->
+<style>
+  :root {
+    --bg: #070b16;
+    --bg-soft: #0c1223;
+    --panel: rgba(18, 26, 45, 0.82);
+    --panel-solid: #121a2d;
+    --line: #22304e;
+    --line-soft: #1a2540;
+    --fg: #eaf0ff;
+    --fg-dim: #93a4c7;
+    --fg-faint: #6b7c9e;
+    --cyan: #35e0c4;
+    --blue: #4b8cff;
+    --green: #2fd07a;
+    --orange: #f5a524;
+    --red: #f0435a;
+    --gray: #5d6b87;
+    --radius: 14px;
+    --font: "Bahnschrift", "DIN Alternate", "Segoe UI Variable Display", "Microsoft YaHei", sans-serif;
+    --mono: "Cascadia Mono", "Consolas", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    min-height: 100dvh;
+    background:
+      radial-gradient(1100px 620px at 8% -8%, rgba(53, 224, 196, 0.10), transparent 60%),
+      radial-gradient(900px 520px at 96% 4%, rgba(75, 140, 255, 0.12), transparent 62%),
+      linear-gradient(180deg, var(--bg) 0%, #050810 100%);
+    color: var(--fg);
+    font-family: var(--font);
+    font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+    background-size: 46px 46px;
+    mask-image: radial-gradient(1200px 700px at 50% 0%, #000 30%, transparent 78%);
+  }
+  .wrap { position: relative; z-index: 1; max-width: 1560px; margin: 0 auto; padding: 20px 22px 56px; }
+
+  /* ── 顶栏 ── */
+  .top {
+    display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between;
+    padding: 14px 18px; margin-bottom: 18px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+    backdrop-filter: blur(10px);
+  }
+  .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .brand .dot {
+    width: 10px; height: 10px; border-radius: 50%; background: var(--cyan);
+    box-shadow: 0 0 0 4px rgba(53, 224, 196, 0.16); animation: pulse 2.6s ease-in-out infinite;
+  }
+  @keyframes pulse { 50% { box-shadow: 0 0 0 9px rgba(53, 224, 196, 0); } }
+  .brand h1 { margin: 0; font-size: 19px; letter-spacing: 0.06em; font-weight: 600; }
+  .brand .sub { display: block; font-size: 11px; color: var(--fg-faint); letter-spacing: 0.16em; margin-top: 2px; }
+  .topmeta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  .pill {
+    padding: 6px 13px; border-radius: 999px; font-size: 13px; letter-spacing: 0.04em;
+    border: 1px solid var(--line); background: rgba(75, 140, 255, 0.10); color: #cfe0ff;
+  }
+  .pill.alt { background: rgba(53, 224, 196, 0.10); border-color: rgba(53, 224, 196, 0.34); color: #b9f6ea; }
+  .stamp { font-size: 12px; color: var(--fg-faint); }
+  .stamp b { color: var(--fg-dim); font-weight: 500; }
+  .btn {
+    padding: 7px 15px; border-radius: 9px; font-size: 13px; cursor: pointer; font-family: inherit;
+    background: linear-gradient(180deg, #2a3c60, #1d2944); border: 1px solid var(--line); color: var(--fg);
+  }
+  .btn:hover { border-color: var(--cyan); color: #fff; }
+  .btn.ghost { background: transparent; }
+  .tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tab {
+    padding: 6px 14px; border-radius: 9px; font-size: 13px; cursor: pointer;
+    border: 1px solid var(--line-soft); background: transparent; color: var(--fg-dim); font-family: inherit;
+  }
+  .tab.on { background: rgba(53, 224, 196, 0.13); border-color: rgba(53, 224, 196, 0.4); color: #c9fff4; }
+
+  /* ── 提示条 ── */
+  .banner {
+    display: none; margin-bottom: 16px; padding: 11px 15px; border-radius: 11px; font-size: 13px;
+    border: 1px solid rgba(245, 165, 36, 0.42); background: rgba(245, 165, 36, 0.10); color: #ffd79a;
+  }
+  .banner.show { display: block; }
+  .banner.err { border-color: rgba(240, 67, 90, 0.5); background: rgba(240, 67, 90, 0.10); color: #ffb6c0; }
+  .banner ul { margin: 6px 0 0; padding-left: 18px; }
+
+  /* ── 板块 ── */
+  section { margin-bottom: 26px; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin: 0 0 13px; }
+  .sec-no {
+    font-family: var(--mono); font-size: 12px; color: var(--cyan); letter-spacing: 0.14em;
+    border-left: 3px solid var(--cyan); padding-left: 9px;
+  }
+  .sec-head h2 { margin: 0; font-size: 16px; font-weight: 600; letter-spacing: 0.04em; }
+  .sec-head .note { font-size: 12px; color: var(--fg-faint); }
+
+  .grid { display: grid; gap: 14px; }
+  .kpi-grid { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+  .stat-grid { grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); }
+  .person-grid { grid-template-columns: repeat(auto-fit, minmax(292px, 1fr)); }
+  .yoy-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+
+  .card {
+    position: relative; overflow: hidden;
+    background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px;
+  }
+  .card::after {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(53, 224, 196, 0.5), transparent);
+  }
+  .card .cap { font-size: 12px; color: var(--fg-faint); letter-spacing: 0.1em; }
+  .card .big { font-size: 34px; font-weight: 600; letter-spacing: 0.01em; margin: 6px 0 2px; }
+  .card .big.sm { font-size: 27px; }
+  .card .unit { font-size: 14px; color: var(--fg-dim); font-weight: 400; margin-left: 3px; }
+  .card .rowline { display: flex; justify-content: space-between; gap: 10px; font-size: 12.5px; color: var(--fg-dim); margin-top: 9px; }
+  .card .rowline b { color: var(--fg); font-weight: 500; }
+
+  .track { position: relative; height: 9px; border-radius: 5px; background: #0b1224; overflow: hidden; margin-top: 12px; }
+  .track > i { display: block; height: 100%; border-radius: 5px; transition: width 0.7s cubic-bezier(.22,.9,.24,1); }
+  .fill-green { background: linear-gradient(90deg, #1f9e5c, var(--green)); }
+  .fill-orange { background: linear-gradient(90deg, #b7710d, var(--orange)); }
+  .fill-red { background: linear-gradient(90deg, #a51f36, var(--red)); }
+  .fill-gray { background: linear-gradient(90deg, #3d4a66, var(--gray)); }
+  .track .marker { position: absolute; top: -3px; width: 2px; height: 15px; background: rgba(255,255,255,0.55); }
+  .marker-label { font-size: 11px; color: var(--fg-faint); margin-top: 6px; }
+
+  .text-green { color: var(--green); } .text-orange { color: var(--orange); }
+  .text-red { color: var(--red); } .text-gray { color: var(--gray); }
+  .text-cyan { color: var(--cyan); } .text-dim { color: var(--fg-dim); }
+  .tag {
+    display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 11.5px;
+    border: 1px solid var(--line); color: var(--fg-dim);
+  }
+  .tag.ok { border-color: rgba(47, 208, 122, 0.45); background: rgba(47, 208, 122, 0.12); color: #a6f2c9; }
+  .tag.warn { border-color: rgba(245, 165, 36, 0.45); background: rgba(245, 165, 36, 0.12); color: #ffd79a; }
+  .tag.bad { border-color: rgba(240, 67, 90, 0.45); background: rgba(240, 67, 90, 0.12); color: #ffb6c0; }
+
+  .analysis p { margin: 0 0 11px; font-size: 13.5px; line-height: 1.85; color: #d5def4; }
+  .analysis p:last-child { margin-bottom: 0; }
+  .analysis .k { color: var(--cyan); font-weight: 600; }
+  .analysis .col { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .analysis .blk { background: rgba(10, 16, 30, 0.55); border: 1px solid var(--line-soft); border-radius: 11px; padding: 13px 15px; }
+  .analysis .blk h3 { margin: 0 0 7px; font-size: 13px; color: var(--fg-dim); font-weight: 600; letter-spacing: 0.06em; }
+
+  .mini { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 0; border-bottom: 1px dashed var(--line-soft); }
+  .mini:last-child { border-bottom: 0; }
+  .mini .nm { font-size: 13.5px; }
+  .mini .nm small { color: var(--fg-faint); margin-left: 6px; font-size: 11.5px; }
+  .mini .vl { font-size: 15px; color: var(--cyan); }
+
+  table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  thead th {
+    position: sticky; top: 0; z-index: 2;
+    background: #101830; color: var(--fg-dim); font-size: 12px; font-weight: 600;
+    text-align: left; padding: 11px 13px; letter-spacing: 0.06em; white-space: nowrap;
+  }
+  tbody td { padding: 10px 13px; font-size: 13px; border-top: 1px solid var(--line-soft); white-space: nowrap; }
+  tbody tr:hover td { background: rgba(53, 224, 196, 0.045); }
+  .tablewrap { overflow-x: auto; border-radius: var(--radius); }
+  .empty { color: var(--fg-faint); font-size: 13px; padding: 18px 4px; }
+
+  /* ── 口令门 ── */
+  .gate { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .gate input {
+    flex: 1 1 220px; min-width: 0; padding: 9px 13px; border-radius: 9px; font-size: 14px;
+    background: #0b1224; border: 1px solid var(--line); color: var(--fg); font-family: inherit;
+  }
+  .gate input:focus { outline: none; border-color: var(--cyan); }
+  .gate .msg { font-size: 12.5px; color: var(--red); }
+  .custwrap { margin-top: 12px; }
+  .sales-card { border-left: 3px solid var(--cyan); }
+  .cust-row { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px dashed var(--line-soft); font-size: 13px; }
+  .cust-row:last-child { border-bottom: 0; }
+  .cust-row .idn { color: var(--fg-faint); font-family: var(--mono); font-size: 11.5px; margin-right: 8px; }
+
+  footer { margin-top: 30px; color: var(--fg-faint); font-size: 12px; line-height: 1.9; border-top: 1px solid var(--line-soft); padding-top: 16px; }
+  footer code { font-family: var(--mono); color: var(--fg-dim); }
+
+  @media (max-width: 640px) {
+    .wrap { padding: 14px 13px 44px; }
+    .brand h1 { font-size: 16px; }
+    .card .big { font-size: 27px; }
+    .top { padding: 12px 13px; }
+    .topmeta { width: 100%; }
+    .sec-head { flex-wrap: wrap; }
+    thead th, tbody td { padding: 9px 10px; font-size: 12.5px; }
+    .analysis .col { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand">
+      <span class="dot"></span>
+      <div>
+        <h1>公司经营数据大屏</h1>
+        <span class="sub">COMPANY PERFORMANCE BOARD</span>
+      </div>
+    </div>
+    <div class="topmeta">
+      <div class="tabs" id="month-tabs"></div>
+      <span class="pill alt" id="cur-quarter-label">—</span>
+      <span class="stamp">更新 <b id="update-time">—</b></span>
+      <button class="btn ghost" id="refresh-btn" type="button">刷新</button>
+    </div>
+  </header>
+
+  <div class="banner" id="banner"></div>
+
+  <!-- Ⅰ 公司概览 -->
+  <section id="sec-1">
+    <div class="sec-head">
+      <span class="sec-no">Ⅰ</span>
+      <h2>公司概览</h2>
+      <span class="note" id="cur-month-label">—</span>
+      <span class="note" id="source-note"></span>
+    </div>
+    <div class="grid kpi-grid">
+      <div class="card">
+        <div class="cap">月度实收 GMV</div>
+        <div class="big" id="kpi-month-val">--</div>
+        <div class="track"><i id="kpi-month-bar" class="fill-gray" style="width:0"></i></div>
+        <div class="rowline">
+          <span>目标 <b id="kpi-month-target">--</b></span>
+          <span>完成率 <b id="kpi-month-pct" class="text-gray">--</b></span>
+          <span>差额 <b id="kpi-month-gap">--</b></span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="cap">季度累计 GMV</div>
+        <div class="big" id="kpi-quarter-val">--</div>
+        <div class="track"><i id="kpi-quarter-bar" class="fill-gray" style="width:0"></i></div>
+        <div class="rowline">
+          <span>目标 <b id="kpi-quarter-target">--</b></span>
+          <span>完成率 <b id="kpi-quarter-pct" class="text-gray">--</b></span>
+          <span>差额 <b id="kpi-quarter-gap">--</b></span>
+        </div>
+      </div>
+    </div>
+    <div class="grid stat-grid" style="margin-top:14px">
+      <div class="card"><div class="cap">活跃客户数</div><div class="big sm" id="kpi-active">--</div>
+        <div class="rowline"><span>同比同期 <b id="kpi-active-yoy">--</b></span></div></div>
+      <div class="card"><div class="cap">优爆品数量</div><div class="big sm" id="kpi-hit">--</div>
+        <div class="rowline"><span>达成率 <b id="kpi-hit-pct">--</b></span></div></div>
+      <div class="card"><div class="cap">ACP 收入</div><div class="big sm" id="kpi-acp">--</div>
+        <div class="rowline"><span>月度实收</span></div></div>
+      <div class="card"><div class="cap">时间进度</div><div class="big sm" id="kpi-timepct">--</div>
+        <div class="rowline"><span>本月已过</span></div></div>
+    </div>
+  </section>
+
+  <!-- Ⅱ 核心分析 -->
+  <section id="sec-2">
+    <div class="sec-head"><span class="sec-no">Ⅱ</span><h2>核心分析</h2>
+      <span class="note">由当日数据自动生成</span></div>
+    <div class="card analysis"><div class="col" id="analysis-text"><p class="empty">等待数据…</p></div></div>
+  </section>
+
+  <!-- Ⅲ 个人业绩 -->
+  <section id="sec-3">
+    <div class="sec-head"><span class="sec-no">Ⅲ</span><h2>个人业绩</h2>
+      <span class="note">月度 / 季度双进度条 · 竖线为当月时间进度</span></div>
+    <div class="grid person-grid" id="persons-grid"><div class="empty">等待数据…</div></div>
+  </section>
+
+  <!-- Ⅲ-B 活跃客户个人 -->
+  <section id="sec-3b">
+    <div class="sec-head"><span class="sec-no">Ⅲ-B</span><h2>活跃客户（个人）</h2>
+      <span class="note">当前数 · vs 同比同期</span></div>
+    <div class="card" id="active-list"><div class="empty">等待数据…</div></div>
+  </section>
+
+  <!-- Ⅳ GMV 进度榜 -->
+  <section id="sec-4">
+    <div class="sec-head"><span class="sec-no">Ⅳ</span><h2>GMV 进度榜</h2>
+      <span class="note">颜色规则：完成率 ≥80% 绿 · 50–79% 橙 · &lt;50% 红</span></div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr>
+          <th>#</th><th>姓名</th><th>角色</th><th>月实收</th><th>月目标</th>
+          <th>月完成率</th><th>季完成率</th><th>激励状态</th><th>活跃客户</th><th>优爆品</th>
+        </tr></thead>
+        <tbody id="rank-body"><tr><td colspan="10" class="empty">等待数据…</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Ⅴ 客户同比 TOP20 -->
+  <section id="sec-5">
+    <div class="sec-head"><span class="sec-no">Ⅴ</span><h2>客户同比 TOP20</h2>
+      <span class="note">需日报 Excel 含去年同期 GMV 列</span></div>
+    <div class="grid yoy-grid">
+      <div class="card"><div class="cap">增长 TOP20</div><div id="yoy-up"></div></div>
+      <div class="card"><div class="cap">下降 TOP20</div><div id="yoy-down"></div></div>
+    </div>
+  </section>
+
+  <!-- Ⅵ 销售指标拆解 -->
+  <section id="sec-6">
+    <div class="sec-head"><span class="sec-no">Ⅵ</span><h2>销售指标拆解</h2>
+      <span class="note">口令分级：管理员看全部 · 销售仅本人客户明细</span></div>
+    <div class="card">
+      <div class="gate" id="gate-box">
+        <input id="gate-input" type="password" placeholder="输入口令查看客户级明细" autocomplete="off">
+        <button class="btn" id="gate-btn" type="button">进入</button>
+        <button class="btn ghost" id="clear-btn" type="button">清除已保存状态</button>
+        <span class="msg" id="gate-msg"></span>
+      </div>
+      <div class="custwrap" id="breakdown-content" style="display:none"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div>数据每日更新 · 若显示旧数字请按 <code>Ctrl + Shift + R</code> 强制刷新（跳过 CDN 缓存）</div>
+    <div>数据源：<code>data_cur.json</code>（当月实时）· <code>data_prev.json</code>（上月固化，只读）· <code>data_breakdown.json</code>（指标拆解）</div>
+    <div id="footer-status">—</div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ── 配置区（与 project/config.py 同步）──
+  const ASSET_VERSION = '1790686754';           // release_html.py 发布时替换为时间戳
+  const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
+  const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
+  const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
+  const PASSWORDS = {
+    admin: '【管理员口令】',
+    /* 每个销售一行：'姓名': '个人口令' */
+    '【姓名1】': '【口令1】'
+  };
+  const ADMIN = 'admin';
+  const LS_KEY = 'dash_role_v1';
+
+  const STATE = { data: null, month: 'cur', role: null, breakdown: null, loadedAt: null };
+
+  // ── 通用工具 ──
+  const $ = (id) => document.getElementById(id);
+  const setText = (id, v) => { const el = $(id); if (el && v != null && v !== '') el.textContent = v; };
+
+  function num(v) {
+    if (v === null || v === undefined || v === '' || isNaN(Number(v))) return null;
+    return Number(v);
+  }
+  function fmt(v, digits) {
+    const n = num(v);
+    if (n === null) return '--';
+    return n.toLocaleString('en-US', { minimumFractionDigits: digits || 0, maximumFractionDigits: digits || 0 });
+  }
+  function fmtPct(v, digits) {
+    const n = num(v);
+    return n === null ? '--' : n.toFixed(digits === undefined ? 1 : digits) + '%';
+  }
+  function signed(v) {
+    const n = num(v);
+    if (n === null) return '--';
+    return (n > 0 ? '+' : '') + fmt(n);
+  }
+  function clampPct(v) { const n = num(v); return n === null ? 0 : Math.max(0, Math.min(n, 100)); }
+
+  // 完成率配色（统一标准，勿改）
+  function pctColor(p) {
+    const n = num(p);
+    if (n === null) return 'var(--gray)';
+    if (n >= 80) return 'var(--green)';
+    if (n >= 50) return 'var(--orange)';
+    return 'var(--red)';
+  }
+  function pctFillClass(p) {
+    const n = num(p);
+    if (n === null) return 'fill-gray';
+    if (n >= 80) return 'fill-green';
+    if (n >= 50) return 'fill-orange';
+    return 'fill-red';
+  }
+  function pctTextClass(p) {
+    const n = num(p);
+    if (n === null) return 'text-gray';
+    if (n >= 80) return 'text-green';
+    if (n >= 50) return 'text-orange';
+    return 'text-red';
+  }
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, (c) =>
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  // ── 失败要可见：不静默空白 ──
+  function banner(html, isError) {
+    const el = $('banner');
+    if (!html) { el.classList.remove('show', 'err'); el.innerHTML = ''; return; }
+    el.className = 'banner show' + (isError ? ' err' : '');
+    el.innerHTML = html;
+  }
+  function showLoadError(msg) {
+    banner('<b>数据加载失败</b>：' + esc(msg) +
+      ' &nbsp;<button class="btn ghost" type="button" id="retry-btn">重试</button>', true);
+    const btn = $('retry-btn');
+    if (btn) btn.addEventListener('click', () => boot(STATE.month));
+    document.querySelectorAll('.big').forEach((el) => { if (el.textContent.trim() === '') el.textContent = '--'; });
+  }
+
+  // ── 数据加载：同源优先 + raw 备用 ──
+  async function loadJson(file) {
+    const url = file + '?v=' + encodeURIComponent(V) + '&t=' + Date.now();
+    try {
+      const r = await fetch(url, { cache: 'no-store' });
+      if (r.ok) return await r.json();
+    } catch (e) {
+      console.warn('同源加载失败，尝试备用：', e.message);
+    }
+    try {
+      const r2 = await fetch(FALLBACK_BASE + url, { cache: 'no-store' });
+      if (r2.ok) return await r2.json();
+    } catch (e2) {
+      console.warn('备用加载也失败：', e2.message);
+    }
+    return null;
+  }
+
+  async function ensureData() {
+    if (!STATE.data) {
+      STATE.data = await loadJson(DATA_FILES[STATE.month] || DATA_FILES.cur);
+      STATE.loadedAt = new Date();
+    }
+    return STATE.data;
+  }
+  async function ensureBreakdown() {
+    if (!STATE.breakdown) STATE.breakdown = await loadJson('data_breakdown.json');
+    return STATE.breakdown;
+  }
+
+  // ── 月份切换 ──
+  function renderTabs() {
+    const box = $('month-tabs');
+    const labels = { cur: '当月实时', prev: '上月固化' };
+    box.innerHTML = Object.keys(DATA_FILES).map((k) =>
+      '<button class="tab' + (k === STATE.month ? ' on' : '') + '" type="button" data-month="' + k + '">' +
+      labels[k] + '</button>').join('');
+    box.querySelectorAll('.tab').forEach((b) => b.addEventListener('click', () => {
+      if (b.dataset.month === STATE.month) return;
+      STATE.month = b.dataset.month;
+      STATE.data = null;
+      renderTabs();
+      boot(STATE.month);
+    }));
+  }
+
+  // ── ⅰ 概览 ──
+  function renderKPI(d) {
+    const k = d.kpi || {};
+    setText('kpi-month-val', fmt(k.month_val));
+    setText('kpi-month-target', fmt(k.month_target));
+    const mp = $('kpi-month-pct');
+    if (mp) { mp.textContent = fmtPct(k.month_pct); mp.className = pctTextClass(k.month_pct); }
+    setText('kpi-month-gap', signed(k.month_gap));
+    const mb = $('kpi-month-bar');
+    if (mb) { mb.className = pctFillClass(k.month_pct); mb.style.width = clampPct(k.month_pct) + '%'; }
+
+    setText('kpi-quarter-val', fmt(k.quarter_val));
+    setText('kpi-quarter-target', fmt(k.quarter_target));
+    const qp = $('kpi-quarter-pct');
+    if (qp) { qp.textContent = fmtPct(k.quarter_pct); qp.className = pctTextClass(k.quarter_pct); }
+    setText('kpi-quarter-gap', signed(k.quarter_gap));
+    const qb = $('kpi-quarter-bar');
+    if (qb) { qb.className = pctFillClass(k.quarter_pct); qb.style.width = clampPct(k.quarter_pct) + '%'; }
+
+    setText('kpi-active', fmt(k.active_clients));
+    setText('kpi-active-yoy', fmt(k.active_clients_yoy));
+    setText('kpi-hit', fmt(k.hit_products));
+    const hp = $('kpi-hit-pct');
+    if (hp) { hp.textContent = fmtPct(k.hit_pct); hp.className = pctTextClass(k.hit_pct); }
+    setText('kpi-acp', fmt(k.month_val_acp));
+    setText('kpi-timepct', fmtPct(timeProgress(), 1));
+
+    renderAnalysis(d);
+  }
+
+  function timeProgress() {
+    const now = new Date();
+    const days = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+    return now.getDate() / days * 100;
+  }
+
+  // ── Ⅱ 核心分析 ──
+  function renderAnalysis(d) {
+    const k = d.kpi || {};
+    const persons = d.persons || [];
+    const tp = timeProgress();
+
+    const mp = num(k.month_pct);
+    const lead = mp === null ? null : mp - tp;
+    const monthTxt = mp === null ? '暂无数据' :
+      (mp >= 100 ? '已完成月度指标' :
+        '<span class="k">' + fmtPct(mp) + '</span>，' +
+        (lead >= 0 ? '领先时间进度 <span class="k">' + lead.toFixed(1) + '</span> 个百分点'
+                   : '落后时间进度 <span class="k">' + Math.abs(lead).toFixed(1) + '</span> 个百分点'));
+
+    const val = num(k.month_val), target = num(k.month_target);
+    let forecast = '缺少目标或实收数据，无法预测。';
+    if (val !== null && target) {
+      const days = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate();
+      const avg = val / Math.max(new Date().getDate(), 1);
+      const projected = avg * days;
+      const gap = projected - target;
+      forecast = '按当前日均 <span class="k">' + fmt(avg) + '</span> 推算，月末约 <span class="k">' + fmt(projected) +
+        '</span>，' + (gap >= 0
+          ? '预计<b class="text-green">超出目标 ' + fmt(gap) + '</b>'
+          : '较目标<b class="text-red">缺口 ' + fmt(Math.abs(gap)) + '</b>') +
+        '（剩余 ' + (days - new Date().getDate()) + ' 天）。';
+    }
+
+    const behind = persons.filter((p) => num(p.month_pct) !== null && num(p.month_pct) < tp && !p.incentive_ok).map((p) => p.name);
+    const actText = '活跃客户 <span class="k">' + fmt(k.active_clients) + '</span>' +
+      (k.active_clients_yoy != null ? '（同比同期 ' + fmt(k.active_clients_yoy) + '）' : '') +
+      '；优爆品 <span class="k">' + fmt(k.hit_products) + '</span>' +
+      (k.hit_target != null ? ' / 目标 ' + fmt(k.hit_target) + '，达成率 ' + fmtPct(k.hit_pct) : '') + '。' +
+      (behind.length ? '需关注进度落后人员：<span class="k">' + behind.join('、') + '</span>。' : '');
+
+    $('analysis-text').innerHTML =
+      '<div class="blk"><h3>指标解析</h3><p>本月完成率 ' + monthTxt + '。' +
+        (k.month_gap != null ? '与月度目标差额 <span class="k">' + signed(k.month_gap) + '</span>。' : '') + '</p>' +
+        '<p>季度累计 <span class="k">' + fmt(k.quarter_val) + '</span>' +
+        (k.quarter_target ? ' / 目标 ' + fmt(k.quarter_target) + '，完成率 ' + fmtPct(k.quarter_pct) : '') + '。</p></div>' +
+      '<div class="blk"><h3>近况预测</h3><p>' + forecast + '</p></div>' +
+      '<div class="blk"><h3>客户结构</h3><p>' + actText + '</p></div>';
+  }
+
+  // ── Ⅲ 个人业绩 ──
+  function personCard(p) {
+    const tp = num(p.time_pct) != null ? num(p.time_pct) : timeProgress();
+    const inc = p.incentive_ok
+      ? '<span class="tag ok">激励已达标</span>'
+      : '<span class="tag ' + (num(p.incentive_gap) > -0.15 * Math.abs(num(p.incentive_target) || 1) ? 'warn' : 'bad') + '">离激励还差 ' + fmt(Math.abs(num(p.incentive_gap) || 0)) + '</span>';
+    return '<div class="card">' +
+      '<div class="rowline" style="margin:0 0 4px"><span class="nm">' + esc(p.name) +
+      ' <small class="text-dim">' + esc(p.role || '销售') + '</small></span>' + inc + '</div>' +
+      '<div class="rowline" style="margin-top:10px"><span>月度</span><span><b>' + fmt(p.month_val) + '</b> / ' + fmt(p.month_target) +
+      '</span><b class="' + pctTextClass(p.month_pct) + '">' + fmtPct(p.month_pct) + '</b></div>' +
+      '<div class="track"><i class="' + pctFillClass(p.month_pct) + '" style="width:' + clampPct(p.month_pct) + '%"></i>' +
+      '<span class="marker" style="left:' + clampPct(tp) + '%"></span></div>' +
+      '<div class="rowline"><span>季度</span><span><b>' + fmt(p.quarter_val) + '</b> / ' + fmt(p.quarter_target) +
+      '</span><b class="' + pctTextClass(p.quarter_pct) + '">' + fmtPct(p.quarter_pct) + '</b></div>' +
+      '<div class="track"><i class="' + pctFillClass(p.quarter_pct) + '" style="width:' + clampPct(p.quarter_pct) + '%"></i></div>' +
+      '<div class="marker-label">时间进度 ' + fmtPct(tp) + '（竖线位置）' +
+      (num(p.month_gap) != null ? ' · 月度差额 ' + signed(p.month_gap) : '') + '</div>' +
+      '</div>';
+  }
+  function renderPersons(d) {
+    const persons = d.persons || [];
+    $('persons-grid').innerHTML = persons.length
+      ? persons.map(personCard).join('')
+      : '<div class="empty">暂无个人数据（检查 config.SHEETS 与 Excel 列索引）</div>';
+  }
+
+  // ── Ⅲ-B 活跃客户个人 ──
+  function renderActiveList(d) {
+    const persons = d.persons || [];
+    const rows = persons.filter((p) => num(p.active_clients) != null);
+    $('active-list').innerHTML = rows.length ? rows.map((p) => {
+      const cur = num(p.active_clients), yoy = num(p.active_clients_yoy);
+      const diff = (cur != null && yoy != null) ? cur - yoy : null;
+      return '<div class="mini"><span class="nm">' + esc(p.name) + '<small>' + esc(p.role || '') + '</small></span>' +
+        '<span class="vl">' + fmt(cur) +
+        '<small class="text-dim"> vs 同比 ' + fmt(yoy) +
+        (diff != null ? '（' + (diff > 0 ? '+' : '') + fmt(diff) + '）' : '') + '</small></span></div>';
+    }).join('') : '<div class="empty">暂无活跃客户数据</div>';
+  }
+
+  // ── Ⅳ 进度榜 ──
+  function renderRank(d) {
+    const persons = d.persons || [];
+    $('rank-body').innerHTML = persons.length ? persons.map((p, i) => {
+      const incTxt = p.incentive_ok ? '已达标'
+        : '差 ' + fmt(Math.abs(num(p.incentive_gap) || 0));
+      return '<tr>' +
+        '<td class="text-dim">' + (i + 1) + '</td>' +
+        '<td>' + esc(p.name) + '</td>' +
+        '<td class="text-dim">' + esc(p.role || '') + '</td>' +
+        '<td>' + fmt(p.month_val) + '</td>' +
+        '<td class="text-dim">' + fmt(p.month_target) + '</td>' +
+        '<td class="' + pctTextClass(p.month_pct) + '"><b>' + fmtPct(p.month_pct) + '</b></td>' +
+        '<td class="' + pctTextClass(p.quarter_pct) + '">' + fmtPct(p.quarter_pct) + '</td>' +
+        '<td>' + (p.incentive_ok ? '<span class="tag ok">' + incTxt + '</span>' : '<span class="tag warn">' + incTxt + '</span>') + '</td>' +
+        '<td>' + fmt(p.active_clients) + '</td>' +
+        '<td>' + fmt(p.hit_products) + '</td>' +
+        '</tr>';
+    }).join('') : '<tr><td colspan="10" class="empty">暂无数据</td></tr>';
+  }
+
+  // ── Ⅴ 客户同比 TOP20 ──
+  function renderYoy(d) {
+    const up = d.yoy_up || [], down = d.yoy_down || [];
+    const line = (c) => '<div class="mini"><span class="nm">' + esc(c.name || c.id || '-') +
+      '<small class="text-dim">' + esc(c.sales || '') + '</small></span><span class="vl">' +
+      signed(c.diff) + '<small class="text-dim"> ' + fmt(c.prev) + ' → ' + fmt(c.cur) + '</small></span></div>';
+    $('yoy-up').innerHTML = up.length ? up.map(line).join('')
+      : '<div class="empty">需在日报 Excel 中补充「去年同期 GMV」列后自动生成</div>';
+    $('yoy-down').innerHTML = down.length ? down.map(line).join('')
+      : '<div class="empty">需在日报 Excel 中补充「去年同期 GMV」列后自动生成</div>';
+  }
+
+  // ── Ⅵ 口径分级 ──
+  function hasPlaceholderPassword() {
+    return Object.keys(PASSWORDS).some((k) => String(PASSWORDS[k]).indexOf('【') >= 0);
+  }
+  function setRole(role) {
+    STATE.role = role;
+    try { localStorage.setItem(LS_KEY, role); } catch (e) { /* 隐私模式忽略 */ }
+  }
+  function getRole() {
+    if (STATE.role) return STATE.role;
+    try { return localStorage.getItem(LS_KEY); } catch (e) { return null; }
+  }
+  async function tryUnlock(input) {
+    const val = String(input || '').trim();
+    const msg = $('gate-msg');
+    if (!val) { msg.textContent = '请输入口令'; return; }
+    const names = Object.keys(PASSWORDS);
+    if (val === PASSWORDS.admin) {
+      setRole(ADMIN);
+    } else {
+      const hit = names.find((n) => n !== 'admin' && PASSWORDS[n] === val);
+      if (!hit) { msg.textContent = '口令错误'; return; }
+      setRole(hit);
+    }
+    msg.textContent = '';
+    await ensureBreakdown();
+    showContent();
+  }
+  function showContent() {
+    const role = getRole();
+    const box = $('breakdown-content');
+    const bd = STATE.breakdown;
+    if (!bd || !bd.sales || !bd.sales.length) {
+      box.style.display = 'block';
+      box.innerHTML = '<div class="empty">指标拆解数据未加载（需先运行 build_breakdown.py 推送 data_breakdown.json）</div>';
+      return;
+    }
+    const isAdmin = role === ADMIN;
+    const list = isAdmin ? bd.sales : bd.sales.filter((s) => s.name === role);
+    box.style.display = 'block';
+    box.innerHTML = (isAdmin ? '' : '<div class="rowline" style="margin-bottom:8px"><span class="text-dim">个人视图：仅显示本人客户明细</span></div>') +
+      list.map((s) => {
+        const cust = (s.customers || []).map((c) =>
+          '<div class="cust-row"><span><span class="idn">' + esc(c.id) + '</span>' + esc(c.name) + '</span>' +
+          '<span><b>' + fmt(c.gmv_month) + '</b><small class="text-dim"> 占指标 ' + fmtPct(c.share_pct) + '</small></span></div>').join('');
+        return '<div class="card sales-card" style="margin-bottom:12px">' +
+          '<div class="rowline" style="margin:0 0 8px"><span><b>' + esc(s.name) + '</b> <small class="text-dim">' + esc(s.role || '') + '</small></span>' +
+          '<span>月度 <b>' + fmt(s.gmv_month) + '</b> / 目标 ' + fmt(s.month_target) +
+          ' <b class="' + pctTextClass(s.share_pct) + '">' + fmtPct(s.share_pct) + '</b></span></div>' +
+          (cust || '<div class="empty">无客户明细</div>') + '</div>';
+      }).join('') +
+      (list.length ? '' : '<div class="empty">该口令名下没有客户明细</div>');
+    if (!isAdmin) $('gate-box').style.display = 'none';
+  }
+  function resetGate() {
+    STATE.role = null;
+    try { localStorage.removeItem(LS_KEY); } catch (e) { /* ignore */ }
+    $('breakdown-content').style.display = 'none';
+    $('breakdown-content').innerHTML = '';
+    $('gate-box').style.display = 'flex';
+    $('gate-input').value = '';
+    $('gate-msg').textContent = '已清除本机保存的登录状态';
+  }
+
+  // ── 标签动态化（避免硬编码月份）──
+  function updateLabels(d) {
+    setText('cur-month-label', d.month);
+    setText('cur-quarter-label', d.quarter);
+    setText('update-time', d.update_time);
+    setText('source-note', d.source_file ? '· 来源 ' + d.source_file : '');
+  }
+
+  // ── 统一入口 ──
+  function renderAll(d) {
+    renderKPI(d);
+    renderPersons(d);
+    renderActiveList(d);
+    renderRank(d);
+    renderYoy(d);
+    updateLabels(d);
+    const warns = d.warnings || [];
+    if (warns.length) banner('<b>解析告警（已按规则沿用上次数据）</b><ul><li>' +
+      warns.map(esc).join('</li><li>') + '</li></ul>', false);
+    if (hasPlaceholderPassword()) {
+      banner((warns.length ? '' : '') + '<b>口令尚未配置</b>：index.html 里的 PASSWORDS 仍是占位符，请填入口令后再对外发布。', true);
+    }
+    $('footer-status').textContent = '本次渲染 ' + new Date().toLocaleString('zh-CN') +
+      (STATE.month === 'prev' ? ' · 正在查看上月固化数据（只读）' : '');
+  }
+
+  async function boot(month) {
+    STATE.month = month || STATE.month;
+    const d = await ensureData();
+    if (!d) {
+      showLoadError('未能获取 ' + (DATA_FILES[STATE.month] || '') + '（同源与备用地址均失败），请确认文件已推送或稍后重试');
+      $('footer-status').textContent = '加载失败 ' + new Date().toLocaleString('zh-CN');
+      return;
+    }
+    banner('');
+    renderAll(d);
+    const role = getRole();
+    if (role) { await ensureBreakdown(); showContent(); }
+  }
+
+  // ── 事件绑定 ──
+  $('refresh-btn').addEventListener('click', () => { STATE.data = null; boot(STATE.month); });
+  $('gate-btn').addEventListener('click', () => tryUnlock($('gate-input').value));
+  $('gate-input').addEventListener('keydown', (e) => { if (e.key === 'Enter') tryUnlock($('gate-input').value); });
+  $('clear-btn').addEventListener('click', resetGate);
+
+  renderTabs();
+  boot('cur');
+})();
+</script>
+</body>
+</html>
