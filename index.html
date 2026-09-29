@@ -338,7 +338,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1790688493';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1790689700';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -547,9 +547,13 @@
   // ── Ⅲ 个人业绩 ──
   function personCard(p) {
     const tp = num(p.time_pct) != null ? num(p.time_pct) : timeProgress();
-    const inc = p.incentive_ok
-      ? '<span class="tag ok">激励已达标</span>'
-      : '<span class="tag ' + (num(p.incentive_gap) > -0.15 * Math.abs(num(p.incentive_target) || 1) ? 'warn' : 'bad') + '">离激励还差 ' + fmt(Math.abs(num(p.incentive_gap) || 0)) + '</span>';
+    const incTarget = num(p.incentive_target);
+    const inc = incTarget == null
+      ? '<span class="tag">激励目标待配</span>'
+      : (p.incentive_ok
+        ? '<span class="tag ok">激励已达标</span>'
+        : '<span class="tag ' + (num(p.incentive_gap) > -0.15 * incTarget ? 'warn' : 'bad') +
+          '">离激励还差 ' + fmt(Math.abs(num(p.incentive_gap) || 0)) + '</span>');
     return '<div class="card">' +
       '<div class="rowline" style="margin:0 0 4px"><span class="nm">' + esc(p.name) +
       ' <small class="text-dim">' + esc(p.role || '销售') + '</small></span>' + inc + '</div>' +
@@ -589,8 +593,8 @@
   function renderRank(d) {
     const persons = d.persons || [];
     $('rank-body').innerHTML = persons.length ? persons.map((p, i) => {
-      const incTxt = p.incentive_ok ? '已达标'
-        : '差 ' + fmt(Math.abs(num(p.incentive_gap) || 0));
+      const incTxt = num(p.incentive_target) == null ? '待配目标'
+        : (p.incentive_ok ? '已达标' : '差 ' + fmt(Math.abs(num(p.incentive_gap) || 0)));
       return '<tr>' +
         '<td class="text-dim">' + (i + 1) + '</td>' +
         '<td>' + esc(p.name) + '</td>' +
@@ -599,7 +603,9 @@
         '<td class="text-dim">' + fmt(p.month_target) + '</td>' +
         '<td class="' + pctTextClass(p.month_pct) + '"><b>' + fmtPct(p.month_pct) + '</b></td>' +
         '<td class="' + pctTextClass(p.quarter_pct) + '">' + fmtPct(p.quarter_pct) + '</td>' +
-        '<td>' + (p.incentive_ok ? '<span class="tag ok">' + incTxt + '</span>' : '<span class="tag warn">' + incTxt + '</span>') + '</td>' +
+        '<td>' + (num(p.incentive_target) == null ? '<span class="tag">' + incTxt + '</span>'
+          : (p.incentive_ok ? '<span class="tag ok">' + incTxt + '</span>'
+                            : '<span class="tag warn">' + incTxt + '</span>')) + '</td>' +
         '<td>' + fmt(p.active_clients) + '</td>' +
         '<td>' + fmt(p.hit_products) + '</td>' +
         '</tr>';
