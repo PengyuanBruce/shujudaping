@@ -202,6 +202,73 @@
     thead th, tbody td { padding: 9px 10px; font-size: 12.5px; }
     .analysis .col { grid-template-columns: 1fr; }
   }
+  /* ══ 参考站对齐 v2（2026-09-30 按实测计算样式覆盖）══ */
+  /* B 头部：透明底 + 1px #1C2A4A 下边线 + 底部对齐，公司名青色、标题高亮金色 */
+  header.top { min-height: 71px; background: transparent; border-bottom: 1px solid #1C2A4A;
+    align-items: flex-end; padding: 6px 0 10px; }
+  #brand-title { line-height: 1.15; }
+  #brand-sub { line-height: 1.2; }
+  #brand-sub { color: #22D3EE; letter-spacing: 2px; font-size: 12px; }
+  #brand-title { font-size: 26px; font-weight: 700; letter-spacing: 1px; }
+  #brand-title .hl { color: #FBBF24; font-weight: 800; }
+  .pill { font-size: 12px; padding: 5px 12px; border-radius: 20px; background: #0D1424;
+    border: 1px solid #1C2A4A; height: 28px; display: inline-flex; align-items: center; gap: 5px; }
+  .stamp { font-size: 12px; }
+  /* C 板块头：编号 chip 实心青色 + 标题 17/700 */
+  .sec-head { gap: 10px; margin-bottom: 12px; align-items: center; }
+  .sec-no { padding: 2px 8px; border-radius: 6px; background: #22D3EE; color: #04121A;
+    font-size: 12px; font-weight: 800; letter-spacing: 1px; }
+  .sec-head h2 { font-size: 17px; font-weight: 700; letter-spacing: 1px; }
+  section { margin-bottom: 22px; }
+  /* D 卡片：渐变底 + 30/800 大数字；Ⅰ 改 4 列（前两张各占 2 列） */
+  .card { background: linear-gradient(160deg, #101A30, #0D1424); border: 1px solid #1C2A4A; }
+  .kpi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  /* 只有 Ⅰ 区的前两张卡跨 2 列；嵌套在盘面/采购节里的小卡用 auto-fit，避免被撑成 3 行 */
+  #sec-1 .kpi-grid > .card:nth-child(-n+2) { grid-column: span 2; }
+  #panel-stats .kpi-grid, #festival-body .kpi-grid, #sec-6 .kpi-grid {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
+  /* Ⅱ：3 列放短卡，盘面与分层各自整行 —— 否则盘面(高)会把同行短卡拉出大片留白 */
+  #sec-2 .grid.two { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+  #sec-2 .grid.two > .card:nth-child(n+4) { grid-column: 1 / -1; }
+  .wrap .card .big { font-size: 30px; font-weight: 800; line-height: 1.05; }
+  .wrap .card .big.sm { font-size: 26px; }
+  .cap { color: #8FA3C8; }
+  /* E 表格：行 34px 级、7px 10px 内边距、细分隔线、数字右对齐等宽 */
+  thead th { padding: 8px 10px; background: transparent; }
+  tbody td { padding: 7px 10px; border-top: 0; }
+  tbody tr { border-bottom: 1px solid rgba(28, 42, 74, 0.55); }
+  tbody tr:last-child { border-bottom: 0; }
+  tbody td:first-child { text-align: center; }
+  tbody td:nth-child(n+4) { text-align: right; font-variant-numeric: tabular-nums; }
+  thead th:nth-child(n+4) { text-align: right; }
+  /* F 进度条 16px/9 圆角/描边；填充 14px */
+  .track { height: 16px; border-radius: 9px; background: #050A16; border: 1px solid #2A3D68; }
+  .track > i { height: 14px; border-radius: 9px; }
+  .track .marker { height: 20px; top: -2.5px; }
+  /* F 双柱图：图区 120、柱区 77、柱顶数值小字 */
+  #sec-2 .trend { height: 120px; min-height: 0; align-items: flex-end; }
+  #sec-2 .tbars { height: 77px; }
+  #sec-2 .tv { font-size: 10px; }
+  #sec-2 .tp { font-size: 10px; }
+  #sec-2 .tl { font-size: 11px; }
+  /* H 我们页独有缺陷 */
+  #sec-2 .grid.two { align-items: start; }                    /* Ⅱ 左列不再被拉高留白 */
+  .grid.two { align-items: start; }
+  #sec-8 .rank-row { height: 37px; white-space: nowrap; overflow: hidden; }
+  #sec-4b .rank-row { height: 37px; }
+  @media (max-width: 700px) {
+    .kpi-grid { grid-template-columns: 1fr; }
+    .kpi-grid > .card:nth-child(-n+2) { grid-column: auto; }
+    .topmeta { gap: 6px; }
+    .pill { font-size: 11px; padding: 4px 9px; height: 25px; }
+    #brand-title { font-size: 19px; }
+    header.top { padding: 5px 0 5px; min-height: 0; }
+    #sec-2 .grid.two { grid-template-columns: 1fr; }
+    /* 375 宽：时间进度两个 chip 收进 Ⅰ 区卡片，头部不再撑成三行 */
+    .pill.time-chip { display: none; }
+    #month-tabs { order: -1; }
+  }
+
   /* ── 参考站对齐新增 ── */
   .grid.two { grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); }
   .text-dim { color: var(--fg-faint); }
@@ -254,8 +321,8 @@
       <div class="tabs" id="month-tabs"></div>
       <span class="pill alt" id="cur-quarter-label">—</span>
       <span class="stamp">更新 <b id="update-time">—</b></span>
-      <span class="pill">月度时间进度 <b id="month-time-pct">--</b></span>
-      <span class="pill">季度时间进度 <b id="quarter-time-pct">--</b></span>
+      <span class="pill time-chip">月度时间进度 <b id="month-time-pct">--</b></span>
+      <span class="pill time-chip">季度时间进度 <b id="quarter-time-pct">--</b></span>
       <button class="btn ghost" id="refresh-btn" type="button">刷新</button>
     </div>
   </header>
@@ -414,7 +481,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1790734997';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1790740001';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
