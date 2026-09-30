@@ -1,7 +1,7 @@
 {
   "month": "2026-09",
   "quarter": "FY27Q2",
-  "update_time": "2026-09-30 17:34",
+  "update_time": "2026-09-30 19:17",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 87243165.89926325,
@@ -12,18 +12,19 @@
     "quarter_pct": 91.39,
     "month_gap": -12191529.0,
     "quarter_gap": -22608044.0,
-    "month_val_acp": 17770341.0,
+    "month_val_acp": 18052028.19,
     "active_clients": 945.0,
     "active_clients_yoy": 1017.0,
     "hit_products": 130836.0,
     "hit_target": 159402.0,
     "hit_pct": 82.1,
     "caliber_note": "公司行=信保实收（首页接口）；个人行=信保实收（业务目标▸信保▸拍档销售）÷ 个人目标（激励▸激励进展▸FY27-9月激励进展▸小二激励）",
-    "acp_month_target": 18342541.0,
-    "acp_month_pct": 97.0,
-    "quarter_acp_target": 46651656.0,
+    "acp_month_target": 16382542.58,
+    "quarter_val_acp": 43836047.75,
+    "quarter_acp_target": 46651656.31,
+    "acp_month_pct": 110.2,
     "acp_quarter_pct": 94.0,
-    "quarter_val_acp": 43774955.0
+    "acp_caliber": "激励▸业务目标▸ACP▸拍档▸总实收（2026-09）"
   },
   "acp": {
     "month_val": 17807145.1,
@@ -521,6 +522,8 @@
     }
   ],
   "warnings": [],
+  "config_month_label": "2026-09",
+  "config_quarter_label": "FY27Q2",
   "company": "深圳市鹏远企业服务有限公司",
   "month_time_pct": 100.0,
   "month_time_pct_platform": 97.0,
@@ -555,21 +558,21 @@
       "points": [
         {
           "label": "7月",
-          "val": 14907985.83,
-          "target": null,
-          "pct": null
+          "val": 13384608.4,
+          "target": 15062428.36,
+          "pct": 88.9
         },
         {
           "label": "8月",
-          "val": 16804465.59,
-          "target": null,
-          "pct": null
+          "val": 12779824.93,
+          "target": 15206685.37,
+          "pct": 84.0
         },
         {
           "label": "9月",
-          "val": 16423477.65,
-          "target": null,
-          "pct": null
+          "val": 18052028.19,
+          "target": 16382542.58,
+          "pct": 110.2
         }
       ]
     }
