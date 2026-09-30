@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>公司经营数据大屏</title>
+<title>深圳市鹏远企业服务有限公司 · 业绩数据大屏</title>
 <!--
   数据来源：data_cur.json / data_prev.json（同源优先，raw.githubusercontent 备用）
   首屏数据由 renderAll(data) 统一渲染；所有月份/季度标签都走 id，禁止硬编码月份。
@@ -209,8 +209,8 @@
     <div class="brand">
       <span class="dot"></span>
       <div>
-        <h1>公司经营数据大屏</h1>
-        <span class="sub">COMPANY PERFORMANCE BOARD</span>
+        <h1>深圳市鹏远企业服务有限公司</h1>
+        <span class="sub">当前财年季度 业绩数据大屏</span>
       </div>
     </div>
     <div class="topmeta">
@@ -338,7 +338,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1790689700';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1790728286';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
