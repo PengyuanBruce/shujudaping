@@ -251,6 +251,28 @@
     .sub:first-child { border-top: 0 !important; }
   }
 
+  /* Ⅱ · 时间进度 vs 完成率（参考站版式：四条带数值的进度条） */
+  .pmeta { font-size: 11.5px; color: #8FA3C8; text-align: right; margin-bottom: 10px; }
+  .prow { margin-bottom: 11px; }
+  .prow:last-child { margin-bottom: 2px; }
+  .pname { font-size: 12.5px; color: #E8EEFC; margin-bottom: 4px; }
+  .prow .bar { height: 14px; border-radius: 8px; background: #050A16; border: 1px solid #2A3D68; }
+  .prow .bar > i { height: 12px; border-radius: 8px; }
+  .prow .bar .tmark { height: 18px; top: -3.5px; background: #FFFFFF; }
+  .pval { font-size: 12.5px; margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .fill-deep-green { background: #16A34A; }
+  .fill-green { background: #34D399; }
+  .fill-yellow { background: #FBBF24; }
+  .fill-orange { background: #F59E0B; }
+  .fill-red { background: #F87171; }
+  .fill-dim { background: #3B4A68; }
+  /* 双柱图：柱顶数值 */
+  .tbarwrap { height: 100%; display: flex; flex-direction: column; justify-content: flex-end;
+    align-items: center; }
+  .tbv { font-size: 9.5px; color: #5A6C92; line-height: 1; margin-bottom: 3px; white-space: nowrap; }
+  #sec-2 .tbars { height: 96px; }
+  #sec-2 .trend { height: 152px; min-height: 0; }
+
   /* 组织业绩树 */
   #org-tree .thead, .tnode { display: grid; grid-template-columns: 1fr 190px 190px; gap: 10px; align-items: center; }
   #org-tree .thead { font-size: 11.5px; color: #5A6C92; border-bottom: 1px solid var(--line-soft); padding: 4px 0 6px; }
@@ -536,7 +558,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1790743914';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1790744760';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -574,6 +596,16 @@
     const n = num(v);
     if (n === null) return '--';
     return (n >= 0 ? '+' : '-') + fmtWan(Math.abs(n));
+  }
+
+  function tierFill(p) {                // 参考站 5 档填充色（进度条用）
+    const n = num(p);
+    if (n === null) return 'fill-dim';
+    if (n >= 100) return 'fill-deep-green';
+    if (n >= 85) return 'fill-green';
+    if (n >= 70) return 'fill-yellow';
+    if (n >= 50) return 'fill-orange';
+    return 'fill-red';
   }
 
   // 参考站 5 档语义：≥100 深绿 / 85-99 绿 / 70-84 黄 / 50-69 橙 / <50 红
@@ -962,36 +994,51 @@
   }
 
   // ── Ⅱ 时间进度 vs 完成率 ──
+  // 参考站版式：信保月/季 + ACP月/季 四条进度条，各自带「完成值 / 目标值」，右侧标时间进度
   function renderProgressCmp(d) {
     const k = d.kpi || {};
-    $('progress-cmp').innerHTML = [['月度', k.month_pct, d.month_time_pct], ['季度', k.quarter_pct, d.quarter_time_pct]]
-      .map(function (r) {
-        const v = num(r[1]), t = num(r[2]);
-        const diff = (v === null || t === null) ? null : v - t;
-        return '<div class="rowline" style="margin:8px 0 2px"><span>' + r[0] + '完成率</span><span>' +
-          '<b class="' + pctTextClass(v) + '">' + fmtPct(v) + '</b>' +
-          '<small class="text-dim"> vs 时间进度 ' + fmtPct(t) + '</small>' +
-          (diff === null ? '' : ' <small class="' + (diff >= 0 ? 'text-ok' : 'text-bad') + '">' +
-            (diff >= 0 ? '领先 ' : '落后 ') + Math.abs(diff).toFixed(1) + 'pt</small>') + '</span></div>' +
-          '<div class="bar"><i class="' + pctFillClass(v) + '" style="width:' +
-          Math.max(0, Math.min(100, v || 0)) + '%"></i>' +
-          (t === null ? '' : '<u class="tmark" style="left:' + Math.max(0, Math.min(100, t)) + '%"></u>') + '</div>';
+    const mp = num(d.month_time_pct), qp = num(d.quarter_time_pct);
+    const rows = [
+      ['信保 · 9月', k.month_val, k.month_target, k.month_pct, mp],
+      ['信保 · Q2', k.quarter_val, k.quarter_target, k.quarter_pct, qp],
+      ['ACP · 9月', k.month_val_acp, k.acp_month_target || null, null, mp],
+      ['ACP · Q2', k.quarter_val_acp, k.quarter_acp_target || k.acp_quarter_target || null, null, qp],
+    ];
+    const computed = (r) => (r[3] != null ? r[3]
+      : (num(r[2]) ? Math.round((num(r[1]) || 0) / num(r[2]) * 10000) / 100 : null));
+    rows.forEach((r) => { r[3] = computed(r); });
+    const meta = '9月已过 ' + fmtPct(mp) + ' 时间 · Q2 已过 ' + fmtPct(qp);
+    $('progress-cmp').innerHTML =
+      '<div class="pmeta">' + meta + '</div>' +
+      rows.map(function (r) {
+        const v = num(r[3]), t = num(r[4]);
+        const w = Math.max(0, Math.min(100, num(r[2]) || 0));
+        return '<div class="prow">' +
+          '<div class="pname">' + esc(r[0]) + '</div>' +
+          '<div class="bar"><i class="' + tierFill(v) + '" style="width:' + w + '%"></i>' +
+          (t === null ? '' : '<u class="tmark" style="left:' + Math.max(0, Math.min(100, t)) + '%"></u>') +
+          '</div>' +
+          '<div class="pval"><b class="' + pctTextClass(v) + '">' + fmtWan(r[1], 0) + '</b>' +
+          '<span class="text-dim"> / ' + fmtWan(r[2], 0) + '</span></div>' +
+          '</div>';
       }).join('');
   }
 
   // ── Ⅱ 月度趋势（双柱：目标虚线 / 实际实心，单位万美元）──
+  // 参考站版式：每根柱顶标数值（目标柱 / 实际柱各一个），柱下标「月份 + 完成率」
   function trendCard(t, withLegend) {
     if (!t || !(t.points || []).length) return '';
     const pts = t.points;
     const max = Math.max.apply(null, pts.map(function (p) { return Math.max(num(p.val) || 0, num(p.target) || 0); }).concat([1]));
+    const bar = (cls, val, h) => '<div class="tbarwrap"><span class="tbv">' +
+      (num(val) === null ? '' : fmtWan(val, 0)) + '</span>' +
+      '<i class="tbar ' + cls + '" style="height:' + Math.max(2, h) + '%"></i></div>';
     return '<div class="trend">' + pts.map(function (p) {
       const vh = Math.round((num(p.val) || 0) / max * 100), th = Math.round((num(p.target) || 0) / max * 100);
       return '<div class="tcol"><div class="tbars">' +
-        '<i class="tbar tgt" style="height:' + Math.max(2, th) + '%"></i>' +
-        '<i class="tbar act" style="height:' + Math.max(2, vh) + '%"></i></div>' +
-        '<div class="tv">' + fmtWan(p.val) + '</div>' +
-        '<div class="tp ' + pctTextClass(p.pct) + '">' + fmtPct(p.pct) + '</div>' +
-        '<div class="tl">' + esc(p.label) + '</div></div>';
+        bar('tgt', p.target, th) + bar('act', p.val, vh) + '</div>' +
+        '<div class="tl">' + esc(p.label) + '</div>' +
+        '<div class="tp ' + pctTextClass(p.pct) + '">' + fmtPct(p.pct) + '</div></div>';
     }).join('') + '</div>' + (withLegend === false ? '' :
       '<div class="legend"><span><i class="sw tgt"></i>目标(虚线边框)</span>' +
       '<span><i class="sw act"></i>实际</span></div>');
