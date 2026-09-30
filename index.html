@@ -546,7 +546,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1790752817';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1790755118';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1075,15 +1075,24 @@
   function renderPanel(d) {
     const p = d.panel;
     if (!p) {
-      $('panel-stats').innerHTML = pendingPanel(['客户盘面 6 项：策略中心客户总数 / 盘点客户数 / 本季度满3万 / 2-3万冲刺客户 / 未动销客户 / 活跃客户合计（需你指认在数据罗盘哪个页面）']);
+      $('panel-stats').innerHTML = pendingPanel(['客户盘面 6 项：策略中心客户总数 / 盘点客户数 / 本季度满3万 / 2-3万冲刺客户 / 未动销客户 / 有实收客户数（分档 4 项取全量客户盘点口径，与「3万客户分层」同源）']);
       return;
     }
-    $('panel-stats').innerHTML = '<div class="grid kpi-grid">' + [['策略中心客户总数', p.total], ['盘点客户数', p.checked],
-      ['本季度满3万', p.full3w], ['2-3万冲刺客户', p.sprint], ['未动销客户', p.inactive], ['活跃客户合计(3w)', p.active3w]]
-      .map(function (it) {
-        return '<div class="card"><span class="cap">' + it[0] + '</span><div class="big">' + fmt(it[1], 0) +
-          '<small class="text-dim"> 家</small></div></div>';
-      }).join('') + '</div>';
+    // 每张卡自带来源标签：这一屏跨了 2 张报表（策略中心 / 全量客户盘点），
+    // 不标来源就会出现"同一个维度两个数"却看不出为什么（曾发生：满3万 945 vs 已达3万 967）。
+    // 分档类 4 项统一取【盘点】口径，与右侧「3万客户分层」同源同数。
+    $('panel-stats').innerHTML = '<div class="grid kpi-grid">' + [
+      ['策略中心客户总数', p.total, '策略中心'],
+      ['盘点客户数', p.checked, '盘点'],
+      ['本季度满3万', p.full3w, '盘点'],
+      ['2-3万冲刺客户', p.sprint, '盘点'],
+      ['未动销客户', p.inactive, '盘点'],
+      ['有实收客户数', p.paid, '盘点']
+    ].map(function (it) {
+      return '<div class="card"><span class="cap">' + it[0] +
+        '<span class="text-dim">（' + it[2] + '）</span></span><div class="big">' + fmt(it[1], 0) +
+        '<small class="text-dim"> 家</small></div></div>';
+    }).join('') + '</div>';
   }
   function renderLayers(d) {
     const rows = d.layers || [];
