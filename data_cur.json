@@ -1,7 +1,7 @@
 {
   "month": "2026-09",
   "quarter": "FY27Q2",
-  "update_time": "2026-09-30 10:19",
+  "update_time": "2026-09-30 10:20",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 85193539.10380837,
@@ -498,87 +498,92 @@
     }
   },
   "goods": {
-    "current": 130365.0,
+    "current": null,
     "target": 159402.0,
-    "pct": 81.8,
-    "structure": []
+    "pct": 82.1,
+    "structure": [
+      {
+        "name": "在线品数",
+        "count": 2631480.0,
+        "pct": null
+      },
+      {
+        "name": "有优爆品的客户数",
+        "count": 2146.0,
+        "pct": null
+      }
+    ]
   },
   "goods_sales": [
     {
-      "name": "李怡萍",
-      "value": 7495.0,
-      "target": 9324.0,
-      "pct": 80.4
+      "name": "邓晓东",
+      "value": null,
+      "target": 8911.0,
+      "pct": 91.0
     },
     {
       "name": "罗金填",
-      "value": 1824.0,
+      "value": null,
       "target": 3164.0,
-      "pct": 57.6
+      "pct": 57.8
     },
     {
       "name": "梁诗琪",
-      "value": 1475.0,
+      "value": null,
       "target": 3257.0,
       "pct": 45.3
     },
     {
       "name": "陈苑英",
-      "value": 1076.0,
+      "value": null,
       "target": 1725.0,
-      "pct": 62.4
+      "pct": 62.5
     },
     {
       "name": "王金国",
-      "value": 2528.0,
+      "value": null,
       "target": 3710.0,
-      "pct": 68.1
+      "pct": 67.8
     },
     {
       "name": "程碧瑶",
-      "value": 1902.0,
+      "value": null,
       "target": 3851.0,
-      "pct": 49.4
+      "pct": 49.8
     },
     {
       "name": "何尧玲",
-      "value": 4249.0,
+      "value": null,
       "target": 4865.0,
-      "pct": 87.3
+      "pct": 88.2
     },
     {
       "name": "刘蓝琳",
-      "value": 2442.0,
+      "value": null,
       "target": 3192.0,
-      "pct": 76.5
+      "pct": 76.6
     },
     {
       "name": "牛群",
-      "value": 1533.0,
+      "value": null,
       "target": 2624.0,
-      "pct": 58.4
+      "pct": 58.0
     },
     {
       "name": "刘嘉艳",
-      "value": 1975.0,
-      "target": null,
-      "pct": 52.4
+      "value": null,
+      "target": 3770.0,
+      "pct": 49.8
     },
     {
       "name": "文一锦",
-      "value": 1783.0,
+      "value": null,
       "target": 3370.0,
-      "pct": 52.9
-    },
-    {
-      "name": "邓晓东",
-      "value": 8054.0,
-      "target": 8911.0,
-      "pct": 90.4
+      "pct": 28.8
     },
     {
       "name": "李彬",
-      "value": 6222.0,
+      "value": null,
       "target": 6236.0,
       "pct": 99.8
     }
