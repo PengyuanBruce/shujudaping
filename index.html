@@ -546,7 +546,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1790752527';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1790752817';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1014,7 +1014,9 @@
       '<div class="pmeta">' + meta + '</div>' +
       rows.map(function (r) {
         const v = num(r[3]), t = num(r[4]);
-        const w = Math.max(0, Math.min(100, num(r[2]) || 0));
+        // 填充宽度 = 完成率（不是目标金额！）。写成 r[2] 会让四条全都 clamp 成 100% 满格，
+        // 看不出"完成到哪了"，也就没法跟右侧的时间进度竖线比。
+        const w = Math.max(0, Math.min(100, v == null ? 0 : v));
         return '<div class="prow">' +
           '<div class="pname">' + esc(r[0]) + '</div>' +
           '<div class="bar"><i class="' + tierFill(v) + '" style="width:' + w + '%"></i>' +
