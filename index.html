@@ -210,7 +210,7 @@
       <span class="dot"></span>
       <div>
         <h1>深圳市鹏远企业服务有限公司</h1>
-        <span class="sub">当前财年季度 业绩数据大屏</span>
+        <span class="sub" id="brand-sub">当前财年季度 业绩数据大屏</span>
       </div>
     </div>
     <div class="topmeta">
@@ -338,7 +338,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1790728635';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1790729248';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -391,6 +391,11 @@
     if (n >= 50) return 'fill-orange';
     return 'fill-red';
   }
+  // 客户明细的期间口径（接口 dateType）：MONTH/QUARTER/YEAR
+  function periodLabel(p) {
+    return { MONTH: '月度', QUARTER: '季度', YEAR: '本财年' }[p] || '本期';
+  }
+
   function pctTextClass(p) {
     const n = num(p);
     if (n === null) return 'text-gray';
@@ -663,16 +668,25 @@
     }
     const isAdmin = role === ADMIN;
     const list = isAdmin ? bd.sales : bd.sales.filter((s) => s.name === role);
+    const per = periodLabel(bd.period);
+    const monthly = bd.period === 'MONTH';
+    const head = '<div class="rowline" style="margin-bottom:8px"><span class="text-dim">客户明细期间：' + per +
+      (monthly ? '' : '（与月度目标不是同一期间，故不计算占指标）') + '</span></div>';
     box.style.display = 'block';
-    box.innerHTML = (isAdmin ? '' : '<div class="rowline" style="margin-bottom:8px"><span class="text-dim">个人视图：仅显示本人客户明细</span></div>') +
+    box.innerHTML = head + (isAdmin ? '' : '<div class="rowline" style="margin-bottom:8px"><span class="text-dim">个人视图：仅显示本人客户明细</span></div>') +
       list.map((s) => {
         const cust = (s.customers || []).map((c) =>
           '<div class="cust-row"><span><span class="idn">' + esc(c.id) + '</span>' + esc(c.name) + '</span>' +
-          '<span><b>' + fmt(c.gmv_month) + '</b><small class="text-dim"> 占指标 ' + fmtPct(c.share_pct) + '</small></span></div>').join('');
+          '<span><b>' + fmt(c.gmv_month) + '</b>' +
+          (c.share_pct == null ? '' : '<small class="text-dim"> 占指标 ' + fmtPct(c.share_pct) + '</small>') +
+          '</span></div>').join('');
+        const cmp = monthly
+          ? ' / 目标 ' + fmt(s.month_target) +
+            ' <b class="' + pctTextClass(s.share_pct) + '">' + fmtPct(s.share_pct) + '</b>'
+          : ' <small class="text-dim">（' + per + '累计）</small>';
         return '<div class="card sales-card" style="margin-bottom:12px">' +
           '<div class="rowline" style="margin:0 0 8px"><span><b>' + esc(s.name) + '</b> <small class="text-dim">' + esc(s.role || '') + '</small></span>' +
-          '<span>月度 <b>' + fmt(s.gmv_month) + '</b> / 目标 ' + fmt(s.month_target) +
-          ' <b class="' + pctTextClass(s.share_pct) + '">' + fmtPct(s.share_pct) + '</b></span></div>' +
+          '<span>' + per + ' <b>' + fmt(s.gmv_month) + '</b>' + cmp + '</span></div>' +
           (cust || '<div class="empty">无客户明细</div>') + '</div>';
       }).join('') +
       (list.length ? '' : '<div class="empty">该口令名下没有客户明细</div>');
@@ -694,6 +708,9 @@
     setText('cur-quarter-label', d.quarter);
     setText('update-time', d.update_time);
     setText('source-note', d.source_file ? '· 来源 ' + d.source_file : '');
+    // 头部副标题跟随财年季度标签（如 FY27Q2），不写死
+    const q = String(d.quarter || '').replace(/[【】]/g, '').trim();
+    setText('brand-sub', (q || '当前财年季度') + ' 业绩数据大屏');
   }
 
   // ── 统一入口 ──
