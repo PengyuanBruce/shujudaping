@@ -446,8 +446,8 @@
 
   <!-- Ⅴ 客户同比 TOP20 -->
   <section id="sec-5">
-    <div class="sec-head"><span class="sec-no">Ⅴ</span><h2>客户同比 TOP20</h2>
-      <span class="note">需日报 Excel 含去年同期 GMV 列</span></div>
+    <div class="sec-head"><span class="sec-no">Ⅴ</span><h2>客户环比 TOP20</h2>
+      <span class="note" id="yoy-note">本季度 vs 上季度 · 客户级 GMV</span></div>
     <div class="grid yoy-grid">
       <div class="card"><div class="cap">增长 TOP20</div><div id="yoy-up"></div></div>
       <div class="card"><div class="cap">下降 TOP20</div><div id="yoy-down"></div></div>
@@ -495,7 +495,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1790742019';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1790743314';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -816,13 +816,15 @@
   // ── Ⅴ 客户同比 TOP20 ──
   function renderYoy(d) {
     const up = d.yoy_up || [], down = d.yoy_down || [];
+    setText('yoy-note', d.yoy_compare || '本季度 vs 上季度 · 客户级 GMV');
     const line = (c) => '<div class="mini"><span class="nm">' + esc(c.name || c.id || '-') +
-      '<small class="text-dim">' + esc(c.sales || '') + '</small></span><span class="vl">' +
-      signed(c.diff) + '<small class="text-dim"> ' + fmt(c.prev) + ' → ' + fmt(c.cur) + '</small></span></div>';
+      '<small class="text-dim"> ' + esc([c.sales, c.industry].filter(Boolean).join(' · ')) + '</small></span>' +
+      '<span class="vl">' + signed(c.diff) +
+      '<small class="text-dim"> ' + fmt(c.prev) + ' → ' + fmt(c.cur) + '</small></span></div>';
     $('yoy-up').innerHTML = up.length ? up.map(line).join('')
-      : '<div class="empty">需在日报 Excel 中补充「去年同期 GMV」列后自动生成</div>';
+      : '<div class="empty">暂无环比数据（需策略中心当月明细的 本季度/上季度 GMV）</div>';
     $('yoy-down').innerHTML = down.length ? down.map(line).join('')
-      : '<div class="empty">需在日报 Excel 中补充「去年同期 GMV」列后自动生成</div>';
+      : '<div class="empty">暂无环比数据</div>';
   }
 
   // ── Ⅵ 口径分级 ──
