@@ -1,7 +1,7 @@
 {
   "month": "2026-09",
   "quarter": "FY27Q2",
-  "update_time": "2026-09-30 10:23",
+  "update_time": "2026-09-30 11:46",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 85193539.10380837,
@@ -588,6 +588,10 @@
       "pct": 99.8
     }
   ],
+  "incentive_quarter_targets": {
+    "汤子豪": 3466029.0,
+    "文一锦": 45995382.0
+  },
   "panel": {
     "total": 2442.0,
     "checked": 7478.0,
