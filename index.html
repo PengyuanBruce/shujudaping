@@ -546,7 +546,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1790752212';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1790752527';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -978,7 +978,20 @@
     const h1 = $('brand-title');
     if (h1) h1.innerHTML = title;
     setText('month-time-pct', d.month_time_pct == null ? '--' : fmtPct(d.month_time_pct));
+    const qPctEl = $('quarter-time-pct');
     setText('quarter-time-pct', d.quarter_time_pct == null ? '--' : fmtPct(d.quarter_time_pct));
+    // 口径可追溯：鼠标悬停看到"已过第几天 / 总天数"，免得有人以为这是个完成率
+    if (qPctEl && qPctEl.parentNode && d.quarter_time_note) {
+      qPctEl.parentNode.title = '季度时间进度 = 本季度已过天数 ÷ 季度总天数：' + d.quarter_time_note;
+    }
+  }
+
+  // 「2026-09」→「9月」；「FY27Q2」→「Q2」。任何地方要显示月份/季度都走这两个函数，禁止写死。
+  function monthShort(d) {
+    return (d && d.month) ? String(Number(String(d.month).slice(5, 7))) + '月' : '当月';
+  }
+  function quarterShort(d) {
+    return (String((d && d.quarter) || '').match(/Q\d/) || ['本季'])[0];
   }
 
   // ── Ⅱ 时间进度 vs 完成率 ──
@@ -986,16 +999,17 @@
   function renderProgressCmp(d) {
     const k = d.kpi || {};
     const mp = num(d.month_time_pct), qp = num(d.quarter_time_pct);
+    const mShort = monthShort(d), qShort = quarterShort(d);
     const rows = [
-      ['信保 · 9月', k.month_val, k.month_target, k.month_pct, mp],
-      ['信保 · Q2', k.quarter_val, k.quarter_target, k.quarter_pct, qp],
-      ['ACP · 9月', k.month_val_acp, k.acp_month_target || null, null, mp],
-      ['ACP · Q2', k.quarter_val_acp, k.quarter_acp_target || k.acp_quarter_target || null, null, qp],
+      ['信保 · ' + mShort, k.month_val, k.month_target, k.month_pct, mp],
+      ['信保 · ' + qShort, k.quarter_val, k.quarter_target, k.quarter_pct, qp],
+      ['ACP · ' + mShort, k.month_val_acp, k.acp_month_target || null, null, mp],
+      ['ACP · ' + qShort, k.quarter_val_acp, k.quarter_acp_target || k.acp_quarter_target || null, null, qp],
     ];
     const computed = (r) => (r[3] != null ? r[3]
       : (num(r[2]) ? Math.round((num(r[1]) || 0) / num(r[2]) * 10000) / 100 : null));
     rows.forEach((r) => { r[3] = computed(r); });
-    const meta = '9月已过 ' + fmtPct(mp) + ' 时间 · Q2 已过 ' + fmtPct(qp);
+    const meta = mShort + '已过 ' + fmtPct(mp) + ' 时间 · ' + qShort + ' 已过 ' + fmtPct(qp);
     $('progress-cmp').innerHTML =
       '<div class="pmeta">' + meta + '</div>' +
       rows.map(function (r) {
@@ -1169,7 +1183,7 @@
     const f = d.festival;
     if (!f) {
       $('festival-body').innerHTML = pendingPanel([
-        '策略中心实时口径：9月GMV / 大促任务 / 各挑战赛（按销售）',
+        '策略中心实时口径：' + monthShort(d) + 'GMV / 大促任务 / 各挑战赛（按销售）',
         '销售缺口漏斗 11 列：销售 / 名下客户 / 可参赛榜单 / 已认领未完成 / 已完成 / 认领完成率 / 满3w / 同比3w / 3w目标完成率 / 大促缺口合计($万) / 挑战赛进行中',
         '客户级榜单与缺口明细（带销售）',
         '需你指认来源页面（我判断在「策略中心」或数据罗盘的大促及场景运营里）']);
