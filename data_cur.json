@@ -1,7 +1,7 @@
 {
   "month": "2026-09",
   "quarter": "FY27Q2",
-  "update_time": "2026-09-30 14:57",
+  "update_time": "2026-09-30 15:15",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 86595646.45926328,
@@ -477,6 +477,8 @@
   "warnings": [],
   "company": "深圳市鹏远企业服务有限公司",
   "month_time_pct": 97.0,
+  "quarter_time_pct": 98.9,
+  "quarter_time_note": "FY27Q2 第 91/92 天（截至 2026-09-29，T-1 平台口径）",
   "trend": {
     "gmv": {
       "title": "信保月度趋势(万美元)",
