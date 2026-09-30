@@ -269,6 +269,20 @@
     #month-tabs { order: -1; }
   }
 
+  /* Ⅲ-B 活跃客户：每人一个方框 */
+  .active-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  .acard { background: linear-gradient(160deg, #0F1830, #0C1322); border: 1px solid #1C2A4A;
+    border-radius: 12px; padding: 10px 12px; }
+  .acard-nm { font-size: 13px; color: #E8EEFC; letter-spacing: .3px; }
+  .acard-v { font-size: 26px; font-weight: 800; line-height: 1.1; margin: 2px 0 3px;
+    font-variant-numeric: tabular-nums; }
+  .acard-sub { display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; }
+  .acard-sub b { font-weight: 700; }
+  @media (max-width: 700px) {
+    .active-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 9px; }
+    .acard-v { font-size: 22px; }
+  }
+
   /* ── 参考站对齐新增 ── */
   .grid.two { grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); }
   .text-dim { color: var(--fg-faint); }
@@ -481,7 +495,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1790740001';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1790742019';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -758,14 +772,22 @@
   function renderActiveList(d) {
     const persons = d.persons || [];
     const rows = persons.filter((p) => num(p.active_clients) != null);
-    $('active-list').innerHTML = rows.length ? rows.map((p) => {
+    if (!rows.length) {
+      $('active-list').innerHTML = '<div class="empty">暂无活跃客户数据</div>';
+      return;
+    }
+    // 每人一个方框（不用列表）
+    $('active-list').innerHTML = '<div class="grid active-grid">' + rows.map((p) => {
       const cur = num(p.active_clients), yoy = num(p.active_clients_yoy);
       const diff = (cur != null && yoy != null) ? cur - yoy : null;
-      return '<div class="mini"><span class="nm">' + esc(p.name) + '<small>' + esc(p.role || '') + '</small></span>' +
-        '<span class="vl">' + fmt(cur) +
-        '<small class="text-dim"> vs 同比 ' + fmt(yoy) +
-        (diff != null ? '（' + (diff > 0 ? '+' : '') + fmt(diff) + '）' : '') + '</small></span></div>';
-    }).join('') : '<div class="empty">暂无活跃客户数据</div>';
+      return '<div class="acard">' +
+        '<span class="acard-nm">' + esc(p.name) + '</span>' +
+        '<div class="acard-v">' + fmt(cur) + '<small class="text-dim"> 家</small></div>' +
+        '<div class="acard-sub"><span class="text-dim">vs 同比 ' + fmt(yoy) + '</span>' +
+        (diff != null ? '<b class="' + (diff >= 0 ? 'text-ok' : 'text-bad') + '">' +
+          (diff > 0 ? '+' : '') + fmt(diff) + '</b>' : '') + '</div>' +
+        '</div>';
+    }).join('') + '</div>';
   }
 
   // ── Ⅳ 进度榜 ──
@@ -972,7 +994,8 @@
   // ── Ⅱ·B 每日新增（对比昨日快照）──
   function renderDailyAdd(d) {
     const a = d.daily_add;
-    $('daily-add-title').textContent = (a && a.label ? a.label : (d.month || '')) + ' 每日新增';
+    $('daily-add-title').textContent = (a && a.title) ? a.title
+      : ((a && a.label ? a.label : (d.month || '')) + ' 每日新增');
     if (!a) {
       $('daily-add-grid').innerHTML = pendingPanel(
         ['当日 vs 昨日的增量：信保实收(+X,XXX,XXX.XX) / 3万客户数(+N 家) / 客户数(+N 家)',
