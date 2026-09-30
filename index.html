@@ -541,7 +541,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1790746236';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1790746739';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -786,8 +786,8 @@
 
     $('analysis-text').innerHTML =
       '<div class="blk"><h3>指标解析</h3><p>本月完成率 ' + monthTxt + '。' +
-        (k.month_gap != null ? '与月度目标差额 <span class="k">' + signed(k.month_gap) + '</span>。' : '') + '</p>' +
-        '<p>季度累计 <span class="k">' + fmt(k.quarter_val) + '</span>' +
+        (k.month_gap != null ? '与月度目标差额 <span class="k">' + signedWan(k.month_gap) + '</span>。' : '') + '</p>' +
+        '<p>季度累计 <span class="k">' + fmtWan(k.quarter_val, 1) + '</span>' +
         (k.quarter_target ? ' / 目标 ' + fmt(k.quarter_target) + '，完成率 ' + fmtPct(k.quarter_pct) : '') + '。</p></div>' +
       '<div class="blk"><h3>近况预测</h3><p>' + forecast + '</p></div>' +
       '<div class="blk"><h3>客户结构</h3><p>' + actText + '</p></div>';
@@ -806,11 +806,11 @@
     return '<div class="card">' +
       '<div class="rowline" style="margin:0 0 4px"><span class="nm">' + esc(p.name) +
       ' <small class="text-dim">' + esc(p.role || '销售') + '</small></span>' + inc + '</div>' +
-      '<div class="rowline" style="margin-top:10px"><span>月度</span><span><b>' + fmt(p.month_val) + '</b> / ' + fmt(p.month_target) +
+      '<div class="rowline" style="margin-top:10px"><span>月度</span><span><b>' + fmtWan(p.month_val, 1) + '</b> / ' + fmtWan(p.month_target, 1) +
       '</span><b class="' + pctTextClass(p.month_pct) + '">' + fmtPct(p.month_pct) + '</b></div>' +
       '<div class="track"><i class="' + pctFillClass(p.month_pct) + '" style="width:' + clampPct(p.month_pct) + '%"></i>' +
       '<span class="marker" style="left:' + clampPct(tp) + '%"></span></div>' +
-      '<div class="rowline"><span>季度</span><span><b>' + fmt(p.quarter_val) + '</b> / ' + fmt(p.quarter_target) +
+      '<div class="rowline"><span>季度</span><span><b>' + fmtWan(p.quarter_val, 1) + '</b> / ' + fmtWan(p.quarter_target, 1) +
       '</span><b class="' + pctTextClass(p.quarter_pct) + '">' + fmtPct(p.quarter_pct) + '</b></div>' +
       '<div class="track"><i class="' + pctFillClass(p.quarter_pct) + '" style="width:' + clampPct(p.quarter_pct) + '%"></i></div>' +
       '<div class="marker-label">时间进度 ' + fmtPct(tp) + '（竖线位置）' +
@@ -851,13 +851,13 @@
     const persons = d.persons || [];
     $('rank-body').innerHTML = persons.length ? persons.map((p, i) => {
       const incTxt = num(p.incentive_target) == null ? '待配目标'
-        : (p.incentive_ok ? '已达标' : '差 ' + fmt(Math.abs(num(p.incentive_gap) || 0)));
+        : (p.incentive_ok ? '已达标' : '差 ' + fmtWan(Math.abs(num(p.incentive_gap) || 0), 1));
       return '<tr>' +
         '<td class="text-dim">' + (i + 1) + '</td>' +
         '<td>' + esc(p.name) + '</td>' +
         '<td class="text-dim">' + esc(p.role || '') + '</td>' +
-        '<td>' + fmt(p.month_val) + '</td>' +
-        '<td class="text-dim">' + fmt(p.month_target) + '</td>' +
+        '<td>' + fmtWan(p.month_val, 1) + '</td>' +
+        '<td class="text-dim">' + fmtWan(p.month_target, 1) + '</td>' +
         '<td class="' + pctTextClass(p.month_pct) + '"><b>' + fmtPct(p.month_pct) + '</b></td>' +
         '<td class="' + pctTextClass(p.quarter_pct) + '">' + fmtPct(p.quarter_pct) + '</td>' +
         '<td>' + (num(p.incentive_target) == null ? '<span class="tag">' + incTxt + '</span>'
@@ -875,8 +875,8 @@
     setText('yoy-note', d.yoy_compare || '本季度 vs 上季度 · 客户级 GMV');
     const line = (c) => '<div class="mini"><span class="nm">' + esc(c.name || c.id || '-') +
       '<small class="text-dim"> ' + esc([c.sales, c.industry].filter(Boolean).join(' · ')) + '</small></span>' +
-      '<span class="vl">' + signed(c.diff) +
-      '<small class="text-dim"> ' + fmt(c.prev) + ' → ' + fmt(c.cur) + '</small></span></div>';
+      '<span class="vl">' + signedWan(c.diff) +
+      '<small class="text-dim"> ' + fmtWan(c.prev, 1) + ' → ' + fmtWan(c.cur, 1) + '</small></span></div>';
     $('yoy-up').innerHTML = up.length ? up.map(line).join('')
       : '<div class="empty">暂无环比数据（需策略中心当月明细的 本季度/上季度 GMV）</div>';
     $('yoy-down').innerHTML = down.length ? down.map(line).join('')
@@ -1092,7 +1092,7 @@
     $('daily-add-grid').innerHTML = [['信保实收', a.xb_recv, 'usd'], ['3万客户数', a.active_3w, 'jia'], ['客户数', a.customers, 'jia']]
       .map(function (it) {
         const v = num(it[1]);
-        const txt = it[2] === 'usd' ? (v === null ? '--' : (v >= 0 ? '+' : '') + fmt(v, 2))
+        const txt = it[2] === 'usd' ? signedWan(v)          // 每日新增金额也用万美元
                                     : (v === null ? '--' : (v >= 0 ? '+' : '') + fmt(v, 0) + ' 家');
         return '<div class="card"><span class="cap">' + it[0] + '</span><div class="big ' +
           (v !== null && v < 0 ? 'text-bad' : 'text-ok') + '">' + txt + '</div></div>';
@@ -1108,7 +1108,7 @@
           return '<div class="acard">' +
             '<span class="acard-nm">' + esc(n) + '</span>' +
             '<div class="acard-v ' + (xb === null ? '' : (xb >= 0 ? 'text-ok' : 'text-bad')) + '">' +
-            (xb === null ? '--' : (xb >= 0 ? '+' : '-') + fmt(Math.abs(xb), 0)) + '</div>' +
+            (xb === null ? '--' : signedWan(xb)) + '</div>' +
             '<div class="acard-sub"><span class="text-dim">3w客户</span><b class="' +
             (a3 === null ? '' : (a3 >= 0 ? 'text-ok' : 'text-bad')) + '">' +
             (a3 === null ? '--' : (a3 >= 0 ? '+' : '') + fmt(a3, 0)) + '</b></div>' +
