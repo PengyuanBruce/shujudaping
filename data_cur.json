@@ -1,7 +1,7 @@
 {
   "month": "2026-09",
   "quarter": "FY27Q2",
-  "update_time": "2026-09-30 15:15",
+  "update_time": "2026-09-30 15:58",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 86595646.45926328,
@@ -1034,14 +1034,6 @@
     }
   ],
   "yoy_compare": "本季度 vs 上季度（策略中心当月明细）",
-  "panel": {
-    "total": 2442.0,
-    "checked": 7478.0,
-    "full3w": 945.0,
-    "active3w": 945.0,
-    "sprint": 186,
-    "inactive": 4953
-  },
   "layers": [
     {
       "name": "已达3万",
@@ -1069,6 +1061,14 @@
       "pct": 66.2
     }
   ],
+  "panel": {
+    "total": 2442.0,
+    "checked": 7478.0,
+    "full3w": 967,
+    "sprint": 192,
+    "inactive": 4953,
+    "paid": 2525.0
+  },
   "festival": {
     "title": "采购节 · GMV榜单冲榜明细",
     "period": "统计周期 09.01–09.05（周标记 2，T-1 小时更新）",
