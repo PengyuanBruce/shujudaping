@@ -1,7 +1,7 @@
 {
   "month": "2026-09",
   "quarter": "FY27Q2",
-  "update_time": "2026-09-30 10:20",
+  "update_time": "2026-09-30 10:21",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 85193539.10380837,
@@ -498,7 +498,7 @@
     }
   },
   "goods": {
-    "current": null,
+    "current": 130836.0,
     "target": 159402.0,
     "pct": 82.1,
     "structure": [
