@@ -1,7 +1,7 @@
 {
   "month": "2026-09",
   "quarter": "FY27Q2",
-  "update_time": "2026-09-30 10:21",
+  "update_time": "2026-09-30 10:23",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 85193539.10380837,
@@ -15,9 +15,9 @@
     "month_val_acp": 17514920.37,
     "active_clients": 941.0,
     "active_clients_yoy": 1007.0,
-    "hit_products": 130365.0,
+    "hit_products": 130836.0,
     "hit_target": 159402.0,
-    "hit_pct": 81.8,
+    "hit_pct": 82.1,
     "caliber_note": "公司行=信保口径（首页）；个人行=总实收口径（≡员工业绩「大实收」，与激励▸业务目标的目标/完成率配套）"
   },
   "acp": {
