@@ -229,7 +229,26 @@
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
   /* Ⅱ：3 列放短卡，盘面与分层各自整行 —— 否则盘面(高)会把同行短卡拉出大片留白 */
   #sec-2 .grid.two { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
-  #sec-2 .grid.two > .card:nth-child(n+4) { grid-column: 1 / -1; }
+  #sec-2 .grid.two > .card:nth-child(n+3) { grid-column: 1 / -1; }
+  /* 合并后的趋势卡：两条趋势纵向排，共用图例 */
+  .trow + .trow { border-top: 1px solid var(--line-soft); margin-top: 10px; padding-top: 10px; }
+  .tsub { font-size: 12px; color: #8FA3C8; margin-bottom: 2px; }
+  /* 组织业绩树 */
+  #org-tree .thead, .tnode { display: grid; grid-template-columns: 1fr 190px 190px; gap: 10px; align-items: center; }
+  #org-tree .thead { font-size: 11.5px; color: #5A6C92; border-bottom: 1px solid var(--line-soft); padding: 4px 0 6px; }
+  #org-tree .thead span:not(:first-child), .tval { text-align: right; font-variant-numeric: tabular-nums; }
+  .tbr { border-bottom: 1px solid rgba(28, 42, 74, .45); }
+  .tbr > summary { list-style: none; cursor: pointer; position: relative; }
+  .tbr > summary::-webkit-details-marker { display: none; }
+  .tbr > summary::before { content: '▸'; position: absolute; left: 2px; color: #5A6C92; font-size: 10px; top: 9px; }
+  .tbr[open] > summary::before { content: '▾'; }
+  .tbr > summary:hover, .tleaf:hover { background: rgba(34, 211, 238, .05); }
+  .tleaf { border-bottom: 1px solid rgba(28, 42, 74, .3); }
+  .tname { font-size: 13px; }
+  .tname small { margin-left: 6px; font-size: 11px; }
+  .tnode { padding: 6px 0; }
+  .tval { font-size: 13px; }
+  .tval small { margin-left: 6px; font-size: 11.5px; }
   .wrap .card .big { font-size: 30px; font-weight: 800; line-height: 1.05; }
   .wrap .card .big.sm { font-size: 26px; }
   .cap { color: #8FA3C8; }
@@ -392,10 +411,11 @@
       <span class="note">时间进度 vs 完成率 · 月度趋势 · 客户盘面</span></div>
     <div class="grid two">
       <div class="card"><div class="cap">时间进度 vs 完成率</div><div id="progress-cmp"></div></div>
-      <div class="card"><div class="cap" id="trend-xb-title">信保月度趋势(万美元)</div><div id="trend-xinbao"></div></div>
-      <div class="card"><div class="cap" id="trend-acp-title">ACP 月度趋势(万美元)</div><div id="trend-acp"></div></div>
+      <div class="card"><div class="cap" id="trend-title">月度趋势(万美元)</div><div id="trend-both"></div></div>
       <div class="card"><div class="cap">客户盘面</div><div id="panel-stats"></div></div>
       <div class="card"><div class="cap" id="layers-title">3万客户分层</div><div id="layers-body"></div></div>
+      <div class="card"><div class="cap">组织业绩树（总实收口径 · 大区 → 生态主管 → 拍档 → 销售主管 → 销售）</div>
+        <div id="org-tree"></div></div>
     </div>
     <div class="card analysis"><div class="col" id="analysis-text"><p class="empty">等待数据…</p></div></div>
   </section>
@@ -495,7 +515,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1790743314';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1790743727';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -939,7 +959,7 @@
   }
 
   // ── Ⅱ 月度趋势（双柱：目标虚线 / 实际实心，单位万美元）──
-  function trendCard(t) {
+  function trendCard(t, withLegend) {
     if (!t || !(t.points || []).length) return '';
     const pts = t.points;
     const max = Math.max.apply(null, pts.map(function (p) { return Math.max(num(p.val) || 0, num(p.target) || 0); }).concat([1]));
@@ -951,16 +971,27 @@
         '<div class="tv">' + fmtWan(p.val) + '</div>' +
         '<div class="tp ' + pctTextClass(p.pct) + '">' + fmtPct(p.pct) + '</div>' +
         '<div class="tl">' + esc(p.label) + '</div></div>';
-    }).join('') + '</div><div class="legend"><span><i class="sw tgt"></i>目标(虚线边框)</span>' +
-      '<span><i class="sw act"></i>实际</span></div>';
+    }).join('') + '</div>' + (withLegend === false ? '' :
+      '<div class="legend"><span><i class="sw tgt"></i>目标(虚线边框)</span>' +
+      '<span><i class="sw act"></i>实际</span></div>');
   }
+  // 两个趋势（总实收 / ACP）合到同一个框里，共用一套图例
   function renderTrends(d) {
     const t = d.trend || {};
     const need = '公司级近 3 个月的「实际 + 目标」（首页接口按历史月份取，或激励▸业务目标按月汇总）';
-    if (t.gmv && t.gmv.title) setText('trend-xb-title', t.gmv.title);
-    if (t.acp && t.acp.title) setText('trend-acp-title', t.acp.title);
-    $('trend-xinbao').innerHTML = trendCard(t.gmv) || pendingPanel([need + ' —— 总实收口径']);
-    $('trend-acp').innerHTML = trendCard(t.acp) || pendingPanel([need + ' —— ACP 口径（个人 ACP 实收已按人汇总，月度目标暂无）']);
+    const g = trendCard(t.gmv, false), a = trendCard(t.acp, false);
+    if (!g && !a) {
+      $('trend-both').innerHTML = pendingPanel([need + ' —— 总实收口径', need + ' —— ACP 口径']);
+      return;
+    }
+    const sub = (title) => '<div class="tsub">' + esc(title || '') + '</div>';
+    $('trend-both').innerHTML =
+      '<div class="trow">' + sub((t.gmv && t.gmv.title) || '总实收月度趋势(万美元)') +
+        (g || '<div class="empty">暂无（总实收近 3 个月）</div>') + '</div>' +
+      '<div class="trow">' + sub((t.acp && t.acp.title) || 'ACP 月度趋势(万美元)') +
+        (a || '<div class="empty">暂无（ACP 近 3 个月）</div>') + '</div>' +
+      '<div class="legend"><span><i class="sw tgt"></i>目标(虚线边框)</span>' +
+      '<span><i class="sw act"></i>实际</span></div>';
   }
 
   // ── Ⅱ 客户盘面 / 3万客户分层 ──
@@ -991,6 +1022,33 @@
         return '<div class="layer-row"><span>' + esc(r.name) + '</span><span>' + fmt(r.count, 0) + '</span><span>' +
           fmtPct(r.pct) + '</span></div>';
       }).join('');
+  }
+
+  // ── Ⅱ 组织业绩树（可折叠：大区 → 生态主管 → 拍档 → 销售主管 → 销售）──
+  function treeNode(n, depth) {
+    const kids = n.children || [];
+    const head = '<div class="tnode"><span class="tname">' + esc(n.name) +
+      '<small class="text-dim">' + esc(n.level || '') + '</small></span>' +
+      '<span class="tval">' + fmtWan(n.month_val, 1) +
+      '<small class="' + pctTextClass(n.month_pct) + '"> ' + fmtPct(n.month_pct) + '</small></span>' +
+      '<span class="tval">' + fmtWan(n.quarter_val, 1) +
+      '<small class="' + pctTextClass(n.quarter_pct) + '"> ' + fmtPct(n.quarter_pct) + '</small></span></div>';
+    if (!kids.length) {
+      return '<div class="tleaf" style="padding-left:' + (depth * 14 + 10) + 'px">' + head + '</div>';
+    }
+    return '<details class="tbr"' + (depth < 2 ? ' open' : '') + '>' +
+      '<summary style="padding-left:' + (depth * 14 + 10) + 'px">' + head + '</summary>' +
+      kids.map((k) => treeNode(k, depth + 1)).join('') + '</details>';
+  }
+  function renderOrgTree(d) {
+    const t = d.org_tree;
+    if (!t) {
+      $('org-tree').innerHTML = pendingPanel(['组织业绩树：需要 激励▸业务目标 的 销售/销售主管/拍档/大区/生态主管 维度']);
+      return;
+    }
+    $('org-tree').innerHTML =
+      '<div class="thead"><span>组织层级（点标题可折叠）</span><span>月实收(万) / 完成率</span>' +
+      '<span>季实收(万) / 完成率</span></div>' + treeNode(t, 0);
   }
 
   // ── Ⅱ·B 每日新增（对比昨日快照）──
@@ -1109,6 +1167,7 @@
     renderLayers(d);
     renderDailyAdd(d);
     renderPersons(d);
+    renderOrgTree(d);
     renderActiveList(d);
     renderRank(d);
     renderGoodsRank(d);
