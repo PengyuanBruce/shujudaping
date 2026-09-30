@@ -1,17 +1,17 @@
 {
   "month": "2026-09",
   "quarter": "FY27Q2",
-  "update_time": "2026-09-30 13:27",
+  "update_time": "2026-09-30 13:30",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
-    "month_val": null,
-    "month_target": null,
-    "month_pct": null,
-    "quarter_val": null,
-    "quarter_target": null,
-    "quarter_pct": null,
-    "month_gap": 0,
-    "quarter_gap": 0,
+    "month_val": 86595646.45926328,
+    "month_target": 99434695.1007484,
+    "month_pct": 87.09,
+    "quarter_val": 239306658.39514682,
+    "quarter_target": 262562222.0,
+    "quarter_pct": 91.14,
+    "month_gap": -12839049.0,
+    "quarter_gap": -23255564.0,
     "month_val_acp": 17770341.0,
     "active_clients": 941.0,
     "active_clients_yoy": 1007.0,
@@ -30,10 +30,10 @@
     "month_target": null,
     "month_pct": null,
     "quarter_val": 43313142.68,
-    "quarter_target": null,
+    "quarter_target": 46651656.31,
     "quarter_pct": null,
     "month_gap": 17514920.0,
-    "quarter_gap": 43313143.0
+    "quarter_gap": -3338514.0
   },
   "persons": [
     {
@@ -1370,7 +1370,7 @@
   "daily_add": {
     "title": "每日新增（对比 2026-09-29 快照）",
     "label": "对比 2026-09-29 快照",
-    "xb_recv": null,
+    "xb_recv": 2948932.92,
     "active_3w": 0.0,
     "customers": null
   },
