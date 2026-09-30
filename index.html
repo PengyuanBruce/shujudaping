@@ -66,8 +66,10 @@
     box-shadow: 0 0 0 4px rgba(53, 224, 196, 0.16); animation: pulse 2.6s ease-in-out infinite;
   }
   @keyframes pulse { 50% { box-shadow: 0 0 0 9px rgba(53, 224, 196, 0); } }
-  .brand h1 { margin: 0; font-size: 19px; letter-spacing: 0.06em; font-weight: 600; }
-  .brand .sub { display: block; font-size: 11px; color: var(--fg-faint); letter-spacing: 0.16em; margin-top: 2px; }
+  /* 参考站头部：第 1 行小字公司名，第 2 行大字财季标题（FY27 / Q2 高亮） */
+  .brand h1 { margin: 0; font-size: 26px; letter-spacing: 0.04em; font-weight: 700; }
+  .brand h1 .hl { color: var(--accent); }
+  .brand .sub { display: block; font-size: 12px; color: var(--fg-dim); letter-spacing: 0.08em; margin-bottom: 3px; }
   .topmeta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
   .pill {
     padding: 6px 13px; border-radius: 999px; font-size: 13px; letter-spacing: 0.04em;
@@ -200,6 +202,41 @@
     thead th, tbody td { padding: 9px 10px; font-size: 12.5px; }
     .analysis .col { grid-template-columns: 1fr; }
   }
+  /* ── 参考站对齐新增 ── */
+  .grid.two { grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); }
+  .text-dim { color: var(--fg-faint); }
+  .text-ok { color: var(--green); }
+  .text-bad { color: var(--red); }
+  .bar { position: relative; height: 8px; border-radius: 6px; background: #16203a; overflow: hidden; margin: 4px 0 2px; }
+  .bar i { display: block; height: 100%; border-radius: 6px; }
+  .bar .tmark { position: absolute; top: -2px; width: 2px; height: 12px; background: var(--fg); opacity: .75; }
+  .deep-green { color: #16a34a; }
+  .deep-green-fill { background: #16a34a; }
+  .pending { border: 1px dashed var(--line); border-radius: 12px; padding: 12px 14px; background: rgba(255,255,255,.015); }
+  .pending-t { font-size: 12px; letter-spacing: .12em; color: var(--gold); margin-bottom: 6px; }
+  .pending ul { margin: 0; padding-left: 18px; }
+  .pending li { font-size: 12.5px; color: var(--fg-dim); line-height: 1.7; }
+  .trend { display: flex; align-items: flex-end; gap: 18px; padding: 8px 4px 0; min-height: 150px; }
+  .tcol { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; }
+  .tbars { display: flex; align-items: flex-end; gap: 6px; height: 96px; }
+  .tbar { width: 22px; border-radius: 4px 4px 0 0; }
+  .tbar.tgt { background: #16203a; border: 1px dashed var(--line); }
+  .tbar.act { background: var(--accent); }
+  .tv { font-size: 13px; font-weight: 600; margin-top: 6px; }
+  .tp { font-size: 12px; }
+  .tl { font-size: 12px; color: var(--fg-faint); }
+  .legend { display: flex; gap: 14px; font-size: 11.5px; color: var(--fg-faint); margin-top: 8px; }
+  .legend .sw { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 4px; }
+  .legend .sw.tgt { background: #16203a; border: 1px dashed var(--line); }
+  .legend .sw.act { background: var(--accent); }
+  .rank-row { display: grid; grid-template-columns: 34px 84px 1fr 92px; gap: 10px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--line-soft); }
+  .layer-row { display: grid; grid-template-columns: 1fr 90px 74px; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--line-soft); }
+  @media (max-width: 700px) {
+    .grid.two { grid-template-columns: 1fr; }
+    .trend { gap: 10px; }
+    .tbar { width: 15px; }
+    .rank-row { grid-template-columns: 28px 66px 1fr 74px; font-size: 12.5px; }
+  }
 </style>
 </head>
 <body>
@@ -209,14 +246,16 @@
     <div class="brand">
       <span class="dot"></span>
       <div>
-        <h1>深圳市鹏远企业服务有限公司</h1>
-        <span class="sub" id="brand-sub">当前财年季度 业绩数据大屏</span>
+        <span class="sub" id="brand-sub">深圳市鹏远企业服务有限公司</span>
+        <h1 id="brand-title">FY27 Q2 业绩数据大屏</h1>
       </div>
     </div>
     <div class="topmeta">
       <div class="tabs" id="month-tabs"></div>
       <span class="pill alt" id="cur-quarter-label">—</span>
       <span class="stamp">更新 <b id="update-time">—</b></span>
+      <span class="pill">月度时间进度 <b id="month-time-pct">--</b></span>
+      <span class="pill">季度时间进度 <b id="quarter-time-pct">--</b></span>
       <button class="btn ghost" id="refresh-btn" type="button">刷新</button>
     </div>
   </header>
@@ -229,6 +268,7 @@
       <span class="sec-no">Ⅰ</span>
       <h2>公司概览</h2>
       <span class="note" id="cur-month-label">—</span>
+      <span class="note">单位:美元(万)</span>
       <span class="note" id="source-note"></span>
     </div>
     <div class="grid kpi-grid">
@@ -265,11 +305,26 @@
     </div>
   </section>
 
-  <!-- Ⅱ 核心分析 -->
+  <!-- Ⅱ 核心分析（对齐参考站：时间进度 vs 完成率 · 月度趋势 · 客户盘面 · 分层） -->
   <section id="sec-2">
     <div class="sec-head"><span class="sec-no">Ⅱ</span><h2>核心分析</h2>
-      <span class="note">由当日数据自动生成</span></div>
+      <span class="note">时间进度 vs 完成率 · 月度趋势 · 客户盘面</span></div>
+    <div class="grid two">
+      <div class="card"><div class="cap">时间进度 vs 完成率</div><div id="progress-cmp"></div></div>
+      <div class="card"><div class="cap" id="trend-xb-title">信保月度趋势(万美元)</div><div id="trend-xinbao"></div></div>
+      <div class="card"><div class="cap" id="trend-acp-title">ACP 月度趋势(万美元)</div><div id="trend-acp"></div></div>
+      <div class="card"><div class="cap">客户盘面</div><div id="panel-stats"></div></div>
+      <div class="card"><div class="cap" id="layers-title">3万客户分层</div><div id="layers-body"></div></div>
+    </div>
     <div class="card analysis"><div class="col" id="analysis-text"><p class="empty">等待数据…</p></div></div>
+  </section>
+
+  <!-- Ⅱ·B 每日新增 -->
+  <section id="sec-2b">
+    <div class="sec-head"><span class="sec-no">Ⅱ·B</span><h2 id="daily-add-title">每日新增</h2>
+      <span class="note">对比昨日快照</span></div>
+    <div class="grid kpi-grid" id="daily-add-grid"><div class="empty">等待数据…</div></div>
+    <div class="card" id="daily-add-persons" style="margin-top:12px"></div>
   </section>
 
   <!-- Ⅲ 个人业绩 -->
@@ -301,6 +356,13 @@
     </div>
   </section>
 
+  <!-- Ⅳ·B 商品成长排名(优品3.0) -->
+  <section id="sec-4b">
+    <div class="sec-head"><span class="sec-no">Ⅳ·B</span><h2>商品成长排名（优品3.0）</h2>
+      <span class="note">按季度目标达成率降序 · ≥100% 深绿 / 85–99% 绿 / 70–84% 黄 / 50–69% 橙 / 数据 T+2</span></div>
+    <div class="card" id="goods-rank-body"></div>
+  </section>
+
   <!-- Ⅴ 客户同比 TOP20 -->
   <section id="sec-5">
     <div class="sec-head"><span class="sec-no">Ⅴ</span><h2>客户同比 TOP20</h2>
@@ -311,10 +373,17 @@
     </div>
   </section>
 
-  <!-- Ⅵ 销售指标拆解 -->
+  <!-- Ⅵ 商品成长(优品3.0) -->
   <section id="sec-6">
-    <div class="sec-head"><span class="sec-no">Ⅵ</span><h2>销售指标拆解</h2>
-      <span class="note">口令分级：管理员看全部 · 销售仅本人客户明细</span></div>
+    <div class="sec-head"><span class="sec-no">Ⅵ</span><h2>商品成长（优品3.0）</h2>
+      <span class="note">优爆品口径含爆品 · 数据 T+2 · 商品结构 在线品全量口径</span></div>
+    <div class="card" id="goods-body"></div>
+  </section>
+
+  <!-- Ⅶ 销售指标拆解 -->
+  <section id="sec-7">
+    <div class="sec-head"><span class="sec-no">Ⅶ</span><h2>销售指标拆解</h2>
+      <span class="note">客户级 GMV 明细 · 口令分级：管理员看全部 · 销售仅本人客户明细</span></div>
     <div class="card">
       <div class="gate" id="gate-box">
         <input id="gate-input" type="password" placeholder="输入口令查看客户级明细" autocomplete="off">
@@ -324,6 +393,13 @@
       </div>
       <div class="custwrap" id="breakdown-content" style="display:none"></div>
     </div>
+  </section>
+
+  <!-- Ⅷ 采购节榜单与缺口 -->
+  <section id="sec-8">
+    <div class="sec-head"><span class="sec-no">Ⅷ</span><h2 id="festival-title">采购节榜单与缺口</h2>
+      <span class="note">策略中心实时口径 · GMV / 大促任务 / 各挑战赛 · 带销售</span></div>
+    <div class="card" id="festival-body"></div>
   </section>
 
   <footer>
@@ -338,7 +414,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1790729248';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1790734801';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -365,6 +441,36 @@
     if (n === null) return '--';
     return n.toLocaleString('en-US', { minimumFractionDigits: digits || 0, maximumFractionDigits: digits || 0 });
   }
+  function fmtWan(v, digits) {          // 美元 → 万美元（参考站口径）
+    const n = num(v);
+    if (n === null) return '--';
+    return (n / 10000).toLocaleString('en-US',
+      { minimumFractionDigits: digits || 0, maximumFractionDigits: digits || 0 }) + '万';
+  }
+
+  function signedWan(v) {                // 差额也用万美元（参考站 Ⅰ 口径）
+    const n = num(v);
+    if (n === null) return '--';
+    return (n >= 0 ? '+' : '-') + fmtWan(Math.abs(n));
+  }
+
+  // 参考站 5 档语义：≥100 深绿 / 85-99 绿 / 70-84 黄 / 50-69 橙 / <50 红
+  function tierClass(p) {
+    const n = num(p);
+    if (n === null) return 'dim';
+    if (n >= 100) return 'deep-green';
+    if (n >= 85) return 'green';
+    if (n >= 70) return 'yellow';
+    if (n >= 50) return 'orange';
+    return 'red';
+  }
+
+  // 数据待接：把"这个板块还缺什么数据"直接写在页面上，不留空白板块
+  function pendingPanel(needs) {
+    return '<div class="pending"><div class="pending-t">数据待接</div><ul>' +
+      (needs || []).map((n) => '<li>' + esc(n) + '</li>').join('') + '</ul></div>';
+  }
+
   function fmtPct(v, digits) {
     const n = num(v);
     return n === null ? '--' : n.toFixed(digits === undefined ? 1 : digits) + '%';
@@ -472,19 +578,20 @@
   // ── ⅰ 概览 ──
   function renderKPI(d) {
     const k = d.kpi || {};
-    setText('kpi-month-val', fmt(k.month_val));
-    setText('kpi-month-target', fmt(k.month_target));
+    // Ⅰ 单位统一为万美元（参考站口径）
+    setText('kpi-month-val', fmtWan(k.month_val));
+    setText('kpi-month-target', fmtWan(k.month_target));
     const mp = $('kpi-month-pct');
     if (mp) { mp.textContent = fmtPct(k.month_pct); mp.className = pctTextClass(k.month_pct); }
-    setText('kpi-month-gap', signed(k.month_gap));
+    setText('kpi-month-gap', signedWan(k.month_gap));
     const mb = $('kpi-month-bar');
     if (mb) { mb.className = pctFillClass(k.month_pct); mb.style.width = clampPct(k.month_pct) + '%'; }
 
-    setText('kpi-quarter-val', fmt(k.quarter_val));
-    setText('kpi-quarter-target', fmt(k.quarter_target));
+    setText('kpi-quarter-val', fmtWan(k.quarter_val));
+    setText('kpi-quarter-target', fmtWan(k.quarter_target));
     const qp = $('kpi-quarter-pct');
     if (qp) { qp.textContent = fmtPct(k.quarter_pct); qp.className = pctTextClass(k.quarter_pct); }
-    setText('kpi-quarter-gap', signed(k.quarter_gap));
+    setText('kpi-quarter-gap', signedWan(k.quarter_gap));
     const qb = $('kpi-quarter-bar');
     if (qb) { qb.className = pctFillClass(k.quarter_pct); qb.style.width = clampPct(k.quarter_pct) + '%'; }
 
@@ -493,8 +600,8 @@
     setText('kpi-hit', fmt(k.hit_products));
     const hp = $('kpi-hit-pct');
     if (hp) { hp.textContent = fmtPct(k.hit_pct); hp.className = pctTextClass(k.hit_pct); }
-    setText('kpi-acp', fmt(k.month_val_acp));
-    setText('kpi-timepct', fmtPct(timeProgress(), 1));
+    setText('kpi-acp', fmtWan(k.month_val_acp));
+    setText('kpi-timepct', d.month_time_pct == null ? fmtPct(timeProgress(), 1) : fmtPct(d.month_time_pct));
 
     renderAnalysis(d);
   }
@@ -708,18 +815,214 @@
     setText('cur-quarter-label', d.quarter);
     setText('update-time', d.update_time);
     setText('source-note', d.source_file ? '· 来源 ' + d.source_file : '');
-    // 头部副标题跟随财年季度标签（如 FY27Q2），不写死
+    // 头部（参考站版式）：第 1 行公司名，第 2 行财季标题（FY27 / Q2 高亮），均不写死
+    setText('brand-sub', d.company || '深圳市鹏远企业服务有限公司');
     const q = String(d.quarter || '').replace(/[【】]/g, '').trim();
-    setText('brand-sub', (q || '当前财年季度') + ' 业绩数据大屏');
+    const m = q.match(/^(FY\s*\d+)\s*(Q\s*\d+)$/i);
+    const title = m
+      ? '<span class="hl">' + esc(m[1].replace(/\s+/g, ' ')) + '</span> <span class="hl">' +
+        esc(m[2].replace(/\s+/g, ' ')) + '</span> 业绩数据大屏'
+      : esc(q || '当前财年季度') + ' 业绩数据大屏';
+    const h1 = $('brand-title');
+    if (h1) h1.innerHTML = title;
+    setText('month-time-pct', d.month_time_pct == null ? '--' : fmtPct(d.month_time_pct));
+    setText('quarter-time-pct', d.quarter_time_pct == null ? '--' : fmtPct(d.quarter_time_pct));
+  }
+
+  // ── Ⅱ 时间进度 vs 完成率 ──
+  function renderProgressCmp(d) {
+    const k = d.kpi || {};
+    $('progress-cmp').innerHTML = [['月度', k.month_pct, d.month_time_pct], ['季度', k.quarter_pct, d.quarter_time_pct]]
+      .map(function (r) {
+        const v = num(r[1]), t = num(r[2]);
+        const diff = (v === null || t === null) ? null : v - t;
+        return '<div class="rowline" style="margin:8px 0 2px"><span>' + r[0] + '完成率</span><span>' +
+          '<b class="' + pctTextClass(v) + '">' + fmtPct(v) + '</b>' +
+          '<small class="text-dim"> vs 时间进度 ' + fmtPct(t) + '</small>' +
+          (diff === null ? '' : ' <small class="' + (diff >= 0 ? 'text-ok' : 'text-bad') + '">' +
+            (diff >= 0 ? '领先 ' : '落后 ') + Math.abs(diff).toFixed(1) + 'pt</small>') + '</span></div>' +
+          '<div class="bar"><i class="' + pctFillClass(v) + '" style="width:' +
+          Math.max(0, Math.min(100, v || 0)) + '%"></i>' +
+          (t === null ? '' : '<u class="tmark" style="left:' + Math.max(0, Math.min(100, t)) + '%"></u>') + '</div>';
+      }).join('');
+  }
+
+  // ── Ⅱ 月度趋势（双柱：目标虚线 / 实际实心，单位万美元）──
+  function trendCard(t) {
+    if (!t || !(t.points || []).length) return '';
+    const pts = t.points;
+    const max = Math.max.apply(null, pts.map(function (p) { return Math.max(num(p.val) || 0, num(p.target) || 0); }).concat([1]));
+    return '<div class="trend">' + pts.map(function (p) {
+      const vh = Math.round((num(p.val) || 0) / max * 100), th = Math.round((num(p.target) || 0) / max * 100);
+      return '<div class="tcol"><div class="tbars">' +
+        '<i class="tbar tgt" style="height:' + Math.max(2, th) + '%"></i>' +
+        '<i class="tbar act" style="height:' + Math.max(2, vh) + '%"></i></div>' +
+        '<div class="tv">' + fmtWan(p.val) + '</div>' +
+        '<div class="tp ' + pctTextClass(p.pct) + '">' + fmtPct(p.pct) + '</div>' +
+        '<div class="tl">' + esc(p.label) + '</div></div>';
+    }).join('') + '</div><div class="legend"><span><i class="sw tgt"></i>目标(虚线边框)</span>' +
+      '<span><i class="sw act"></i>实际</span></div>';
+  }
+  function renderTrends(d) {
+    const t = d.trend || {};
+    const need = '公司级近 3 个月的「实际 + 目标」（首页接口按历史月份取，或激励▸业务目标按月汇总）';
+    if (t.gmv && t.gmv.title) setText('trend-xb-title', t.gmv.title);
+    if (t.acp && t.acp.title) setText('trend-acp-title', t.acp.title);
+    $('trend-xinbao').innerHTML = trendCard(t.gmv) || pendingPanel([need + ' —— 总实收口径']);
+    $('trend-acp').innerHTML = trendCard(t.acp) || pendingPanel([need + ' —— ACP 口径（个人 ACP 实收已按人汇总，月度目标暂无）']);
+  }
+
+  // ── Ⅱ 客户盘面 / 3万客户分层 ──
+  function renderPanel(d) {
+    const p = d.panel;
+    if (!p) {
+      $('panel-stats').innerHTML = pendingPanel(['客户盘面 6 项：策略中心客户总数 / 盘点客户数 / 本季度满3万 / 2-3万冲刺客户 / 未动销客户 / 活跃客户合计（需你指认在数据罗盘哪个页面）']);
+      return;
+    }
+    $('panel-stats').innerHTML = '<div class="grid kpi-grid">' + [['策略中心客户总数', p.total], ['盘点客户数', p.checked],
+      ['本季度满3万', p.full3w], ['2-3万冲刺客户', p.sprint], ['未动销客户', p.inactive], ['活跃客户合计(3w)', p.active3w]]
+      .map(function (it) {
+        return '<div class="card"><span class="cap">' + it[0] + '</span><div class="big">' + fmt(it[1], 0) +
+          '<small class="text-dim"> 家</small></div></div>';
+      }).join('') + '</div>';
+  }
+  function renderLayers(d) {
+    const rows = d.layers || [];
+    if (!rows.length) {
+      $('layers-title').textContent = '3万客户分层';
+      $('layers-body').innerHTML = pendingPanel(['3万客户分层 5 档（已达3万 / 2-3万 / 1-2万 / 0-1万 / 未动销）：家数 + 占比']);
+      return;
+    }
+    const total = rows.reduce(function (s, r) { return s + (num(r.count) || 0); }, 0);
+    $('layers-title').textContent = '3万客户分层（' + fmt(total, 0) + ' 家）';
+    $('layers-body').innerHTML = '<div class="layer-row text-dim"><span>分层</span><span>客户数</span><span>占比</span></div>' +
+      rows.map(function (r) {
+        return '<div class="layer-row"><span>' + esc(r.name) + '</span><span>' + fmt(r.count, 0) + '</span><span>' +
+          fmtPct(r.pct) + '</span></div>';
+      }).join('');
+  }
+
+  // ── Ⅱ·B 每日新增（对比昨日快照）──
+  function renderDailyAdd(d) {
+    const a = d.daily_add;
+    $('daily-add-title').textContent = (a && a.label ? a.label : (d.month || '')) + ' 每日新增';
+    if (!a) {
+      $('daily-add-grid').innerHTML = pendingPanel(
+        ['当日 vs 昨日的增量：信保实收(+X,XXX,XXX.XX) / 3万客户数(+N 家) / 客户数(+N 家)',
+         '需要每日快照做差：跑完当天存一份 snapshots/data_YYYYMMDD.json，下次自动对比（我可以加进流水线）']);
+      $('daily-add-persons').innerHTML = '';
+      return;
+    }
+    $('daily-add-grid').innerHTML = [['信保实收', a.xb_recv, 'usd'], ['3万客户数', a.active_3w, 'jia'], ['客户数', a.customers, 'jia']]
+      .map(function (it) {
+        const v = num(it[1]);
+        const txt = it[2] === 'usd' ? (v === null ? '--' : (v >= 0 ? '+' : '') + fmt(v, 2))
+                                    : (v === null ? '--' : (v >= 0 ? '+' : '') + fmt(v, 0) + ' 家');
+        return '<div class="card"><span class="cap">' + it[0] + '</span><div class="big ' +
+          (v !== null && v < 0 ? 'text-bad' : 'text-ok') + '">' + txt + '</div></div>';
+      }).join('');
+    const per = d.persons_daily_add || {};
+    const names = Object.keys(per);
+    $('daily-add-persons').innerHTML = names.length
+      ? '<div class="cap">个人新增</div>' + names.map(function (n) {
+        const r = per[n] || {};
+        return '<div class="rowline"><span>' + esc(n) + '</span><span>' +
+          (num(r.xb_recv) === null ? '--' : (r.xb_recv >= 0 ? '+' : '') + fmt(r.xb_recv, 2)) +
+          ' <small class="text-dim">· 3w客户 ' + (num(r.active_3w) === null ? '--' : (r.active_3w >= 0 ? '+' : '') + fmt(r.active_3w, 0)) +
+          '</small></span></div>';
+      }).join('')
+      : '';
+  }
+
+  // ── Ⅳ·B 商品成长排名（优品3.0）──
+  function renderGoodsRank(d) {
+    const rows = (d.goods_sales || []).slice();
+    if (!rows.length) {
+      $('goods-rank-body').innerHTML = pendingPanel(['每位销售的 优爆品数 + 季度目标 + 达成率（「商品成长▸优品3.0总览」的 pivot 接口，现仅 13/23 人有值）']);
+      return;
+    }
+    rows.sort(function (a, b) { return (num(b.pct) || 0) - (num(a.pct) || 0); });
+    $('goods-rank-body').innerHTML = rows.map(function (r, i) {
+      const w = Math.max(0, Math.min(100, num(r.pct) || 0));
+      return '<div class="rank-row"><span class="text-dim">' + (i + 1) + '</span><span>' + esc(r.name) + '</span>' +
+        '<span class="rowline" style="margin:0"><span class="text-dim">优爆品 ' + fmt(r.value, 0) + '</span>' +
+        '<b class="' + tierClass(r.pct) + '">' + fmtPct(r.pct, 2) + '</b></span>' +
+        '<span class="bar"><i class="' + pctFillClass(r.pct) + '" style="width:' + w + '%"></i></span></div>';
+    }).join('');
+  }
+
+  // ── Ⅵ 商品成长(优品3.0) ──
+  function renderGoods(d) {
+    const g = d.goods;
+    if (!g) {
+      $('goods-body').innerHTML = pendingPanel(['公司级：当前优爆品数 / 当季度累计目标 / 达成率（已有 130,365 / 159,402 / 81.8%）',
+        '商品结构（在线品全量口径）：各层级商品数与占比 —— 需抓「优品3.0总览」的商品结构区块']);
+      return;
+    }
+    $('goods-body').innerHTML = '<div class="grid kpi-grid">' + [['当前优爆品数', g.current, '件'], ['当季度累计目标', g.target, '件'],
+      ['达成率', g.pct, '%']].map(function (it) {
+        return '<div class="card"><span class="cap">' + it[0] + '</span><div class="big">' +
+          (it[2] === '%' ? fmtPct(it[1], 2) : fmt(it[1], 0) + '<small class="text-dim"> ' + it[2] + '</small>') + '</div></div>';
+      }).join('') + '</div>' +
+      ((g.structure || []).length
+        ? '<div style="margin-top:12px">' + g.structure.map(function (s) {
+          return '<div class="layer-row"><span>' + esc(s.name) + '</span><span>' + fmt(s.count, 0) + '</span><span>' + fmtPct(s.pct) + '</span></div>';
+        }).join('') + '</div>'
+        : pendingPanel(['商品结构（在线品全量口径）：各层级商品数与占比']));
+  }
+
+  // ── Ⅷ 采购节榜单与缺口 ──
+  function renderFestival(d) {
+    const f = d.festival;
+    if (!f) {
+      $('festival-body').innerHTML = pendingPanel([
+        '策略中心实时口径：9月GMV / 大促任务 / 各挑战赛（按销售）',
+        '销售缺口漏斗 11 列：销售 / 名下客户 / 可参赛榜单 / 已认领未完成 / 已完成 / 认领完成率 / 满3w / 同比3w / 3w目标完成率 / 大促缺口合计($万) / 挑战赛进行中',
+        '客户级榜单与缺口明细（带销售）',
+        '需你指认来源页面（我判断在「策略中心」或数据罗盘的大促及场景运营里）']);
+      return;
+    }
+    const t = f.totals || {};
+    const rows = f.by_sale || [];
+    setText('festival-title', f.title || '采购节榜单与缺口');
+    $('festival-body').innerHTML =
+      '<div class="rowline"><span class="text-dim">' + esc(f.period || '') + '</span></div>' +
+      '<div class="grid kpi-grid" style="margin:8px 0 12px">' +
+      [['在榜客户数', fmt(t.customers, 0) + '<small class="text-dim"> 家</small>'],
+       ['本周GMV(风控后)', fmtWan(t.gmv, 1)],
+       ['达5万商家', fmt(t.hit5w, 0) + '<small class="text-dim"> 家</small>'],
+       ['本周上榜商家', fmt(t.listed, 0) + '<small class="text-dim"> 家</small>']]
+        .map(function (x) { return '<div class="card"><span class="cap">' + x[0] + '</span><div class="big">' + x[1] + '</div></div>'; }).join('') +
+      '</div>' +
+      (rows.length ? '<div class="cap">按销售汇总</div>' + rows.map(function (r) {
+        return '<div class="rank-row"><span class="text-dim">' + esc(r.name) + '</span><span class="text-dim">' +
+          fmt(r.customers, 0) + ' 家</span><span>' + fmtWan(r.gmv, 1) +
+          '<small class="text-dim"> · 达5万 ' + fmt(r.hit5w, 0) + ' · 上榜 ' + fmt(r.listed, 0) +
+          ' · 满足门槛 ' + fmt(r.thresholds, 0) + '</small></span><span></span></div>';
+      }).join('') : '') +
+      ((f.top || []).length ? '<div class="cap" style="margin-top:12px">客户 TOP10（本周GMV）</div>' +
+        f.top.map(function (c, i) {
+          return '<div class="rank-row"><span class="text-dim">' + (i + 1) + '</span><span>' + esc(c.sale) + '</span>' +
+            '<span>' + esc(c.customer) + '<small class="text-dim"> 距第1名 ' + fmtWan(c.gap1, 1) + '</small></span>' +
+            '<span>' + fmtWan(c.gmv, 1) + '</span></div>';
+        }).join('') : '');
   }
 
   // ── 统一入口 ──
   function renderAll(d) {
     renderKPI(d);
+    renderProgressCmp(d);
+    renderTrends(d);
+    renderPanel(d);
+    renderLayers(d);
+    renderDailyAdd(d);
     renderPersons(d);
     renderActiveList(d);
     renderRank(d);
+    renderGoodsRank(d);
     renderYoy(d);
+    renderGoods(d);
+    renderFestival(d);
     updateLabels(d);
     const warns = d.warnings || [];
     if (warns.length) banner('<b>解析告警（已按规则沿用上次数据）</b><ul><li>' +
