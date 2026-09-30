@@ -546,7 +546,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1790760898';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1790767051';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1042,7 +1042,8 @@
       '<i class="tbar ' + cls + '" style="height:' + Math.max(2, Math.round(h * H)) + '%"></i></div>';
     return '<div class="trend">' + pts.map(function (p) {
       const vh = Math.round((num(p.val) || 0) / max * 100), th = Math.round((num(p.target) || 0) / max * 100);
-      // 没有目标的行（如 ACP 无月度目标）不画目标柱，否则会留一根 2% 的残影
+      // 目标确实缺失时才不画目标柱（否则会留一根 2% 的残影）。
+      // ACP 的目标来自 acp-pivot.json（激励▸业务目标▸ACP▸拍档▸总实收，逐月），正常情况下有值。
       const tgt = num(p.target) === null ? '' : bar('tgt', p.target, th);
       return '<div class="tcol"><div class="tbars">' +
         tgt + bar('act', p.val, vh) + '</div>' +
@@ -1173,7 +1174,7 @@
   function renderGoods(d) {
     const g = d.goods;
     if (!g) {
-      $('goods-body').innerHTML = pendingPanel(['公司级：当前优爆品数 / 当季度累计目标 / 达成率（已有 130,365 / 159,402 / 81.8%）',
+      $('goods-body').innerHTML = pendingPanel(['公司级：当前优爆品数 / 当季度累计目标 / 达成率（来源：优品3.0总览 pivot）',
         '商品结构（在线品全量口径）：各层级商品数与占比 —— 需抓「优品3.0总览」的商品结构区块']);
       return;
     }
