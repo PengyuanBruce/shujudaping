@@ -22,6 +22,11 @@
     --fg-faint: #6b7c9e;
     --cyan: #35e0c4;
     --blue: #4b8cff;
+    /* v2 版式的主强调色（板块编号 chip / 副标题 / 趋势图「实际」柱与图例色块都用它）。
+       2026-09-30 修复：这两个变量以前只在样式里被引用、却没有定义，
+       导致 var(--accent) 整条声明失效 → 「实际」柱与图例色块透明不可见。 */
+    --accent: #22d3ee;
+    --gold: #fbbf24;
     --green: #2fd07a;
     --orange: #f5a524;
     --red: #f0435a;
@@ -438,7 +443,7 @@
     <div class="card sec-box">
       <div class="box-grid">
         <div class="sub s1"><div class="cap">时间进度 vs 完成率</div><div id="progress-cmp"></div></div>
-        <div class="sub s2"><div class="cap" id="trend-title">月度趋势(万美元)</div><div id="trend-both"></div></div>
+        <div class="sub s2"><div class="cap" id="trend-title">月度趋势</div><div id="trend-both"></div></div>
         <div class="sub s1"><div class="cap">客户盘面</div><div id="panel-stats"></div></div>
         <div class="sub s2"><div class="cap" id="layers-title">3万客户分层</div><div id="layers-body"></div></div>
         <div class="sub s3"><div class="cap">核心分析</div><div class="col" id="analysis-text"><p class="empty">等待数据…</p></div></div>
@@ -541,7 +546,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1790751493';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1790752212';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1013,13 +1018,18 @@
     if (!t || !(t.points || []).length) return '';
     const pts = t.points;
     const max = Math.max.apply(null, pts.map(function (p) { return Math.max(num(p.val) || 0, num(p.target) || 0); }).concat([1]));
+    // 柱顶的数值标签也占竖向空间（约 12.5px / 77px ≈ 16%），柱高统一留出这部分，
+    // 否则最高的那根柱会把标签顶出柱区、和上方的说明文字叠在一起。
+    const H = 0.84;
     const bar = (cls, val, h) => '<div class="tbarwrap"><span class="tbv">' +
       (num(val) === null ? '' : fmtWan(val, 0)) + '</span>' +
-      '<i class="tbar ' + cls + '" style="height:' + Math.max(2, h) + '%"></i></div>';
+      '<i class="tbar ' + cls + '" style="height:' + Math.max(2, Math.round(h * H)) + '%"></i></div>';
     return '<div class="trend">' + pts.map(function (p) {
       const vh = Math.round((num(p.val) || 0) / max * 100), th = Math.round((num(p.target) || 0) / max * 100);
+      // 没有目标的行（如 ACP 无月度目标）不画目标柱，否则会留一根 2% 的残影
+      const tgt = num(p.target) === null ? '' : bar('tgt', p.target, th);
       return '<div class="tcol"><div class="tbars">' +
-        bar('tgt', p.target, th) + bar('act', p.val, vh) + '</div>' +
+        tgt + bar('act', p.val, vh) + '</div>' +
         '<div class="tl">' + esc(p.label) + '</div>' +
         '<div class="tp ' + pctTextClass(p.pct) + '">' + fmtPct(p.pct) + '</div></div>';
     }).join('') + '</div>' + (withLegend === false ? '' :
