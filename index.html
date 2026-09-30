@@ -233,6 +233,24 @@
   /* 合并后的趋势卡：两条趋势纵向排，共用图例 */
   .trow + .trow { border-top: 1px solid var(--line-soft); margin-top: 10px; padding-top: 10px; }
   .tsub { font-size: 12px; color: #8FA3C8; margin-bottom: 2px; }
+  /* Ⅱ 核心分析：整段装在一个框里，内部按 3 列网格排布（s1/s2/s3 = 占 1/2/3 列） */
+  .sec-box { padding: 4px 18px 16px; }
+  .box-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px 20px;
+    align-items: start; }
+  .sub { padding: 12px 0; border-top: 1px solid rgba(28, 42, 74, .55); min-width: 0; }
+  .sub:first-child, .sub:nth-child(2) { border-top: 0; }
+  .sub .cap { margin-bottom: 6px; }
+  .s1 { grid-column: span 1; }
+  .s2 { grid-column: span 2; }
+  .s3 { grid-column: span 3; }
+  .sec-box .card { background: linear-gradient(160deg, #101A30, #0D1424); }
+  @media (max-width: 900px) {
+    .box-grid { grid-template-columns: 1fr; gap: 0; }
+    .s1, .s2, .s3 { grid-column: auto; }
+    .sub { border-top: 1px solid rgba(28, 42, 74, .55) !important; }
+    .sub:first-child { border-top: 0 !important; }
+  }
+
   /* 组织业绩树 */
   #org-tree .thead, .tnode { display: grid; grid-template-columns: 1fr 190px 190px; gap: 10px; align-items: center; }
   #org-tree .thead { font-size: 11.5px; color: #5A6C92; border-bottom: 1px solid var(--line-soft); padding: 4px 0 6px; }
@@ -409,15 +427,18 @@
   <section id="sec-2">
     <div class="sec-head"><span class="sec-no">Ⅱ</span><h2>核心分析</h2>
       <span class="note">时间进度 vs 完成率 · 月度趋势 · 客户盘面</span></div>
-    <div class="grid two">
-      <div class="card"><div class="cap">时间进度 vs 完成率</div><div id="progress-cmp"></div></div>
-      <div class="card"><div class="cap" id="trend-title">月度趋势(万美元)</div><div id="trend-both"></div></div>
-      <div class="card"><div class="cap">客户盘面</div><div id="panel-stats"></div></div>
-      <div class="card"><div class="cap" id="layers-title">3万客户分层</div><div id="layers-body"></div></div>
-      <div class="card"><div class="cap">组织业绩树（总实收口径 · 大区 → 生态主管 → 拍档 → 销售主管 → 销售）</div>
-        <div id="org-tree"></div></div>
+    <!-- 整段核心分析装在同一个框里 -->
+    <div class="card sec-box">
+      <div class="box-grid">
+        <div class="sub s1"><div class="cap">时间进度 vs 完成率</div><div id="progress-cmp"></div></div>
+        <div class="sub s2"><div class="cap" id="trend-title">月度趋势(万美元)</div><div id="trend-both"></div></div>
+        <div class="sub s1"><div class="cap">客户盘面</div><div id="panel-stats"></div></div>
+        <div class="sub s2"><div class="cap" id="layers-title">3万客户分层</div><div id="layers-body"></div></div>
+        <div class="sub s3"><div class="cap">组织业绩树（总实收口径 · 大区 → 生态主管 → 拍档 → 销售主管 → 销售）</div>
+          <div id="org-tree"></div></div>
+        <div class="sub s3"><div class="cap">核心分析</div><div class="col" id="analysis-text"><p class="empty">等待数据…</p></div></div>
+      </div>
     </div>
-    <div class="card analysis"><div class="col" id="analysis-text"><p class="empty">等待数据…</p></div></div>
   </section>
 
   <!-- Ⅱ·B 每日新增 -->
@@ -515,7 +536,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1790743727';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1790743914';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1071,16 +1092,23 @@
         return '<div class="card"><span class="cap">' + it[0] + '</span><div class="big ' +
           (v !== null && v < 0 ? 'text-bad' : 'text-ok') + '">' + txt + '</div></div>';
       }).join('');
+    // 个人新增：与 Ⅲ-B 活跃客户同一套方框样式
     const per = d.persons_daily_add || {};
     const names = Object.keys(per);
     $('daily-add-persons').innerHTML = names.length
-      ? '<div class="cap">个人新增</div>' + names.map(function (n) {
-        const r = per[n] || {};
-        return '<div class="rowline"><span>' + esc(n) + '</span><span>' +
-          (num(r.xb_recv) === null ? '--' : (r.xb_recv >= 0 ? '+' : '') + fmt(r.xb_recv, 2)) +
-          ' <small class="text-dim">· 3w客户 ' + (num(r.active_3w) === null ? '--' : (r.active_3w >= 0 ? '+' : '') + fmt(r.active_3w, 0)) +
-          '</small></span></div>';
-      }).join('')
+      ? '<div class="cap" style="margin-bottom:8px">个人新增（对比 ' + esc(a.label || '上次快照') + '）</div>' +
+        '<div class="grid active-grid">' + names.map(function (n) {
+          const r = per[n] || {};
+          const xb = num(r.xb_recv), a3 = num(r.active_3w);
+          return '<div class="acard">' +
+            '<span class="acard-nm">' + esc(n) + '</span>' +
+            '<div class="acard-v ' + (xb === null ? '' : (xb >= 0 ? 'text-ok' : 'text-bad')) + '">' +
+            (xb === null ? '--' : (xb >= 0 ? '+' : '-') + fmt(Math.abs(xb), 0)) + '</div>' +
+            '<div class="acard-sub"><span class="text-dim">3w客户</span><b class="' +
+            (a3 === null ? '' : (a3 >= 0 ? 'text-ok' : 'text-bad')) + '">' +
+            (a3 === null ? '--' : (a3 >= 0 ? '+' : '') + fmt(a3, 0)) + '</b></div>' +
+            '</div>';
+        }).join('') + '</div>'
       : '';
   }
 
