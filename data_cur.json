@@ -1,7 +1,7 @@
 {
   "month": "2026-09",
   "quarter": "FY27Q2",
-  "update_time": "2026-09-30 11:46",
+  "update_time": "2026-09-30 12:20",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 85193539.10380837,
@@ -926,5 +926,106 @@
     ]
   },
   "month_no": "9",
-  "source_note": "阿里一拍档·数据参谋，浏览器只读采集"
+  "source_note": "阿里一拍档·数据参谋，浏览器只读采集",
+  "daily_add": {
+    "title": "每日新增（对比 2026-09-29 快照）",
+    "label": "对比 2026-09-29 快照",
+    "xb_recv": 1546825.56,
+    "active_3w": 0.0,
+    "customers": null
+  },
+  "persons_daily_add": {
+    "李彬": {
+      "xb_recv": 1272125.53,
+      "active_3w": null
+    },
+    "陈建国": {
+      "xb_recv": 4192666.64,
+      "active_3w": 3.0
+    },
+    "汪伟": {
+      "xb_recv": 1677466.04,
+      "active_3w": null
+    },
+    "蒋汶桃": {
+      "xb_recv": 492951.21,
+      "active_3w": 0.0
+    },
+    "王子豪": {
+      "xb_recv": 1271296.9,
+      "active_3w": 70.0
+    },
+    "漆螯童": {
+      "xb_recv": 989990.76,
+      "active_3w": -17.0
+    },
+    "夏锐": {
+      "xb_recv": 730841.95,
+      "active_3w": null
+    },
+    "汤子豪": {
+      "xb_recv": 242859.03,
+      "active_3w": null
+    },
+    "王凡": {
+      "xb_recv": -68210.81,
+      "active_3w": 34.0
+    },
+    "谢承杰": {
+      "xb_recv": 784533.06,
+      "active_3w": -1.0
+    },
+    "高国权": {
+      "xb_recv": 553448.94,
+      "active_3w": 0.0
+    },
+    "李怡萍": {
+      "xb_recv": 680434.95,
+      "active_3w": null
+    },
+    "邓晓东": {
+      "xb_recv": 282100.77,
+      "active_3w": 0.0
+    },
+    "罗金填": {
+      "xb_recv": 1006885.47,
+      "active_3w": -63.0
+    },
+    "何尧玲": {
+      "xb_recv": 143977.05,
+      "active_3w": null
+    },
+    "梁诗琪": {
+      "xb_recv": 671706.29,
+      "active_3w": null
+    },
+    "刘嘉艳": {
+      "xb_recv": 406073.31,
+      "active_3w": null
+    },
+    "刘蓝琳": {
+      "xb_recv": 92163.02,
+      "active_3w": null
+    },
+    "王金国": {
+      "xb_recv": 107025.41,
+      "active_3w": -8.0
+    },
+    "程碧瑶": {
+      "xb_recv": 57806.06,
+      "active_3w": -3.0
+    },
+    "陈苑英": {
+      "xb_recv": 42350.4,
+      "active_3w": -9.0
+    },
+    "牛群": {
+      "xb_recv": 62949.82,
+      "active_3w": -83.0
+    },
+    "文一锦": {
+      "xb_recv": 4400.0,
+      "active_3w": null
+    }
+  }
 }
