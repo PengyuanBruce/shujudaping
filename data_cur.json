@@ -1,34 +1,39 @@
 {
   "month": "2026-09",
   "quarter": "FY27Q2",
-  "update_time": "2026-09-30 13:11",
+  "update_time": "2026-09-30 13:27",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
-    "month_val": 85193539.10380837,
-    "month_target": 99434695.1007484,
-    "month_pct": 85.68,
-    "quarter_val": 237904551.03969198,
-    "quarter_target": 262562222.0,
-    "quarter_pct": 90.61,
-    "month_gap": -14241156.0,
-    "quarter_gap": -24657671.0,
-    "month_val_acp": 17514920.37,
+    "month_val": null,
+    "month_target": null,
+    "month_pct": null,
+    "quarter_val": null,
+    "quarter_target": null,
+    "quarter_pct": null,
+    "month_gap": 0,
+    "quarter_gap": 0,
+    "month_val_acp": 17770341.0,
     "active_clients": 941.0,
     "active_clients_yoy": 1007.0,
     "hit_products": 130836.0,
     "hit_target": 159402.0,
     "hit_pct": 82.1,
-    "caliber_note": "公司行=信保口径（首页）；个人行=总实收口径（≡员工业绩「大实收」，与激励▸业务目标的目标/完成率配套）"
+    "caliber_note": "公司行=信保口径（首页）；个人行=总实收口径（≡员工业绩「大实收」，与激励▸业务目标的目标/完成率配套）",
+    "acp_month_target": 18342541.0,
+    "acp_month_pct": 97.0,
+    "quarter_acp_target": 46651656.0,
+    "acp_quarter_pct": 94.0,
+    "quarter_val_acp": 43774955.0
   },
   "acp": {
     "month_val": 17514920.37,
     "month_target": null,
     "month_pct": null,
     "quarter_val": 43313142.68,
-    "quarter_target": 46651656.31,
+    "quarter_target": null,
     "quarter_pct": null,
     "month_gap": 17514920.0,
-    "quarter_gap": -3338514.0
+    "quarter_gap": 43313143.0
   },
   "persons": [
     {
@@ -1365,7 +1370,7 @@
   "daily_add": {
     "title": "每日新增（对比 2026-09-29 快照）",
     "label": "对比 2026-09-29 快照",
-    "xb_recv": 1546825.56,
+    "xb_recv": null,
     "active_3w": 0.0,
     "customers": null
   },
