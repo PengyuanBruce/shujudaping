@@ -1,237 +1,237 @@
 {
   "month": "2026-10",
   "period": "MONTH",
-  "update_time": "2026-10-04 12:51",
+  "update_time": "2026-10-04 13:04",
   "source_file": "数据罗盘（拍档系统）·客户明细TOP20",
   "scope": "TOP20（按信保实收GMV降序，财年口径）",
   "sales": [
     {
       "name": "漆螯童",
       "role": "销售",
-      "month_target": 6500000.0,
+      "month_target": null,
       "gmv_month": 54136.75,
-      "share_pct": 0.83,
+      "share_pct": null,
       "customers": [
         {
           "id": "458894",
           "name": "深圳市润泰芯科技有限公司",
           "gmv_month": 18000.0,
           "gmv_quarter": null,
-          "share_pct": 0.28
+          "share_pct": null
         },
         {
           "id": "460697",
           "name": "深圳市杰众联科技有限公司",
           "gmv_month": 10475.0,
           "gmv_quarter": null,
-          "share_pct": 0.16
+          "share_pct": null
         },
         {
           "id": "835097",
           "name": "深圳市品人达科技有限公司",
           "gmv_month": 9228.25,
           "gmv_quarter": null,
-          "share_pct": 0.14
+          "share_pct": null
         },
         {
           "id": "322116",
           "name": "深圳市世纪金点包装有限公司",
           "gmv_month": 8592.5,
           "gmv_quarter": null,
-          "share_pct": 0.13
+          "share_pct": null
         },
         {
           "id": "224031",
           "name": "深圳市春福龙科技有限公司",
           "gmv_month": 7841.0,
           "gmv_quarter": null,
-          "share_pct": 0.12
+          "share_pct": null
         }
       ]
     },
     {
       "name": "陈建国",
       "role": "销售",
-      "month_target": 18000000.0,
+      "month_target": null,
       "gmv_month": 50329.1,
-      "share_pct": 0.28,
+      "share_pct": null,
       "customers": [
         {
           "id": "387799",
           "name": "深圳彩虹源科技有限责任公司",
           "gmv_month": 18751.0,
           "gmv_quarter": 1608344.44,
-          "share_pct": 0.1
+          "share_pct": null
         },
         {
           "id": "224388",
           "name": "深圳贯虹自动化有限公司",
           "gmv_month": 11903.0,
           "gmv_quarter": null,
-          "share_pct": 0.07
+          "share_pct": null
         },
         {
           "id": "216683",
           "name": "深圳市易扣展示制品有限公司",
           "gmv_month": 10600.0,
           "gmv_quarter": null,
-          "share_pct": 0.06
+          "share_pct": null
         },
         {
           "id": "236930",
           "name": "深圳市多普共成技术有限公司",
           "gmv_month": 9075.1,
           "gmv_quarter": null,
-          "share_pct": 0.05
+          "share_pct": null
         }
       ]
     },
     {
       "name": "夏锐",
       "role": "销售",
-      "month_target": 4000000.0,
+      "month_target": null,
       "gmv_month": 40173.38,
-      "share_pct": 1.0,
+      "share_pct": null,
       "customers": [
         {
           "id": "202105",
           "name": "深圳凯士威科技有限公司",
           "gmv_month": 28286.0,
           "gmv_quarter": null,
-          "share_pct": 0.71
+          "share_pct": null
         },
         {
           "id": "765103",
           "name": "深圳市卖家秀科技有限公司",
           "gmv_month": 11887.38,
           "gmv_quarter": null,
-          "share_pct": 0.3
+          "share_pct": null
         }
       ]
     },
     {
       "name": "王子豪",
       "role": "销售",
-      "month_target": 6000000.0,
+      "month_target": null,
       "gmv_month": 36674.05,
-      "share_pct": 0.61,
+      "share_pct": null,
       "customers": [
         {
           "id": "405335",
           "name": "深圳市东泰海绵制品有限公司",
           "gmv_month": 14876.0,
           "gmv_quarter": null,
-          "share_pct": 0.25
+          "share_pct": null
         },
         {
           "id": "557736",
           "name": "深圳市赢骄益科技有限公司",
           "gmv_month": 13671.05,
           "gmv_quarter": null,
-          "share_pct": 0.23
+          "share_pct": null
         },
         {
           "id": "744612",
           "name": "深圳市森蓝能源科技有限公司",
           "gmv_month": 8127.0,
           "gmv_quarter": null,
-          "share_pct": 0.14
+          "share_pct": null
         }
       ]
     },
     {
       "name": "高国权",
       "role": "销售",
-      "month_target": 2140286.0,
+      "month_target": null,
       "gmv_month": 12148.0,
-      "share_pct": 0.57,
+      "share_pct": null,
       "customers": [
         {
           "id": "757947",
           "name": "深圳雅煊显示有限公司",
           "gmv_month": 12148.0,
           "gmv_quarter": null,
-          "share_pct": 0.57
+          "share_pct": null
         }
       ]
     },
     {
       "name": "谢承杰",
       "role": "销售",
-      "month_target": 2754739.0,
+      "month_target": null,
       "gmv_month": 11285.04,
-      "share_pct": 0.41,
+      "share_pct": null,
       "customers": [
         {
           "id": "612591",
           "name": "深圳市安吉拉包装有限公司",
           "gmv_month": 11285.04,
           "gmv_quarter": null,
-          "share_pct": 0.41
+          "share_pct": null
         }
       ]
     },
     {
       "name": "蒋汶桃",
       "role": "销售",
-      "month_target": 12000000.0,
+      "month_target": null,
       "gmv_month": 9999.5,
-      "share_pct": 0.08,
+      "share_pct": null,
       "customers": [
         {
           "id": "412882",
           "name": "深圳市嘉易通电子有限公司",
           "gmv_month": 9999.5,
           "gmv_quarter": 1513021.07,
-          "share_pct": 0.08
+          "share_pct": null
         }
       ]
     },
     {
       "name": "汤子豪",
       "role": "销售",
-      "month_target": 3500000.0,
+      "month_target": null,
       "gmv_month": 9105.57,
-      "share_pct": 0.26,
+      "share_pct": null,
       "customers": [
         {
           "id": "399482",
           "name": "深圳市贝克兰塑胶制品有限公司",
           "gmv_month": 9105.57,
           "gmv_quarter": null,
-          "share_pct": 0.26
+          "share_pct": null
         }
       ]
     },
     {
       "name": "汪伟",
       "role": "销售",
-      "month_target": 11000000.0,
+      "month_target": null,
       "gmv_month": 7200.0,
-      "share_pct": 0.07,
+      "share_pct": null,
       "customers": [
         {
           "id": "276959",
           "name": "深圳市睿莫电子科技有限公司",
           "gmv_month": 7200.0,
           "gmv_quarter": null,
-          "share_pct": 0.07
+          "share_pct": null
         }
       ]
     },
     {
       "name": "王凡",
       "role": "销售",
-      "month_target": 4456221.0,
+      "month_target": null,
       "gmv_month": 6977.74,
-      "share_pct": 0.16,
+      "share_pct": null,
       "customers": [
         {
           "id": "422778",
           "name": "深圳市鸿联实业有限公司",
           "gmv_month": 6977.74,
           "gmv_quarter": null,
-          "share_pct": 0.16
+          "share_pct": null
         }
       ]
     }
