@@ -1,7 +1,7 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-04 13:09",
+  "update_time": "2026-10-04 13:20",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": null,
@@ -472,26 +472,6 @@
       "time_pct": 10.0,
       "hit_target": 2624.0,
       "hit_pct": 58.0
-    },
-    {
-      "name": "文一锦",
-      "role": "销售",
-      "month_val": 2288.1600000000003,
-      "month_target": null,
-      "month_pct": null,
-      "month_gap": 2288.0,
-      "quarter_val": 2288.1600000000003,
-      "quarter_target": null,
-      "quarter_pct": null,
-      "incentive_target": null,
-      "incentive_gap": 2288.0,
-      "incentive_ok": false,
-      "active_clients": 0.0,
-      "active_clients_yoy": 4.0,
-      "hit_products": 972.0,
-      "time_pct": 10.0,
-      "hit_target": 3370.0,
-      "hit_pct": 28.8
     }
   ],
   "warnings": [],
@@ -508,19 +488,19 @@
       "points": [
         {
           "label": "8月",
-          "val": 77421290.21,
+          "val": 77330662.23,
           "target": 81289225.83,
-          "pct": 95.2
+          "pct": 95.1
         },
         {
           "label": "9月",
-          "val": 88986048.84,
+          "val": 88904077.43,
           "target": 99434695.1,
-          "pct": 89.5
+          "pct": 89.4
         },
         {
           "label": "10月",
-          "val": 908456.44,
+          "val": 906168.28,
           "target": 0.0,
           "pct": null
         }
@@ -627,12 +607,6 @@
       "value": 1877.0,
       "target": 3770.0,
       "pct": 49.78779840848807
-    },
-    {
-      "name": "文一锦",
-      "value": 972.0,
-      "target": 3370.0,
-      "pct": 28.84272997032641
     },
     {
       "name": "李彬",
@@ -1236,14 +1210,6 @@
         "hit5w": 0,
         "listed": 0,
         "thresholds": 104
-      },
-      {
-        "name": "文一锦",
-        "customers": 3,
-        "gmv": 933.75,
-        "hit5w": 0,
-        "listed": 0,
-        "thresholds": 71
       },
       {
         "name": "牛群",
