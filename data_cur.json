@@ -1,17 +1,17 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-09 15:00",
+  "update_time": "2026-10-09 16:38",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
-    "month_val": 8407919.97,
+    "month_val": 10132341.38,
     "month_target": null,
     "month_pct": null,
-    "quarter_val": 8409040.44,
+    "quarter_val": 10184264.98,
     "quarter_target": null,
     "quarter_pct": null,
-    "month_gap": 8407920.0,
-    "quarter_gap": 8409040.0,
+    "month_gap": 10132341.0,
+    "quarter_gap": 10184265.0,
     "month_val_acp": 1388821.04,
     "active_clients": 945.0,
     "active_clients_yoy": 1017.0,
@@ -23,14 +23,14 @@
     "acp_caliber": "激励▸业务目标▸ACP▸拍档▸总实收（2026-10）"
   },
   "acp": {
-    "month_val": 1385305.04,
+    "month_val": 1541056.6,
     "month_target": null,
     "month_pct": null,
-    "quarter_val": 1385305.04,
+    "quarter_val": 1541056.6,
     "quarter_target": null,
     "quarter_pct": null,
-    "month_gap": 1385305.0,
-    "quarter_gap": 1385305.0
+    "month_gap": 1541057.0,
+    "quarter_gap": 1541057.0
   },
   "persons": [
     {
@@ -1325,7 +1325,8 @@
     "update": "",
     "totals": {
       "prospects": 19,
-      "cgs": 0,
+      "visited": 19,
+      "cgs": 19,
       "amount": 344000.0,
       "sales": 12,
       "dropped": 1
@@ -1334,85 +1335,85 @@
       {
         "name": "邓晓东",
         "prospects": 4,
-        "visited": 0,
-        "cgs": 0,
+        "visited": 4,
+        "cgs": 4,
         "amount": 80000.0
       },
       {
         "name": "蒋汶桃",
         "prospects": 2,
-        "visited": 0,
-        "cgs": 0,
+        "visited": 2,
+        "cgs": 2,
         "amount": 40000.0
       },
       {
         "name": "夏锐",
         "prospects": 2,
-        "visited": 0,
-        "cgs": 0,
+        "visited": 2,
+        "cgs": 2,
         "amount": 40000.0
       },
       {
         "name": "陈建国",
         "prospects": 2,
-        "visited": 0,
-        "cgs": 0,
+        "visited": 2,
+        "cgs": 2,
         "amount": 22000.0
       },
       {
         "name": "李彬",
         "prospects": 2,
-        "visited": 0,
-        "cgs": 0,
+        "visited": 2,
+        "cgs": 2,
         "amount": 22000.0
       },
       {
         "name": "高国权",
         "prospects": 1,
-        "visited": 0,
-        "cgs": 0,
+        "visited": 1,
+        "cgs": 1,
         "amount": 20000.0
       },
       {
         "name": "王子豪",
         "prospects": 1,
-        "visited": 0,
-        "cgs": 0,
+        "visited": 1,
+        "cgs": 1,
         "amount": 20000.0
       },
       {
         "name": "谢承杰",
         "prospects": 1,
-        "visited": 0,
-        "cgs": 0,
+        "visited": 1,
+        "cgs": 1,
         "amount": 20000.0
       },
       {
         "name": "牛群",
         "prospects": 1,
-        "visited": 0,
-        "cgs": 0,
+        "visited": 1,
+        "cgs": 1,
         "amount": 20000.0
       },
       {
         "name": "王金国",
         "prospects": 1,
-        "visited": 0,
-        "cgs": 0,
+        "visited": 1,
+        "cgs": 1,
         "amount": 20000.0
       },
       {
         "name": "刘蓝琳",
         "prospects": 1,
-        "visited": 0,
-        "cgs": 0,
+        "visited": 1,
+        "cgs": 1,
         "amount": 20000.0
       },
       {
         "name": "刘嘉艳",
         "prospects": 1,
-        "visited": 0,
-        "cgs": 0,
+        "visited": 1,
+        "cgs": 1,
         "amount": 20000.0
       }
     ],
@@ -1420,8 +1421,8 @@
       {
         "customer": "深圳市炜晨阳科技有限公司",
         "sale": "陈建国",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 20000.0,
         "sign_time": "",
         "blocker": "运营不认可，需要针对运营问题，上门做个实操"
@@ -1429,8 +1430,8 @@
       {
         "customer": "深圳市亚台新电子有限公司",
         "sale": "高国权",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 20000.0,
         "sign_time": "",
         "blocker": ""
@@ -1438,8 +1439,8 @@
       {
         "customer": "深圳市顺力电机有限公司",
         "sale": "王子豪",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 20000.0,
         "sign_time": "",
         "blocker": "有客情，客户在客户经理那边犹豫，上门做服务逼单"
@@ -1447,8 +1448,8 @@
       {
         "customer": "深圳市未林森有限公司",
         "sale": "谢承杰",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 20000.0,
         "sign_time": "",
         "blocker": "客户那边已经确认了，等付款，可能先试一个2000的，推动20000方案"
@@ -1456,8 +1457,8 @@
       {
         "customer": "深圳市雅客日化有限公司",
         "sale": "蒋汶桃",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 20000.0,
         "sign_time": "",
         "blocker": ""
@@ -1465,8 +1466,8 @@
       {
         "customer": "深圳市吉顺达纸制品有限公司",
         "sale": "蒋汶桃",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 20000.0,
         "sign_time": "",
         "blocker": ""
@@ -1474,8 +1475,8 @@
       {
         "customer": "深圳市若盛科技有限公司",
         "sale": "邓晓东",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 20000.0,
         "sign_time": "",
         "blocker": ""
@@ -1483,8 +1484,8 @@
       {
         "customer": "深圳市三嘉达电子科技有限公司",
         "sale": "夏锐",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 20000.0,
         "sign_time": "",
         "blocker": "需要上门具体实操"
@@ -1492,8 +1493,8 @@
       {
         "customer": "深圳市芯图世纪科技有限公司",
         "sale": "夏锐",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 20000.0,
         "sign_time": "",
         "blocker": "客户有需求，需要上门实操，针对客户线上线下以及公司管理方面"
@@ -1501,8 +1502,8 @@
       {
         "customer": "深圳蓝丰电子有限公司",
         "sale": "李彬",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 20000.0,
         "sign_time": "",
         "blocker": ""
@@ -1510,8 +1511,8 @@
       {
         "customer": "深圳市蓝濂科技有限公司",
         "sale": "牛群",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 20000.0,
         "sign_time": "",
         "blocker": ""
@@ -1519,8 +1520,8 @@
       {
         "customer": "深圳市东仪电子有限公司",
         "sale": "王金国",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 20000.0,
         "sign_time": "",
         "blocker": "没有运营，业务兼职运营，业务都比较忙，他们没有时间运营和研究awb"
@@ -1528,8 +1529,8 @@
       {
         "customer": "深圳市展辉光电科技有限公司",
         "sale": "邓晓东",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 20000.0,
         "sign_time": "",
         "blocker": ""
@@ -1537,8 +1538,8 @@
       {
         "customer": "深圳市瑞欣电子科技有限公司",
         "sale": "刘蓝琳",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 20000.0,
         "sign_time": "",
         "blocker": ""
@@ -1546,8 +1547,8 @@
       {
         "customer": "深圳市一腾供应链有限公司",
         "sale": "刘嘉艳",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 20000.0,
         "sign_time": "",
         "blocker": ""
@@ -1555,8 +1556,8 @@
       {
         "customer": "深圳市宝隆盛科技有限公司",
         "sale": "邓晓东",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 20000.0,
         "sign_time": "",
         "blocker": "客户觉得有点贵，自己又懂运营，需要上门实操让他感受便捷后逼单"
@@ -1564,8 +1565,8 @@
       {
         "customer": "深圳市永昌泰电子有限公司",
         "sale": "邓晓东",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 20000.0,
         "sign_time": "",
         "blocker": ""
@@ -1573,8 +1574,8 @@
       {
         "customer": "深圳酷虎智触实业有限公司",
         "sale": "李彬",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 2000.0,
         "sign_time": "",
         "blocker": ""
@@ -1582,8 +1583,8 @@
       {
         "customer": "东莞市筑华贸易有限公司",
         "sale": "陈建国",
-        "visited": "",
-        "cgs": "",
+        "visited": "已上门",
+        "cgs": "CGS",
         "amount": 2000.0,
         "sign_time": "",
         "blocker": "上门同步，客户感兴趣，需要针对产品上门做操作"
@@ -1595,7 +1596,7 @@
   "daily_add": {
     "title": "每日新增（对比 2026-10-08 快照）",
     "label": "对比 2026-10-08 快照",
-    "xb_recv": 669765.11,
+    "xb_recv": 2394186.52,
     "active_3w": 0.0,
     "customers": 1.0
   },
