@@ -1,7 +1,7 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-09 16:38",
+  "update_time": "2026-10-09 16:45",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 10132341.38,
@@ -1321,15 +1321,18 @@
   },
   "awb": {
     "title": "AWB 潜客盘点",
-    "note": "AWB 待签约潜客 · 按销售 + 客户明细（来源：桌面「10月AWB盘点.xlsx」）",
+    "note": "AWB 待签约潜客 · 按销售 + 客户明细（来源：桌面「10月AWB盘点.xlsx」） · ⚠ 点名放行 文一锦 1 家（不在 22 人销售名单内）",
     "update": "",
     "totals": {
-      "prospects": 19,
-      "visited": 19,
-      "cgs": 19,
-      "amount": 344000.0,
-      "sales": 12,
-      "dropped": 1
+      "prospects": 20,
+      "visited": 20,
+      "cgs": 20,
+      "amount": 364000.0,
+      "sales": 13,
+      "extra": [
+        "文一锦"
+      ],
+      "dropped": 0
     },
     "by_sale": [
       {
@@ -1383,6 +1386,13 @@
       },
       {
         "name": "谢承杰",
+        "prospects": 1,
+        "visited": 1,
+        "cgs": 1,
+        "amount": 20000.0
+      },
+      {
+        "name": "文一锦",
         "prospects": 1,
         "visited": 1,
         "cgs": 1,
@@ -1507,6 +1517,15 @@
         "amount": 20000.0,
         "sign_time": "",
         "blocker": ""
+      },
+      {
+        "customer": "深圳市安诚通集装箱服务有限公司",
+        "sale": "文一锦",
+        "visited": "已上门",
+        "cgs": "CGS",
+        "amount": 20000.0,
+        "sign_time": "",
+        "blocker": "已经买了2000的版本，铺垫了平台优化和数据清洗功能，要节后上门指导，积分不够升级方案"
       },
       {
         "customer": "深圳市蓝濂科技有限公司",
