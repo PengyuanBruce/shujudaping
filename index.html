@@ -228,9 +228,9 @@
   /* D 卡片：渐变底 + 30/800 大数字；Ⅰ 改 4 列（前两张各占 2 列） */
   .card { background: linear-gradient(160deg, #101A30, #0D1424); border: 1px solid #1C2A4A; }
   .kpi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  /* 只有 Ⅰ 区的前两张卡跨 2 列；嵌套在盘面/采购节里的小卡用 auto-fit，避免被撑成 3 行 */
+  /* 只有 Ⅰ 区的前两张卡跨 2 列；嵌套在盘面/专题里的小卡用 auto-fit，避免被撑成 3 行 */
   #sec-1 .kpi-grid > .card:nth-child(-n+2) { grid-column: span 2; }
-  #panel-stats .kpi-grid, #festival-body .kpi-grid, #sec-6 .kpi-grid {
+  #panel-stats .kpi-grid, #topic-body .kpi-grid, #sec-6 .kpi-grid {
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
   /* Ⅱ：3 列放短卡，盘面与分层各自整行 —— 否则盘面(高)会把同行短卡拉出大片留白 */
   #sec-2 .grid.two { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
@@ -303,7 +303,11 @@
   /* H 我们页独有缺陷 */
   #sec-2 .grid.two { align-items: start; }                    /* Ⅱ 左列不再被拉高留白 */
   .grid.two { align-items: start; }
-  #sec-8 .rank-row { height: 37px; white-space: nowrap; overflow: hidden; }
+  #sec-9 .rank-row { height: 37px; white-space: nowrap; overflow: hidden; }
+  /* Ⅸ 专题：明细行右侧信息多（金额/签约时间/卡点），允许换行、左侧不被挤扁 */
+  #sec-9 .cust-row { align-items: flex-start; }
+  #sec-9 .cust-row > span:first-child { flex: 0 0 auto; }
+  #sec-9 .cust-row > span:last-child { text-align: right; }
   #sec-4b .rank-row { height: 37px; }
   @media (max-width: 700px) {
     .kpi-grid { grid-template-columns: 1fr; }
@@ -491,7 +495,7 @@
   <!-- Ⅳ·B 商品成长排名(优品3.0) -->
   <section id="sec-4b">
     <div class="sec-head"><span class="sec-no">Ⅳ·B</span><h2>商品成长排名（优品3.0）</h2>
-      <span class="note">按季度目标达成率降序 · ≥100% 深绿 / 85–99% 绿 / 70–84% 黄 / 50–69% 橙 / 数据 T+2</span></div>
+      <span class="note">按季度目标达成率降序 · 同时看优爆品与「推p」个人比例 · ≥100% 深绿 / 85–99% 绿 / 70–84% 黄 / 50–69% 橙 / 数据 T+2</span></div>
     <div class="card" id="goods-rank-body"></div>
   </section>
 
@@ -527,11 +531,11 @@
     </div>
   </section>
 
-  <!-- Ⅷ 采购节榜单与缺口 -->
-  <section id="sec-8">
-    <div class="sec-head"><span class="sec-no">Ⅷ</span><h2 id="festival-title">采购节榜单与缺口</h2>
-      <span class="note">策略中心实时口径 · GMV / 大促任务 / 各挑战赛 · 带销售</span></div>
-    <div class="card" id="festival-body"></div>
+  <!-- Ⅸ 9610 / AWB 专题（2026-10-09 新增；原 Ⅷ「采购节榜单与缺口」已随活动结束下线） -->
+  <section id="sec-9">
+    <div class="sec-head"><span class="sec-no">Ⅸ</span><h2 id="topic-title">9610 / AWB 专题</h2>
+      <span class="note" id="topic-note">9610 下单登记（按客服）· AWB 待签约潜客（按销售）· 均含客户明细</span></div>
+    <div id="topic-body"></div>
   </section>
 
   <footer>
@@ -546,7 +550,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1791505965';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1791529277';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1163,8 +1167,12 @@
     rows.sort(function (a, b) { return (num(b.pct) || 0) - (num(a.pct) || 0); });
     $('goods-rank-body').innerHTML = rows.map(function (r, i) {
       const w = Math.max(0, Math.min(100, num(r.pct) || 0));
+      // 推p = 该销售的「优爆品p4p推广中比例」（2026-10-09 用户要求：Ⅳ·B 除优爆品外再看推p个人比例）
+      const p4p = num(r.pct_p4p) == null ? ''
+        : '<span class="text-dim">推p <b>' + fmtPct(r.pct_p4p, 1) + '</b></span>';
       return '<div class="rank-row"><span class="text-dim">' + (i + 1) + '</span><span>' + esc(r.name) + '</span>' +
         '<span class="rowline" style="margin:0"><span class="text-dim">优爆品 ' + fmt(r.value, 0) + '</span>' +
+        '<span class="text-dim">目标 ' + fmt(r.target, 0) + '</span>' + p4p +
         '<b class="' + tierClass(r.pct) + '">' + fmtPct(r.pct, 2) + '</b></span>' +
         '<span class="bar"><i class="' + pctFillClass(r.pct) + '" style="width:' + w + '%"></i></span></div>';
     }).join('');
@@ -1190,41 +1198,84 @@
         : pendingPanel(['商品结构（在线品全量口径）：各层级商品数与占比']));
   }
 
-  // ── Ⅷ 采购节榜单与缺口 ──
-  function renderFestival(d) {
-    const f = d.festival;
-    if (!f) {
-      $('festival-body').innerHTML = pendingPanel([
-        '策略中心实时口径：' + monthShort(d) + 'GMV / 大促任务 / 各挑战赛（按销售）',
-        '销售缺口漏斗 11 列：销售 / 名下客户 / 可参赛榜单 / 已认领未完成 / 已完成 / 认领完成率 / 满3w / 同比3w / 3w目标完成率 / 大促缺口合计($万) / 挑战赛进行中',
-        '客户级榜单与缺口明细（带销售）',
-        '需你指认来源页面（我判断在「策略中心」或数据罗盘的大促及场景运营里）']);
+  // ── Ⅸ 9610 / AWB 专题 ──
+  // 数据来源与数据罗盘不同源（业务自建）。缺件时整块显示待接，绝不用旧数据兜底。
+  function renderTopic(d) {
+    const s = d.s9610, a = d.awb;
+    if (!s && !a) {
+      $('topic-body').innerHTML = pendingPanel([
+        '9610 下单登记：按客服（下单客户数 / 订单数 / 9610专享订单）+ 客户明细（一行一笔订单按客户聚合）',
+        'AWB 潜客：按销售（潜客数 / 已上门 / CGS / 方案合计）+ 客户明细（含预计签约时间与卡点）',
+        '需要两件事：① 9610 登记表落盘 ② AWB 盘点表补「上门 / CGS / 签约时间」三列']);
       return;
     }
-    const t = f.totals || {};
-    const rows = f.by_sale || [];
-    setText('festival-title', f.title || '采购节榜单与缺口');
-    $('festival-body').innerHTML =
-      '<div class="rowline"><span class="text-dim">' + esc(f.period || '') + '</span></div>' +
-      '<div class="grid kpi-grid" style="margin:8px 0 12px">' +
-      [['在榜客户数', fmt(t.customers, 0) + '<small class="text-dim"> 家</small>'],
-       ['本周GMV(风控后)', fmtWan(t.gmv, 1)],
-       ['达5万商家', fmt(t.hit5w, 0) + '<small class="text-dim"> 家</small>'],
-       ['本周上榜商家', fmt(t.listed, 0) + '<small class="text-dim"> 家</small>']]
-        .map(function (x) { return '<div class="card"><span class="cap">' + x[0] + '</span><div class="big">' + x[1] + '</div></div>'; }).join('') +
-      '</div>' +
-      (rows.length ? '<div class="cap">按销售汇总</div>' + rows.map(function (r) {
-        return '<div class="rank-row"><span class="text-dim">' + esc(r.name) + '</span><span class="text-dim">' +
-          fmt(r.customers, 0) + ' 家</span><span>' + fmtWan(r.gmv, 1) +
-          '<small class="text-dim"> · 达5万 ' + fmt(r.hit5w, 0) + ' · 上榜 ' + fmt(r.listed, 0) +
-          ' · 满足门槛 ' + fmt(r.thresholds, 0) + '</small></span><span></span></div>';
-      }).join('') : '') +
-      ((f.top || []).length ? '<div class="cap" style="margin-top:12px">客户 TOP10（本周GMV）</div>' +
-        f.top.map(function (c, i) {
-          return '<div class="rank-row"><span class="text-dim">' + (i + 1) + '</span><span>' + esc(c.sale) + '</span>' +
-            '<span>' + esc(c.customer) + '<small class="text-dim"> 距第1名 ' + fmtWan(c.gap1, 1) + '</small></span>' +
-            '<span>' + fmtWan(c.gmv, 1) + '</span></div>';
-        }).join('') : '');
+    const unit = (v, u) => v + '<small class="text-dim"> ' + u + '</small>';
+    const upd = (o) => (o && o.update) ? '<span class="text-dim">更新 ' + esc(o.update) + '</span>' : '';
+    const kpi = (items) => '<div class="grid kpi-grid" style="margin:8px 0 12px">' + items.map(function (it) {
+      return '<div class="card"><span class="cap">' + it[0] + '</span><div class="big">' + it[1] + '</div></div>';
+    }).join('') + '</div>';
+    const row = (cells) => '<div class="rank-row">' + cells.map(function (c, i) {
+      return '<span class="' + (i === 0 ? '' : 'text-dim') + '">' + c + '</span>';
+    }).join('') + '</div>';
+    const det = (main, sub, right) => '<div class="cust-row"><span>' + main +
+      (sub ? '<small class="text-dim"> ' + sub + '</small>' : '') + '</span><span>' + right + '</span></div>';
+    const head = (o, label, sub) => '<div class="rowline" style="margin:0 0 6px"><span><b>' + label +
+      '</b>' + (sub ? ' <small class="text-dim">' + esc(sub) + '</small>' : '') + '</span>' + upd(o) + '</div>';
+    const out = [];
+    if (s) {
+      const t = s.totals || {};
+      const who = esc(s.person_label || '销售');
+      // 登记表里没有的列（申报金额 / 9610专享）就不画那一格，不补 0 不补 "--"
+      const cards = [['9610 下单客户', unit(fmt(t.customers, 0), '家')],
+                     ['订单数', unit(fmt(t.orders, 0), '笔')]];
+      if (t.exclusive_orders != null) cards.push(['9610 专享订单', unit(fmt(t.exclusive_orders, 0), '笔')]);
+      if (t.new_customers) cards.push(['新增下单客户', unit(fmt(t.new_customers, 0), '家')]);
+      if (t.declared) cards.push(['申报金额', '$' + fmt(t.declared, 1)]);
+      cards.push(['覆盖' + who, unit(fmt(t.sales, 0), '人')]);
+      out.push('<div class="card" style="margin-bottom:12px">' +
+        head(s, s.title || '9610 下单登记', s.note) +
+        kpi(cards) +
+        '<div class="cap">按' + who + ' · 下单客户数</div>' +
+        ((s.by_sale || []).length ? (s.by_sale || []).map(function (r) {
+          return row([esc(r.name), unit(fmt(r.customers, 0), '家客户'), unit(fmt(r.orders, 0), '笔'),
+                      '专享 ' + fmt(r.exclusive_orders, 0)]);
+        }).join('') : '<div class="empty">暂无</div>') +
+        '<div class="cap" style="margin-top:12px">客户明细 · 按客户聚合</div>' +
+        ((s.detail || []).length ? (s.detail || []).map(function (r) {
+          const sub = [esc(r.sale), unit(fmt(r.orders, 0), '笔')].filter(Boolean).join(' · ') +
+            (r.exclusive_orders ? '（专享 ' + fmt(r.exclusive_orders, 0) + '）' : '') +
+            (r.line ? '<small class="text-dim"> · ' + esc(r.line) + '</small>' : '');
+          const right = (r.declared ? '$' + fmt(r.declared, 1) : '') +
+            (r.last_order ? '<small class="text-dim"> ' + esc(r.last_order) + '</small>' : '');
+          return det(esc(r.customer) + (r.new_customer ? ' <span class="text-dim">新</span>' : ''), sub, right);
+        }).join('') : '<div class="empty">暂无</div>') +
+        '</div>');
+    }
+    if (a) {
+      const t = a.totals || {};
+      out.push('<div class="card">' +
+        head(a, 'AWB 潜客盘点', a.note) +
+        kpi([['待签约潜客', unit(fmt(t.prospects, 0), '家')],
+             ['CGS 客户', unit(fmt(t.cgs, 0), '家')],
+             ['方案合计', fmt(t.amount, 0) + '<small class="text-dim"> 元</small>'],
+             ['覆盖销售', unit(fmt(t.sales, 0), '人')]]) +
+        '<div class="cap">按销售 · 潜客数</div>' +
+        ((a.by_sale || []).length ? (a.by_sale || []).map(function (r) {
+          // rank-row 是 4 列网格：把「已上门 / CGS」并成一格，别让第 5 格换行
+          return row([esc(r.name), unit(fmt(r.prospects, 0), '家潜客'),
+                      unit(fmt(r.visited, 0), '上门') + ' · CGS ' + fmt(r.cgs, 0),
+                      unit(fmt(r.amount, 0), '元')]);
+        }).join('') : '<div class="empty">暂无</div>') +
+        '<div class="cap" style="margin-top:12px">潜客户明细 · 待签约</div>' +
+        ((a.detail || []).length ? (a.detail || []).map(function (r) {
+          return det(esc(r.customer), [esc(r.sale), esc(r.visited), esc(r.cgs)].filter(Boolean).join(' · '),
+                     unit(fmt(r.amount, 0), '元') +
+                     (r.sign_time ? '<small class="text-dim"> ' + esc(r.sign_time) + '</small>' : '') +
+                     (r.blocker && r.blocker !== '-' ? '<small class="text-dim"> · ' + esc(r.blocker) + '</small>' : ''));
+        }).join('') : '<div class="empty">暂无</div>') +
+        '</div>');
+    }
+    $('topic-body').innerHTML = out.join('');
   }
 
   // ── 统一入口 ──
@@ -1241,7 +1292,7 @@
     renderGoodsRank(d);
     renderYoy(d);
     renderGoods(d);
-    renderFestival(d);
+    renderTopic(d);
     updateLabels(d);
     const warns = d.warnings || [];
     if (warns.length) banner('<b>解析告警（已按规则沿用上次数据）</b><ul><li>' +
