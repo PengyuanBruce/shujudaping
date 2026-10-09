@@ -1,7 +1,7 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-09 08:32",
+  "update_time": "2026-10-09 15:00",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 8407919.97,
@@ -552,133 +552,155 @@
       "name": "邓晓东",
       "value": 8106.0,
       "target": 8911.0,
-      "pct": 90.96622152395916
+      "pct": 90.96622152395916,
+      "pct_p4p": 21.798667653589934
     },
     {
       "name": "罗金填",
       "value": 1828.0,
       "target": 3164.0,
-      "pct": 57.77496839443742
+      "pct": 57.77496839443742,
+      "pct_p4p": 24.50765864332604
     },
     {
       "name": "梁诗琪",
       "value": 1475.0,
       "target": 3257.0,
-      "pct": 45.287073994473445
+      "pct": 45.287073994473445,
+      "pct_p4p": 22.915254237288135
     },
     {
       "name": "陈苑英",
       "value": 1078.0,
       "target": 1725.0,
-      "pct": 62.4927536231884
+      "pct": 62.4927536231884,
+      "pct_p4p": 15.120593692022263
     },
     {
       "name": "王金国",
       "value": 2516.0,
       "target": 3710.0,
-      "pct": 67.81671159029649
+      "pct": 67.81671159029649,
+      "pct_p4p": 23.17170111287758
     },
     {
       "name": "程碧瑶",
       "value": 1918.0,
       "target": 3851.0,
-      "pct": 49.80524539080758
+      "pct": 49.80524539080758,
+      "pct_p4p": 15.015641293013557
     },
     {
       "name": "何尧玲",
       "value": 4291.0,
       "target": 4865.0,
-      "pct": 88.20143884892087
+      "pct": 88.20143884892087,
+      "pct_p4p": 17.781402936378466
     },
     {
       "name": "刘蓝琳",
       "value": 2445.0,
       "target": 3192.0,
-      "pct": 76.59774436090225
+      "pct": 76.59774436090225,
+      "pct_p4p": 26.707566462167687
     },
     {
       "name": "牛群",
       "value": 1522.0,
       "target": 2624.0,
-      "pct": 58.00304878048781
+      "pct": 58.00304878048781,
+      "pct_p4p": 32.8515111695138
     },
     {
       "name": "刘嘉艳",
       "value": 1877.0,
       "target": 3770.0,
-      "pct": 49.78779840848807
+      "pct": 49.78779840848807,
+      "pct_p4p": 28.39637719765583
     },
     {
       "name": "李彬",
       "value": 6223.0,
       "target": 6236.0,
-      "pct": 99.79153303399615
+      "pct": 99.79153303399615,
+      "pct_p4p": 44.09448818897638
     },
     {
       "name": "李怡萍",
       "value": 7492.0,
       "target": 9324.0,
-      "pct": 80.35178035178035
+      "pct": 80.35178035178035,
+      "pct_p4p": 21.516284036305393
     },
     {
       "name": "高国权",
       "value": 6623.0,
       "target": 7419.0,
-      "pct": 89.2707912117536
+      "pct": 89.2707912117536,
+      "pct_p4p": 17.454325834214103
     },
     {
       "name": "汤子豪",
       "value": 5177.0,
       "target": 6018.0,
-      "pct": 86.02525756065138
+      "pct": 86.02525756065138,
+      "pct_p4p": 41.80027042688816
     },
     {
       "name": "谢承杰",
       "value": 5630.0,
       "target": 6297.0,
-      "pct": 89.40765443862156
+      "pct": 89.40765443862156,
+      "pct_p4p": 24.209591474245116
     },
     {
       "name": "夏锐",
       "value": 10438.0,
       "target": 12939.0,
-      "pct": 80.6708400958343
+      "pct": 80.6708400958343,
+      "pct_p4p": 24.171297183368463
     },
     {
       "name": "漆螯童",
       "value": 10658.0,
       "target": 11319.0,
-      "pct": 94.16026150720029
+      "pct": 94.16026150720029,
+      "pct_p4p": 30.17451679489585
     },
     {
       "name": "王子豪",
       "value": 11911.0,
       "target": 14137.0,
-      "pct": 84.25408502511141
+      "pct": 84.25408502511141,
+      "pct_p4p": 31.928469481991435
     },
     {
       "name": "王凡",
       "value": 5588.0,
       "target": 4073.0,
-      "pct": 137.1961698993371
+      "pct": 137.1961698993371,
+      "pct_p4p": 32.659269863994275
     },
     {
       "name": "汪伟",
       "value": 12214.0,
       "target": 14390.0,
-      "pct": 84.87838776928423
+      "pct": 84.87838776928423,
+      "pct_p4p": 36.933027673161945
     },
     {
       "name": "陈建国",
       "value": 9565.0,
       "target": 10865.0,
-      "pct": 88.03497468936953
+      "pct": 88.03497468936953,
+      "pct_p4p": 29.053842132775742
     },
     {
       "name": "蒋汶桃",
       "value": 10468.0,
       "target": 11987.0,
-      "pct": 87.32793860015016
+      "pct": 87.32793860015016,
+      "pct_p4p": 30.58846006878105
     }
   ],
   "yoy_up": [
@@ -1041,293 +1063,530 @@
     "inactive": 4952,
     "paid": 2526.0
   },
-  "festival": {
-    "title": "采购节 · GMV榜单冲榜明细",
-    "period": "统计周期 09.01–09.05（周标记 2，T-1 小时更新）",
+  "s9610": {
+    "title": "9610 下单登记",
+    "note": "仅「9610」下单登记（来源：桌面「9月份9610下单登记表.xlsx」· 人维度是**客服**）",
+    "update": "2026-09-28",
+    "person_label": "客服",
     "totals": {
-      "customers": 720,
-      "gmv": 8864702.74,
-      "hit5w": 41,
-      "listed": 0
+      "customers": 20,
+      "orders": 55,
+      "exclusive_orders": 45,
+      "new_customers": 15,
+      "declared": null,
+      "sales": 8,
+      "roster_scoped": false,
+      "dropped": 0
     },
     "by_sale": [
       {
-        "name": "李彬",
-        "customers": 33,
-        "gmv": 1694365.18,
-        "hit5w": 8,
-        "listed": 0,
-        "thresholds": 796
+        "name": "曹丽",
+        "customers": 5,
+        "orders": 10,
+        "exclusive_orders": 6,
+        "new_customers": 4
+      },
+      {
+        "name": "陈宇",
+        "customers": 4,
+        "orders": 21,
+        "exclusive_orders": 21,
+        "new_customers": 2
+      },
+      {
+        "name": "邢欢欢",
+        "customers": 4,
+        "orders": 11,
+        "exclusive_orders": 9,
+        "new_customers": 4
+      },
+      {
+        "name": "方琼",
+        "customers": 3,
+        "orders": 6,
+        "exclusive_orders": 2,
+        "new_customers": 2
+      },
+      {
+        "name": "苏梓梦",
+        "customers": 1,
+        "orders": 3,
+        "exclusive_orders": 3,
+        "new_customers": 0
+      },
+      {
+        "name": "庞婷婷",
+        "customers": 1,
+        "orders": 2,
+        "exclusive_orders": 2,
+        "new_customers": 1
+      },
+      {
+        "name": "罗洋清",
+        "customers": 1,
+        "orders": 1,
+        "exclusive_orders": 1,
+        "new_customers": 1
+      },
+      {
+        "name": "农路源",
+        "customers": 1,
+        "orders": 1,
+        "exclusive_orders": 1,
+        "new_customers": 1
+      }
+    ],
+    "detail": [
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "orders": 14,
+        "exclusive_orders": 14,
+        "new_customer": true,
+        "last_order": "2026-09-28",
+        "line": "全球9610专线DDP_标准",
+        "sale": "陈宇"
+      },
+      {
+        "customer": "深圳市陆洋电子科技有限公司",
+        "orders": 7,
+        "exclusive_orders": 5,
+        "new_customer": true,
+        "last_order": "2026-09-24",
+        "line": "全球9610专线DDP_标准",
+        "sale": "邢欢欢"
+      },
+      {
+        "customer": "深圳市威斯尼科技有限公司",
+        "orders": 5,
+        "exclusive_orders": 1,
+        "new_customer": true,
+        "last_order": "2026-09-11",
+        "line": "全球9610小包DDP_标准 / 全球9610专线DDP_标准",
+        "sale": "曹丽"
+      },
+      {
+        "customer": "深圳市博悦展示品有限公司",
+        "orders": 4,
+        "exclusive_orders": 4,
+        "new_customer": false,
+        "last_order": "2026-09-18",
+        "line": "全球9610专线DDP_标准",
+        "sale": "陈宇"
+      },
+      {
+        "customer": "深圳大塘科技电子有限公司",
+        "orders": 3,
+        "exclusive_orders": 3,
+        "new_customer": false,
+        "last_order": "2026-09-22",
+        "line": "全球9610专线DDP_标准",
+        "sale": "苏梓梦"
+      },
+      {
+        "customer": "深圳市百乐康科技有限公司",
+        "orders": 3,
+        "exclusive_orders": 1,
+        "new_customer": false,
+        "last_order": "2026-09-28",
+        "line": "全球9610小包DDP_标准 / 全球9610专线DDP_标准",
+        "sale": "方琼"
+      },
+      {
+        "customer": "惠州奇锋商贸有限公司",
+        "orders": 2,
+        "exclusive_orders": 2,
+        "new_customer": true,
+        "last_order": "2026-09-20",
+        "line": "全球9610专线DDP_标准",
+        "sale": "邢欢欢"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "orders": 2,
+        "exclusive_orders": 0,
+        "new_customer": true,
+        "last_order": "2026-09-14",
+        "line": "全球9610小包DDP_标准",
+        "sale": "方琼"
+      },
+      {
+        "customer": "深圳市布拉沃国际实业有限公司",
+        "orders": 2,
+        "exclusive_orders": 2,
+        "new_customer": false,
+        "last_order": "2026-09-22",
+        "line": "全球9610专线DDP_标准",
+        "sale": "陈宇"
+      },
+      {
+        "customer": "深圳市德创纪元科技有限公司",
+        "orders": 2,
+        "exclusive_orders": 2,
+        "new_customer": true,
+        "last_order": "2026-09-16",
+        "line": "全球9610专线DDP_标准",
+        "sale": "曹丽"
+      },
+      {
+        "customer": "深圳市风都科技有限公司",
+        "orders": 2,
+        "exclusive_orders": 2,
+        "new_customer": true,
+        "last_order": "2026-09-24",
+        "line": "全球9610专线DDP_标准",
+        "sale": "庞婷婷"
+      },
+      {
+        "customer": "深圳信广鑫仪器设备有限公司",
+        "orders": 1,
+        "exclusive_orders": 1,
+        "new_customer": true,
+        "last_order": "2026-09-21",
+        "line": "全球9610专线DDP_标准",
+        "sale": "邢欢欢"
+      },
+      {
+        "customer": "深圳华声科技有限公司",
+        "orders": 1,
+        "exclusive_orders": 1,
+        "new_customer": true,
+        "last_order": "2026-09-24",
+        "line": "全球9610专线DDP_标准",
+        "sale": "曹丽"
+      },
+      {
+        "customer": "深圳市古石科技有限公司",
+        "orders": 1,
+        "exclusive_orders": 1,
+        "new_customer": true,
+        "last_order": "2026-09-24",
+        "line": "全球9610专线DDP_标准",
+        "sale": "方琼"
+      },
+      {
+        "customer": "深圳市哇哦暖通设备有限公司",
+        "orders": 1,
+        "exclusive_orders": 1,
+        "new_customer": true,
+        "last_order": "2026-09-16",
+        "line": "全球9610专线DDP_标准",
+        "sale": "邢欢欢"
+      },
+      {
+        "customer": "深圳市四通广行实业有限公司",
+        "orders": 1,
+        "exclusive_orders": 1,
+        "new_customer": true,
+        "last_order": "2026-09-14",
+        "line": "全球9610专线DDP_标准",
+        "sale": "罗洋清"
+      },
+      {
+        "customer": "深圳市美昕实业有限公司",
+        "orders": 1,
+        "exclusive_orders": 1,
+        "new_customer": true,
+        "last_order": "2026-09-24",
+        "line": "全球9610专线DDP_标准",
+        "sale": "农路源"
+      },
+      {
+        "customer": "深圳市路通电子有限公司",
+        "orders": 1,
+        "exclusive_orders": 1,
+        "new_customer": true,
+        "last_order": "2026-09-28",
+        "line": "全球9610专线DDP_标准",
+        "sale": "陈宇"
+      },
+      {
+        "customer": "深圳市辉波诚科技有限公司",
+        "orders": 1,
+        "exclusive_orders": 1,
+        "new_customer": true,
+        "last_order": "2026-09-22",
+        "line": "全球9610专线DDP_标准",
+        "sale": "曹丽"
+      },
+      {
+        "customer": "鸿晖(深圳)科技有限公司",
+        "orders": 1,
+        "exclusive_orders": 1,
+        "new_customer": false,
+        "last_order": "2026-09-16",
+        "line": "全球9610专线DDP_标准",
+        "sale": "曹丽"
+      }
+    ]
+  },
+  "awb": {
+    "title": "AWB 潜客盘点",
+    "note": "AWB 待签约潜客 · 按销售 + 客户明细（来源：桌面「10月AWB盘点.xlsx」）",
+    "update": "",
+    "totals": {
+      "prospects": 19,
+      "cgs": 0,
+      "amount": 344000.0,
+      "sales": 12,
+      "dropped": 1
+    },
+    "by_sale": [
+      {
+        "name": "邓晓东",
+        "prospects": 4,
+        "visited": 0,
+        "cgs": 0,
+        "amount": 80000.0
       },
       {
         "name": "蒋汶桃",
-        "customers": 56,
-        "gmv": 1614680.2,
-        "hit5w": 7,
-        "listed": 0,
-        "thresholds": 1372
-      },
-      {
-        "name": "汪伟",
-        "customers": 70,
-        "gmv": 992455.9,
-        "hit5w": 7,
-        "listed": 0,
-        "thresholds": 1691
-      },
-      {
-        "name": "漆螯童",
-        "customers": 76,
-        "gmv": 986091.47,
-        "hit5w": 5,
-        "listed": 0,
-        "thresholds": 1835
-      },
-      {
-        "name": "陈建国",
-        "customers": 68,
-        "gmv": 924457.44,
-        "hit5w": 6,
-        "listed": 0,
-        "thresholds": 1537
-      },
-      {
-        "name": "王子豪",
-        "customers": 71,
-        "gmv": 728752.5,
-        "hit5w": 2,
-        "listed": 0,
-        "thresholds": 1657
+        "prospects": 2,
+        "visited": 0,
+        "cgs": 0,
+        "amount": 40000.0
       },
       {
         "name": "夏锐",
-        "customers": 57,
-        "gmv": 564255.16,
-        "hit5w": 3,
-        "listed": 0,
-        "thresholds": 1544
+        "prospects": 2,
+        "visited": 0,
+        "cgs": 0,
+        "amount": 40000.0
       },
       {
-        "name": "汤子豪",
-        "customers": 37,
-        "gmv": 407855.25,
-        "hit5w": 2,
-        "listed": 0,
-        "thresholds": 848
+        "name": "陈建国",
+        "prospects": 2,
+        "visited": 0,
+        "cgs": 0,
+        "amount": 22000.0
       },
       {
-        "name": "谢承杰",
-        "customers": 42,
-        "gmv": 308732.34,
-        "hit5w": 1,
-        "listed": 0,
-        "thresholds": 1057
+        "name": "李彬",
+        "prospects": 2,
+        "visited": 0,
+        "cgs": 0,
+        "amount": 22000.0
       },
       {
         "name": "高国权",
-        "customers": 36,
-        "gmv": 175798.25,
-        "hit5w": 0,
-        "listed": 0,
-        "thresholds": 939
+        "prospects": 1,
+        "visited": 0,
+        "cgs": 0,
+        "amount": 20000.0
       },
       {
-        "name": "王凡",
-        "customers": 25,
-        "gmv": 113454.35,
-        "hit5w": 0,
-        "listed": 0,
-        "thresholds": 504
+        "name": "王子豪",
+        "prospects": 1,
+        "visited": 0,
+        "cgs": 0,
+        "amount": 20000.0
       },
       {
-        "name": "邓晓东",
-        "customers": 33,
-        "gmv": 112128.05,
-        "hit5w": 0,
-        "listed": 0,
-        "thresholds": 925
-      },
-      {
-        "name": "李怡萍",
-        "customers": 36,
-        "gmv": 99057.43,
-        "hit5w": 0,
-        "listed": 0,
-        "thresholds": 957
-      },
-      {
-        "name": "何尧玲",
-        "customers": 16,
-        "gmv": 52453.8,
-        "hit5w": 0,
-        "listed": 0,
-        "thresholds": 354
-      },
-      {
-        "name": "王金国",
-        "customers": 15,
-        "gmv": 25416.89,
-        "hit5w": 0,
-        "listed": 0,
-        "thresholds": 394
-      },
-      {
-        "name": "刘蓝琳",
-        "customers": 10,
-        "gmv": 21412.81,
-        "hit5w": 0,
-        "listed": 0,
-        "thresholds": 226
-      },
-      {
-        "name": "刘嘉艳",
-        "customers": 10,
-        "gmv": 16192.17,
-        "hit5w": 0,
-        "listed": 0,
-        "thresholds": 250
-      },
-      {
-        "name": "罗金填",
-        "customers": 9,
-        "gmv": 13678.04,
-        "hit5w": 0,
-        "listed": 0,
-        "thresholds": 212
-      },
-      {
-        "name": "梁诗琪",
-        "customers": 3,
-        "gmv": 7825.0,
-        "hit5w": 0,
-        "listed": 0,
-        "thresholds": 44
-      },
-      {
-        "name": "程碧瑶",
-        "customers": 4,
-        "gmv": 4173.0,
-        "hit5w": 0,
-        "listed": 0,
-        "thresholds": 104
+        "name": "谢承杰",
+        "prospects": 1,
+        "visited": 0,
+        "cgs": 0,
+        "amount": 20000.0
       },
       {
         "name": "牛群",
-        "customers": 6,
-        "gmv": 420.0,
-        "hit5w": 0,
-        "listed": 0,
-        "thresholds": 158
+        "prospects": 1,
+        "visited": 0,
+        "cgs": 0,
+        "amount": 20000.0
       },
       {
-        "name": "陈苑英",
-        "customers": 3,
-        "gmv": 113.75,
-        "hit5w": 0,
-        "listed": 0,
-        "thresholds": 59
+        "name": "王金国",
+        "prospects": 1,
+        "visited": 0,
+        "cgs": 0,
+        "amount": 20000.0
+      },
+      {
+        "name": "刘蓝琳",
+        "prospects": 1,
+        "visited": 0,
+        "cgs": 0,
+        "amount": 20000.0
+      },
+      {
+        "name": "刘嘉艳",
+        "prospects": 1,
+        "visited": 0,
+        "cgs": 0,
+        "amount": 20000.0
       }
     ],
-    "top": [
+    "detail": [
       {
-        "customer": "深圳市天德普储能科技有限公司",
-        "sale": "李彬",
-        "gmv": 453863.42000000004,
-        "hit5w": true,
-        "listed": false,
-        "got": 16.0,
-        "gap1": null,
-        "stage_cnt": null
-      },
-      {
-        "customer": "深圳市鑫锦泰贸易有限公司",
-        "sale": "李彬",
-        "gmv": 434133.64,
-        "hit5w": true,
-        "listed": false,
-        "got": 28.0,
-        "gap1": null,
-        "stage_cnt": null
-      },
-      {
-        "customer": "深圳市艾尔生科技有限公司",
-        "sale": "漆螯童",
-        "gmv": 358862.93000000005,
-        "hit5w": true,
-        "listed": false,
-        "got": 44.0,
-        "gap1": null,
-        "stage_cnt": null
-      },
-      {
-        "customer": "深圳市迈斯奇科技有限公司",
-        "sale": "蒋汶桃",
-        "gmv": 332851.31,
-        "hit5w": true,
-        "listed": false,
-        "got": 15.0,
-        "gap1": null,
-        "stage_cnt": null
-      },
-      {
-        "customer": "深圳市嘉易通电子有限公司",
-        "sale": "蒋汶桃",
-        "gmv": 245076.60000000006,
-        "hit5w": true,
-        "listed": false,
-        "got": 22.0,
-        "gap1": null,
-        "stage_cnt": 1.0
-      },
-      {
-        "customer": "深圳市福瑞诺科技有限公司",
-        "sale": "李彬",
-        "gmv": 225981.36,
-        "hit5w": true,
-        "listed": false,
-        "got": 57.0,
-        "gap1": null,
-        "stage_cnt": 1.0
-      },
-      {
-        "customer": "深圳市英辉源电子有限公司",
-        "sale": "王子豪",
-        "gmv": 221238.39,
-        "hit5w": true,
-        "listed": false,
-        "got": 22.0,
-        "gap1": null,
-        "stage_cnt": 4.0
-      },
-      {
-        "customer": "深圳市泽熹智能电子有限公司",
-        "sale": "蒋汶桃",
-        "gmv": 188198.31000000003,
-        "hit5w": true,
-        "listed": false,
-        "got": 15.0,
-        "gap1": null,
-        "stage_cnt": null
-      },
-      {
-        "customer": "深圳市九晟光电通讯科技有限公司",
-        "sale": "蒋汶桃",
-        "gmv": 175644.62,
-        "hit5w": true,
-        "listed": false,
-        "got": 15.0,
-        "gap1": null,
-        "stage_cnt": 2.0
-      },
-      {
-        "customer": "深圳市创闪科技有限公司",
+        "customer": "深圳市炜晨阳科技有限公司",
         "sale": "陈建国",
-        "gmv": 174171.99,
-        "hit5w": true,
-        "listed": false,
-        "got": 30.0,
-        "gap1": null,
-        "stage_cnt": null
+        "visited": "",
+        "cgs": "",
+        "amount": 20000.0,
+        "sign_time": "",
+        "blocker": "运营不认可，需要针对运营问题，上门做个实操"
+      },
+      {
+        "customer": "深圳市亚台新电子有限公司",
+        "sale": "高国权",
+        "visited": "",
+        "cgs": "",
+        "amount": 20000.0,
+        "sign_time": "",
+        "blocker": ""
+      },
+      {
+        "customer": "深圳市顺力电机有限公司",
+        "sale": "王子豪",
+        "visited": "",
+        "cgs": "",
+        "amount": 20000.0,
+        "sign_time": "",
+        "blocker": "有客情，客户在客户经理那边犹豫，上门做服务逼单"
+      },
+      {
+        "customer": "深圳市未林森有限公司",
+        "sale": "谢承杰",
+        "visited": "",
+        "cgs": "",
+        "amount": 20000.0,
+        "sign_time": "",
+        "blocker": "客户那边已经确认了，等付款，可能先试一个2000的，推动20000方案"
+      },
+      {
+        "customer": "深圳市雅客日化有限公司",
+        "sale": "蒋汶桃",
+        "visited": "",
+        "cgs": "",
+        "amount": 20000.0,
+        "sign_time": "",
+        "blocker": ""
+      },
+      {
+        "customer": "深圳市吉顺达纸制品有限公司",
+        "sale": "蒋汶桃",
+        "visited": "",
+        "cgs": "",
+        "amount": 20000.0,
+        "sign_time": "",
+        "blocker": ""
+      },
+      {
+        "customer": "深圳市若盛科技有限公司",
+        "sale": "邓晓东",
+        "visited": "",
+        "cgs": "",
+        "amount": 20000.0,
+        "sign_time": "",
+        "blocker": ""
+      },
+      {
+        "customer": "深圳市三嘉达电子科技有限公司",
+        "sale": "夏锐",
+        "visited": "",
+        "cgs": "",
+        "amount": 20000.0,
+        "sign_time": "",
+        "blocker": "需要上门具体实操"
+      },
+      {
+        "customer": "深圳市芯图世纪科技有限公司",
+        "sale": "夏锐",
+        "visited": "",
+        "cgs": "",
+        "amount": 20000.0,
+        "sign_time": "",
+        "blocker": "客户有需求，需要上门实操，针对客户线上线下以及公司管理方面"
+      },
+      {
+        "customer": "深圳蓝丰电子有限公司",
+        "sale": "李彬",
+        "visited": "",
+        "cgs": "",
+        "amount": 20000.0,
+        "sign_time": "",
+        "blocker": ""
+      },
+      {
+        "customer": "深圳市蓝濂科技有限公司",
+        "sale": "牛群",
+        "visited": "",
+        "cgs": "",
+        "amount": 20000.0,
+        "sign_time": "",
+        "blocker": ""
+      },
+      {
+        "customer": "深圳市东仪电子有限公司",
+        "sale": "王金国",
+        "visited": "",
+        "cgs": "",
+        "amount": 20000.0,
+        "sign_time": "",
+        "blocker": "没有运营，业务兼职运营，业务都比较忙，他们没有时间运营和研究awb"
+      },
+      {
+        "customer": "深圳市展辉光电科技有限公司",
+        "sale": "邓晓东",
+        "visited": "",
+        "cgs": "",
+        "amount": 20000.0,
+        "sign_time": "",
+        "blocker": ""
+      },
+      {
+        "customer": "深圳市瑞欣电子科技有限公司",
+        "sale": "刘蓝琳",
+        "visited": "",
+        "cgs": "",
+        "amount": 20000.0,
+        "sign_time": "",
+        "blocker": ""
+      },
+      {
+        "customer": "深圳市一腾供应链有限公司",
+        "sale": "刘嘉艳",
+        "visited": "",
+        "cgs": "",
+        "amount": 20000.0,
+        "sign_time": "",
+        "blocker": ""
+      },
+      {
+        "customer": "深圳市宝隆盛科技有限公司",
+        "sale": "邓晓东",
+        "visited": "",
+        "cgs": "",
+        "amount": 20000.0,
+        "sign_time": "",
+        "blocker": "客户觉得有点贵，自己又懂运营，需要上门实操让他感受便捷后逼单"
+      },
+      {
+        "customer": "深圳市永昌泰电子有限公司",
+        "sale": "邓晓东",
+        "visited": "",
+        "cgs": "",
+        "amount": 20000.0,
+        "sign_time": "",
+        "blocker": ""
+      },
+      {
+        "customer": "深圳酷虎智触实业有限公司",
+        "sale": "李彬",
+        "visited": "",
+        "cgs": "",
+        "amount": 2000.0,
+        "sign_time": "",
+        "blocker": ""
+      },
+      {
+        "customer": "东莞市筑华贸易有限公司",
+        "sale": "陈建国",
+        "visited": "",
+        "cgs": "",
+        "amount": 2000.0,
+        "sign_time": "",
+        "blocker": "上门同步，客户感兴趣，需要针对产品上门做操作"
       }
     ]
   },
