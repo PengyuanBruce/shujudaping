@@ -510,7 +510,7 @@
   <!-- Ⅳ·B 商品成长排名(优品3.0) -->
   <section id="sec-4b">
     <div class="sec-head"><span class="sec-no">Ⅳ·B</span><h2>商品成长排名（优品3.0）</h2>
-      <span class="note">按季度目标达成率降序 · 同时看优爆品与「推p」个人比例 · ≥100% 深绿 / 85–99% 绿 / 70–84% 黄 / 50–69% 橙 / 数据 T+2</span></div>
+      <span class="note">公司级 5 指标 + 个人级（优爆品数 / 目标 / 推P率 / 完成率，按完成率降序） · 源：数据罗盘 ▸ 商品成长 ▸ 优品3.0总览（平台 T+2）</span></div>
     <div class="card" id="goods-rank-body"></div>
   </section>
 
@@ -572,7 +572,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1791781003';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1791788475';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1180,24 +1180,46 @@
   }
 
   // ── Ⅳ·B 商品成长排名（优品3.0）──
+  // 公司级 5 指标 ← youpin3-company.json（优品3.0总览「拍档公司」表，2026-10-12 用户指定）
+  // 个人级 4 指标 ← youpin3-sales-full.json（同名报表「拍档销售」表）
+  // 两块都是**接口直接给的列**，不在前端做除法（见 docs §二十二）。
   function renderGoodsRank(d) {
     const rows = (d.goods_sales || []).slice();
+    const c = (d.youpin_company && d.youpin_company.value != null) ? d.youpin_company : (d.goods || {});
+    const unit = (v, u) => v + '<small class="text-dim"> ' + u + '</small>';
+    let head = '';
+    if (c.value != null || c.target != null) {
+      const cards = [['当前优爆品数', unit(fmt(c.value, 0), '个')],
+                     ['当季度累计目标', fmt(c.target, 0)],
+                     ['当季度累计目标达成率',
+                      '<b class="' + tierClass(c.pct) + '">' + fmtPct(c.pct, 1) + '</b>']];
+      if (c.p4p_products != null) cards.push(['p4p推广中优爆品数', unit(fmt(c.p4p_products, 0), '个')]);
+      if (c.p4p_pct != null) cards.push(['优爆品p4p推广中比例', fmtPct(c.p4p_pct, 1)]);
+      head = '<div class="grid kpi-grid" style="margin:0 0 10px">' + cards.map(function (it) {
+        return '<div class="card"><span class="cap">' + it[0] + '</span><div class="big">' + it[1] + '</div></div>';
+      }).join('') + '</div>' +
+        '<div class="cap">公司级（优品3.0总览·拍档公司） · 数据日期 ' + esc(c.date || '—') + ' · 平台 T+2</div>';
+    }
     if (!rows.length) {
-      $('goods-rank-body').innerHTML = pendingPanel(['每位销售的 优爆品数 + 季度目标 + 达成率（「商品成长▸优品3.0总览」的 pivot 接口，现仅 13/23 人有值）']);
+      $('goods-rank-body').innerHTML = head + pendingPanel([
+        '个人级：每位销售的 优爆品数 / 当季度累计目标 / 推P率 / 完成率',
+        '需要 youpin3-sales-full.json（优品3.0总览·拍档销售表，已改为每日采集）']);
       return;
     }
     rows.sort(function (a, b) { return (num(b.pct) || 0) - (num(a.pct) || 0); });
-    $('goods-rank-body').innerHTML = rows.map(function (r, i) {
-      const w = Math.max(0, Math.min(100, num(r.pct) || 0));
-      // 推p = 该销售的「优爆品p4p推广中比例」（2026-10-09 用户要求：Ⅳ·B 除优爆品外再看推p个人比例）
-      const p4p = num(r.pct_p4p) == null ? ''
-        : '<span class="text-dim">推p <b>' + fmtPct(r.pct_p4p, 1) + '</b></span>';
-      return '<div class="rank-row"><span class="text-dim">' + (i + 1) + '</span><span>' + esc(r.name) + '</span>' +
-        '<span class="rowline" style="margin:0"><span class="text-dim">优爆品 ' + fmt(r.value, 0) + '</span>' +
-        '<span class="text-dim">目标 ' + fmt(r.target, 0) + '</span>' + p4p +
-        '<b class="' + tierClass(r.pct) + '">' + fmtPct(r.pct, 2) + '</b></span>' +
-        '<span class="bar"><i class="' + pctFillClass(r.pct) + '" style="width:' + w + '%"></i></span></div>';
-    }).join('');
+    $('goods-rank-body').innerHTML = head +
+      '<div class="cap" style="margin-top:10px">个人级 · 按完成率降序（优爆品数 / 当季度累计目标 / 推P率 / 完成率）</div>' +
+      rows.map(function (r, i) {
+        const w = Math.max(0, Math.min(100, num(r.pct) || 0));
+        // 推P率 = 该销售的「优爆品p4p推广中比例」（接口直接给，不自己算）
+        const p4p = num(r.pct_p4p) == null ? ''
+          : '<span class="text-dim">推P <b>' + fmtPct(r.pct_p4p, 1) + '</b></span>';
+        return '<div class="rank-row"><span class="text-dim">' + (i + 1) + '</span><span>' + esc(r.name) + '</span>' +
+          '<span class="rowline" style="margin:0"><span class="text-dim">优爆品 ' + fmt(r.value, 0) + '</span>' +
+          '<span class="text-dim">目标 ' + fmt(r.target, 0) + '</span>' + p4p +
+          '<b class="' + tierClass(r.pct) + '">' + fmtPct(r.pct, 2) + '</b></span>' +
+          '<span class="bar"><i class="' + pctFillClass(r.pct) + '" style="width:' + w + '%"></i></span></div>';
+      }).join('');
   }
 
   // ── Ⅵ 商品成长(优品3.0) ──
