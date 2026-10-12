@@ -1,52 +1,52 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-12 15:00",
+  "update_time": "2026-10-12 16:14",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
-    "month_val": 14255124.29,
+    "month_val": 14477327.92,
     "month_target": null,
     "month_pct": null,
-    "quarter_val": 14256524.91,
+    "quarter_val": 15196327.24,
     "quarter_target": null,
     "quarter_pct": null,
-    "month_gap": 14255124.0,
-    "quarter_gap": 14256525.0,
-    "month_val_acp": 1953051.22,
+    "month_gap": 14477328.0,
+    "quarter_gap": 15196327.0,
+    "month_val_acp": 2084089.13,
     "active_clients": 945.0,
     "active_clients_yoy": 1017.0,
     "hit_products": 127517.0,
     "hit_target": 175437.0,
     "hit_pct": 72.7,
     "caliber_note": "公司行=信保实收（数据罗盘首页 GMV实收卡）+ 目标（首页绩效目标卡）；个人行=信保实收（业务目标▸信保▸拍档销售）÷ 个人目标（激励▸激励进展▸FY27-10月激励进展▸小二激励）",
-    "quarter_val_acp": 1952542.74,
+    "quarter_val_acp": 2084089.13,
     "acp_caliber": "激励▸业务目标▸ACP▸拍档▸总实收（2026-10）",
     "hit_p4p_products": 34724.0,
     "hit_p4p_pct": 27.2
   },
   "acp": {
-    "month_val": 1979723.79,
+    "month_val": 2041858.6300000001,
     "month_target": null,
     "month_pct": null,
-    "quarter_val": 1979723.79,
+    "quarter_val": 2041858.6300000001,
     "quarter_target": null,
     "quarter_pct": null,
-    "month_gap": 1979724.0,
-    "quarter_gap": 1979724.0
+    "month_gap": 2041859.0,
+    "quarter_gap": 2041859.0
   },
   "persons": [
     {
       "name": "李彬",
       "role": "销售",
-      "month_val": 3190255.3792736,
+      "month_val": 3304235.3392736,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 3190255.0,
-      "quarter_val": 3190255.3792736,
+      "month_gap": 3304235.0,
+      "quarter_val": 3304235.3392736,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 3190255.0,
+      "incentive_gap": 3304235.0,
       "incentive_ok": false,
       "active_clients": 55.0,
       "active_clients_yoy": 54.0,
@@ -58,15 +58,15 @@
     {
       "name": "汪伟",
       "role": "销售",
-      "month_val": 1841520.3363501597,
+      "month_val": 1928474.9263501598,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 1841520.0,
-      "quarter_val": 1841520.3363501597,
+      "month_gap": 1928475.0,
+      "quarter_val": 1928474.9263501598,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 1841520.0,
+      "incentive_gap": 1928475.0,
       "incentive_ok": false,
       "active_clients": 91.0,
       "active_clients_yoy": 107.0,
@@ -78,15 +78,15 @@
     {
       "name": "陈建国",
       "role": "销售",
-      "month_val": 1305760.5077072098,
+      "month_val": 1349195.44770721,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 1305761.0,
-      "quarter_val": 1305760.5077072098,
+      "month_gap": 1349195.0,
+      "quarter_val": 1349195.44770721,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 1305761.0,
+      "incentive_gap": 1349195.0,
       "incentive_ok": false,
       "active_clients": 92.0,
       "active_clients_yoy": 89.0,
@@ -98,15 +98,15 @@
     {
       "name": "漆螯童",
       "role": "销售",
-      "month_val": 1006959.4248,
+      "month_val": 1038846.0948000001,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 1006959.0,
-      "quarter_val": 1006959.4248,
+      "month_gap": 1038846.0,
+      "quarter_val": 1038846.0948000001,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 1006959.0,
+      "incentive_gap": 1038846.0,
       "incentive_ok": false,
       "active_clients": 81.0,
       "active_clients_yoy": 104.0,
@@ -118,15 +118,15 @@
     {
       "name": "蒋汶桃",
       "role": "销售",
-      "month_val": 931269.2625000001,
+      "month_val": 1028581.9624999999,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 931269.0,
-      "quarter_val": 931269.2625000001,
+      "month_gap": 1028582.0,
+      "quarter_val": 1028581.9624999999,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 931269.0,
+      "incentive_gap": 1028582.0,
       "incentive_ok": false,
       "active_clients": 68.0,
       "active_clients_yoy": 73.0,
@@ -138,15 +138,15 @@
     {
       "name": "夏锐",
       "role": "销售",
-      "month_val": 915408.62,
+      "month_val": 1009604.4500000001,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 915409.0,
-      "quarter_val": 915408.62,
+      "month_gap": 1009604.0,
+      "quarter_val": 1009604.4500000001,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 915409.0,
+      "incentive_gap": 1009604.0,
       "incentive_ok": false,
       "active_clients": 80.0,
       "active_clients_yoy": 90.0,
@@ -158,15 +158,15 @@
     {
       "name": "王子豪",
       "role": "销售",
-      "month_val": 894250.2499999998,
+      "month_val": 986194.0899999999,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 894250.0,
-      "quarter_val": 894250.2499999998,
+      "month_gap": 986194.0,
+      "quarter_val": 986194.0899999999,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 894250.0,
+      "incentive_gap": 986194.0,
       "incentive_ok": false,
       "active_clients": 87.0,
       "active_clients_yoy": 98.0,
@@ -178,15 +178,15 @@
     {
       "name": "汤子豪",
       "role": "销售",
-      "month_val": 845946.4999999999,
+      "month_val": 887191.2900000002,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 845946.0,
-      "quarter_val": 845946.4999999999,
+      "month_gap": 887191.0,
+      "quarter_val": 887191.2900000002,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 845946.0,
+      "incentive_gap": 887191.0,
       "incentive_ok": false,
       "active_clients": 52.0,
       "active_clients_yoy": 45.0,
@@ -198,15 +198,15 @@
     {
       "name": "高国权",
       "role": "销售",
-      "month_val": 438606.8214399999,
+      "month_val": 472428.5214399999,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 438607.0,
-      "quarter_val": 438606.8214399999,
+      "month_gap": 472429.0,
+      "quarter_val": 472428.5214399999,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 438607.0,
+      "incentive_gap": 472429.0,
       "incentive_ok": false,
       "active_clients": 58.0,
       "active_clients_yoy": 52.0,
@@ -218,15 +218,15 @@
     {
       "name": "王凡",
       "role": "销售",
-      "month_val": 340285.89999999997,
+      "month_val": 377686.6599999999,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 340286.0,
-      "quarter_val": 340285.89999999997,
+      "month_gap": 377687.0,
+      "quarter_val": 377686.6599999999,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 340286.0,
+      "incentive_gap": 377687.0,
       "incentive_ok": false,
       "active_clients": 45.0,
       "active_clients_yoy": 62.0,
@@ -236,37 +236,17 @@
       "hit_pct": 87.5
     },
     {
-      "name": "谢承杰",
-      "role": "销售",
-      "month_val": 331167.81,
-      "month_target": null,
-      "month_pct": null,
-      "month_gap": 331168.0,
-      "quarter_val": 331167.81,
-      "quarter_target": null,
-      "quarter_pct": null,
-      "incentive_target": null,
-      "incentive_gap": 331168.0,
-      "incentive_ok": false,
-      "active_clients": 58.0,
-      "active_clients_yoy": 59.0,
-      "hit_products": 5690.0,
-      "time_pct": 35.0,
-      "hit_target": 6936.0,
-      "hit_pct": 82.0
-    },
-    {
       "name": "李怡萍",
       "role": "销售",
-      "month_val": 330178.54999999993,
+      "month_val": 362943.2899999999,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 330179.0,
-      "quarter_val": 330178.54999999993,
+      "month_gap": 362943.0,
+      "quarter_val": 362943.2899999999,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 330179.0,
+      "incentive_gap": 362943.0,
       "incentive_ok": false,
       "active_clients": 50.0,
       "active_clients_yoy": 47.0,
@@ -278,15 +258,15 @@
     {
       "name": "邓晓东",
       "role": "销售",
-      "month_val": 294554.02999999997,
+      "month_val": 319166.8,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 294554.0,
-      "quarter_val": 294554.02999999997,
+      "month_gap": 319167.0,
+      "quarter_val": 319166.8,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 294554.0,
+      "incentive_gap": 319167.0,
       "incentive_ok": false,
       "active_clients": 41.0,
       "active_clients_yoy": 30.0,
@@ -296,17 +276,37 @@
       "hit_pct": 81.1
     },
     {
-      "name": "何尧玲",
+      "name": "谢承杰",
       "role": "销售",
-      "month_val": 180445.58000000005,
+      "month_val": 301941.17,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 180446.0,
-      "quarter_val": 180445.58000000005,
+      "month_gap": 301941.0,
+      "quarter_val": 301941.17,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 180446.0,
+      "incentive_gap": 301941.0,
+      "incentive_ok": false,
+      "active_clients": 58.0,
+      "active_clients_yoy": 59.0,
+      "hit_products": 5690.0,
+      "time_pct": 35.0,
+      "hit_target": 6936.0,
+      "hit_pct": 82.0
+    },
+    {
+      "name": "何尧玲",
+      "role": "销售",
+      "month_val": 189591.13999999998,
+      "month_target": null,
+      "month_pct": null,
+      "month_gap": 189591.0,
+      "quarter_val": 189591.13999999998,
+      "quarter_target": null,
+      "quarter_pct": null,
+      "incentive_target": null,
+      "incentive_gap": 189591.0,
       "incentive_ok": false,
       "active_clients": 25.0,
       "active_clients_yoy": 14.0,
@@ -318,15 +318,15 @@
     {
       "name": "刘蓝琳",
       "role": "销售",
-      "month_val": 114521.63999999998,
+      "month_val": 117410.68999999999,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 114522.0,
-      "quarter_val": 114521.63999999998,
+      "month_gap": 117411.0,
+      "quarter_val": 117410.68999999999,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 114522.0,
+      "incentive_gap": 117411.0,
       "incentive_ok": false,
       "active_clients": 13.0,
       "active_clients_yoy": 14.0,
@@ -338,15 +338,15 @@
     {
       "name": "刘嘉艳",
       "role": "销售",
-      "month_val": 105607.49536000003,
+      "month_val": 110215.45536000002,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 105607.0,
-      "quarter_val": 105607.49536000003,
+      "month_gap": 110215.0,
+      "quarter_val": 110215.45536000002,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 105607.0,
+      "incentive_gap": 110215.0,
       "incentive_ok": false,
       "active_clients": 10.0,
       "active_clients_yoy": 11.0,
@@ -358,15 +358,15 @@
     {
       "name": "罗金填",
       "role": "销售",
-      "month_val": 92340.92,
+      "month_val": 99235.11000000002,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 92341.0,
-      "quarter_val": 92340.92,
+      "month_gap": 99235.0,
+      "quarter_val": 99235.11000000002,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 92341.0,
+      "incentive_gap": 99235.0,
       "incentive_ok": false,
       "active_clients": 10.0,
       "active_clients_yoy": 15.0,
@@ -378,15 +378,15 @@
     {
       "name": "梁诗琪",
       "role": "销售",
-      "month_val": 73369.18999999999,
+      "month_val": 77143.9,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 73369.0,
-      "quarter_val": 73369.18999999999,
+      "month_gap": 77144.0,
+      "quarter_val": 77143.9,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 73369.0,
+      "incentive_gap": 77144.0,
       "incentive_ok": false,
       "active_clients": 5.0,
       "active_clients_yoy": 15.0,
@@ -396,17 +396,37 @@
       "hit_pct": 43.3
     },
     {
-      "name": "王金国",
+      "name": "程碧瑶",
       "role": "销售",
-      "month_val": 59335.96000000001,
+      "month_val": 75229.0,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 59336.0,
-      "quarter_val": 59335.96000000001,
+      "month_gap": 75229.0,
+      "quarter_val": 75229.0,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 59336.0,
+      "incentive_gap": 75229.0,
+      "incentive_ok": false,
+      "active_clients": 7.0,
+      "active_clients_yoy": 17.0,
+      "hit_products": 1971.0,
+      "time_pct": 35.0,
+      "hit_target": 4236.0,
+      "hit_pct": 46.5
+    },
+    {
+      "name": "王金国",
+      "role": "销售",
+      "month_val": 67243.76,
+      "month_target": null,
+      "month_pct": null,
+      "month_gap": 67244.0,
+      "quarter_val": 67243.76,
+      "quarter_target": null,
+      "quarter_pct": null,
+      "incentive_target": null,
+      "incentive_gap": 67244.0,
       "incentive_ok": false,
       "active_clients": 7.0,
       "active_clients_yoy": 11.0,
@@ -418,15 +438,15 @@
     {
       "name": "陈苑英",
       "role": "销售",
-      "month_val": 54534.15,
+      "month_val": 59478.36000000001,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 54534.0,
-      "quarter_val": 54534.15,
+      "month_gap": 59478.0,
+      "quarter_val": 59478.36000000001,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 54534.0,
+      "incentive_gap": 59478.0,
       "incentive_ok": false,
       "active_clients": 3.0,
       "active_clients_yoy": 12.0,
@@ -436,37 +456,17 @@
       "hit_pct": 58.9
     },
     {
-      "name": "程碧瑶",
-      "role": "销售",
-      "month_val": 53247.06999999999,
-      "month_target": null,
-      "month_pct": null,
-      "month_gap": 53247.0,
-      "quarter_val": 53247.06999999999,
-      "quarter_target": null,
-      "quarter_pct": null,
-      "incentive_target": null,
-      "incentive_gap": 53247.0,
-      "incentive_ok": false,
-      "active_clients": 7.0,
-      "active_clients_yoy": 17.0,
-      "hit_products": 1971.0,
-      "time_pct": 35.0,
-      "hit_target": 4236.0,
-      "hit_pct": 46.5
-    },
-    {
       "name": "牛群",
       "role": "销售",
-      "month_val": 34587.99999999999,
+      "month_val": 38713.990000000005,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 34588.0,
-      "quarter_val": 34587.99999999999,
+      "month_gap": 38714.0,
+      "quarter_val": 38713.990000000005,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 34588.0,
+      "incentive_gap": 38714.0,
       "incentive_ok": false,
       "active_clients": 4.0,
       "active_clients_yoy": 6.0,
@@ -490,19 +490,19 @@
       "points": [
         {
           "label": "8月",
-          "val": 76993601.16,
+          "val": 76752894.03,
           "target": 0.0,
           "pct": null
         },
         {
           "label": "9月",
-          "val": 88351746.39,
+          "val": 88339366.14,
           "target": 0.0,
           "pct": null
         },
         {
           "label": "10月",
-          "val": 13434153.4,
+          "val": 14200751.45,
           "target": 0.0,
           "pct": null
         }
@@ -525,7 +525,7 @@
         },
         {
           "label": "10月",
-          "val": 1953051.22,
+          "val": 2084089.13,
           "target": null,
           "pct": null
         }
@@ -539,13 +539,17 @@
     "structure": [
       {
         "name": "在线品数",
-        "count": 2631480.0,
-        "pct": null
+        "count": 2609050.0,
+        "unit": "个",
+        "pct": 4.88748778290949,
+        "pct_label": "优爆品占比"
       },
       {
-        "name": "有优爆品的客户数",
-        "count": 2146.0,
-        "pct": null
+        "name": "当前有优爆品的客户数",
+        "count": 2142.0,
+        "unit": "家",
+        "pct": 88.3298969072165,
+        "pct_label": "占服务中客户"
       }
     ],
     "date": "2026-10-10",
@@ -709,6 +713,22 @@
     }
   ],
   "youpin_company": {
+    "structure": [
+      {
+        "name": "在线品数",
+        "count": 2609050.0,
+        "unit": "个",
+        "pct": 4.88748778290949,
+        "pct_label": "优爆品占比"
+      },
+      {
+        "name": "当前有优爆品的客户数",
+        "count": 2142.0,
+        "unit": "家",
+        "pct": 88.3298969072165,
+        "pct_label": "占服务中客户"
+      }
+    ],
     "date": "2026-10-10",
     "value": 127517.0,
     "target": 175437.0,
@@ -749,16 +769,16 @@
       "industry": "Gifts & Crafts",
       "sales": "王子豪",
       "cur": 67346.28,
-      "prev": 37249.22000000001,
+      "prev": 37249.219999999994,
       "diff": 30097.06
     },
     {
       "name": "深圳市小铁锤珠宝有限公司",
       "industry": "Jewelry, Eyewear, Watches & Accessories",
       "sales": "陈建国",
-      "cur": 56126.0,
+      "cur": 57170.0,
       "prev": 42402.97,
-      "diff": 13723.03
+      "diff": 14767.03
     },
     {
       "name": "深圳市广宏达科技有限公司",
@@ -788,7 +808,7 @@
       "name": "广东伟力德新能源科技有限公司",
       "industry": "Renewable Energy",
       "sales": "陈建国",
-      "cur": 7739.017707209999,
+      "cur": 7739.017707210001,
       "prev": null,
       "diff": 7739.02
     },
@@ -804,16 +824,16 @@
       "name": "深圳市畹澄服饰有限公司",
       "industry": "Apparel & Accessories",
       "sales": "王凡",
-      "cur": 5619.13,
+      "cur": 5810.69,
       "prev": 48.38,
-      "diff": 5570.75
+      "diff": 5762.31
     },
     {
       "name": "深圳市和兴光电技术有限公司",
       "industry": "Electronic Components, Accessories & Telecommunications",
       "sales": "李怡萍",
       "cur": 73.37,
-      "prev": -4755.179999999999,
+      "prev": -4755.180000000003,
       "diff": 4828.55
     },
     {
@@ -839,6 +859,14 @@
       "cur": 2730.0,
       "prev": null,
       "diff": 2730.0
+    },
+    {
+      "name": "深圳市星拓源科技有限公司",
+      "industry": "Mother, Kids & Toys",
+      "sales": "高国权",
+      "cur": 2629.81,
+      "prev": null,
+      "diff": 2629.81
     },
     {
       "name": "深圳市兆珑科技有限公司",
@@ -871,14 +899,6 @@
       "cur": 1871.0,
       "prev": null,
       "diff": 1871.0
-    },
-    {
-      "name": "深圳市星拓源科技有限公司",
-      "industry": "Mother, Kids & Toys",
-      "sales": "高国权",
-      "cur": 1393.6,
-      "prev": null,
-      "diff": 1393.6
     }
   ],
   "yoy_down": [
@@ -887,7 +907,7 @@
       "industry": "Vehicle Accessories, Electronics & Tools",
       "sales": "李彬",
       "cur": null,
-      "prev": 17535732.8206557,
+      "prev": 17535732.820655704,
       "diff": -17535732.82
     },
     {
@@ -895,47 +915,47 @@
       "industry": "Consumer Electronics",
       "sales": "李彬",
       "cur": 1000538.58,
-      "prev": 11528212.169999992,
+      "prev": 11528212.170000004,
       "diff": -10527673.59
     },
     {
       "name": "东莞博格斯科技有限公司",
       "industry": "Pet Supplies",
       "sales": "陈建国",
-      "cur": 250.42000000000002,
-      "prev": 2900668.01,
-      "diff": -2900417.59
+      "cur": 391.62,
+      "prev": 2900668.0100000002,
+      "diff": -2900276.39
     },
     {
       "name": "深圳亿上光科技有限公司",
       "industry": "Beauty",
       "sales": "陈建国",
-      "cur": 11704.5,
+      "cur": 13855.9,
       "prev": 2813446.55,
-      "diff": -2801742.05
+      "diff": -2799590.65
     },
     {
       "name": "深圳牧人行智能制造有限公司",
       "industry": "Home Appliances",
       "sales": "蒋汶桃",
-      "cur": 882.85,
-      "prev": 2522957.5399999996,
-      "diff": -2522074.69
+      "cur": 987.85,
+      "prev": 2522957.54,
+      "diff": -2521969.69
     },
     {
       "name": "深圳市福瑞诺科技有限公司",
       "industry": "Medical devices & Supplies",
       "sales": "李彬",
-      "cur": 4021.89,
-      "prev": 2457460.8500000006,
-      "diff": -2453438.96
+      "cur": 4156.889999999999,
+      "prev": 2457460.850000001,
+      "diff": -2453303.96
     },
     {
       "name": "深圳市立泰能源科技有限公司",
       "industry": "Renewable Energy",
       "sales": "蒋汶桃",
       "cur": 154146.25,
-      "prev": 2455861.76,
+      "prev": 2455861.7600000002,
       "diff": -2301715.51
     },
     {
@@ -950,8 +970,8 @@
       "name": "深圳市中和盛科技有限公司",
       "industry": "Fabrication Services",
       "sales": "夏锐",
-      "cur": 133059.52999999997,
-      "prev": 2118173.1299999994,
+      "cur": 133059.53,
+      "prev": 2118173.13,
       "diff": -1985113.6
     },
     {
@@ -967,7 +987,7 @@
       "industry": "Consumer Electronics",
       "sales": "汪伟",
       "cur": 26535.3,
-      "prev": 1924718.3001143993,
+      "prev": 1924718.3001143995,
       "diff": -1898183.0
     },
     {
@@ -975,31 +995,31 @@
       "industry": "Home Appliances",
       "sales": "蒋汶桃",
       "cur": 41095.56,
-      "prev": 1926156.8392559995,
+      "prev": 1926156.8392560002,
       "diff": -1885061.28
     },
     {
       "name": "深圳市鸿泰门窗有限公司",
       "industry": "Construction & Real Estate",
       "sales": "陈建国",
-      "cur": 125504.24,
-      "prev": 1996776.1500000015,
-      "diff": -1871271.91
+      "cur": 136922.4,
+      "prev": 1996776.1500000001,
+      "diff": -1859853.75
     },
     {
       "name": "深圳蓝丰电子有限公司",
       "industry": "Commercial Equipment & Machinery",
       "sales": "李彬",
-      "cur": 7535.0,
-      "prev": 1870869.6600000001,
-      "diff": -1863334.66
+      "cur": 11799.0,
+      "prev": 1870869.66,
+      "diff": -1859070.66
     },
     {
       "name": "深圳彩虹源科技有限责任公司",
       "industry": "Commercial Equipment & Machinery",
       "sales": "陈建国",
       "cur": 80494.88,
-      "prev": 1709397.87,
+      "prev": 1709397.8699999999,
       "diff": -1628902.99
     },
     {
@@ -1007,7 +1027,7 @@
       "industry": "Home & Garden",
       "sales": "陈建国",
       "cur": 169448.63,
-      "prev": 1668056.5300000003,
+      "prev": 1668056.53,
       "diff": -1498607.9
     },
     {
@@ -1015,7 +1035,7 @@
       "industry": "Construction & Real Estate",
       "sales": "李彬",
       "cur": 19793.739999999998,
-      "prev": 1478695.37,
+      "prev": 1478695.3700000003,
       "diff": -1458901.63
     },
     {
@@ -1023,7 +1043,7 @@
       "industry": "Sports & Entertainment",
       "sales": "李彬",
       "cur": 11265.0,
-      "prev": 1449094.3699999999,
+      "prev": 1449094.3700000003,
       "diff": -1437829.37
     },
     {
@@ -1031,7 +1051,7 @@
       "industry": "Consumer Electronics",
       "sales": "汪伟",
       "cur": 6175.77,
-      "prev": 1439086.7496502388,
+      "prev": 1439086.749650239,
       "diff": -1432910.98
     },
     {
@@ -1072,7 +1092,7 @@
     }
   ],
   "panel": {
-    "total": 2444.0,
+    "total": 2442.0,
     "checked": 7478.0,
     "full3w": 971,
     "sprint": 190,
@@ -1084,6 +1104,7 @@
     "note": "9610 打标订单（来源：一拍档物流服务商后台订单列表；按线路汇总 · 全部历史）",
     "update": "2026-10-12",
     "group_label": "线路",
+    "detail_kind": "order",
     "totals": {
       "customers": 36,
       "orders": 179,
@@ -1093,7 +1114,11 @@
         "USD"
       ],
       "lines": 5,
-      "lines_active": 3
+      "lines_active": 3,
+      "owners_matched": 36,
+      "owners_total": 36,
+      "owners_fallback": 0,
+      "owner_source": "策略中心明细（当月）"
     },
     "by_line": [
       {
@@ -1117,256 +1142,1973 @@
     ],
     "detail": [
       {
-        "customer": "深圳市元合诚科技有限公司",
-        "orders": 38,
-        "declared": 2096.0,
-        "last_order": "2026-09-14 15:18",
-        "line": "无忧全球9610小包DDP_标准(标准)"
-      },
-      {
-        "customer": "深圳鑫生力科技有限公司",
-        "orders": 34,
-        "declared": 12246.0,
-        "last_order": "2026-10-08 20:12",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳云飞扬化妆品有限公司",
-        "orders": 13,
-        "declared": 2880.0,
-        "last_order": "2023-08-31 14:19",
-        "line": "无忧9610SKA专线(优选)"
+        "customer": "深圳市陆洋电子科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02018763298",
+        "amount": 2520.0,
+        "currency": "USD",
+        "time_ms": 1791777609000,
+        "time": "2026-10-12 12:00",
+        "owner": "汪伟",
+        "owner_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
-        "orders": 13,
-        "declared": 7157.0,
-        "last_order": "2026-10-12 12:00",
-        "line": "无忧全球9610专线DDP(标准)"
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS02018628028",
+        "amount": 100.0,
+        "currency": "USD",
+        "time_ms": 1791773613000,
+        "time": "2026-10-12 10:53",
+        "owner": "汪伟",
+        "owner_from": "strategy"
       },
       {
-        "customer": "深圳市德创纪元科技有限公司",
-        "orders": 7,
-        "declared": 1469.0,
-        "last_order": "2026-09-29 11:31",
-        "line": "无忧全球9610专线DDP(标准)"
+        "customer": "深圳市陆洋电子科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS02015334978",
+        "amount": 50.0,
+        "currency": "USD",
+        "time_ms": 1791597103000,
+        "time": "2026-10-10 09:51",
+        "owner": "汪伟",
+        "owner_from": "strategy"
       },
       {
-        "customer": "深圳市百乐康科技有限公司",
-        "orders": 7,
-        "declared": 1903.3,
-        "last_order": "2026-10-08 10:22",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳大塘科技电子有限公司",
-        "orders": 6,
-        "declared": 3725.94,
-        "last_order": "2026-09-22 16:25",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳市威斯尼科技有限公司",
-        "orders": 6,
-        "declared": 762.9,
-        "last_order": "2026-09-30 11:49",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳市博悦展示品有限公司",
-        "orders": 5,
-        "declared": 3339.57,
-        "last_order": "2026-09-18 14:41",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳市布拉沃国际实业有限公司",
-        "orders": 5,
-        "declared": 4634.0,
-        "last_order": "2026-09-22 13:55",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳市爱铂科技有限公司",
-        "orders": 5,
-        "declared": 1709.35,
-        "last_order": "2026-10-09 11:12",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳市新生力科技有限公司",
-        "orders": 3,
-        "declared": 430.0,
-        "last_order": "2026-10-08 18:55",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳市辉波诚科技有限公司",
-        "orders": 3,
-        "declared": 5012.04,
-        "last_order": "2026-09-30 16:13",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "惠州奇锋商贸有限公司",
-        "orders": 2,
-        "declared": 254.0,
-        "last_order": "2026-09-20 11:50",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳宏颖科技有限公司",
-        "orders": 2,
-        "declared": 206.6,
-        "last_order": "2026-08-31 16:14",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳市伟腾鑫科技有限公司",
-        "orders": 2,
-        "declared": 445.22,
-        "last_order": "2026-08-01 13:47",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳市泓泰印刷包装制品有限公司",
-        "orders": 2,
-        "declared": 453.0,
-        "last_order": "2026-08-13 09:17",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳市海飞源科技有限公司",
-        "orders": 2,
-        "declared": 1247.0,
-        "last_order": "2026-08-08 11:07",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳市润之行商标制作有限公司",
-        "orders": 2,
-        "declared": 40.3,
-        "last_order": "2026-10-07 13:42",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳市路通电子有限公司",
-        "orders": 2,
-        "declared": 2922.0,
-        "last_order": "2026-09-28 11:29",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳市阿桌数码科技有限公司",
-        "orders": 2,
-        "declared": 27.6,
-        "last_order": "2026-08-05 16:45",
-        "line": "无忧全球9610小包DDP_标准(标准)"
-      },
-      {
-        "customer": "深圳市阿贝丝化妆用具有限公司",
-        "orders": 2,
-        "declared": 360.0,
-        "last_order": "2026-07-20 15:19",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳市风都科技有限公司",
-        "orders": 2,
-        "declared": 593.0,
-        "last_order": "2026-09-24 18:41",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "鸿晖(深圳)科技有限公司",
-        "orders": 2,
-        "declared": 541.5,
-        "last_order": "2026-09-16 15:02",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳信广鑫仪器设备有限公司",
-        "orders": 1,
-        "declared": 60.0,
-        "last_order": "2026-09-21 13:49",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳华声科技有限公司",
-        "orders": 1,
-        "declared": 180.0,
-        "last_order": "2026-09-24 10:48",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳市古石科技有限公司",
-        "orders": 1,
-        "declared": 10.0,
-        "last_order": "2026-09-24 14:54",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳市哇哦暖通设备有限公司",
-        "orders": 1,
-        "declared": 1780.0,
-        "last_order": "2026-09-16 11:20",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳市四通广行实业有限公司",
-        "orders": 1,
-        "declared": 29.4,
-        "last_order": "2026-09-14 15:57",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳市圳烨科技有限公司",
-        "orders": 1,
-        "declared": 5.0,
-        "last_order": "2026-09-30 11:39",
-        "line": "无忧全球9610专线DDP(标准)"
-      },
-      {
-        "customer": "深圳市思攀达科技有限公司",
-        "orders": 1,
-        "declared": 30.92,
-        "last_order": "2026-08-06 08:48",
-        "line": "无忧全球9610小包DDP_标准(标准)"
-      },
-      {
-        "customer": "深圳市日盛华科技有限公司",
-        "orders": 1,
-        "declared": 160.0,
-        "last_order": "2026-07-30 17:27",
-        "line": "无忧全球9610小包DDP_标准(标准)"
-      },
-      {
-        "customer": "深圳市灵视创科技有限公司",
-        "orders": 1,
-        "declared": 348.0,
-        "last_order": "2026-10-07 11:14",
-        "line": "无忧全球9610专线DDP(标准)"
+        "customer": "深圳市陆洋电子科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS02015334922",
+        "amount": 80.0,
+        "currency": "USD",
+        "time_ms": 1791596832000,
+        "time": "2026-10-10 09:47",
+        "owner": "汪伟",
+        "owner_from": "strategy"
       },
       {
         "customer": "深圳市爱思考制冷设备有限公司",
-        "orders": 1,
-        "declared": 2640.0,
-        "last_order": "2026-10-09 19:10",
-        "line": "无忧全球9610专线DDP(标准)"
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02015172004",
+        "amount": 2640.0,
+        "currency": "USD",
+        "time_ms": 1791544207000,
+        "time": "2026-10-09 19:10",
+        "owner": "陈建国",
+        "owner_from": "strategy"
       },
       {
-        "customer": "深圳市美昕实业有限公司",
-        "orders": 1,
-        "declared": 180.0,
-        "last_order": "2026-09-24 11:42",
-        "line": "无忧全球9610专线DDP(标准)"
+        "customer": "深圳市爱铂科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02013201404",
+        "amount": 1125.0,
+        "currency": "USD",
+        "time_ms": 1791515522000,
+        "time": "2026-10-09 11:12",
+        "owner": "漆螯童",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02012526314",
+        "amount": 413.0,
+        "currency": "USD",
+        "time_ms": 1791461562000,
+        "time": "2026-10-08 20:12",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市新生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02012283549",
+        "amount": 124.0,
+        "currency": "USD",
+        "time_ms": 1791456908000,
+        "time": "2026-10-08 18:55",
+        "owner": "夏锐",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市爱铂科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02011338126",
+        "amount": 49.2,
+        "currency": "USD",
+        "time_ms": 1791441822000,
+        "time": "2026-10-08 14:43",
+        "owner": "漆螯童",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市百乐康科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02010447103",
+        "amount": 50.0,
+        "currency": "USD",
+        "time_ms": 1791426132000,
+        "time": "2026-10-08 10:22",
+        "owner": "夏锐",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02009961066",
+        "amount": 275.0,
+        "currency": "USD",
+        "time_ms": 1791376398000,
+        "time": "2026-10-07 20:33",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02009934077",
+        "amount": 410.0,
+        "currency": "USD",
+        "time_ms": 1791373562000,
+        "time": "2026-10-07 19:46",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02009745953",
+        "amount": 410.0,
+        "currency": "USD",
+        "time_ms": 1791370984000,
+        "time": "2026-10-07 19:03",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02009745842",
+        "amount": 410.0,
+        "currency": "USD",
+        "time_ms": 1791369231000,
+        "time": "2026-10-07 18:33",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02009745767",
+        "amount": 410.0,
+        "currency": "USD",
+        "time_ms": 1791368383000,
+        "time": "2026-10-07 18:19",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市润之行商标制作有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02009043283",
+        "amount": 2.3,
+        "currency": "USD",
+        "time_ms": 1791351734000,
+        "time": "2026-10-07 13:42",
+        "owner": "邓晓东",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市灵视创科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02008908025",
+        "amount": 348.0,
+        "currency": "USD",
+        "time_ms": 1791342850000,
+        "time": "2026-10-07 11:14",
+        "owner": "陈建国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市爱铂科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02008666000",
+        "amount": 135.0,
+        "currency": "USD",
+        "time_ms": 1791342118000,
+        "time": "2026-10-07 11:01",
+        "owner": "漆螯童",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市新生力科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS02008071952",
+        "amount": 54.0,
+        "currency": "USD",
+        "time_ms": 1791276612000,
+        "time": "2026-10-06 16:50",
+        "owner": "夏锐",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02007369857",
+        "amount": 413.0,
+        "currency": "USD",
+        "time_ms": 1791255964000,
+        "time": "2026-10-06 11:06",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02006694945",
+        "amount": 410.0,
+        "currency": "USD",
+        "time_ms": 1791187998000,
+        "time": "2026-10-05 16:13",
+        "owner": "高国权",
+        "owner_from": "strategy"
       },
       {
         "customer": "深圳市龙腾特科技有限公司",
-        "orders": 1,
-        "declared": 520.0,
-        "last_order": "2026-10-04 17:24",
-        "line": "无忧全球9610专线DDP(标准)"
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02005830635",
+        "amount": 520.0,
+        "currency": "USD",
+        "time_ms": 1791105854000,
+        "time": "2026-10-04 17:24",
+        "owner": "李怡萍",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02003562386",
+        "amount": 410.0,
+        "currency": "USD",
+        "time_ms": 1790764334000,
+        "time": "2026-09-30 18:32",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02003265267",
+        "amount": 550.0,
+        "currency": "USD",
+        "time_ms": 1790757915000,
+        "time": "2026-09-30 16:45",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市辉波诚科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02003184465",
+        "amount": 2490.0,
+        "currency": "USD",
+        "time_ms": 1790756028000,
+        "time": "2026-09-30 16:13",
+        "owner": "罗金填",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市辉波诚科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02003157480",
+        "amount": 2490.0,
+        "currency": "USD",
+        "time_ms": 1790755933000,
+        "time": "2026-09-30 16:12",
+        "owner": "罗金填",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市威斯尼科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02002374333",
+        "amount": 347.4,
+        "currency": "USD",
+        "time_ms": 1790740162000,
+        "time": "2026-09-30 11:49",
+        "owner": "陈建国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市圳烨科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02002293316",
+        "amount": 5.0,
+        "currency": "USD",
+        "time_ms": 1790739571000,
+        "time": "2026-09-30 11:39",
+        "owner": "程碧瑶",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02001645143",
+        "amount": 390.0,
+        "currency": "USD",
+        "time_ms": 1790691178000,
+        "time": "2026-09-29 22:12",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02001645045",
+        "amount": 275.0,
+        "currency": "USD",
+        "time_ms": 1790688580000,
+        "time": "2026-09-29 21:29",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02001429993",
+        "amount": 275.0,
+        "currency": "USD",
+        "time_ms": 1790687436000,
+        "time": "2026-09-29 21:10",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02001510551",
+        "amount": 290.0,
+        "currency": "USD",
+        "time_ms": 1790683406000,
+        "time": "2026-09-29 20:03",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02001402276",
+        "amount": 275.0,
+        "currency": "USD",
+        "time_ms": 1790677708000,
+        "time": "2026-09-29 18:28",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02001294893",
+        "amount": 275.0,
+        "currency": "USD",
+        "time_ms": 1790676111000,
+        "time": "2026-09-29 18:01",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市陆洋电子科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02001078584",
+        "amount": 190.0,
+        "currency": "USD",
+        "time_ms": 1790672191000,
+        "time": "2026-09-29 16:56",
+        "owner": "汪伟",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02000970130",
+        "amount": 275.0,
+        "currency": "USD",
+        "time_ms": 1790669859000,
+        "time": "2026-09-29 16:17",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市德创纪元科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01999944307",
+        "amount": 189.0,
+        "currency": "USD",
+        "time_ms": 1790652706000,
+        "time": "2026-09-29 11:31",
+        "owner": "陈建国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市德创纪元科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01999512370",
+        "amount": 180.0,
+        "currency": "USD",
+        "time_ms": 1790645417000,
+        "time": "2026-09-29 09:30",
+        "owner": "陈建国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01998810484",
+        "amount": 275.0,
+        "currency": "USD",
+        "time_ms": 1790586957000,
+        "time": "2026-09-28 17:15",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01998756457",
+        "amount": 275.0,
+        "currency": "USD",
+        "time_ms": 1790586576000,
+        "time": "2026-09-28 17:09",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市百乐康科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01998054239",
+        "amount": 1350.0,
+        "currency": "USD",
+        "time_ms": 1790577903000,
+        "time": "2026-09-28 14:45",
+        "owner": "夏锐",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市路通电子有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01997217989",
+        "amount": 1461.0,
+        "currency": "USD",
+        "time_ms": 1790566192000,
+        "time": "2026-09-28 11:29",
+        "owner": "漆螯童",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01993923511",
+        "amount": 275.0,
+        "currency": "USD",
+        "time_ms": 1790250243000,
+        "time": "2026-09-24 19:44",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01993734995",
+        "amount": 275.0,
+        "currency": "USD",
+        "time_ms": 1790249901000,
+        "time": "2026-09-24 19:38",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01993842807",
+        "amount": 275.0,
+        "currency": "USD",
+        "time_ms": 1790249231000,
+        "time": "2026-09-24 19:27",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01993788817",
+        "amount": 410.0,
+        "currency": "USD",
+        "time_ms": 1790248146000,
+        "time": "2026-09-24 19:09",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市风都科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01993734797",
+        "amount": 323.0,
+        "currency": "USD",
+        "time_ms": 1790246474000,
+        "time": "2026-09-24 18:41",
+        "owner": "汪伟",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01993896308",
+        "amount": 390.0,
+        "currency": "USD",
+        "time_ms": 1790246352000,
+        "time": "2026-09-24 18:39",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市风都科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01993842609",
+        "amount": 270.0,
+        "currency": "USD",
+        "time_ms": 1790246138000,
+        "time": "2026-09-24 18:35",
+        "owner": "汪伟",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01993842475",
+        "amount": 390.0,
+        "currency": "USD",
+        "time_ms": 1790245018000,
+        "time": "2026-09-24 18:16",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01993653368",
+        "amount": 390.0,
+        "currency": "USD",
+        "time_ms": 1790241149000,
+        "time": "2026-09-24 17:12",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01993545514",
+        "amount": 390.0,
+        "currency": "USD",
+        "time_ms": 1790240207000,
+        "time": "2026-09-24 16:56",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01993410900",
+        "amount": 410.0,
+        "currency": "USD",
+        "time_ms": 1790239128000,
+        "time": "2026-09-24 16:38",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01993464693",
+        "amount": 410.0,
+        "currency": "USD",
+        "time_ms": 1790238732000,
+        "time": "2026-09-24 16:32",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01993491132",
+        "amount": 410.0,
+        "currency": "USD",
+        "time_ms": 1790237977000,
+        "time": "2026-09-24 16:19",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市古石科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01993005914",
+        "amount": 10.0,
+        "currency": "USD",
+        "time_ms": 1790232878000,
+        "time": "2026-09-24 14:54",
+        "owner": "汪伟",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01993059498",
+        "amount": 410.0,
+        "currency": "USD",
+        "time_ms": 1790232785000,
+        "time": "2026-09-24 14:53",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01993059258",
+        "amount": 410.0,
+        "currency": "USD",
+        "time_ms": 1790232198000,
+        "time": "2026-09-24 14:43",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01992951818",
+        "amount": 410.0,
+        "currency": "USD",
+        "time_ms": 1790231396000,
+        "time": "2026-09-24 14:29",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市美昕实业有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01992438984",
+        "amount": 180.0,
+        "currency": "USD",
+        "time_ms": 1790221332000,
+        "time": "2026-09-24 11:42",
+        "owner": "牛群",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳华声科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01992249731",
+        "amount": 180.0,
+        "currency": "USD",
+        "time_ms": 1790218130000,
+        "time": "2026-09-24 10:48",
+        "owner": "漆螯童",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市陆洋电子科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01992411183",
+        "amount": 510.0,
+        "currency": "USD",
+        "time_ms": 1790218106000,
+        "time": "2026-09-24 10:48",
+        "owner": "汪伟",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市陆洋电子科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01992033428",
+        "amount": 650.0,
+        "currency": "USD",
+        "time_ms": 1790213971000,
+        "time": "2026-09-24 09:39",
+        "owner": "汪伟",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳鑫生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01991250721",
+        "amount": 275.0,
+        "currency": "USD",
+        "time_ms": 1790160658000,
+        "time": "2026-09-23 18:50",
+        "owner": "高国权",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳大塘科技电子有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01988550099",
+        "amount": 60.0,
+        "currency": "USD",
+        "time_ms": 1790065530000,
+        "time": "2026-09-22 16:25",
+        "owner": "李彬",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市辉波诚科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01987767603",
+        "amount": 32.04,
+        "currency": "USD",
+        "time_ms": 1790056577000,
+        "time": "2026-09-22 13:56",
+        "owner": "罗金填",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市布拉沃国际实业有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01987686742",
+        "amount": 1194.0,
+        "currency": "USD",
+        "time_ms": 1790056546000,
+        "time": "2026-09-22 13:55",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳信广鑫仪器设备有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01984878990",
+        "amount": 60.0,
+        "currency": "USD",
+        "time_ms": 1789969777000,
+        "time": "2026-09-21 13:49",
+        "owner": "蒋汶桃",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市路通电子有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01984770247",
+        "amount": 1461.0,
+        "currency": "USD",
+        "time_ms": 1789963085000,
+        "time": "2026-09-21 11:58",
+        "owner": "漆螯童",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "惠州奇锋商贸有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01982178469",
+        "amount": 34.0,
+        "currency": "USD",
+        "time_ms": 1789876235000,
+        "time": "2026-09-20 11:50",
+        "owner": "蒋汶桃",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳大塘科技电子有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01982205292",
+        "amount": 143.6,
+        "currency": "USD",
+        "time_ms": 1789875288000,
+        "time": "2026-09-20 11:34",
+        "owner": "李彬",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市陆洋电子科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01980369381",
+        "amount": 274.0,
+        "currency": "USD",
+        "time_ms": 1789720144000,
+        "time": "2026-09-18 16:29",
+        "owner": "汪伟",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市博悦展示品有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01979775690",
+        "amount": 1000.0,
+        "currency": "USD",
+        "time_ms": 1789713711000,
+        "time": "2026-09-18 14:41",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市博悦展示品有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01979964211",
+        "amount": 796.0,
+        "currency": "USD",
+        "time_ms": 1789713512000,
+        "time": "2026-09-18 14:38",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市布拉沃国际实业有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01979316093",
+        "amount": 726.0,
+        "currency": "USD",
+        "time_ms": 1789701052000,
+        "time": "2026-09-18 11:10",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市博悦展示品有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01977426010",
+        "amount": 676.0,
+        "currency": "USD",
+        "time_ms": 1789627149000,
+        "time": "2026-09-17 14:39",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市陆洋电子科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01977264986",
+        "amount": 900.0,
+        "currency": "USD",
+        "time_ms": 1789627120000,
+        "time": "2026-09-17 14:38",
+        "owner": "汪伟",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "惠州奇锋商贸有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01976292984",
+        "amount": 220.0,
+        "currency": "USD",
+        "time_ms": 1789607146000,
+        "time": "2026-09-17 09:05",
+        "owner": "蒋汶桃",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市陆洋电子科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01975887843",
+        "amount": 1050.0,
+        "currency": "USD",
+        "time_ms": 1789552902000,
+        "time": "2026-09-16 18:01",
+        "owner": "汪伟",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "鸿晖(深圳)科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01975185884",
+        "amount": 229.0,
+        "currency": "USD",
+        "time_ms": 1789542141000,
+        "time": "2026-09-16 15:02",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市百乐康科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01974888166",
+        "amount": 99.0,
+        "currency": "USD",
+        "time_ms": 1789532549000,
+        "time": "2026-09-16 12:22",
+        "owner": "夏锐",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市百乐康科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01974726519",
+        "amount": 99.0,
+        "currency": "USD",
+        "time_ms": 1789532139000,
+        "time": "2026-09-16 12:15",
+        "owner": "夏锐",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市哇哦暖通设备有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01974564412",
+        "amount": 1780.0,
+        "currency": "USD",
+        "time_ms": 1789528833000,
+        "time": "2026-09-16 11:20",
+        "owner": "程碧瑶",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市德创纪元科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01974321991",
+        "amount": 300.0,
+        "currency": "USD",
+        "time_ms": 1789526772000,
+        "time": "2026-09-16 10:46",
+        "owner": "陈建国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市德创纪元科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01973484010",
+        "amount": 300.0,
+        "currency": "USD",
+        "time_ms": 1789459639000,
+        "time": "2026-09-15 16:07",
+        "owner": "陈建国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市德创纪元科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01972026605",
+        "amount": 300.0,
+        "currency": "USD",
+        "time_ms": 1789438244000,
+        "time": "2026-09-15 10:10",
+        "owner": "陈建国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市四通广行实业有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01970460929",
+        "amount": 29.4,
+        "currency": "USD",
+        "time_ms": 1789372672000,
+        "time": "2026-09-14 15:57",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970352420",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789370313000,
+        "time": "2026-09-14 15:18",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970325743",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789370312000,
+        "time": "2026-09-14 15:18",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970514327",
+        "amount": 96.0,
+        "currency": "USD",
+        "time_ms": 1789370257000,
+        "time": "2026-09-14 15:17",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970487170",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789370163000,
+        "time": "2026-09-14 15:16",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970325675",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789370091000,
+        "time": "2026-09-14 15:14",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970514215",
+        "amount": 96.0,
+        "currency": "USD",
+        "time_ms": 1789369948000,
+        "time": "2026-09-14 15:12",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970136829",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789369885000,
+        "time": "2026-09-14 15:11",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970433323",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789369883000,
+        "time": "2026-09-14 15:11",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970325530",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789369679000,
+        "time": "2026-09-14 15:07",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970514122",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789369679000,
+        "time": "2026-09-14 15:07",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970244905",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789369571000,
+        "time": "2026-09-14 15:06",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970190573",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789368201000,
+        "time": "2026-09-14 14:43",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970136435",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789368145000,
+        "time": "2026-09-14 14:42",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01969974821",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789368003000,
+        "time": "2026-09-14 14:40",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970244292",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789367700000,
+        "time": "2026-09-14 14:35",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970055598",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789367626000,
+        "time": "2026-09-14 14:33",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970163338",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789367465000,
+        "time": "2026-09-14 14:31",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970136213",
+        "amount": 96.0,
+        "currency": "USD",
+        "time_ms": 1789367409000,
+        "time": "2026-09-14 14:30",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970055489",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789367213000,
+        "time": "2026-09-14 14:26",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970028647",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789367102000,
+        "time": "2026-09-14 14:25",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970082372",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789367023000,
+        "time": "2026-09-14 14:23",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01969920990",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789366880000,
+        "time": "2026-09-14 14:21",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970190065",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789366840000,
+        "time": "2026-09-14 14:20",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01969866785",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789366061000,
+        "time": "2026-09-14 14:07",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01969812808",
+        "amount": 72.0,
+        "currency": "USD",
+        "time_ms": 1789365838000,
+        "time": "2026-09-14 14:03",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970082037",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789365775000,
+        "time": "2026-09-14 14:02",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01970055095",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789365764000,
+        "time": "2026-09-14 14:02",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01969785962",
+        "amount": 96.0,
+        "currency": "USD",
+        "time_ms": 1789365459000,
+        "time": "2026-09-14 13:57",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01969704959",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789365126000,
+        "time": "2026-09-14 13:52",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01969704894",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789364833000,
+        "time": "2026-09-14 13:47",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01969758121",
+        "amount": 72.0,
+        "currency": "USD",
+        "time_ms": 1789357613000,
+        "time": "2026-09-14 11:46",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01969650234",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789357545000,
+        "time": "2026-09-14 11:45",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01969758085",
+        "amount": 72.0,
+        "currency": "USD",
+        "time_ms": 1789357423000,
+        "time": "2026-09-14 11:43",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳大塘科技电子有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01969758059",
+        "amount": 1132.2,
+        "currency": "USD",
+        "time_ms": 1789357357000,
+        "time": "2026-09-14 11:42",
+        "owner": "李彬",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01969515661",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789357338000,
+        "time": "2026-09-14 11:42",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01969218959",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789356434000,
+        "time": "2026-09-14 11:27",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01969407555",
+        "amount": 24.0,
+        "currency": "USD",
+        "time_ms": 1789355879000,
+        "time": "2026-09-14 11:17",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01969353041",
+        "amount": 48.0,
+        "currency": "USD",
+        "time_ms": 1789354145000,
+        "time": "2026-09-14 10:49",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市威斯尼科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01967004139",
+        "amount": 22.0,
+        "currency": "USD",
+        "time_ms": 1789128078000,
+        "time": "2026-09-11 20:01",
+        "owner": "陈建国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市博悦展示品有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01966734109",
+        "amount": 184.3,
+        "currency": "USD",
+        "time_ms": 1789120081000,
+        "time": "2026-09-11 17:48",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市百乐康科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01965384747",
+        "amount": 71.3,
+        "currency": "USD",
+        "time_ms": 1789097116000,
+        "time": "2026-09-11 11:25",
+        "owner": "夏锐",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市陆洋电子科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01964439604",
+        "amount": 88.0,
+        "currency": "USD",
+        "time_ms": 1789033588000,
+        "time": "2026-09-10 17:46",
+        "owner": "汪伟",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市威斯尼科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01962468313",
+        "amount": 211.5,
+        "currency": "USD",
+        "time_ms": 1788947288000,
+        "time": "2026-09-09 17:48",
+        "owner": "陈建国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01958715071",
+        "amount": 80.0,
+        "currency": "USD",
+        "time_ms": 1788839552000,
+        "time": "2026-09-08 11:52",
+        "owner": "王金国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市陆洋电子科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01953450367",
+        "amount": 345.0,
+        "currency": "USD",
+        "time_ms": 1788746550000,
+        "time": "2026-09-07 10:02",
+        "owner": "汪伟",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市威斯尼科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01952748085",
+        "amount": 80.0,
+        "currency": "USD",
+        "time_ms": 1788666980000,
+        "time": "2026-09-06 11:56",
+        "owner": "陈建国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市威斯尼科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01951317833",
+        "amount": 22.0,
+        "currency": "USD",
+        "time_ms": 1788603274000,
+        "time": "2026-09-05 18:14",
+        "owner": "陈建国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市威斯尼科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01950669830",
+        "amount": 80.0,
+        "currency": "USD",
+        "time_ms": 1788601785000,
+        "time": "2026-09-05 17:49",
+        "owner": "陈建国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市陆洋电子科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01939032703",
+        "amount": 400.0,
+        "currency": "USD",
+        "time_ms": 1788245218000,
+        "time": "2026-09-01 14:46",
+        "owner": "汪伟",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳宏颖科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01937709168",
+        "amount": 20.6,
+        "currency": "USD",
+        "time_ms": 1788164040000,
+        "time": "2026-08-31 16:14",
+        "owner": "漆螯童",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市百乐康科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01921266276",
+        "amount": 119.0,
+        "currency": "USD",
+        "time_ms": 1787626669000,
+        "time": "2026-08-25 10:57",
+        "owner": "夏锐",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市百乐康科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01919646149",
+        "amount": 115.0,
+        "currency": "USD",
+        "time_ms": 1787555571000,
+        "time": "2026-08-24 15:12",
+        "owner": "夏锐",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳大塘科技电子有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01908684855",
+        "amount": 400.0,
+        "currency": "USD",
+        "time_ms": 1787125837000,
+        "time": "2026-08-19 15:50",
+        "owner": "李彬",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "鸿晖(深圳)科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01901529111",
+        "amount": 312.5,
+        "currency": "USD",
+        "time_ms": 1786930918000,
+        "time": "2026-08-17 09:41",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市博悦展示品有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01898478949",
+        "amount": 683.27,
+        "currency": "USD",
+        "time_ms": 1786788782000,
+        "time": "2026-08-15 18:13",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市泓泰印刷包装制品有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01892079458",
+        "amount": 243.0,
+        "currency": "USD",
+        "time_ms": 1786583850000,
+        "time": "2026-08-13 09:17",
+        "owner": "李彬",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市泓泰印刷包装制品有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01893456024",
+        "amount": 210.0,
+        "currency": "USD",
+        "time_ms": 1786583554000,
+        "time": "2026-08-13 09:12",
+        "owner": "李彬",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市润之行商标制作有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01888515771",
+        "amount": 38.0,
+        "currency": "USD",
+        "time_ms": 1786439896000,
+        "time": "2026-08-11 17:18",
+        "owner": "邓晓东",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市布拉沃国际实业有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01881711709",
+        "amount": 900.0,
+        "currency": "USD",
+        "time_ms": 1786182816000,
+        "time": "2026-08-08 17:53",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳宏颖科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01881765603",
+        "amount": 186.0,
+        "currency": "USD",
+        "time_ms": 1786179458000,
+        "time": "2026-08-08 16:57",
+        "owner": "漆螯童",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市海飞源科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01881900186",
+        "amount": 1072.0,
+        "currency": "USD",
+        "time_ms": 1786158476000,
+        "time": "2026-08-08 11:07",
+        "owner": "李怡萍",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市思攀达科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01874529244",
+        "amount": 30.92,
+        "currency": "USD",
+        "time_ms": 1785977332000,
+        "time": "2026-08-06 08:48",
+        "owner": "漆螯童",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市阿桌数码科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01873557004",
+        "amount": 13.8,
+        "currency": "USD",
+        "time_ms": 1785919544000,
+        "time": "2026-08-05 16:45",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市阿桌数码科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01873044071",
+        "amount": 13.8,
+        "currency": "USD",
+        "time_ms": 1785918662000,
+        "time": "2026-08-05 16:31",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市伟腾鑫科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01863081274",
+        "amount": 113.0,
+        "currency": "USD",
+        "time_ms": 1785563263000,
+        "time": "2026-08-01 13:47",
+        "owner": "李彬",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市布拉沃国际实业有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01859976114",
+        "amount": 404.0,
+        "currency": "USD",
+        "time_ms": 1785490738000,
+        "time": "2026-07-31 17:38",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市德创纪元科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01859571571",
+        "amount": 100.0,
+        "currency": "USD",
+        "time_ms": 1785481228000,
+        "time": "2026-07-31 15:00",
+        "owner": "陈建国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市德创纪元科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01859031641",
+        "amount": 100.0,
+        "currency": "USD",
+        "time_ms": 1785480558000,
+        "time": "2026-07-31 14:49",
+        "owner": "陈建国",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市日盛华科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS01856736796",
+        "amount": 160.0,
+        "currency": "USD",
+        "time_ms": 1785403655000,
+        "time": "2026-07-30 17:27",
+        "owner": "蒋汶桃",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市伟腾鑫科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01856790411",
+        "amount": 332.22,
+        "currency": "USD",
+        "time_ms": 1785399793000,
+        "time": "2026-07-30 16:23",
+        "owner": "李彬",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市爱铂科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01851714784",
+        "amount": 254.95,
+        "currency": "USD",
+        "time_ms": 1785312096000,
+        "time": "2026-07-29 16:01",
+        "owner": "漆螯童",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳大塘科技电子有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01842291539",
+        "amount": 987.57,
+        "currency": "USD",
+        "time_ms": 1784879055000,
+        "time": "2026-07-24 15:44",
+        "owner": "李彬",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳大塘科技电子有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01841508828",
+        "amount": 1002.57,
+        "currency": "USD",
+        "time_ms": 1784878435000,
+        "time": "2026-07-24 15:33",
+        "owner": "李彬",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市海飞源科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01839672717",
+        "amount": 175.0,
+        "currency": "USD",
+        "time_ms": 1784790620000,
+        "time": "2026-07-23 15:10",
+        "owner": "李怡萍",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市布拉沃国际实业有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01837188078",
+        "amount": 1410.0,
+        "currency": "USD",
+        "time_ms": 1784705620000,
+        "time": "2026-07-22 15:33",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市阿贝丝化妆用具有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01829088786",
+        "amount": 180.0,
+        "currency": "USD",
+        "time_ms": 1784531942000,
+        "time": "2026-07-20 15:19",
+        "owner": "李怡萍",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市爱铂科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01830384014",
+        "amount": 145.2,
+        "currency": "USD",
+        "time_ms": 1784531412000,
+        "time": "2026-07-20 15:10",
+        "owner": "漆螯童",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市阿贝丝化妆用具有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01829790321",
+        "amount": 180.0,
+        "currency": "USD",
+        "time_ms": 1784530890000,
+        "time": "2026-07-20 15:01",
+        "owner": "李怡萍",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳市新生力科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS01814400273",
+        "amount": 252.0,
+        "currency": "USD",
+        "time_ms": 1784001057000,
+        "time": "2026-07-14 11:50",
+        "owner": "夏锐",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳云飞扬化妆品有限公司",
+        "line": "无忧9610SKA专线(优选)",
+        "order_no": "ALS00544968297",
+        "amount": 260.0,
+        "currency": "USD",
+        "time_ms": 1693462786000,
+        "time": "2023-08-31 14:19",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳云飞扬化妆品有限公司",
+        "line": "无忧9610SKA专线(优选)",
+        "order_no": "ALS00545076108",
+        "amount": 160.0,
+        "currency": "USD",
+        "time_ms": 1693462574000,
+        "time": "2023-08-31 14:16",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳云飞扬化妆品有限公司",
+        "line": "无忧9610SKA专线(优选)",
+        "order_no": "ALS00545022187",
+        "amount": 200.0,
+        "currency": "USD",
+        "time_ms": 1693462420000,
+        "time": "2023-08-31 14:13",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳云飞扬化妆品有限公司",
+        "line": "无忧9610SKA专线(优选)",
+        "order_no": "ALS00545103042",
+        "amount": 180.0,
+        "currency": "USD",
+        "time_ms": 1693461937000,
+        "time": "2023-08-31 14:05",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳云飞扬化妆品有限公司",
+        "line": "无忧9610SKA专线(优选)",
+        "order_no": "ALS00544887851",
+        "amount": 170.0,
+        "currency": "USD",
+        "time_ms": 1693461722000,
+        "time": "2023-08-31 14:02",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳云飞扬化妆品有限公司",
+        "line": "无忧9610SKA专线(优选)",
+        "order_no": "ALS00544941422",
+        "amount": 200.0,
+        "currency": "USD",
+        "time_ms": 1693461260000,
+        "time": "2023-08-31 13:54",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳云飞扬化妆品有限公司",
+        "line": "无忧9610SKA专线(优选)",
+        "order_no": "ALS00545049108",
+        "amount": 230.0,
+        "currency": "USD",
+        "time_ms": 1693461091000,
+        "time": "2023-08-31 13:51",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳云飞扬化妆品有限公司",
+        "line": "无忧9610SKA专线(优选)",
+        "order_no": "ALS00544914348",
+        "amount": 200.0,
+        "currency": "USD",
+        "time_ms": 1693460921000,
+        "time": "2023-08-31 13:48",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳云飞扬化妆品有限公司",
+        "line": "无忧9610SKA专线(优选)",
+        "order_no": "ALS00544914346",
+        "amount": 220.0,
+        "currency": "USD",
+        "time_ms": 1693460766000,
+        "time": "2023-08-31 13:46",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳云飞扬化妆品有限公司",
+        "line": "无忧9610SKA专线(优选)",
+        "order_no": "ALS00544914342",
+        "amount": 380.0,
+        "currency": "USD",
+        "time_ms": 1693460617000,
+        "time": "2023-08-31 13:43",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳云飞扬化妆品有限公司",
+        "line": "无忧9610SKA专线(优选)",
+        "order_no": "ALS00544752977",
+        "amount": 200.0,
+        "currency": "USD",
+        "time_ms": 1693460225000,
+        "time": "2023-08-31 13:37",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳云飞扬化妆品有限公司",
+        "line": "无忧9610SKA专线(优选)",
+        "order_no": "ALS00544293712",
+        "amount": 240.0,
+        "currency": "USD",
+        "time_ms": 1693375147000,
+        "time": "2023-08-30 13:59",
+        "owner": "王子豪",
+        "owner_from": "strategy"
+      },
+      {
+        "customer": "深圳云飞扬化妆品有限公司",
+        "line": "无忧9610SKA专线(优选)",
+        "order_no": "ALS00544374835",
+        "amount": 240.0,
+        "currency": "USD",
+        "time_ms": 1693374502000,
+        "time": "2023-08-30 13:48",
+        "owner": "王子豪",
+        "owner_from": "strategy"
       }
     ]
   },
@@ -1666,97 +3408,97 @@
   "daily_add": {
     "title": "每日新增（对比 2026-10-11 快照）",
     "label": "对比 2026-10-11 快照",
-    "xb_recv": 650006.46,
+    "xb_recv": 872210.09,
     "active_3w": 0.0,
-    "customers": 0.0
+    "customers": -2.0
   },
   "persons_daily_add": {
     "李彬": {
-      "xb_recv": 0.0,
+      "xb_recv": 113979.96,
       "active_3w": 0.0
     },
     "汪伟": {
-      "xb_recv": 0.0,
+      "xb_recv": 86954.59,
       "active_3w": 0.0
     },
     "陈建国": {
-      "xb_recv": 0.0,
+      "xb_recv": 43434.94,
       "active_3w": 0.0
     },
     "漆螯童": {
-      "xb_recv": 0.0,
+      "xb_recv": 31886.67,
       "active_3w": 0.0
     },
     "蒋汶桃": {
-      "xb_recv": 0.0,
+      "xb_recv": 97312.7,
       "active_3w": 0.0
     },
     "夏锐": {
-      "xb_recv": 0.0,
+      "xb_recv": 94195.83,
       "active_3w": 0.0
     },
     "王子豪": {
-      "xb_recv": 0.0,
+      "xb_recv": 91943.84,
       "active_3w": 0.0
     },
     "汤子豪": {
-      "xb_recv": 0.0,
+      "xb_recv": 41244.79,
       "active_3w": 0.0
     },
     "高国权": {
-      "xb_recv": 0.0,
+      "xb_recv": 33821.7,
       "active_3w": 0.0
     },
     "王凡": {
-      "xb_recv": 0.0,
-      "active_3w": 0.0
-    },
-    "谢承杰": {
-      "xb_recv": 0.0,
+      "xb_recv": 37400.76,
       "active_3w": 0.0
     },
     "李怡萍": {
-      "xb_recv": 0.0,
+      "xb_recv": 32764.74,
       "active_3w": 0.0
     },
     "邓晓东": {
-      "xb_recv": 0.0,
+      "xb_recv": 24612.77,
+      "active_3w": 0.0
+    },
+    "谢承杰": {
+      "xb_recv": -29226.64,
       "active_3w": 0.0
     },
     "何尧玲": {
-      "xb_recv": 0.0,
+      "xb_recv": 9145.56,
       "active_3w": 0.0
     },
     "刘蓝琳": {
-      "xb_recv": 0.0,
+      "xb_recv": 2889.05,
       "active_3w": 0.0
     },
     "刘嘉艳": {
-      "xb_recv": 0.0,
+      "xb_recv": 4607.96,
       "active_3w": 0.0
     },
     "罗金填": {
-      "xb_recv": 0.0,
+      "xb_recv": 6894.19,
       "active_3w": 0.0
     },
     "梁诗琪": {
-      "xb_recv": 0.0,
-      "active_3w": 0.0
-    },
-    "王金国": {
-      "xb_recv": 0.0,
-      "active_3w": 0.0
-    },
-    "陈苑英": {
-      "xb_recv": 0.0,
+      "xb_recv": 3774.71,
       "active_3w": 0.0
     },
     "程碧瑶": {
-      "xb_recv": 0.0,
+      "xb_recv": 21981.93,
+      "active_3w": 0.0
+    },
+    "王金国": {
+      "xb_recv": 7907.8,
+      "active_3w": 0.0
+    },
+    "陈苑英": {
+      "xb_recv": 4944.21,
       "active_3w": 0.0
     },
     "牛群": {
-      "xb_recv": 0.0,
+      "xb_recv": 4125.99,
       "active_3w": 0.0
     }
   }
