@@ -303,11 +303,22 @@
   /* H 我们页独有缺陷 */
   #sec-2 .grid.two { align-items: start; }                    /* Ⅱ 左列不再被拉高留白 */
   .grid.two { align-items: start; }
-  #sec-9 .rank-row { height: 37px; white-space: nowrap; overflow: hidden; }
-  /* Ⅸ 专题：明细行右侧信息多（金额/签约时间/卡点），允许换行、左侧不被挤扁 */
-  #sec-9 .cust-row { align-items: flex-start; }
-  #sec-9 .cust-row > span:first-child { flex: 0 0 auto; }
-  #sec-9 .cust-row > span:last-child { text-align: right; }
+   #sec-9 .rank-row, #sec-10 .rank-row { height: 37px; white-space: nowrap; overflow: hidden; }
+   /* Ⅸ 9610 / Ⅹ AWB 汇总行：名称列要宽（9610 线路名最长 16 字），且允许换行。
+      ⚠ 不能沿用通用 .rank-row 的 34px 首列放名称 —— 名称会溢出压到后面几列上
+      （2026-10-12 用户截图报的「文本重叠」就是这一处）。 */
+   #sec-9 .rank-row.sum-row, #sec-10 .rank-row.sum-row {
+     grid-template-columns: 28px minmax(0, 1fr) 150px 108px;
+     height: auto; min-height: 37px; white-space: normal; overflow: visible; line-height: 1.35;
+   }
+   #sec-9 .rank-row.sum-row > span:first-child,
+   #sec-10 .rank-row.sum-row > span:first-child { color: var(--fg-faint); }
+   #sec-9 .rank-row.sum-row > span:last-child,
+   #sec-10 .rank-row.sum-row > span:last-child { text-align: right; }
+   /* Ⅸ/Ⅹ 专题：明细行右侧信息多（金额/签约时间/卡点），允许换行、左侧不被挤扁 */
+   #sec-9 .cust-row, #sec-10 .cust-row { align-items: flex-start; }
+   #sec-9 .cust-row > span:first-child, #sec-10 .cust-row > span:first-child { flex: 0 0 auto; }
+   #sec-9 .cust-row > span:last-child, #sec-10 .cust-row > span:last-child { text-align: right; }
   #sec-4b .rank-row { height: 37px; }
   @media (max-width: 700px) {
     .kpi-grid { grid-template-columns: 1fr; }
@@ -369,8 +380,12 @@
     .grid.two { grid-template-columns: 1fr; }
     .trend { gap: 10px; }
     .tbar { width: 15px; }
-    .rank-row { grid-template-columns: 28px 66px 1fr 74px; font-size: 12.5px; }
-  }
+     .rank-row { grid-template-columns: 28px 66px 1fr 74px; font-size: 12.5px; }
+     /* 窄屏：9610/AWB 汇总行也要跟着收窄，但名称列仍留给 1fr（不能回到固定 66px） */
+     #sec-9 .rank-row.sum-row, #sec-10 .rank-row.sum-row {
+       grid-template-columns: 22px minmax(0, 1fr) 96px 84px;
+     }
+   }
 </style>
 </head>
 <body>
@@ -531,12 +546,19 @@
     </div>
   </section>
 
-  <!-- Ⅸ 9610 / AWB 专题（2026-10-09 新增；原 Ⅷ「采购节榜单与缺口」已随活动结束下线） -->
-  <section id="sec-9">
-    <div class="sec-head"><span class="sec-no">Ⅸ</span><h2 id="topic-title">9610 / AWB 专题</h2>
-      <span class="note" id="topic-note">9610 打标订单（按线路 · 源：平台物流订单列表）· AWB 待签约潜客（按销售）· 均含客户明细</span></div>
-    <div id="topic-body"></div>
-  </section>
+    <!-- Ⅸ 9610 打标订单（2026-10-12 从原「9610 / AWB 专题」拆成独立板块） -->
+    <section id="sec-9">
+      <div class="sec-head"><span class="sec-no">Ⅸ</span><h2 id="topic-title">9610 打标订单</h2>
+        <span class="note" id="topic-note">按线路 · 源：一拍档物流服务商后台订单列表 · 含客户明细</span></div>
+      <div id="topic-body"></div>
+    </section>
+
+    <!-- Ⅹ AWB 待签约潜客（2026-10-12 与 9610 分开成独立板块） -->
+    <section id="sec-10">
+      <div class="sec-head"><span class="sec-no">Ⅹ</span><h2 id="awb-title">AWB 待签约潜客</h2>
+        <span class="note" id="awb-note">按销售 · 源：业务盘点表 · 含客户明细与卡点</span></div>
+      <div id="awb-body"></div>
+    </section>
 
   <footer>
     <div>数据每日更新 · 若显示旧数字请按 <code>Ctrl + Shift + R</code> 强制刷新（跳过 CDN 缓存）</div>
@@ -550,7 +572,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1791766520';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1791781003';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1198,87 +1220,103 @@
         : pendingPanel(['商品结构（在线品全量口径）：各层级商品数与占比']));
   }
 
-  // ── Ⅸ 9610 / AWB 专题 ──
-  // 数据来源与数据罗盘不同源（业务自建）。缺件时整块显示待接，绝不用旧数据兜底。
-  function renderTopic(d) {
-    const s = d.s9610, a = d.awb;
-    if (!s && !a) {
+  // ── Ⅸ 9610 打标订单（按线路）／Ⅹ AWB 待签约潜客（按销售）──
+  // 2026-10-12 把原来的单一「9610 / AWB 专题」拆成**两个独立板块**：各自标题、各自数据区，
+  // 各自缺件时各自显示「待接」，绝不用旧数据兜底。
+  const TOPIC_H = {
+    unit: (v, u) => v + '<small class="text-dim"> ' + u + '</small>',
+    kpi: (items) => '<div class="grid kpi-grid" style="margin:8px 0 12px">' + items.map(function (it) {
+      return '<div class="card"><span class="cap">' + it[0] + '</span><div class="big">' + it[1] + '</div></div>';
+    }).join('') + '</div>',
+    // ⚠ 汇总行**必须带序号**：通用 .rank-row 是「序号 名称 中列 右列」四列网格，首列只有 34px。
+    //   把长名称（9610 线路名最长 16 字）塞进首列会溢出压到后面几列上 ——
+    //   2026-10-12 用户截图报的「文本重叠」就是这一处。sum-row 把名称列改成 minmax(0,1fr) 且允许换行（见 CSS）。
+    rowSum: (cells) => '<div class="rank-row sum-row">' + cells.map(function (c, i) {
+      return '<span class="' + (i === 0 ? '' : 'text-dim') + '">' + c + '</span>';
+    }).join('') + '</div>',
+    det: (main, sub, right) => '<div class="cust-row"><span>' + main +
+      (sub ? '<small class="text-dim"> ' + sub + '</small>' : '') + '</span><span>' + right + '</span></div>',
+    head: (o, label, sub) => '<div class="rowline" style="margin:0 0 6px"><span><b>' + label +
+      '</b>' + (sub ? ' <small class="text-dim">' + esc(sub) + '</small>' : '') + '</span>' +
+      ((o && o.update) ? '<span class="text-dim">更新 ' + esc(o.update) + '</span>' : '') + '</div>',
+  };
+
+  function renderTopic9610(d) {
+    const s = d.s9610;
+    if (!s) {
       $('topic-body').innerHTML = pendingPanel([
         '9610 打标订单：按线路（下单客户数 / 打标订单 / 申报金额）+ 客户明细（按客户聚合）',
-        'AWB 潜客：按销售（潜客数 / 已上门 / CGS / 方案合计）+ 客户明细（含预计签约时间与卡点）',
-        '需要两件事：① 9610 订单件落盘（capture_sameorigin.js 步骤 5）② AWB 盘点表补「上门 / CGS / 签约时间」三列']);
+        '需要一件数据：s9610-orders.json —— 跑 build/capture_sameorigin.js（步骤 5 会自动逐条拉 5 条 9610 运力线）']);
       return;
     }
-    const unit = (v, u) => v + '<small class="text-dim"> ' + u + '</small>';
-    const upd = (o) => (o && o.update) ? '<span class="text-dim">更新 ' + esc(o.update) + '</span>' : '';
-    const kpi = (items) => '<div class="grid kpi-grid" style="margin:8px 0 12px">' + items.map(function (it) {
-      return '<div class="card"><span class="cap">' + it[0] + '</span><div class="big">' + it[1] + '</div></div>';
-    }).join('') + '</div>';
-    const row = (cells) => '<div class="rank-row">' + cells.map(function (c, i) {
-      return '<span class="' + (i === 0 ? '' : 'text-dim') + '">' + c + '</span>';
-    }).join('') + '</div>';
-    const det = (main, sub, right) => '<div class="cust-row"><span>' + main +
-      (sub ? '<small class="text-dim"> ' + sub + '</small>' : '') + '</span><span>' + right + '</span></div>';
-    const head = (o, label, sub) => '<div class="rowline" style="margin:0 0 6px"><span><b>' + label +
-      '</b>' + (sub ? ' <small class="text-dim">' + esc(sub) + '</small>' : '') + '</span>' + upd(o) + '</div>';
-    const out = [];
-    if (s) {
-      const t = s.totals || {};
-      const gl = esc(s.group_label || '线路');
-      // 源里没有的列（申报金额 / 币种）就不画那一格，不补 0 不补 "--"
-      const money = (v) => (t.currency && t.currency !== 'USD')
-        ? fmt(v, 1) + '<small class="text-dim"> ' + esc(t.currency) + '</small>'
-        : '$' + fmt(v, 1);
-      const cards = [['9610 下单客户', unit(fmt(t.customers, 0), '家')],
-                     ['打标订单', unit(fmt(t.orders, 0), '笔')]];
-      if (t.declared != null) cards.push(['申报金额', money(t.declared)]);
-      if (t.currencies && t.currencies.length > 1) {
-        cards.push(['币种（未跨币种求和）', esc(t.currencies.join(' / '))]);
-      }
-      cards.push(['覆盖' + gl, unit(fmt(t.lines_active != null ? t.lines_active : t.lines, 0), '条') +
-                  (t.lines ? '<small class="text-dim"> / 共 ' + fmt(t.lines, 0) + '</small>' : '')]);
-      out.push('<div class="card" style="margin-bottom:12px">' +
-        head(s, s.title || '9610 打标订单', s.note) +
-        kpi(cards) +
-        '<div class="cap">按' + gl + ' · 下单客户数</div>' +
-        ((s.by_line || []).length ? (s.by_line || []).map(function (r) {
-          return row([esc(r.name), unit(fmt(r.customers, 0), '家客户'), unit(fmt(r.orders, 0), '笔'),
-                      (r.declared != null ? money(r.declared) : '')]);
-        }).join('') : '<div class="empty">暂无</div>') +
-        '<div class="cap" style="margin-top:12px">客户明细 · 按客户聚合</div>' +
-        ((s.detail || []).length ? (s.detail || []).map(function (r) {
-          const sub = [esc(r.line), unit(fmt(r.orders, 0), '笔')].filter(Boolean).join(' · ');
-          const right = (r.declared != null ? money(r.declared) : '') +
-            (r.last_order ? '<small class="text-dim"> ' + esc(r.last_order) + '</small>' : '');
-          return det(esc(r.customer), sub, right);
-        }).join('') : '<div class="empty">暂无</div>') +
-        '</div>');
+    const unit = TOPIC_H.unit, kpi = TOPIC_H.kpi, rowSum = TOPIC_H.rowSum,
+          det = TOPIC_H.det, head = TOPIC_H.head;
+    const t = s.totals || {};
+    const gl = esc(s.group_label || '线路');
+    // 源里没有的列（申报金额 / 币种）就不画那一格，不补 0 不补 "--"
+    const money = (v) => (t.currency && t.currency !== 'USD')
+      ? fmt(v, 1) + '<small class="text-dim"> ' + esc(t.currency) + '</small>'
+      : '$' + fmt(v, 1);
+    const cards = [['9610 下单客户', unit(fmt(t.customers, 0), '家')],
+                   ['打标订单', unit(fmt(t.orders, 0), '笔')]];
+    if (t.declared != null) cards.push(['申报金额', money(t.declared)]);
+    if (t.currencies && t.currencies.length > 1) {
+      cards.push(['币种（未跨币种求和）', esc(t.currencies.join(' / '))]);
     }
-    if (a) {
-      const t = a.totals || {};
-      out.push('<div class="card">' +
-        head(a, 'AWB 潜客盘点', a.note) +
-        kpi([['待签约潜客', unit(fmt(t.prospects, 0), '家')],
-             ['CGS 客户', unit(fmt(t.cgs, 0), '家')],
-             ['方案合计', fmt(t.amount, 0) + '<small class="text-dim"> 元</small>'],
-             ['覆盖销售', unit(fmt(t.sales, 0), '人')]]) +
-        '<div class="cap">按销售 · 潜客数</div>' +
-        ((a.by_sale || []).length ? (a.by_sale || []).map(function (r) {
-          // rank-row 是 4 列网格：把「已上门 / CGS」并成一格，别让第 5 格换行
-          return row([esc(r.name), unit(fmt(r.prospects, 0), '家潜客'),
-                      unit(fmt(r.visited, 0), '上门') + ' · CGS ' + fmt(r.cgs, 0),
-                      unit(fmt(r.amount, 0), '元')]);
-        }).join('') : '<div class="empty">暂无</div>') +
-        '<div class="cap" style="margin-top:12px">潜客户明细 · 待签约</div>' +
-        ((a.detail || []).length ? (a.detail || []).map(function (r) {
-          return det(esc(r.customer), [esc(r.sale), esc(r.visited), esc(r.cgs)].filter(Boolean).join(' · '),
-                     unit(fmt(r.amount, 0), '元') +
-                     (r.sign_time ? '<small class="text-dim"> ' + esc(r.sign_time) + '</small>' : '') +
-                     (r.blocker && r.blocker !== '-' ? '<small class="text-dim"> · ' + esc(r.blocker) + '</small>' : ''));
-        }).join('') : '<div class="empty">暂无</div>') +
-        '</div>');
+    cards.push(['覆盖' + gl, unit(fmt(t.lines_active != null ? t.lines_active : t.lines, 0), '条') +
+                (t.lines ? '<small class="text-dim"> / 共 ' + fmt(t.lines, 0) + '</small>' : '')]);
+    $('topic-body').innerHTML = '<div class="card">' +
+      head(s, s.title || '9610 打标订单', s.note) +
+      kpi(cards) +
+      '<div class="cap">按' + gl + ' · 下单客户数</div>' +
+      ((s.by_line || []).length ? (s.by_line || []).map(function (r, i) {
+        return rowSum([String(i + 1), esc(r.name),
+                       unit(fmt(r.customers, 0), '家客户') + ' · ' + unit(fmt(r.orders, 0), '笔'),
+                       (r.declared != null ? money(r.declared) : '')]);
+      }).join('') : '<div class="empty">暂无</div>') +
+      '<div class="cap" style="margin-top:12px">客户明细 · 按客户聚合</div>' +
+      ((s.detail || []).length ? (s.detail || []).map(function (r) {
+        const sub = [esc(r.line), unit(fmt(r.orders, 0), '笔')].filter(Boolean).join(' · ');
+        const right = (r.declared != null ? money(r.declared) : '') +
+          (r.last_order ? '<small class="text-dim"> ' + esc(r.last_order) + '</small>' : '');
+        return det(esc(r.customer), sub, right);
+      }).join('') : '<div class="empty">暂无</div>') +
+      '</div>';
+  }
+
+  function renderTopicAwb(d) {
+    const a = d.awb;
+    if (!a) {
+      $('awb-body').innerHTML = pendingPanel([
+        'AWB 潜客：按销售（潜客数 / 已上门 / CGS / 方案合计）+ 客户明细（含预计签约时间与卡点）',
+        '需要一件数据：awb-prospects.json —— 由桌面盘点表转换（build/make_awb_prospects.py），需含「上门 / CGS / 签约时间」列']);
+      return;
     }
-    $('topic-body').innerHTML = out.join('');
+    const unit = TOPIC_H.unit, kpi = TOPIC_H.kpi, rowSum = TOPIC_H.rowSum,
+          det = TOPIC_H.det, head = TOPIC_H.head;
+    const t = a.totals || {};
+    $('awb-body').innerHTML = '<div class="card">' +
+      head(a, 'AWB 潜客盘点', a.note) +
+      kpi([['待签约潜客', unit(fmt(t.prospects, 0), '家')],
+           ['CGS 客户', unit(fmt(t.cgs, 0), '家')],
+           ['方案合计', fmt(t.amount, 0) + '<small class="text-dim"> 元</small>'],
+           ['覆盖销售', unit(fmt(t.sales, 0), '人')]]) +
+      '<div class="cap">按销售 · 潜客数</div>' +
+      ((a.by_sale || []).length ? (a.by_sale || []).map(function (r, i) {
+        // sum-row 是 4 列网格：把「潜客 / 上门 / CGS」并进中列，别再多塞第 5 格
+        return rowSum([String(i + 1), esc(r.name),
+                       unit(fmt(r.prospects, 0), '家潜客') + ' · ' +
+                       unit(fmt(r.visited, 0), '上门') + ' · CGS ' + fmt(r.cgs, 0),
+                       unit(fmt(r.amount, 0), '元')]);
+      }).join('') : '<div class="empty">暂无</div>') +
+      '<div class="cap" style="margin-top:12px">潜客户明细 · 待签约</div>' +
+      ((a.detail || []).length ? (a.detail || []).map(function (r) {
+        return det(esc(r.customer), [esc(r.sale), esc(r.visited), esc(r.cgs)].filter(Boolean).join(' · '),
+                   unit(fmt(r.amount, 0), '元') +
+                   (r.sign_time ? '<small class="text-dim"> ' + esc(r.sign_time) + '</small>' : '') +
+                   (r.blocker && r.blocker !== '-' ? '<small class="text-dim"> · ' + esc(r.blocker) + '</small>' : ''));
+      }).join('') : '<div class="empty">暂无</div>') +
+      '</div>';
   }
 
   // ── 统一入口 ──
@@ -1295,7 +1333,8 @@
     renderGoodsRank(d);
     renderYoy(d);
     renderGoods(d);
-    renderTopic(d);
+    renderTopic9610(d);
+    renderTopicAwb(d);
     updateLabels(d);
     const warns = d.warnings || [];
     if (warns.length) banner('<b>解析告警（已按规则沿用上次数据）</b><ul><li>' +
