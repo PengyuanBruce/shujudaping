@@ -1,7 +1,7 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-12 16:14",
+  "update_time": "2026-10-12 16:24",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 14477327.92,
@@ -1115,10 +1115,11 @@
       ],
       "lines": 5,
       "lines_active": 3,
-      "owners_matched": 36,
-      "owners_total": 36,
-      "owners_fallback": 0,
-      "owner_source": "策略中心明细（当月）"
+      "kefu_matched": 36,
+      "kefu_total": 36,
+      "kefu_fallback": 0,
+      "kefu_source": "策略中心明细（当月）",
+      "kefu_column": "拍档客服"
     },
     "by_line": [
       {
@@ -1149,8 +1150,8 @@
         "currency": "USD",
         "time_ms": 1791777609000,
         "time": "2026-10-12 12:00",
-        "owner": "汪伟",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -1160,8 +1161,8 @@
         "currency": "USD",
         "time_ms": 1791773613000,
         "time": "2026-10-12 10:53",
-        "owner": "汪伟",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -1171,8 +1172,8 @@
         "currency": "USD",
         "time_ms": 1791597103000,
         "time": "2026-10-10 09:51",
-        "owner": "汪伟",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -1182,8 +1183,8 @@
         "currency": "USD",
         "time_ms": 1791596832000,
         "time": "2026-10-10 09:47",
-        "owner": "汪伟",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市爱思考制冷设备有限公司",
@@ -1193,8 +1194,8 @@
         "currency": "USD",
         "time_ms": 1791544207000,
         "time": "2026-10-09 19:10",
-        "owner": "陈建国",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市爱铂科技有限公司",
@@ -1204,8 +1205,8 @@
         "currency": "USD",
         "time_ms": 1791515522000,
         "time": "2026-10-09 11:12",
-        "owner": "漆螯童",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1215,8 +1216,8 @@
         "currency": "USD",
         "time_ms": 1791461562000,
         "time": "2026-10-08 20:12",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市新生力科技有限公司",
@@ -1226,8 +1227,8 @@
         "currency": "USD",
         "time_ms": 1791456908000,
         "time": "2026-10-08 18:55",
-        "owner": "夏锐",
-        "owner_from": "strategy"
+        "kefu": "罗洋清",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市爱铂科技有限公司",
@@ -1237,8 +1238,8 @@
         "currency": "USD",
         "time_ms": 1791441822000,
         "time": "2026-10-08 14:43",
-        "owner": "漆螯童",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市百乐康科技有限公司",
@@ -1248,8 +1249,8 @@
         "currency": "USD",
         "time_ms": 1791426132000,
         "time": "2026-10-08 10:22",
-        "owner": "夏锐",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1259,8 +1260,8 @@
         "currency": "USD",
         "time_ms": 1791376398000,
         "time": "2026-10-07 20:33",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1270,8 +1271,8 @@
         "currency": "USD",
         "time_ms": 1791373562000,
         "time": "2026-10-07 19:46",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1281,8 +1282,8 @@
         "currency": "USD",
         "time_ms": 1791370984000,
         "time": "2026-10-07 19:03",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1292,8 +1293,8 @@
         "currency": "USD",
         "time_ms": 1791369231000,
         "time": "2026-10-07 18:33",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1303,8 +1304,8 @@
         "currency": "USD",
         "time_ms": 1791368383000,
         "time": "2026-10-07 18:19",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市润之行商标制作有限公司",
@@ -1314,8 +1315,8 @@
         "currency": "USD",
         "time_ms": 1791351734000,
         "time": "2026-10-07 13:42",
-        "owner": "邓晓东",
-        "owner_from": "strategy"
+        "kefu": "苏梓梦",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市灵视创科技有限公司",
@@ -1325,8 +1326,8 @@
         "currency": "USD",
         "time_ms": 1791342850000,
         "time": "2026-10-07 11:14",
-        "owner": "陈建国",
-        "owner_from": "strategy"
+        "kefu": "农路源",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市爱铂科技有限公司",
@@ -1336,8 +1337,8 @@
         "currency": "USD",
         "time_ms": 1791342118000,
         "time": "2026-10-07 11:01",
-        "owner": "漆螯童",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市新生力科技有限公司",
@@ -1347,8 +1348,8 @@
         "currency": "USD",
         "time_ms": 1791276612000,
         "time": "2026-10-06 16:50",
-        "owner": "夏锐",
-        "owner_from": "strategy"
+        "kefu": "罗洋清",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1358,8 +1359,8 @@
         "currency": "USD",
         "time_ms": 1791255964000,
         "time": "2026-10-06 11:06",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1369,8 +1370,8 @@
         "currency": "USD",
         "time_ms": 1791187998000,
         "time": "2026-10-05 16:13",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市龙腾特科技有限公司",
@@ -1380,8 +1381,8 @@
         "currency": "USD",
         "time_ms": 1791105854000,
         "time": "2026-10-04 17:24",
-        "owner": "李怡萍",
-        "owner_from": "strategy"
+        "kefu": "农路源",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1391,8 +1392,8 @@
         "currency": "USD",
         "time_ms": 1790764334000,
         "time": "2026-09-30 18:32",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1402,8 +1403,8 @@
         "currency": "USD",
         "time_ms": 1790757915000,
         "time": "2026-09-30 16:45",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市辉波诚科技有限公司",
@@ -1413,8 +1414,8 @@
         "currency": "USD",
         "time_ms": 1790756028000,
         "time": "2026-09-30 16:13",
-        "owner": "罗金填",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市辉波诚科技有限公司",
@@ -1424,8 +1425,8 @@
         "currency": "USD",
         "time_ms": 1790755933000,
         "time": "2026-09-30 16:12",
-        "owner": "罗金填",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市威斯尼科技有限公司",
@@ -1435,8 +1436,8 @@
         "currency": "USD",
         "time_ms": 1790740162000,
         "time": "2026-09-30 11:49",
-        "owner": "陈建国",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市圳烨科技有限公司",
@@ -1446,8 +1447,8 @@
         "currency": "USD",
         "time_ms": 1790739571000,
         "time": "2026-09-30 11:39",
-        "owner": "程碧瑶",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1457,8 +1458,8 @@
         "currency": "USD",
         "time_ms": 1790691178000,
         "time": "2026-09-29 22:12",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1468,8 +1469,8 @@
         "currency": "USD",
         "time_ms": 1790688580000,
         "time": "2026-09-29 21:29",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1479,8 +1480,8 @@
         "currency": "USD",
         "time_ms": 1790687436000,
         "time": "2026-09-29 21:10",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1490,8 +1491,8 @@
         "currency": "USD",
         "time_ms": 1790683406000,
         "time": "2026-09-29 20:03",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1501,8 +1502,8 @@
         "currency": "USD",
         "time_ms": 1790677708000,
         "time": "2026-09-29 18:28",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1512,8 +1513,8 @@
         "currency": "USD",
         "time_ms": 1790676111000,
         "time": "2026-09-29 18:01",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -1523,8 +1524,8 @@
         "currency": "USD",
         "time_ms": 1790672191000,
         "time": "2026-09-29 16:56",
-        "owner": "汪伟",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1534,8 +1535,8 @@
         "currency": "USD",
         "time_ms": 1790669859000,
         "time": "2026-09-29 16:17",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市德创纪元科技有限公司",
@@ -1545,8 +1546,8 @@
         "currency": "USD",
         "time_ms": 1790652706000,
         "time": "2026-09-29 11:31",
-        "owner": "陈建国",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市德创纪元科技有限公司",
@@ -1556,8 +1557,8 @@
         "currency": "USD",
         "time_ms": 1790645417000,
         "time": "2026-09-29 09:30",
-        "owner": "陈建国",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1567,8 +1568,8 @@
         "currency": "USD",
         "time_ms": 1790586957000,
         "time": "2026-09-28 17:15",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1578,8 +1579,8 @@
         "currency": "USD",
         "time_ms": 1790586576000,
         "time": "2026-09-28 17:09",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市百乐康科技有限公司",
@@ -1589,8 +1590,8 @@
         "currency": "USD",
         "time_ms": 1790577903000,
         "time": "2026-09-28 14:45",
-        "owner": "夏锐",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市路通电子有限公司",
@@ -1600,8 +1601,8 @@
         "currency": "USD",
         "time_ms": 1790566192000,
         "time": "2026-09-28 11:29",
-        "owner": "漆螯童",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1611,8 +1612,8 @@
         "currency": "USD",
         "time_ms": 1790250243000,
         "time": "2026-09-24 19:44",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1622,8 +1623,8 @@
         "currency": "USD",
         "time_ms": 1790249901000,
         "time": "2026-09-24 19:38",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1633,8 +1634,8 @@
         "currency": "USD",
         "time_ms": 1790249231000,
         "time": "2026-09-24 19:27",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1644,8 +1645,8 @@
         "currency": "USD",
         "time_ms": 1790248146000,
         "time": "2026-09-24 19:09",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市风都科技有限公司",
@@ -1655,8 +1656,8 @@
         "currency": "USD",
         "time_ms": 1790246474000,
         "time": "2026-09-24 18:41",
-        "owner": "汪伟",
-        "owner_from": "strategy"
+        "kefu": "庞婷婷",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1666,8 +1667,8 @@
         "currency": "USD",
         "time_ms": 1790246352000,
         "time": "2026-09-24 18:39",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市风都科技有限公司",
@@ -1677,8 +1678,8 @@
         "currency": "USD",
         "time_ms": 1790246138000,
         "time": "2026-09-24 18:35",
-        "owner": "汪伟",
-        "owner_from": "strategy"
+        "kefu": "庞婷婷",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1688,8 +1689,8 @@
         "currency": "USD",
         "time_ms": 1790245018000,
         "time": "2026-09-24 18:16",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1699,8 +1700,8 @@
         "currency": "USD",
         "time_ms": 1790241149000,
         "time": "2026-09-24 17:12",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1710,8 +1711,8 @@
         "currency": "USD",
         "time_ms": 1790240207000,
         "time": "2026-09-24 16:56",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1721,8 +1722,8 @@
         "currency": "USD",
         "time_ms": 1790239128000,
         "time": "2026-09-24 16:38",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1732,8 +1733,8 @@
         "currency": "USD",
         "time_ms": 1790238732000,
         "time": "2026-09-24 16:32",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1743,8 +1744,8 @@
         "currency": "USD",
         "time_ms": 1790237977000,
         "time": "2026-09-24 16:19",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市古石科技有限公司",
@@ -1754,8 +1755,8 @@
         "currency": "USD",
         "time_ms": 1790232878000,
         "time": "2026-09-24 14:54",
-        "owner": "汪伟",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1765,8 +1766,8 @@
         "currency": "USD",
         "time_ms": 1790232785000,
         "time": "2026-09-24 14:53",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1776,8 +1777,8 @@
         "currency": "USD",
         "time_ms": 1790232198000,
         "time": "2026-09-24 14:43",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1787,8 +1788,8 @@
         "currency": "USD",
         "time_ms": 1790231396000,
         "time": "2026-09-24 14:29",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市美昕实业有限公司",
@@ -1798,8 +1799,8 @@
         "currency": "USD",
         "time_ms": 1790221332000,
         "time": "2026-09-24 11:42",
-        "owner": "牛群",
-        "owner_from": "strategy"
+        "kefu": "农路源",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳华声科技有限公司",
@@ -1809,8 +1810,8 @@
         "currency": "USD",
         "time_ms": 1790218130000,
         "time": "2026-09-24 10:48",
-        "owner": "漆螯童",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -1820,8 +1821,8 @@
         "currency": "USD",
         "time_ms": 1790218106000,
         "time": "2026-09-24 10:48",
-        "owner": "汪伟",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -1831,8 +1832,8 @@
         "currency": "USD",
         "time_ms": 1790213971000,
         "time": "2026-09-24 09:39",
-        "owner": "汪伟",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1842,8 +1843,8 @@
         "currency": "USD",
         "time_ms": 1790160658000,
         "time": "2026-09-23 18:50",
-        "owner": "高国权",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳大塘科技电子有限公司",
@@ -1853,8 +1854,8 @@
         "currency": "USD",
         "time_ms": 1790065530000,
         "time": "2026-09-22 16:25",
-        "owner": "李彬",
-        "owner_from": "strategy"
+        "kefu": "苏梓梦",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市辉波诚科技有限公司",
@@ -1864,8 +1865,8 @@
         "currency": "USD",
         "time_ms": 1790056577000,
         "time": "2026-09-22 13:56",
-        "owner": "罗金填",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市布拉沃国际实业有限公司",
@@ -1875,8 +1876,8 @@
         "currency": "USD",
         "time_ms": 1790056546000,
         "time": "2026-09-22 13:55",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳信广鑫仪器设备有限公司",
@@ -1886,8 +1887,8 @@
         "currency": "USD",
         "time_ms": 1789969777000,
         "time": "2026-09-21 13:49",
-        "owner": "蒋汶桃",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市路通电子有限公司",
@@ -1897,8 +1898,8 @@
         "currency": "USD",
         "time_ms": 1789963085000,
         "time": "2026-09-21 11:58",
-        "owner": "漆螯童",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "惠州奇锋商贸有限公司",
@@ -1908,8 +1909,8 @@
         "currency": "USD",
         "time_ms": 1789876235000,
         "time": "2026-09-20 11:50",
-        "owner": "蒋汶桃",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳大塘科技电子有限公司",
@@ -1919,8 +1920,8 @@
         "currency": "USD",
         "time_ms": 1789875288000,
         "time": "2026-09-20 11:34",
-        "owner": "李彬",
-        "owner_from": "strategy"
+        "kefu": "苏梓梦",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -1930,8 +1931,8 @@
         "currency": "USD",
         "time_ms": 1789720144000,
         "time": "2026-09-18 16:29",
-        "owner": "汪伟",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市博悦展示品有限公司",
@@ -1941,8 +1942,8 @@
         "currency": "USD",
         "time_ms": 1789713711000,
         "time": "2026-09-18 14:41",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市博悦展示品有限公司",
@@ -1952,8 +1953,8 @@
         "currency": "USD",
         "time_ms": 1789713512000,
         "time": "2026-09-18 14:38",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市布拉沃国际实业有限公司",
@@ -1963,8 +1964,8 @@
         "currency": "USD",
         "time_ms": 1789701052000,
         "time": "2026-09-18 11:10",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市博悦展示品有限公司",
@@ -1974,8 +1975,8 @@
         "currency": "USD",
         "time_ms": 1789627149000,
         "time": "2026-09-17 14:39",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -1985,8 +1986,8 @@
         "currency": "USD",
         "time_ms": 1789627120000,
         "time": "2026-09-17 14:38",
-        "owner": "汪伟",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "惠州奇锋商贸有限公司",
@@ -1996,8 +1997,8 @@
         "currency": "USD",
         "time_ms": 1789607146000,
         "time": "2026-09-17 09:05",
-        "owner": "蒋汶桃",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -2007,8 +2008,8 @@
         "currency": "USD",
         "time_ms": 1789552902000,
         "time": "2026-09-16 18:01",
-        "owner": "汪伟",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "鸿晖(深圳)科技有限公司",
@@ -2018,8 +2019,8 @@
         "currency": "USD",
         "time_ms": 1789542141000,
         "time": "2026-09-16 15:02",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市百乐康科技有限公司",
@@ -2029,8 +2030,8 @@
         "currency": "USD",
         "time_ms": 1789532549000,
         "time": "2026-09-16 12:22",
-        "owner": "夏锐",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市百乐康科技有限公司",
@@ -2040,8 +2041,8 @@
         "currency": "USD",
         "time_ms": 1789532139000,
         "time": "2026-09-16 12:15",
-        "owner": "夏锐",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市哇哦暖通设备有限公司",
@@ -2051,8 +2052,8 @@
         "currency": "USD",
         "time_ms": 1789528833000,
         "time": "2026-09-16 11:20",
-        "owner": "程碧瑶",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市德创纪元科技有限公司",
@@ -2062,8 +2063,8 @@
         "currency": "USD",
         "time_ms": 1789526772000,
         "time": "2026-09-16 10:46",
-        "owner": "陈建国",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市德创纪元科技有限公司",
@@ -2073,8 +2074,8 @@
         "currency": "USD",
         "time_ms": 1789459639000,
         "time": "2026-09-15 16:07",
-        "owner": "陈建国",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市德创纪元科技有限公司",
@@ -2084,8 +2085,8 @@
         "currency": "USD",
         "time_ms": 1789438244000,
         "time": "2026-09-15 10:10",
-        "owner": "陈建国",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市四通广行实业有限公司",
@@ -2095,8 +2096,8 @@
         "currency": "USD",
         "time_ms": 1789372672000,
         "time": "2026-09-14 15:57",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "罗洋清",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2106,8 +2107,8 @@
         "currency": "USD",
         "time_ms": 1789370313000,
         "time": "2026-09-14 15:18",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2117,8 +2118,8 @@
         "currency": "USD",
         "time_ms": 1789370312000,
         "time": "2026-09-14 15:18",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2128,8 +2129,8 @@
         "currency": "USD",
         "time_ms": 1789370257000,
         "time": "2026-09-14 15:17",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2139,8 +2140,8 @@
         "currency": "USD",
         "time_ms": 1789370163000,
         "time": "2026-09-14 15:16",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2150,8 +2151,8 @@
         "currency": "USD",
         "time_ms": 1789370091000,
         "time": "2026-09-14 15:14",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2161,8 +2162,8 @@
         "currency": "USD",
         "time_ms": 1789369948000,
         "time": "2026-09-14 15:12",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2172,8 +2173,8 @@
         "currency": "USD",
         "time_ms": 1789369885000,
         "time": "2026-09-14 15:11",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2183,8 +2184,8 @@
         "currency": "USD",
         "time_ms": 1789369883000,
         "time": "2026-09-14 15:11",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2194,8 +2195,8 @@
         "currency": "USD",
         "time_ms": 1789369679000,
         "time": "2026-09-14 15:07",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2205,8 +2206,8 @@
         "currency": "USD",
         "time_ms": 1789369679000,
         "time": "2026-09-14 15:07",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2216,8 +2217,8 @@
         "currency": "USD",
         "time_ms": 1789369571000,
         "time": "2026-09-14 15:06",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2227,8 +2228,8 @@
         "currency": "USD",
         "time_ms": 1789368201000,
         "time": "2026-09-14 14:43",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2238,8 +2239,8 @@
         "currency": "USD",
         "time_ms": 1789368145000,
         "time": "2026-09-14 14:42",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2249,8 +2250,8 @@
         "currency": "USD",
         "time_ms": 1789368003000,
         "time": "2026-09-14 14:40",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2260,8 +2261,8 @@
         "currency": "USD",
         "time_ms": 1789367700000,
         "time": "2026-09-14 14:35",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2271,8 +2272,8 @@
         "currency": "USD",
         "time_ms": 1789367626000,
         "time": "2026-09-14 14:33",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2282,8 +2283,8 @@
         "currency": "USD",
         "time_ms": 1789367465000,
         "time": "2026-09-14 14:31",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2293,8 +2294,8 @@
         "currency": "USD",
         "time_ms": 1789367409000,
         "time": "2026-09-14 14:30",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2304,8 +2305,8 @@
         "currency": "USD",
         "time_ms": 1789367213000,
         "time": "2026-09-14 14:26",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2315,8 +2316,8 @@
         "currency": "USD",
         "time_ms": 1789367102000,
         "time": "2026-09-14 14:25",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2326,8 +2327,8 @@
         "currency": "USD",
         "time_ms": 1789367023000,
         "time": "2026-09-14 14:23",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2337,8 +2338,8 @@
         "currency": "USD",
         "time_ms": 1789366880000,
         "time": "2026-09-14 14:21",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2348,8 +2349,8 @@
         "currency": "USD",
         "time_ms": 1789366840000,
         "time": "2026-09-14 14:20",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2359,8 +2360,8 @@
         "currency": "USD",
         "time_ms": 1789366061000,
         "time": "2026-09-14 14:07",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2370,8 +2371,8 @@
         "currency": "USD",
         "time_ms": 1789365838000,
         "time": "2026-09-14 14:03",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2381,8 +2382,8 @@
         "currency": "USD",
         "time_ms": 1789365775000,
         "time": "2026-09-14 14:02",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2392,8 +2393,8 @@
         "currency": "USD",
         "time_ms": 1789365764000,
         "time": "2026-09-14 14:02",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2403,8 +2404,8 @@
         "currency": "USD",
         "time_ms": 1789365459000,
         "time": "2026-09-14 13:57",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2414,8 +2415,8 @@
         "currency": "USD",
         "time_ms": 1789365126000,
         "time": "2026-09-14 13:52",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2425,8 +2426,8 @@
         "currency": "USD",
         "time_ms": 1789364833000,
         "time": "2026-09-14 13:47",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2436,8 +2437,8 @@
         "currency": "USD",
         "time_ms": 1789357613000,
         "time": "2026-09-14 11:46",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2447,8 +2448,8 @@
         "currency": "USD",
         "time_ms": 1789357545000,
         "time": "2026-09-14 11:45",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2458,8 +2459,8 @@
         "currency": "USD",
         "time_ms": 1789357423000,
         "time": "2026-09-14 11:43",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳大塘科技电子有限公司",
@@ -2469,8 +2470,8 @@
         "currency": "USD",
         "time_ms": 1789357357000,
         "time": "2026-09-14 11:42",
-        "owner": "李彬",
-        "owner_from": "strategy"
+        "kefu": "苏梓梦",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2480,8 +2481,8 @@
         "currency": "USD",
         "time_ms": 1789357338000,
         "time": "2026-09-14 11:42",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2491,8 +2492,8 @@
         "currency": "USD",
         "time_ms": 1789356434000,
         "time": "2026-09-14 11:27",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2502,8 +2503,8 @@
         "currency": "USD",
         "time_ms": 1789355879000,
         "time": "2026-09-14 11:17",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2513,8 +2514,8 @@
         "currency": "USD",
         "time_ms": 1789354145000,
         "time": "2026-09-14 10:49",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市威斯尼科技有限公司",
@@ -2524,8 +2525,8 @@
         "currency": "USD",
         "time_ms": 1789128078000,
         "time": "2026-09-11 20:01",
-        "owner": "陈建国",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市博悦展示品有限公司",
@@ -2535,8 +2536,8 @@
         "currency": "USD",
         "time_ms": 1789120081000,
         "time": "2026-09-11 17:48",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市百乐康科技有限公司",
@@ -2546,8 +2547,8 @@
         "currency": "USD",
         "time_ms": 1789097116000,
         "time": "2026-09-11 11:25",
-        "owner": "夏锐",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -2557,8 +2558,8 @@
         "currency": "USD",
         "time_ms": 1789033588000,
         "time": "2026-09-10 17:46",
-        "owner": "汪伟",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市威斯尼科技有限公司",
@@ -2568,8 +2569,8 @@
         "currency": "USD",
         "time_ms": 1788947288000,
         "time": "2026-09-09 17:48",
-        "owner": "陈建国",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2579,8 +2580,8 @@
         "currency": "USD",
         "time_ms": 1788839552000,
         "time": "2026-09-08 11:52",
-        "owner": "王金国",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -2590,8 +2591,8 @@
         "currency": "USD",
         "time_ms": 1788746550000,
         "time": "2026-09-07 10:02",
-        "owner": "汪伟",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市威斯尼科技有限公司",
@@ -2601,8 +2602,8 @@
         "currency": "USD",
         "time_ms": 1788666980000,
         "time": "2026-09-06 11:56",
-        "owner": "陈建国",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市威斯尼科技有限公司",
@@ -2612,8 +2613,8 @@
         "currency": "USD",
         "time_ms": 1788603274000,
         "time": "2026-09-05 18:14",
-        "owner": "陈建国",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市威斯尼科技有限公司",
@@ -2623,8 +2624,8 @@
         "currency": "USD",
         "time_ms": 1788601785000,
         "time": "2026-09-05 17:49",
-        "owner": "陈建国",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -2634,8 +2635,8 @@
         "currency": "USD",
         "time_ms": 1788245218000,
         "time": "2026-09-01 14:46",
-        "owner": "汪伟",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳宏颖科技有限公司",
@@ -2645,8 +2646,8 @@
         "currency": "USD",
         "time_ms": 1788164040000,
         "time": "2026-08-31 16:14",
-        "owner": "漆螯童",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市百乐康科技有限公司",
@@ -2656,8 +2657,8 @@
         "currency": "USD",
         "time_ms": 1787626669000,
         "time": "2026-08-25 10:57",
-        "owner": "夏锐",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市百乐康科技有限公司",
@@ -2667,8 +2668,8 @@
         "currency": "USD",
         "time_ms": 1787555571000,
         "time": "2026-08-24 15:12",
-        "owner": "夏锐",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳大塘科技电子有限公司",
@@ -2678,8 +2679,8 @@
         "currency": "USD",
         "time_ms": 1787125837000,
         "time": "2026-08-19 15:50",
-        "owner": "李彬",
-        "owner_from": "strategy"
+        "kefu": "苏梓梦",
+        "kefu_from": "strategy"
       },
       {
         "customer": "鸿晖(深圳)科技有限公司",
@@ -2689,8 +2690,8 @@
         "currency": "USD",
         "time_ms": 1786930918000,
         "time": "2026-08-17 09:41",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市博悦展示品有限公司",
@@ -2700,8 +2701,8 @@
         "currency": "USD",
         "time_ms": 1786788782000,
         "time": "2026-08-15 18:13",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市泓泰印刷包装制品有限公司",
@@ -2711,8 +2712,8 @@
         "currency": "USD",
         "time_ms": 1786583850000,
         "time": "2026-08-13 09:17",
-        "owner": "李彬",
-        "owner_from": "strategy"
+        "kefu": "李岩",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市泓泰印刷包装制品有限公司",
@@ -2722,8 +2723,8 @@
         "currency": "USD",
         "time_ms": 1786583554000,
         "time": "2026-08-13 09:12",
-        "owner": "李彬",
-        "owner_from": "strategy"
+        "kefu": "李岩",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市润之行商标制作有限公司",
@@ -2733,8 +2734,8 @@
         "currency": "USD",
         "time_ms": 1786439896000,
         "time": "2026-08-11 17:18",
-        "owner": "邓晓东",
-        "owner_from": "strategy"
+        "kefu": "苏梓梦",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市布拉沃国际实业有限公司",
@@ -2744,8 +2745,8 @@
         "currency": "USD",
         "time_ms": 1786182816000,
         "time": "2026-08-08 17:53",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳宏颖科技有限公司",
@@ -2755,8 +2756,8 @@
         "currency": "USD",
         "time_ms": 1786179458000,
         "time": "2026-08-08 16:57",
-        "owner": "漆螯童",
-        "owner_from": "strategy"
+        "kefu": "邢欢欢",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市海飞源科技有限公司",
@@ -2766,8 +2767,8 @@
         "currency": "USD",
         "time_ms": 1786158476000,
         "time": "2026-08-08 11:07",
-        "owner": "李怡萍",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市思攀达科技有限公司",
@@ -2777,8 +2778,8 @@
         "currency": "USD",
         "time_ms": 1785977332000,
         "time": "2026-08-06 08:48",
-        "owner": "漆螯童",
-        "owner_from": "strategy"
+        "kefu": "罗洋清",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市阿桌数码科技有限公司",
@@ -2788,8 +2789,8 @@
         "currency": "USD",
         "time_ms": 1785919544000,
         "time": "2026-08-05 16:45",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市阿桌数码科技有限公司",
@@ -2799,8 +2800,8 @@
         "currency": "USD",
         "time_ms": 1785918662000,
         "time": "2026-08-05 16:31",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "方琼",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市伟腾鑫科技有限公司",
@@ -2810,8 +2811,8 @@
         "currency": "USD",
         "time_ms": 1785563263000,
         "time": "2026-08-01 13:47",
-        "owner": "李彬",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市布拉沃国际实业有限公司",
@@ -2821,8 +2822,8 @@
         "currency": "USD",
         "time_ms": 1785490738000,
         "time": "2026-07-31 17:38",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市德创纪元科技有限公司",
@@ -2832,8 +2833,8 @@
         "currency": "USD",
         "time_ms": 1785481228000,
         "time": "2026-07-31 15:00",
-        "owner": "陈建国",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市德创纪元科技有限公司",
@@ -2843,8 +2844,8 @@
         "currency": "USD",
         "time_ms": 1785480558000,
         "time": "2026-07-31 14:49",
-        "owner": "陈建国",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市日盛华科技有限公司",
@@ -2854,8 +2855,8 @@
         "currency": "USD",
         "time_ms": 1785403655000,
         "time": "2026-07-30 17:27",
-        "owner": "蒋汶桃",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市伟腾鑫科技有限公司",
@@ -2865,8 +2866,8 @@
         "currency": "USD",
         "time_ms": 1785399793000,
         "time": "2026-07-30 16:23",
-        "owner": "李彬",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市爱铂科技有限公司",
@@ -2876,8 +2877,8 @@
         "currency": "USD",
         "time_ms": 1785312096000,
         "time": "2026-07-29 16:01",
-        "owner": "漆螯童",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳大塘科技电子有限公司",
@@ -2887,8 +2888,8 @@
         "currency": "USD",
         "time_ms": 1784879055000,
         "time": "2026-07-24 15:44",
-        "owner": "李彬",
-        "owner_from": "strategy"
+        "kefu": "苏梓梦",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳大塘科技电子有限公司",
@@ -2898,8 +2899,8 @@
         "currency": "USD",
         "time_ms": 1784878435000,
         "time": "2026-07-24 15:33",
-        "owner": "李彬",
-        "owner_from": "strategy"
+        "kefu": "苏梓梦",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市海飞源科技有限公司",
@@ -2909,8 +2910,8 @@
         "currency": "USD",
         "time_ms": 1784790620000,
         "time": "2026-07-23 15:10",
-        "owner": "李怡萍",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市布拉沃国际实业有限公司",
@@ -2920,8 +2921,8 @@
         "currency": "USD",
         "time_ms": 1784705620000,
         "time": "2026-07-22 15:33",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市阿贝丝化妆用具有限公司",
@@ -2931,8 +2932,8 @@
         "currency": "USD",
         "time_ms": 1784531942000,
         "time": "2026-07-20 15:19",
-        "owner": "李怡萍",
-        "owner_from": "strategy"
+        "kefu": "汤青芬",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市爱铂科技有限公司",
@@ -2942,8 +2943,8 @@
         "currency": "USD",
         "time_ms": 1784531412000,
         "time": "2026-07-20 15:10",
-        "owner": "漆螯童",
-        "owner_from": "strategy"
+        "kefu": "曹丽",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市阿贝丝化妆用具有限公司",
@@ -2953,8 +2954,8 @@
         "currency": "USD",
         "time_ms": 1784530890000,
         "time": "2026-07-20 15:01",
-        "owner": "李怡萍",
-        "owner_from": "strategy"
+        "kefu": "汤青芬",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳市新生力科技有限公司",
@@ -2964,8 +2965,8 @@
         "currency": "USD",
         "time_ms": 1784001057000,
         "time": "2026-07-14 11:50",
-        "owner": "夏锐",
-        "owner_from": "strategy"
+        "kefu": "罗洋清",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -2975,8 +2976,8 @@
         "currency": "USD",
         "time_ms": 1693462786000,
         "time": "2023-08-31 14:19",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -2986,8 +2987,8 @@
         "currency": "USD",
         "time_ms": 1693462574000,
         "time": "2023-08-31 14:16",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -2997,8 +2998,8 @@
         "currency": "USD",
         "time_ms": 1693462420000,
         "time": "2023-08-31 14:13",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3008,8 +3009,8 @@
         "currency": "USD",
         "time_ms": 1693461937000,
         "time": "2023-08-31 14:05",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3019,8 +3020,8 @@
         "currency": "USD",
         "time_ms": 1693461722000,
         "time": "2023-08-31 14:02",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3030,8 +3031,8 @@
         "currency": "USD",
         "time_ms": 1693461260000,
         "time": "2023-08-31 13:54",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3041,8 +3042,8 @@
         "currency": "USD",
         "time_ms": 1693461091000,
         "time": "2023-08-31 13:51",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3052,8 +3053,8 @@
         "currency": "USD",
         "time_ms": 1693460921000,
         "time": "2023-08-31 13:48",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3063,8 +3064,8 @@
         "currency": "USD",
         "time_ms": 1693460766000,
         "time": "2023-08-31 13:46",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3074,8 +3075,8 @@
         "currency": "USD",
         "time_ms": 1693460617000,
         "time": "2023-08-31 13:43",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3085,8 +3086,8 @@
         "currency": "USD",
         "time_ms": 1693460225000,
         "time": "2023-08-31 13:37",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3096,8 +3097,8 @@
         "currency": "USD",
         "time_ms": 1693375147000,
         "time": "2023-08-30 13:59",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3107,8 +3108,8 @@
         "currency": "USD",
         "time_ms": 1693374502000,
         "time": "2023-08-30 13:48",
-        "owner": "王子豪",
-        "owner_from": "strategy"
+        "kefu": "陈宇",
+        "kefu_from": "strategy"
       }
     ]
   },
