@@ -647,7 +647,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1791796430';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1791800142';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1183,13 +1183,16 @@
     // 每张卡自带来源标签：这一屏跨了 2 张报表（策略中心 / 全量客户盘点），
     // 不标来源就会出现"同一个维度两个数"却看不出为什么（曾发生：满3万 945 vs 已达3万 967）。
     // 分档类 4 项统一取【盘点】口径，与右侧「3万客户分层」同源同数。
+    // 来源逐个从数据里取（2026-10-12 分档口径可由用户在「策略中心 / 全量客户盘点」之间切换，
+    // 写死标签就会出现「数换了、来源还写着旧的」）。
+    const src = p.sources || {};
     $('panel-stats').innerHTML = '<div class="grid kpi-grid">' + [
-      ['策略中心客户总数', p.total, '策略中心'],
-      ['盘点客户数', p.checked, '盘点'],
-      ['本季度满3万', p.full3w, '盘点'],
-      ['2-3万冲刺客户', p.sprint, '盘点'],
-      ['未动销客户', p.inactive, '盘点'],
-      ['有实收客户数', p.paid, '盘点']
+      ['策略中心客户总数', p.total, src.total || '策略中心'],
+      ['盘点客户数', p.checked, src.checked || '全量客户盘点'],
+      ['本季度满3万', p.full3w, src.band || '盘点'],
+      ['2-3万冲刺客户', p.sprint, src.band || '盘点'],
+      ['未动销客户', p.inactive, src.band || '盘点'],
+      ['有实收客户数', p.paid, src.band || '盘点']
     ].map(function (it) {
       return '<div class="card"><span class="cap">' + it[0] +
         '<span class="text-dim">（' + it[2] + '）</span></span><div class="big">' + fmt(it[1], 0) +
@@ -1204,7 +1207,10 @@
       return;
     }
     const total = rows.reduce(function (s, r) { return s + (num(r.count) || 0); }, 0);
-    $('layers-title').textContent = '3万客户分层（' + fmt(total, 0) + ' 家）';
+    // 口径写进标题：分档可由用户在「策略中心·本季度GMV / 全量客户盘点·本季度实收」之间切换，
+    // 两个口径的「满3万」家数不同（2026-10-12 实测 74 vs 5），不标就会有人问为什么两个数打架。
+    $('layers-title').textContent = '3万客户分层（' + fmt(total, 0) + ' 家）· ' +
+      (d.layers_source || '未标口径');
     $('layers-body').innerHTML = '<div class="layer-row text-dim"><span>分层</span><span>客户数</span><span>占比</span></div>' +
       rows.map(function (r) {
         return '<div class="layer-row"><span>' + esc(r.name) + '</span><span>' + fmt(r.count, 0) + '</span><span>' +
