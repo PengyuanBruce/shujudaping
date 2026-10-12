@@ -1,7 +1,7 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-12 16:24",
+  "update_time": "2026-10-12 17:13",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 14477327.92,
@@ -3114,295 +3114,55 @@
     ]
   },
   "awb": {
-    "title": "AWB 潜客盘点",
-    "note": "AWB 待签约潜客 · 按销售 + 客户明细（来源：桌面「10月AWB盘点.xlsx」） · ⚠ 点名放行 文一锦 1 家（不在 22 人销售名单内）",
-    "update": "",
-    "totals": {
-      "prospects": 20,
-      "visited": 20,
-      "cgs": 20,
-      "amount": 364000.0,
-      "sales": 13,
-      "extra": [
-        "文一锦"
-      ],
-      "dropped": 0
-    },
-    "by_sale": [
+    "title": "AWB 客户盘点",
+    "note": "源：桌面「10月AWB盘点.xlsx」· 季度前三单高佣金奖励 + 每日客户盘点 · 表更新 2026-10-12 16:53 · 盘点区暂无数据行（表里还是空的）",
+    "update": "2026-10-12",
+    "source": "10月AWB盘点.xlsx",
+    "source_mtime": "2026-10-12 16:53",
+    "awards": [
       {
-        "name": "邓晓东",
-        "prospects": 4,
-        "visited": 4,
-        "cgs": 4,
-        "amount": 80000.0
-      },
-      {
-        "name": "蒋汶桃",
-        "prospects": 2,
-        "visited": 2,
-        "cgs": 2,
-        "amount": 40000.0
-      },
-      {
-        "name": "夏锐",
-        "prospects": 2,
-        "visited": 2,
-        "cgs": 2,
-        "amount": 40000.0
-      },
-      {
-        "name": "陈建国",
-        "prospects": 2,
-        "visited": 2,
-        "cgs": 2,
-        "amount": 22000.0
-      },
-      {
-        "name": "李彬",
-        "prospects": 2,
-        "visited": 2,
-        "cgs": 2,
-        "amount": 22000.0
-      },
-      {
-        "name": "高国权",
-        "prospects": 1,
-        "visited": 1,
-        "cgs": 1,
+        "label": "季度首单",
+        "pending": false,
+        "sales": "蒋汶桃",
+        "bonus": 8000.0,
+        "bonus_text": "8000（佣金100%+2000激励）",
+        "plan": "入门版",
+        "plan_text": "入门版¥20000",
         "amount": 20000.0
       },
       {
-        "name": "王子豪",
-        "prospects": 1,
-        "visited": 1,
-        "cgs": 1,
-        "amount": 20000.0
+        "label": "季度第二单",
+        "pending": true,
+        "sales": "",
+        "bonus": null,
+        "bonus_text": "",
+        "plan": "",
+        "plan_text": "",
+        "amount": null
       },
       {
-        "name": "谢承杰",
-        "prospects": 1,
-        "visited": 1,
-        "cgs": 1,
-        "amount": 20000.0
-      },
-      {
-        "name": "文一锦",
-        "prospects": 1,
-        "visited": 1,
-        "cgs": 1,
-        "amount": 20000.0
-      },
-      {
-        "name": "牛群",
-        "prospects": 1,
-        "visited": 1,
-        "cgs": 1,
-        "amount": 20000.0
-      },
-      {
-        "name": "王金国",
-        "prospects": 1,
-        "visited": 1,
-        "cgs": 1,
-        "amount": 20000.0
-      },
-      {
-        "name": "刘蓝琳",
-        "prospects": 1,
-        "visited": 1,
-        "cgs": 1,
-        "amount": 20000.0
-      },
-      {
-        "name": "刘嘉艳",
-        "prospects": 1,
-        "visited": 1,
-        "cgs": 1,
-        "amount": 20000.0
+        "label": "季度第三单",
+        "pending": true,
+        "sales": "",
+        "bonus": null,
+        "bonus_text": "",
+        "plan": "",
+        "plan_text": "",
+        "amount": null
       }
     ],
-    "detail": [
-      {
-        "customer": "深圳市炜晨阳科技有限公司",
-        "sale": "陈建国",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 20000.0,
-        "sign_time": "",
-        "blocker": "运营不认可，需要针对运营问题，上门做个实操"
-      },
-      {
-        "customer": "深圳市亚台新电子有限公司",
-        "sale": "高国权",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 20000.0,
-        "sign_time": "",
-        "blocker": ""
-      },
-      {
-        "customer": "深圳市顺力电机有限公司",
-        "sale": "王子豪",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 20000.0,
-        "sign_time": "",
-        "blocker": "有客情，客户在客户经理那边犹豫，上门做服务逼单"
-      },
-      {
-        "customer": "深圳市未林森有限公司",
-        "sale": "谢承杰",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 20000.0,
-        "sign_time": "",
-        "blocker": "客户那边已经确认了，等付款，可能先试一个2000的，推动20000方案"
-      },
-      {
-        "customer": "深圳市雅客日化有限公司",
-        "sale": "蒋汶桃",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 20000.0,
-        "sign_time": "",
-        "blocker": ""
-      },
-      {
-        "customer": "深圳市吉顺达纸制品有限公司",
-        "sale": "蒋汶桃",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 20000.0,
-        "sign_time": "",
-        "blocker": ""
-      },
-      {
-        "customer": "深圳市若盛科技有限公司",
-        "sale": "邓晓东",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 20000.0,
-        "sign_time": "",
-        "blocker": ""
-      },
-      {
-        "customer": "深圳市三嘉达电子科技有限公司",
-        "sale": "夏锐",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 20000.0,
-        "sign_time": "",
-        "blocker": "需要上门具体实操"
-      },
-      {
-        "customer": "深圳市芯图世纪科技有限公司",
-        "sale": "夏锐",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 20000.0,
-        "sign_time": "",
-        "blocker": "客户有需求，需要上门实操，针对客户线上线下以及公司管理方面"
-      },
-      {
-        "customer": "深圳蓝丰电子有限公司",
-        "sale": "李彬",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 20000.0,
-        "sign_time": "",
-        "blocker": ""
-      },
-      {
-        "customer": "深圳市安诚通集装箱服务有限公司",
-        "sale": "文一锦",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 20000.0,
-        "sign_time": "",
-        "blocker": "已经买了2000的版本，铺垫了平台优化和数据清洗功能，要节后上门指导，积分不够升级方案"
-      },
-      {
-        "customer": "深圳市蓝濂科技有限公司",
-        "sale": "牛群",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 20000.0,
-        "sign_time": "",
-        "blocker": ""
-      },
-      {
-        "customer": "深圳市东仪电子有限公司",
-        "sale": "王金国",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 20000.0,
-        "sign_time": "",
-        "blocker": "没有运营，业务兼职运营，业务都比较忙，他们没有时间运营和研究awb"
-      },
-      {
-        "customer": "深圳市展辉光电科技有限公司",
-        "sale": "邓晓东",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 20000.0,
-        "sign_time": "",
-        "blocker": ""
-      },
-      {
-        "customer": "深圳市瑞欣电子科技有限公司",
-        "sale": "刘蓝琳",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 20000.0,
-        "sign_time": "",
-        "blocker": ""
-      },
-      {
-        "customer": "深圳市一腾供应链有限公司",
-        "sale": "刘嘉艳",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 20000.0,
-        "sign_time": "",
-        "blocker": ""
-      },
-      {
-        "customer": "深圳市宝隆盛科技有限公司",
-        "sale": "邓晓东",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 20000.0,
-        "sign_time": "",
-        "blocker": "客户觉得有点贵，自己又懂运营，需要上门实操让他感受便捷后逼单"
-      },
-      {
-        "customer": "深圳市永昌泰电子有限公司",
-        "sale": "邓晓东",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 20000.0,
-        "sign_time": "",
-        "blocker": ""
-      },
-      {
-        "customer": "深圳酷虎智触实业有限公司",
-        "sale": "李彬",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 2000.0,
-        "sign_time": "",
-        "blocker": ""
-      },
-      {
-        "customer": "东莞市筑华贸易有限公司",
-        "sale": "陈建国",
-        "visited": "已上门",
-        "cgs": "CGS",
-        "amount": 2000.0,
-        "sign_time": "",
-        "blocker": "上门同步，客户感兴趣，需要针对产品上门做操作"
-      }
-    ]
+    "totals": {
+      "awards": 3,
+      "awards_done": 1,
+      "customers": 0,
+      "sales": 0,
+      "amount": 0,
+      "days": 0,
+      "latest": "",
+      "offroster": []
+    },
+    "by_sale": [],
+    "detail": []
   },
   "month_no": "10",
   "source_note": "阿里一拍档·数据参谋，浏览器只读采集",
