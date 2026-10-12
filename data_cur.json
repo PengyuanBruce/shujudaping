@@ -1,17 +1,17 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-11 19:11",
+  "update_time": "2026-10-12 08:54",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
-    "month_val": 13605117.83,
+    "month_val": 13777571.91,
     "month_target": null,
     "month_pct": null,
-    "quarter_val": 13606084.9,
+    "quarter_val": 13780742.41,
     "quarter_target": null,
     "quarter_pct": null,
-    "month_gap": 13605118.0,
-    "quarter_gap": 13606085.0,
+    "month_gap": 13777572.0,
+    "quarter_gap": 13780742.0,
     "month_val_acp": 1953051.22,
     "active_clients": 945.0,
     "active_clients_yoy": 1017.0,
@@ -23,14 +23,14 @@
     "acp_caliber": "激励▸业务目标▸ACP▸拍档▸总实收（2026-10）"
   },
   "acp": {
-    "month_val": 1910312.24,
+    "month_val": 1945307.88,
     "month_target": null,
     "month_pct": null,
-    "quarter_val": 1910312.24,
+    "quarter_val": 1945307.88,
     "quarter_target": null,
     "quarter_pct": null,
-    "month_gap": 1910312.0,
-    "quarter_gap": 1910312.0
+    "month_gap": 1945308.0,
+    "quarter_gap": 1945308.0
   },
   "persons": [
     {
@@ -49,7 +49,7 @@
       "active_clients": 55.0,
       "active_clients_yoy": 54.0,
       "hit_products": 6223.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 6236.0,
       "hit_pct": 99.8
     },
@@ -69,7 +69,7 @@
       "active_clients": 91.0,
       "active_clients_yoy": 107.0,
       "hit_products": 12214.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 14390.0,
       "hit_pct": 84.9
     },
@@ -89,7 +89,7 @@
       "active_clients": 92.0,
       "active_clients_yoy": 89.0,
       "hit_products": 9565.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 10865.0,
       "hit_pct": 88.0
     },
@@ -109,7 +109,7 @@
       "active_clients": 81.0,
       "active_clients_yoy": 104.0,
       "hit_products": 10658.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 11319.0,
       "hit_pct": 94.2
     },
@@ -129,7 +129,7 @@
       "active_clients": 68.0,
       "active_clients_yoy": 73.0,
       "hit_products": 10468.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 11987.0,
       "hit_pct": 87.3
     },
@@ -149,7 +149,7 @@
       "active_clients": 80.0,
       "active_clients_yoy": 90.0,
       "hit_products": 10438.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 12939.0,
       "hit_pct": 80.7
     },
@@ -169,7 +169,7 @@
       "active_clients": 87.0,
       "active_clients_yoy": 98.0,
       "hit_products": 11911.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 14137.0,
       "hit_pct": 84.3
     },
@@ -189,7 +189,7 @@
       "active_clients": 52.0,
       "active_clients_yoy": 45.0,
       "hit_products": 5177.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 6018.0,
       "hit_pct": 86.0
     },
@@ -209,7 +209,7 @@
       "active_clients": 58.0,
       "active_clients_yoy": 52.0,
       "hit_products": 6623.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 7419.0,
       "hit_pct": 89.3
     },
@@ -229,7 +229,7 @@
       "active_clients": 45.0,
       "active_clients_yoy": 62.0,
       "hit_products": 5588.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 4073.0,
       "hit_pct": 137.2
     },
@@ -249,7 +249,7 @@
       "active_clients": 58.0,
       "active_clients_yoy": 59.0,
       "hit_products": 5630.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 6297.0,
       "hit_pct": 89.4
     },
@@ -269,7 +269,7 @@
       "active_clients": 50.0,
       "active_clients_yoy": 47.0,
       "hit_products": 7492.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 9324.0,
       "hit_pct": 80.4
     },
@@ -289,7 +289,7 @@
       "active_clients": 41.0,
       "active_clients_yoy": 30.0,
       "hit_products": 8106.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 8911.0,
       "hit_pct": 91.0
     },
@@ -309,7 +309,7 @@
       "active_clients": 25.0,
       "active_clients_yoy": 14.0,
       "hit_products": 4291.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 4865.0,
       "hit_pct": 88.2
     },
@@ -329,7 +329,7 @@
       "active_clients": 13.0,
       "active_clients_yoy": 14.0,
       "hit_products": 2445.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 3192.0,
       "hit_pct": 76.6
     },
@@ -349,7 +349,7 @@
       "active_clients": 10.0,
       "active_clients_yoy": 11.0,
       "hit_products": 1877.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 3770.0,
       "hit_pct": 49.8
     },
@@ -369,7 +369,7 @@
       "active_clients": 10.0,
       "active_clients_yoy": 15.0,
       "hit_products": 1828.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 3164.0,
       "hit_pct": 57.8
     },
@@ -389,7 +389,7 @@
       "active_clients": 5.0,
       "active_clients_yoy": 15.0,
       "hit_products": 1475.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 3257.0,
       "hit_pct": 45.3
     },
@@ -409,7 +409,7 @@
       "active_clients": 7.0,
       "active_clients_yoy": 11.0,
       "hit_products": 2516.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 3710.0,
       "hit_pct": 67.8
     },
@@ -429,7 +429,7 @@
       "active_clients": 3.0,
       "active_clients_yoy": 12.0,
       "hit_products": 1078.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 1725.0,
       "hit_pct": 62.5
     },
@@ -449,7 +449,7 @@
       "active_clients": 7.0,
       "active_clients_yoy": 17.0,
       "hit_products": 1918.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 3851.0,
       "hit_pct": 49.8
     },
@@ -469,7 +469,7 @@
       "active_clients": 4.0,
       "active_clients_yoy": 6.0,
       "hit_products": 1522.0,
-      "time_pct": 32.0,
+      "time_pct": 35.0,
       "hit_target": 2624.0,
       "hit_pct": 58.0
     }
@@ -478,10 +478,10 @@
   "config_month_label": "2026-10",
   "config_quarter_label": "FY27Q3",
   "company": "深圳市鹏远企业服务有限公司",
-  "month_time_pct": 35.5,
-  "month_time_pct_platform": 32.0,
-  "quarter_time_pct": 12.0,
-  "quarter_time_note": "FY27Q3 第 11/92 天（截至 2026-10-11）",
+  "month_time_pct": 38.7,
+  "month_time_pct_platform": 35.0,
+  "quarter_time_pct": 13.0,
+  "quarter_time_note": "FY27Q3 第 12/92 天（截至 2026-10-12）",
   "trend": {
     "gmv": {
       "title": "信保月度趋势(万美元)",
@@ -1064,258 +1064,293 @@
     "paid": 2526.0
   },
   "s9610": {
-    "title": "9610 下单登记",
-    "note": "仅「9610」下单登记（来源：桌面「9月份9610下单登记表.xlsx」· 人维度是**客服**）",
-    "update": "2026-09-28",
-    "person_label": "客服",
+    "title": "9610 打标订单",
+    "note": "9610 打标订单（来源：一拍档物流服务商后台订单列表；按线路汇总 · 全部历史）",
+    "update": "2026-10-12",
+    "group_label": "线路",
     "totals": {
-      "customers": 20,
-      "orders": 55,
-      "exclusive_orders": 45,
-      "new_customers": 15,
-      "declared": null,
-      "sales": 8,
-      "roster_scoped": false,
-      "dropped": 0
+      "customers": 36,
+      "orders": 177,
+      "declared": 57778.64,
+      "currency": "USD",
+      "currencies": [
+        "USD"
+      ],
+      "lines": 5,
+      "lines_active": 3
     },
-    "by_sale": [
+    "by_line": [
       {
-        "name": "曹丽",
-        "customers": 5,
-        "orders": 10,
-        "exclusive_orders": 6,
-        "new_customers": 4
+        "name": "无忧全球9610专线DDP(标准)",
+        "customers": 31,
+        "orders": 122,
+        "declared": 52584.12
       },
       {
-        "name": "陈宇",
+        "name": "无忧全球9610小包DDP_标准(标准)",
         "customers": 4,
-        "orders": 21,
-        "exclusive_orders": 21,
-        "new_customers": 2
+        "orders": 42,
+        "declared": 2314.52
       },
       {
-        "name": "邢欢欢",
-        "customers": 4,
-        "orders": 11,
-        "exclusive_orders": 9,
-        "new_customers": 4
-      },
-      {
-        "name": "方琼",
-        "customers": 3,
-        "orders": 6,
-        "exclusive_orders": 2,
-        "new_customers": 2
-      },
-      {
-        "name": "苏梓梦",
+        "name": "无忧9610SKA专线(优选)",
         "customers": 1,
-        "orders": 3,
-        "exclusive_orders": 3,
-        "new_customers": 0
-      },
-      {
-        "name": "庞婷婷",
-        "customers": 1,
-        "orders": 2,
-        "exclusive_orders": 2,
-        "new_customers": 1
-      },
-      {
-        "name": "罗洋清",
-        "customers": 1,
-        "orders": 1,
-        "exclusive_orders": 1,
-        "new_customers": 1
-      },
-      {
-        "name": "农路源",
-        "customers": 1,
-        "orders": 1,
-        "exclusive_orders": 1,
-        "new_customers": 1
+        "orders": 13,
+        "declared": 2880.0
       }
     ],
     "detail": [
       {
+        "customer": "深圳市元合诚科技有限公司",
+        "orders": 38,
+        "declared": 2096.0,
+        "last_order": "2026-09-14 15:18",
+        "line": "无忧全球9610小包DDP_标准(标准)"
+      },
+      {
         "customer": "深圳鑫生力科技有限公司",
-        "orders": 14,
-        "exclusive_orders": 14,
-        "new_customer": true,
-        "last_order": "2026-09-28",
-        "line": "全球9610专线DDP_标准",
-        "sale": "陈宇"
+        "orders": 34,
+        "declared": 12246.0,
+        "last_order": "2026-10-08 20:12",
+        "line": "无忧全球9610专线DDP(标准)"
+      },
+      {
+        "customer": "深圳云飞扬化妆品有限公司",
+        "orders": 13,
+        "declared": 2880.0,
+        "last_order": "2023-08-31 14:19",
+        "line": "无忧9610SKA专线(优选)"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
+        "orders": 11,
+        "declared": 4537.0,
+        "last_order": "2026-10-10 09:51",
+        "line": "无忧全球9610专线DDP(标准)"
+      },
+      {
+        "customer": "深圳市德创纪元科技有限公司",
         "orders": 7,
-        "exclusive_orders": 5,
-        "new_customer": true,
-        "last_order": "2026-09-24",
-        "line": "全球9610专线DDP_标准",
-        "sale": "邢欢欢"
-      },
-      {
-        "customer": "深圳市威斯尼科技有限公司",
-        "orders": 5,
-        "exclusive_orders": 1,
-        "new_customer": true,
-        "last_order": "2026-09-11",
-        "line": "全球9610小包DDP_标准 / 全球9610专线DDP_标准",
-        "sale": "曹丽"
-      },
-      {
-        "customer": "深圳市博悦展示品有限公司",
-        "orders": 4,
-        "exclusive_orders": 4,
-        "new_customer": false,
-        "last_order": "2026-09-18",
-        "line": "全球9610专线DDP_标准",
-        "sale": "陈宇"
-      },
-      {
-        "customer": "深圳大塘科技电子有限公司",
-        "orders": 3,
-        "exclusive_orders": 3,
-        "new_customer": false,
-        "last_order": "2026-09-22",
-        "line": "全球9610专线DDP_标准",
-        "sale": "苏梓梦"
+        "declared": 1469.0,
+        "last_order": "2026-09-29 11:31",
+        "line": "无忧全球9610专线DDP(标准)"
       },
       {
         "customer": "深圳市百乐康科技有限公司",
+        "orders": 7,
+        "declared": 1903.3,
+        "last_order": "2026-10-08 10:22",
+        "line": "无忧全球9610专线DDP(标准)"
+      },
+      {
+        "customer": "深圳大塘科技电子有限公司",
+        "orders": 6,
+        "declared": 3725.94,
+        "last_order": "2026-09-22 16:25",
+        "line": "无忧全球9610专线DDP(标准)"
+      },
+      {
+        "customer": "深圳市威斯尼科技有限公司",
+        "orders": 6,
+        "declared": 762.9,
+        "last_order": "2026-09-30 11:49",
+        "line": "无忧全球9610专线DDP(标准)"
+      },
+      {
+        "customer": "深圳市博悦展示品有限公司",
+        "orders": 5,
+        "declared": 3339.57,
+        "last_order": "2026-09-18 14:41",
+        "line": "无忧全球9610专线DDP(标准)"
+      },
+      {
+        "customer": "深圳市布拉沃国际实业有限公司",
+        "orders": 5,
+        "declared": 4634.0,
+        "last_order": "2026-09-22 13:55",
+        "line": "无忧全球9610专线DDP(标准)"
+      },
+      {
+        "customer": "深圳市爱铂科技有限公司",
+        "orders": 5,
+        "declared": 1709.35,
+        "last_order": "2026-10-09 11:12",
+        "line": "无忧全球9610专线DDP(标准)"
+      },
+      {
+        "customer": "深圳市新生力科技有限公司",
         "orders": 3,
-        "exclusive_orders": 1,
-        "new_customer": false,
-        "last_order": "2026-09-28",
-        "line": "全球9610小包DDP_标准 / 全球9610专线DDP_标准",
-        "sale": "方琼"
+        "declared": 430.0,
+        "last_order": "2026-10-08 18:55",
+        "line": "无忧全球9610专线DDP(标准)"
+      },
+      {
+        "customer": "深圳市辉波诚科技有限公司",
+        "orders": 3,
+        "declared": 5012.04,
+        "last_order": "2026-09-30 16:13",
+        "line": "无忧全球9610专线DDP(标准)"
       },
       {
         "customer": "惠州奇锋商贸有限公司",
         "orders": 2,
-        "exclusive_orders": 2,
-        "new_customer": true,
-        "last_order": "2026-09-20",
-        "line": "全球9610专线DDP_标准",
-        "sale": "邢欢欢"
+        "declared": 254.0,
+        "last_order": "2026-09-20 11:50",
+        "line": "无忧全球9610专线DDP(标准)"
       },
       {
-        "customer": "深圳市元合诚科技有限公司",
+        "customer": "深圳宏颖科技有限公司",
         "orders": 2,
-        "exclusive_orders": 0,
-        "new_customer": true,
-        "last_order": "2026-09-14",
-        "line": "全球9610小包DDP_标准",
-        "sale": "方琼"
+        "declared": 206.6,
+        "last_order": "2026-08-31 16:14",
+        "line": "无忧全球9610专线DDP(标准)"
       },
       {
-        "customer": "深圳市布拉沃国际实业有限公司",
+        "customer": "深圳市伟腾鑫科技有限公司",
         "orders": 2,
-        "exclusive_orders": 2,
-        "new_customer": false,
-        "last_order": "2026-09-22",
-        "line": "全球9610专线DDP_标准",
-        "sale": "陈宇"
+        "declared": 445.22,
+        "last_order": "2026-08-01 13:47",
+        "line": "无忧全球9610专线DDP(标准)"
       },
       {
-        "customer": "深圳市德创纪元科技有限公司",
+        "customer": "深圳市泓泰印刷包装制品有限公司",
         "orders": 2,
-        "exclusive_orders": 2,
-        "new_customer": true,
-        "last_order": "2026-09-16",
-        "line": "全球9610专线DDP_标准",
-        "sale": "曹丽"
+        "declared": 453.0,
+        "last_order": "2026-08-13 09:17",
+        "line": "无忧全球9610专线DDP(标准)"
+      },
+      {
+        "customer": "深圳市海飞源科技有限公司",
+        "orders": 2,
+        "declared": 1247.0,
+        "last_order": "2026-08-08 11:07",
+        "line": "无忧全球9610专线DDP(标准)"
+      },
+      {
+        "customer": "深圳市润之行商标制作有限公司",
+        "orders": 2,
+        "declared": 40.3,
+        "last_order": "2026-10-07 13:42",
+        "line": "无忧全球9610专线DDP(标准)"
+      },
+      {
+        "customer": "深圳市路通电子有限公司",
+        "orders": 2,
+        "declared": 2922.0,
+        "last_order": "2026-09-28 11:29",
+        "line": "无忧全球9610专线DDP(标准)"
+      },
+      {
+        "customer": "深圳市阿桌数码科技有限公司",
+        "orders": 2,
+        "declared": 27.6,
+        "last_order": "2026-08-05 16:45",
+        "line": "无忧全球9610小包DDP_标准(标准)"
+      },
+      {
+        "customer": "深圳市阿贝丝化妆用具有限公司",
+        "orders": 2,
+        "declared": 360.0,
+        "last_order": "2026-07-20 15:19",
+        "line": "无忧全球9610专线DDP(标准)"
       },
       {
         "customer": "深圳市风都科技有限公司",
         "orders": 2,
-        "exclusive_orders": 2,
-        "new_customer": true,
-        "last_order": "2026-09-24",
-        "line": "全球9610专线DDP_标准",
-        "sale": "庞婷婷"
+        "declared": 593.0,
+        "last_order": "2026-09-24 18:41",
+        "line": "无忧全球9610专线DDP(标准)"
+      },
+      {
+        "customer": "鸿晖(深圳)科技有限公司",
+        "orders": 2,
+        "declared": 541.5,
+        "last_order": "2026-09-16 15:02",
+        "line": "无忧全球9610专线DDP(标准)"
       },
       {
         "customer": "深圳信广鑫仪器设备有限公司",
         "orders": 1,
-        "exclusive_orders": 1,
-        "new_customer": true,
-        "last_order": "2026-09-21",
-        "line": "全球9610专线DDP_标准",
-        "sale": "邢欢欢"
+        "declared": 60.0,
+        "last_order": "2026-09-21 13:49",
+        "line": "无忧全球9610专线DDP(标准)"
       },
       {
         "customer": "深圳华声科技有限公司",
         "orders": 1,
-        "exclusive_orders": 1,
-        "new_customer": true,
-        "last_order": "2026-09-24",
-        "line": "全球9610专线DDP_标准",
-        "sale": "曹丽"
+        "declared": 180.0,
+        "last_order": "2026-09-24 10:48",
+        "line": "无忧全球9610专线DDP(标准)"
       },
       {
         "customer": "深圳市古石科技有限公司",
         "orders": 1,
-        "exclusive_orders": 1,
-        "new_customer": true,
-        "last_order": "2026-09-24",
-        "line": "全球9610专线DDP_标准",
-        "sale": "方琼"
+        "declared": 10.0,
+        "last_order": "2026-09-24 14:54",
+        "line": "无忧全球9610专线DDP(标准)"
       },
       {
         "customer": "深圳市哇哦暖通设备有限公司",
         "orders": 1,
-        "exclusive_orders": 1,
-        "new_customer": true,
-        "last_order": "2026-09-16",
-        "line": "全球9610专线DDP_标准",
-        "sale": "邢欢欢"
+        "declared": 1780.0,
+        "last_order": "2026-09-16 11:20",
+        "line": "无忧全球9610专线DDP(标准)"
       },
       {
         "customer": "深圳市四通广行实业有限公司",
         "orders": 1,
-        "exclusive_orders": 1,
-        "new_customer": true,
-        "last_order": "2026-09-14",
-        "line": "全球9610专线DDP_标准",
-        "sale": "罗洋清"
+        "declared": 29.4,
+        "last_order": "2026-09-14 15:57",
+        "line": "无忧全球9610专线DDP(标准)"
+      },
+      {
+        "customer": "深圳市圳烨科技有限公司",
+        "orders": 1,
+        "declared": 5.0,
+        "last_order": "2026-09-30 11:39",
+        "line": "无忧全球9610专线DDP(标准)"
+      },
+      {
+        "customer": "深圳市思攀达科技有限公司",
+        "orders": 1,
+        "declared": 30.92,
+        "last_order": "2026-08-06 08:48",
+        "line": "无忧全球9610小包DDP_标准(标准)"
+      },
+      {
+        "customer": "深圳市日盛华科技有限公司",
+        "orders": 1,
+        "declared": 160.0,
+        "last_order": "2026-07-30 17:27",
+        "line": "无忧全球9610小包DDP_标准(标准)"
+      },
+      {
+        "customer": "深圳市灵视创科技有限公司",
+        "orders": 1,
+        "declared": 348.0,
+        "last_order": "2026-10-07 11:14",
+        "line": "无忧全球9610专线DDP(标准)"
+      },
+      {
+        "customer": "深圳市爱思考制冷设备有限公司",
+        "orders": 1,
+        "declared": 2640.0,
+        "last_order": "2026-10-09 19:10",
+        "line": "无忧全球9610专线DDP(标准)"
       },
       {
         "customer": "深圳市美昕实业有限公司",
         "orders": 1,
-        "exclusive_orders": 1,
-        "new_customer": true,
-        "last_order": "2026-09-24",
-        "line": "全球9610专线DDP_标准",
-        "sale": "农路源"
+        "declared": 180.0,
+        "last_order": "2026-09-24 11:42",
+        "line": "无忧全球9610专线DDP(标准)"
       },
       {
-        "customer": "深圳市路通电子有限公司",
+        "customer": "深圳市龙腾特科技有限公司",
         "orders": 1,
-        "exclusive_orders": 1,
-        "new_customer": true,
-        "last_order": "2026-09-28",
-        "line": "全球9610专线DDP_标准",
-        "sale": "陈宇"
-      },
-      {
-        "customer": "深圳市辉波诚科技有限公司",
-        "orders": 1,
-        "exclusive_orders": 1,
-        "new_customer": true,
-        "last_order": "2026-09-22",
-        "line": "全球9610专线DDP_标准",
-        "sale": "曹丽"
-      },
-      {
-        "customer": "鸿晖(深圳)科技有限公司",
-        "orders": 1,
-        "exclusive_orders": 1,
-        "new_customer": false,
-        "last_order": "2026-09-16",
-        "line": "全球9610专线DDP_标准",
-        "sale": "曹丽"
+        "declared": 520.0,
+        "last_order": "2026-10-04 17:24",
+        "line": "无忧全球9610专线DDP(标准)"
       }
     ]
   },
@@ -1613,99 +1648,99 @@
   "month_no": "10",
   "source_note": "阿里一拍档·数据参谋，浏览器只读采集",
   "daily_add": {
-    "title": "每日新增（对比 2026-10-10 快照）",
-    "label": "对比 2026-10-10 快照",
-    "xb_recv": 593754.58,
+    "title": "每日新增（对比 2026-10-11 快照）",
+    "label": "对比 2026-10-11 快照",
+    "xb_recv": 172454.08,
     "active_3w": 0.0,
     "customers": 0.0
   },
   "persons_daily_add": {
     "李彬": {
-      "xb_recv": 51481.33,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "汪伟": {
-      "xb_recv": 142350.24,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "陈建国": {
-      "xb_recv": 80217.85,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "漆螯童": {
-      "xb_recv": 47522.4,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "蒋汶桃": {
-      "xb_recv": 49812.14,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "夏锐": {
-      "xb_recv": 41020.05,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "王子豪": {
-      "xb_recv": 49293.11,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "汤子豪": {
-      "xb_recv": 38765.13,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "高国权": {
-      "xb_recv": 13764.22,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "王凡": {
-      "xb_recv": 12328.46,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "谢承杰": {
-      "xb_recv": 32387.33,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "李怡萍": {
-      "xb_recv": 10527.64,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "邓晓东": {
-      "xb_recv": 14481.11,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "何尧玲": {
-      "xb_recv": 7953.53,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "刘蓝琳": {
-      "xb_recv": 5017.91,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "刘嘉艳": {
-      "xb_recv": 11860.06,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "罗金填": {
-      "xb_recv": 1287.93,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "梁诗琪": {
-      "xb_recv": 3820.38,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "王金国": {
-      "xb_recv": 2645.1,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "陈苑英": {
-      "xb_recv": 3109.23,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "程碧瑶": {
-      "xb_recv": 7576.19,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     },
     "牛群": {
-      "xb_recv": 956.83,
+      "xb_recv": 0.0,
       "active_3w": 0.0
     }
   }
