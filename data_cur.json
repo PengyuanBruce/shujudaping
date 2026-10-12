@@ -1,7 +1,7 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-12 17:13",
+  "update_time": "2026-10-12 18:15",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 14477327.92,
@@ -1067,37 +1067,43 @@
   "layers": [
     {
       "name": "已达3万",
-      "count": 971,
-      "pct": 13.0
+      "count": 74,
+      "pct": 3.0
     },
     {
       "name": "2-3万",
-      "count": 190,
-      "pct": 2.5
+      "count": 47,
+      "pct": 1.9
     },
     {
       "name": "1-2万",
-      "count": 314,
-      "pct": 4.2
+      "count": 153,
+      "pct": 6.3
     },
     {
       "name": "0-1万",
-      "count": 1051,
-      "pct": 14.1
+      "count": 1300,
+      "pct": 53.2
     },
     {
       "name": "未动销",
-      "count": 4952,
-      "pct": 66.2
+      "count": 868,
+      "pct": 35.5
     }
   ],
+  "layers_source": "策略中心·本季度GMV",
   "panel": {
     "total": 2442.0,
-    "checked": 7478.0,
-    "full3w": 971,
-    "sprint": 190,
-    "inactive": 4952,
-    "paid": 2526.0
+    "checked": 7486.0,
+    "full3w": 74,
+    "sprint": 47,
+    "inactive": 868,
+    "paid": 1574,
+    "sources": {
+      "total": "策略中心",
+      "checked": "全量客户盘点",
+      "band": "策略中心·本季度GMV"
+    }
   },
   "s9610": {
     "title": "9610 打标订单",
