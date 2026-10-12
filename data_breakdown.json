@@ -1,7 +1,7 @@
 {
   "month": "2026-10",
   "period": "MONTH",
-  "update_time": "2026-10-11 19:11",
+  "update_time": "2026-10-12 08:54",
   "source_file": "数据罗盘（拍档系统）·客户明细TOP20",
   "scope": "TOP20（按信保实收GMV降序，财年口径）",
   "sales": [
@@ -32,7 +32,7 @@
       "name": "汪伟",
       "role": "销售",
       "month_target": null,
-      "gmv_month": 956866.59,
+      "gmv_month": 879857.52,
       "share_pct": null,
       "customers": [
         {
@@ -52,14 +52,14 @@
         {
           "id": "322952",
           "name": "深圳市古石科技有限公司",
-          "gmv_month": 127682.29,
+          "gmv_month": 127700.71,
           "gmv_quarter": null,
           "share_pct": null
         },
         {
           "id": "474714",
           "name": "深圳宠信科技有限公司",
-          "gmv_month": 125148.46,
+          "gmv_month": 125805.46,
           "gmv_quarter": null,
           "share_pct": null
         },
@@ -69,13 +69,6 @@
           "gmv_month": 86026.45,
           "gmv_quarter": null,
           "share_pct": null
-        },
-        {
-          "id": "520912",
-          "name": "瑞思运动用品(深圳)有限公司",
-          "gmv_month": 77684.49,
-          "gmv_quarter": null,
-          "share_pct": null
         }
       ]
     },
@@ -83,7 +76,7 @@
       "name": "陈建国",
       "role": "销售",
       "month_target": null,
-      "gmv_month": 431604.51,
+      "gmv_month": 512099.39,
       "share_pct": null,
       "customers": [
         {
@@ -106,6 +99,13 @@
           "gmv_month": 125504.24,
           "gmv_quarter": 1940948.11,
           "share_pct": null
+        },
+        {
+          "id": "387799",
+          "name": "深圳彩虹源科技有限责任公司",
+          "gmv_month": 80494.88,
+          "gmv_quarter": 1608344.44,
+          "share_pct": null
         }
       ]
     },
@@ -113,7 +113,7 @@
       "name": "蒋汶桃",
       "role": "销售",
       "month_target": null,
-      "gmv_month": 427984.3,
+      "gmv_month": 429718.3,
       "share_pct": null,
       "customers": [
         {
@@ -133,7 +133,7 @@
         {
           "id": "412882",
           "name": "深圳市嘉易通电子有限公司",
-          "gmv_month": 89482.85,
+          "gmv_month": 91216.85,
           "gmv_quarter": 1513021.07,
           "share_pct": null
         }
@@ -143,7 +143,7 @@
       "name": "夏锐",
       "role": "销售",
       "month_target": null,
-      "gmv_month": 343373.73,
+      "gmv_month": 343790.44,
       "share_pct": null,
       "customers": [
         {
@@ -163,7 +163,7 @@
         {
           "id": "765103",
           "name": "深圳市卖家秀科技有限公司",
-          "gmv_month": 91022.99,
+          "gmv_month": 91439.7,
           "gmv_quarter": null,
           "share_pct": null
         }
