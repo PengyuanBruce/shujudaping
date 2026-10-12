@@ -534,7 +534,7 @@
   <!-- Ⅸ 9610 / AWB 专题（2026-10-09 新增；原 Ⅷ「采购节榜单与缺口」已随活动结束下线） -->
   <section id="sec-9">
     <div class="sec-head"><span class="sec-no">Ⅸ</span><h2 id="topic-title">9610 / AWB 专题</h2>
-      <span class="note" id="topic-note">9610 下单登记（按客服）· AWB 待签约潜客（按销售）· 均含客户明细</span></div>
+      <span class="note" id="topic-note">9610 打标订单（按线路 · 源：平台物流订单列表）· AWB 待签约潜客（按销售）· 均含客户明细</span></div>
     <div id="topic-body"></div>
   </section>
 
@@ -550,7 +550,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1791717140';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1791766520';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1204,9 +1204,9 @@
     const s = d.s9610, a = d.awb;
     if (!s && !a) {
       $('topic-body').innerHTML = pendingPanel([
-        '9610 下单登记：按客服（下单客户数 / 订单数 / 9610专享订单）+ 客户明细（一行一笔订单按客户聚合）',
+        '9610 打标订单：按线路（下单客户数 / 打标订单 / 申报金额）+ 客户明细（按客户聚合）',
         'AWB 潜客：按销售（潜客数 / 已上门 / CGS / 方案合计）+ 客户明细（含预计签约时间与卡点）',
-        '需要两件事：① 9610 登记表落盘 ② AWB 盘点表补「上门 / CGS / 签约时间」三列']);
+        '需要两件事：① 9610 订单件落盘（capture_sameorigin.js 步骤 5）② AWB 盘点表补「上门 / CGS / 签约时间」三列']);
       return;
     }
     const unit = (v, u) => v + '<small class="text-dim"> ' + u + '</small>';
@@ -1224,30 +1224,33 @@
     const out = [];
     if (s) {
       const t = s.totals || {};
-      const who = esc(s.person_label || '销售');
-      // 登记表里没有的列（申报金额 / 9610专享）就不画那一格，不补 0 不补 "--"
+      const gl = esc(s.group_label || '线路');
+      // 源里没有的列（申报金额 / 币种）就不画那一格，不补 0 不补 "--"
+      const money = (v) => (t.currency && t.currency !== 'USD')
+        ? fmt(v, 1) + '<small class="text-dim"> ' + esc(t.currency) + '</small>'
+        : '$' + fmt(v, 1);
       const cards = [['9610 下单客户', unit(fmt(t.customers, 0), '家')],
-                     ['订单数', unit(fmt(t.orders, 0), '笔')]];
-      if (t.exclusive_orders != null) cards.push(['9610 专享订单', unit(fmt(t.exclusive_orders, 0), '笔')]);
-      if (t.new_customers) cards.push(['新增下单客户', unit(fmt(t.new_customers, 0), '家')]);
-      if (t.declared) cards.push(['申报金额', '$' + fmt(t.declared, 1)]);
-      cards.push(['覆盖' + who, unit(fmt(t.sales, 0), '人')]);
+                     ['打标订单', unit(fmt(t.orders, 0), '笔')]];
+      if (t.declared != null) cards.push(['申报金额', money(t.declared)]);
+      if (t.currencies && t.currencies.length > 1) {
+        cards.push(['币种（未跨币种求和）', esc(t.currencies.join(' / '))]);
+      }
+      cards.push(['覆盖' + gl, unit(fmt(t.lines_active != null ? t.lines_active : t.lines, 0), '条') +
+                  (t.lines ? '<small class="text-dim"> / 共 ' + fmt(t.lines, 0) + '</small>' : '')]);
       out.push('<div class="card" style="margin-bottom:12px">' +
-        head(s, s.title || '9610 下单登记', s.note) +
+        head(s, s.title || '9610 打标订单', s.note) +
         kpi(cards) +
-        '<div class="cap">按' + who + ' · 下单客户数</div>' +
-        ((s.by_sale || []).length ? (s.by_sale || []).map(function (r) {
+        '<div class="cap">按' + gl + ' · 下单客户数</div>' +
+        ((s.by_line || []).length ? (s.by_line || []).map(function (r) {
           return row([esc(r.name), unit(fmt(r.customers, 0), '家客户'), unit(fmt(r.orders, 0), '笔'),
-                      '专享 ' + fmt(r.exclusive_orders, 0)]);
+                      (r.declared != null ? money(r.declared) : '')]);
         }).join('') : '<div class="empty">暂无</div>') +
         '<div class="cap" style="margin-top:12px">客户明细 · 按客户聚合</div>' +
         ((s.detail || []).length ? (s.detail || []).map(function (r) {
-          const sub = [esc(r.sale), unit(fmt(r.orders, 0), '笔')].filter(Boolean).join(' · ') +
-            (r.exclusive_orders ? '（专享 ' + fmt(r.exclusive_orders, 0) + '）' : '') +
-            (r.line ? '<small class="text-dim"> · ' + esc(r.line) + '</small>' : '');
-          const right = (r.declared ? '$' + fmt(r.declared, 1) : '') +
+          const sub = [esc(r.line), unit(fmt(r.orders, 0), '笔')].filter(Boolean).join(' · ');
+          const right = (r.declared != null ? money(r.declared) : '') +
             (r.last_order ? '<small class="text-dim"> ' + esc(r.last_order) + '</small>' : '');
-          return det(esc(r.customer) + (r.new_customer ? ' <span class="text-dim">新</span>' : ''), sub, right);
+          return det(esc(r.customer), sub, right);
         }).join('') : '<div class="empty">暂无</div>') +
         '</div>');
     }
