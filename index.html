@@ -230,7 +230,7 @@
   .kpi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   /* 只有 Ⅰ 区的前两张卡跨 2 列；嵌套在盘面/专题里的小卡用 auto-fit，避免被撑成 3 行 */
   #sec-1 .kpi-grid > .card:nth-child(-n+2) { grid-column: span 2; }
-  #panel-stats .kpi-grid, #topic-body .kpi-grid, #sec-6 .kpi-grid {
+  #panel-stats .kpi-grid, #topic-body .kpi-grid {
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
   /* Ⅱ：3 列放短卡，盘面与分层各自整行 —— 否则盘面(高)会把同行短卡拉出大片留白 */
   #sec-2 .grid.two { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
@@ -315,11 +315,63 @@
    #sec-10 .rank-row.sum-row > span:first-child { color: var(--fg-faint); }
    #sec-9 .rank-row.sum-row > span:last-child,
    #sec-10 .rank-row.sum-row > span:last-child { text-align: right; }
-   /* Ⅸ/Ⅹ 专题：明细行右侧信息多（金额/签约时间/卡点），允许换行、左侧不被挤扁 */
-   #sec-9 .cust-row, #sec-10 .cust-row { align-items: flex-start; }
-   #sec-9 .cust-row > span:first-child, #sec-10 .cust-row > span:first-child { flex: 0 0 auto; }
-   #sec-9 .cust-row > span:last-child, #sec-10 .cust-row > span:last-child { text-align: right; }
-  #sec-4b .rank-row { height: 37px; }
+    /* Ⅸ/Ⅹ 专题：明细行右侧信息多（金额/签约时间/卡点），允许换行、左侧不被挤扁 */
+    #sec-9 .cust-row, #sec-10 .cust-row { align-items: flex-start; }
+    #sec-9 .cust-row > span:first-child, #sec-10 .cust-row > span:first-child { flex: 0 0 auto; }
+    #sec-9 .cust-row > span:last-child, #sec-10 .cust-row > span:last-child { text-align: right; }
+    /* Ⅸ 成单明细（2026-10-12 用户要求：客户明细 → 成单明细，按成交时间倒序 + 归属客服列）
+       一行 = 一笔订单：桌面 =「客户名称 | 线路·申报金额·成交时间 | 归属客服」；
+       中间那一组再分三列固定宽度 → 一百多行数字纵向对齐。
+       行数多（百来笔）→ 明细区自己做竖向滚动，表头 sticky 在里面（页面总高不被撑爆）。 */
+    #sec-9 .s9610-orders { max-height: 520px; overflow-y: auto; border-top: 1px solid var(--line-soft); }
+    #sec-9 .o-row { display: grid; grid-template-columns: minmax(0, 1fr) 518px 88px;
+      gap: 0 12px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--line-soft); }
+    /* 列宽是**量出来的**（不是估的）：线路名最长「无忧全球9610小包DDP_标准(标准)」需 243px、
+       成交时间「2026-10-12 12:00」需 125px —— 2026-10-12 首轮几何审计就是这两列被省略号截断，
+       故线路 252px / 金额 118px / 时间 128px。改这两个值前先复量，别再靠猜。 */
+    #sec-9 .o-mid { display: grid; grid-template-columns: 252px 118px 128px; gap: 0 10px; align-items: center; }
+    #sec-9 .o-mid > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    #sec-9 .o-mid > span:nth-child(2) { text-align: right; }
+    #sec-9 .o-owner { text-align: right; }
+    #sec-9 .o-head { position: sticky; top: 0; z-index: 1; background: var(--panel-solid);
+      color: var(--fg-faint); font-size: 11.5px; letter-spacing: .08em; padding: 6px 0; }
+    @media (max-width: 900px) {
+      /* 窄屏：线路/金额/时间 整组换到第二行，客户名与归属客服留在第一行。
+         这一组改用 flex-wrap（不用固定列宽）——375 宽时 252+118+128 放不下，
+         固定列宽会把线路名挤成 0 宽；flex 下线路名先占一行、金额与时间跟到下一行，都不溢出。 */
+      #sec-9 .o-row { grid-template-columns: minmax(0, 1fr) 76px; }
+      #sec-9 .o-mid { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 2px 12px; }
+      #sec-9 .o-mid > span { flex: 0 1 auto; min-width: 0; }
+      #sec-9 .o-mid > span:nth-child(3) { margin-left: auto; }
+    }
+   /* Ⅳ·B 商品成长（优品3.0）：公司级 / 商品结构两组卡片**等宽对称** ——
+      5 张一组必须 5 等分。原来套通用 .kpi-grid 的 4 列 → 第 5 张落单占满第二行，
+      就是 2026-10-12 用户截图里那个「排版不对称」（Ⅵ 已并入本板块，见 docs §二十三）。 */
+   #sec-4b .kpi-grid.g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+   #sec-4b .kpi-grid.g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+   #sec-4b .kpi-grid.g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+   #sec-4b .kpi-grid.g5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+   /* 个人级 22 行：4 个指标列**固定宽度** → 各行数值纵向对齐
+      （原来 flex space-between 会随值的长短左右漂，行与行之间对不上） */
+   #sec-4b .rank-row { height: auto; min-height: 37px; align-items: center; }
+   #sec-4b .rank-row .rowline {
+     display: grid; grid-template-columns: 120px 128px 92px minmax(0, 1fr);
+     gap: 0 10px; margin: 0; align-items: center; white-space: nowrap;
+   }
+   #sec-4b .rank-row .rowline > span { overflow: hidden; text-overflow: ellipsis; }
+   /* 最后一列（完成率）右对齐 → 紧贴右侧进度条，中间不留大片空白；
+      该列是 1fr，右对齐后 22 行的数字末位对齐、行与行仍严格同轴 */
+   #sec-4b .rank-row .rowline > *:last-child { text-align: right; }
+   #sec-4b .rank-row.rank-head { color: var(--fg-faint); font-size: 11.5px; letter-spacing: .08em;
+     border-bottom-color: var(--line); }
+   @media (max-width: 700px) {
+     /* 窄屏：卡片改单列（仍是等宽对称），指标列不再固定宽度、允许换行 */
+     #sec-4b .kpi-grid.g2, #sec-4b .kpi-grid.g3,
+     #sec-4b .kpi-grid.g4, #sec-4b .kpi-grid.g5 { grid-template-columns: 1fr; }
+     #sec-4b .rank-row .rowline { display: flex; flex-wrap: wrap; justify-content: flex-end;
+       gap: 2px 12px; }
+     #sec-4b .rank-row .rowline > span { overflow: visible; text-overflow: clip; }
+   }
   @media (max-width: 700px) {
     .kpi-grid { grid-template-columns: 1fr; }
     .kpi-grid > .card:nth-child(-n+2) { grid-column: auto; }
@@ -507,10 +559,13 @@
     </div>
   </section>
 
-  <!-- Ⅳ·B 商品成长排名(优品3.0) -->
+  <!-- Ⅳ·B 商品成长（优品3.0）
+       2026-10-12 合并：原 Ⅵ「商品成长（优品3.0）」与 Ⅳ·B「商品成长排名」展示的是同一张
+       「优品3.0总览 ▸ 拍档公司」表的同一组指标（用户：「这两个板块一样的，直接合并」），
+       故并为一个板块，不再分两处重复展示公司级数字。 -->
   <section id="sec-4b">
-    <div class="sec-head"><span class="sec-no">Ⅳ·B</span><h2>商品成长排名（优品3.0）</h2>
-      <span class="note">公司级 5 指标 + 个人级（优爆品数 / 目标 / 推P率 / 完成率，按完成率降序） · 源：数据罗盘 ▸ 商品成长 ▸ 优品3.0总览（平台 T+2）</span></div>
+    <div class="sec-head"><span class="sec-no">Ⅳ·B</span><h2>商品成长（优品3.0）</h2>
+      <span class="note">公司级 5 指标 + 商品结构（在线品全量口径）+ 个人级（优爆品数 / 目标 / 推P率 / 完成率，按完成率降序） · 源：数据罗盘 ▸ 商品成长 ▸ 优品3.0总览（平台 T+2）</span></div>
     <div class="card" id="goods-rank-body"></div>
   </section>
 
@@ -522,13 +577,6 @@
       <div class="card"><div class="cap">增长 TOP20</div><div id="yoy-up"></div></div>
       <div class="card"><div class="cap">下降 TOP20</div><div id="yoy-down"></div></div>
     </div>
-  </section>
-
-  <!-- Ⅵ 商品成长(优品3.0) -->
-  <section id="sec-6">
-    <div class="sec-head"><span class="sec-no">Ⅵ</span><h2>商品成长（优品3.0）</h2>
-      <span class="note">优爆品口径含爆品 · 数据 T+2 · 商品结构 在线品全量口径</span></div>
-    <div class="card" id="goods-body"></div>
   </section>
 
   <!-- Ⅶ 销售指标拆解 -->
@@ -549,7 +597,7 @@
     <!-- Ⅸ 9610 打标订单（2026-10-12 从原「9610 / AWB 专题」拆成独立板块） -->
     <section id="sec-9">
       <div class="sec-head"><span class="sec-no">Ⅸ</span><h2 id="topic-title">9610 打标订单</h2>
-        <span class="note" id="topic-note">按线路 · 源：一拍档物流服务商后台订单列表 · 含客户明细</span></div>
+        <span class="note" id="topic-note">按线路汇总 + 成单明细（一笔一行 · 按成交时间倒序 · 带归属客服） · 源：一拍档物流服务商后台订单列表</span></div>
       <div id="topic-body"></div>
     </section>
 
@@ -572,7 +620,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1791788475';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1791792878';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1179,26 +1227,43 @@
       : '';
   }
 
-  // ── Ⅳ·B 商品成长排名（优品3.0）──
-  // 公司级 5 指标 ← youpin3-company.json（优品3.0总览「拍档公司」表，2026-10-12 用户指定）
+  // ── Ⅳ·B 商品成长（优品3.0）——公司级 5 指标 + 商品结构 + 个人级排名 ──
+  // 公司级 / 商品结构 ← youpin3-company.json（优品3.0总览「拍档公司」表，2026-10-12 起走接口）
   // 个人级 4 指标 ← youpin3-sales-full.json（同名报表「拍档销售」表）
-  // 两块都是**接口直接给的列**，不在前端做除法（见 docs §二十二）。
+  // 两组都是**接口直接给的列**，不在前端做除法（见 docs §二十二）。
+  // 2026-10-12 二次改版（用户：「这两个板块一样的，直接合并，排版对称下」）：
+  //   原 Ⅵ 与本板块展示的是同一张「拍档公司」表的同一组指标 → 合并为一个板块；
+  //   排版：公司级 5 卡**等宽一行**、商品结构一组等宽、个人级 4 个指标列固定宽度（22 行纵向对齐）。
+  //   ⚠ 公司级不能用通用 .kpi-grid（4 列）——第 5 张会落单到第二行，那正是用户截图里的「不对称」。
   function renderGoodsRank(d) {
     const rows = (d.goods_sales || []).slice();
     const c = (d.youpin_company && d.youpin_company.value != null) ? d.youpin_company : (d.goods || {});
-    const unit = (v, u) => v + '<small class="text-dim"> ' + u + '</small>';
+    const unit = (v, u) => (u ? v + '<small class="unit"> ' + u + '</small>' : v);
+    const kcard = (cap, big, sub) => '<div class="card"><span class="cap">' + cap + '</span>' +
+      '<div class="big sm">' + big + '</div>' +
+      (sub ? '<div class="rowline"><span>' + sub + '</span></div>' : '') + '</div>';
+    const kgrid = (items) => '<div class="grid kpi-grid g' + items.length + '">' + items.join('') + '</div>';
     let head = '';
     if (c.value != null || c.target != null) {
-      const cards = [['当前优爆品数', unit(fmt(c.value, 0), '个')],
-                     ['当季度累计目标', fmt(c.target, 0)],
-                     ['当季度累计目标达成率',
-                      '<b class="' + tierClass(c.pct) + '">' + fmtPct(c.pct, 1) + '</b>']];
-      if (c.p4p_products != null) cards.push(['p4p推广中优爆品数', unit(fmt(c.p4p_products, 0), '个')]);
-      if (c.p4p_pct != null) cards.push(['优爆品p4p推广中比例', fmtPct(c.p4p_pct, 1)]);
-      head = '<div class="grid kpi-grid" style="margin:0 0 10px">' + cards.map(function (it) {
-        return '<div class="card"><span class="cap">' + it[0] + '</span><div class="big">' + it[1] + '</div></div>';
-      }).join('') + '</div>' +
-        '<div class="cap">公司级（优品3.0总览·拍档公司） · 数据日期 ' + esc(c.date || '—') + ' · 平台 T+2</div>';
+      const cards = [kcard('当前优爆品数', unit(fmt(c.value, 0), '个')),
+                     kcard('当季度累计目标', unit(fmt(c.target, 0), '个')),
+                     kcard('当季度累计目标达成率',
+                       '<b class="' + pctTextClass(c.pct) + '">' + fmtPct(c.pct, 1) + '</b>')];
+      if (c.p4p_products != null) cards.push(kcard('p4p推广中优爆品数', unit(fmt(c.p4p_products, 0), '个')));
+      if (c.p4p_pct != null) cards.push(kcard('优爆品p4p推广中比例', fmtPct(c.p4p_pct, 1)));
+      head = '<div class="cap">公司级 · 优品3.0总览「拍档公司」表 · 数据日期 ' +
+        esc(c.date || '—') + '（平台 T+2）</div>' + kgrid(cards);
+      // 商品结构：优先用**同一张表、同一天**的列（youpin3-company.json 的 在线品数 /
+      // 当前有优爆品的客户数 + 对应比例），缺列才退回 pivot/DOM 口径 —— 同屏两块必须同源，
+      // 否则会出现「公司级 127,517 / 在线品数却是十几天前的 pivot 值」这种自相矛盾。
+      const st = ((c.structure || []).length ? c.structure : ((d.goods || {}).structure || []));
+      head += '<div class="cap" style="margin-top:14px">商品结构（在线品全量口径）</div>' +
+        (st.length
+          ? kgrid(st.map(function (s) {
+              return kcard(esc(s.name), unit(fmt(s.count, 0), s.unit || ''),
+                s.pct == null ? '' : esc(s.pct_label || '占比') + ' <b>' + fmtPct(s.pct, 1) + '</b>');
+            }))
+          : pendingPanel(['在线品数 / 当前有优爆品的客户数 —— 需 youpin3-company.json（拍档公司表）']));
     }
     if (!rows.length) {
       $('goods-rank-body').innerHTML = head + pendingPanel([
@@ -1207,39 +1272,21 @@
       return;
     }
     rows.sort(function (a, b) { return (num(b.pct) || 0) - (num(a.pct) || 0); });
+    // 4 个指标各占一列（列宽在 CSS 里固定），22 行的数字因此纵向对齐
+    const cells = (r) => '<span class="rowline"><span>' + fmt(r.value, 0) + '</span>' +
+      '<span>' + fmt(r.target, 0) + '</span><span>' + fmtPct(r.pct_p4p, 1) + '</span>' +
+      '<b class="' + pctTextClass(r.pct) + '">' + fmtPct(r.pct, 2) + '</b></span>';
     $('goods-rank-body').innerHTML = head +
-      '<div class="cap" style="margin-top:10px">个人级 · 按完成率降序（优爆品数 / 当季度累计目标 / 推P率 / 完成率）</div>' +
+      '<div class="cap" style="margin-top:14px">个人级 · 按完成率降序</div>' +
+      '<div class="rank-row rank-head"><span>#</span><span>姓名</span>' +
+      '<span class="rowline"><span>优爆品数</span><span>当季度累计目标</span><span>推P率</span>' +
+      '<span>完成率</span></span><span>进度</span></div>' +
       rows.map(function (r, i) {
         const w = Math.max(0, Math.min(100, num(r.pct) || 0));
-        // 推P率 = 该销售的「优爆品p4p推广中比例」（接口直接给，不自己算）
-        const p4p = num(r.pct_p4p) == null ? ''
-          : '<span class="text-dim">推P <b>' + fmtPct(r.pct_p4p, 1) + '</b></span>';
-        return '<div class="rank-row"><span class="text-dim">' + (i + 1) + '</span><span>' + esc(r.name) + '</span>' +
-          '<span class="rowline" style="margin:0"><span class="text-dim">优爆品 ' + fmt(r.value, 0) + '</span>' +
-          '<span class="text-dim">目标 ' + fmt(r.target, 0) + '</span>' + p4p +
-          '<b class="' + tierClass(r.pct) + '">' + fmtPct(r.pct, 2) + '</b></span>' +
+        return '<div class="rank-row"><span class="text-dim">' + (i + 1) + '</span>' +
+          '<span>' + esc(r.name) + '</span>' + cells(r) +
           '<span class="bar"><i class="' + pctFillClass(r.pct) + '" style="width:' + w + '%"></i></span></div>';
       }).join('');
-  }
-
-  // ── Ⅵ 商品成长(优品3.0) ──
-  function renderGoods(d) {
-    const g = d.goods;
-    if (!g) {
-      $('goods-body').innerHTML = pendingPanel(['公司级：当前优爆品数 / 当季度累计目标 / 达成率（来源：优品3.0总览 pivot）',
-        '商品结构（在线品全量口径）：各层级商品数与占比 —— 需抓「优品3.0总览」的商品结构区块']);
-      return;
-    }
-    $('goods-body').innerHTML = '<div class="grid kpi-grid">' + [['当前优爆品数', g.current, '件'], ['当季度累计目标', g.target, '件'],
-      ['达成率', g.pct, '%']].map(function (it) {
-        return '<div class="card"><span class="cap">' + it[0] + '</span><div class="big">' +
-          (it[2] === '%' ? fmtPct(it[1], 2) : fmt(it[1], 0) + '<small class="text-dim"> ' + it[2] + '</small>') + '</div></div>';
-      }).join('') + '</div>' +
-      ((g.structure || []).length
-        ? '<div style="margin-top:12px">' + g.structure.map(function (s) {
-          return '<div class="layer-row"><span>' + esc(s.name) + '</span><span>' + fmt(s.count, 0) + '</span><span>' + fmtPct(s.pct) + '</span></div>';
-        }).join('') + '</div>'
-        : pendingPanel(['商品结构（在线品全量口径）：各层级商品数与占比']));
   }
 
   // ── Ⅸ 9610 打标订单（按线路）／Ⅹ AWB 待签约潜客（按销售）──
@@ -1296,13 +1343,40 @@
                        unit(fmt(r.customers, 0), '家客户') + ' · ' + unit(fmt(r.orders, 0), '笔'),
                        (r.declared != null ? money(r.declared) : '')]);
       }).join('') : '<div class="empty">暂无</div>') +
-      '<div class="cap" style="margin-top:12px">客户明细 · 按客户聚合</div>' +
-      ((s.detail || []).length ? (s.detail || []).map(function (r) {
-        const sub = [esc(r.line), unit(fmt(r.orders, 0), '笔')].filter(Boolean).join(' · ');
-        const right = (r.declared != null ? money(r.declared) : '') +
-          (r.last_order ? '<small class="text-dim"> ' + esc(r.last_order) + '</small>' : '');
-        return det(esc(r.customer), sub, right);
-      }).join('') : '<div class="empty">暂无</div>') +
+      // ── 成单明细（2026-10-12 用户要求：客户明细 → 成单明细；按成交时间倒序、最新在上；加「归属客服」列）──
+      // 一行 = 一笔订单。⚠ 逐笔金额**各自带币种**（不跨币种求和只约束汇总行，见 docs §二十四）。
+      (function () {
+        const dt = s.detail || [];
+        const cap = '<div class="cap" style="margin-top:12px">成单明细 · 按成交时间倒序（最新在上）' +
+          (dt.length ? ' · 共 ' + fmt(dt.length, 0) + ' 笔' : '') + '</div>';
+        if (!dt.length) {
+          return cap + '<div class="empty">暂无</div>';
+        }
+        const moneyOf = (v, ccy) => (v == null ? '--'
+          : (ccy && ccy !== 'USD') ? fmt(v, 1) + '<small class="text-dim"> ' + esc(ccy) + '</small>'
+            : '$' + fmt(v, 1));
+        const ow = t.owners_matched, owT = t.owners_total;
+        // 归属客服的覆盖率**如实写在页面上**：贴不上的客户显示 --，并在小字里交代来源与缺口
+        const ownCap = (owT
+          ? '<div class="cap" style="margin-top:6px">归属客服 · 源：「' + esc(t.owner_source || '策略中心明细') +
+            '」客户归属 · 已匹配 ' + fmt(ow, 0) + '/' + fmt(owT, 0) + ' 家客户' +
+            (owT > ow ? '（未匹配 ' + fmt(owT - ow, 0) + ' 家显示 --）' : '') +
+            (t.owners_fallback ? '，其中 ' + fmt(t.owners_fallback, 0) + ' 家取自周频全量盘点兜底' : '') + '</div>'
+          : '');
+        return cap + ownCap + '<div class="s9610-orders">' +
+          '<div class="o-row o-head"><span>客户名称</span>' +
+          '<span class="o-mid"><span>' + gl + '</span><span>申报金额</span><span>成交时间</span></span>' +
+          '<span>归属客服</span></div>' +
+          dt.map(function (r) {
+            return '<div class="o-row">' +
+              '<span class="o-cust">' + esc(r.customer) + '</span>' +
+              '<span class="o-mid"><span>' + esc(r.line) + '</span>' +
+              '<span>' + moneyOf(r.amount, r.currency) + '</span>' +
+              '<span class="text-dim">' + esc(r.time || '--') + '</span></span>' +
+              '<span class="o-owner">' + (r.owner ? esc(r.owner) : '<span class="text-dim">--</span>') +
+              '</span></div>';
+          }).join('') + '</div>';
+      })() +
       '</div>';
   }
 
@@ -1352,9 +1426,8 @@
     renderPersons(d);
     renderActiveList(d);
     renderRank(d);
-    renderGoodsRank(d);
+    renderGoodsRank(d);                 // Ⅳ·B：合并后的商品成长（公司级 + 商品结构 + 个人级）
     renderYoy(d);
-    renderGoods(d);
     renderTopic9610(d);
     renderTopicAwb(d);
     updateLabels(d);
