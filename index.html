@@ -620,7 +620,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1791792878';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1791793501';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1355,13 +1355,14 @@
         const moneyOf = (v, ccy) => (v == null ? '--'
           : (ccy && ccy !== 'USD') ? fmt(v, 1) + '<small class="text-dim"> ' + esc(ccy) + '</small>'
             : '$' + fmt(v, 1));
-        const ow = t.owners_matched, owT = t.owners_total;
-        // 归属客服的覆盖率**如实写在页面上**：贴不上的客户显示 --，并在小字里交代来源与缺口
+        const ow = t.kefu_matched, owT = t.kefu_total;
+        // 归属客服的覆盖率**如实写在页面上**：贴不上的客户显示 --，并在小字里交代来源与缺口。
+        // ⚠ 这列取的是平台「拍档客服」列，**不是拍档销售**（2026-10-12 曾贴错销售被用户指出）。
         const ownCap = (owT
-          ? '<div class="cap" style="margin-top:6px">归属客服 · 源：「' + esc(t.owner_source || '策略中心明细') +
-            '」客户归属 · 已匹配 ' + fmt(ow, 0) + '/' + fmt(owT, 0) + ' 家客户' +
+          ? '<div class="cap" style="margin-top:6px">归属客服 · 源：「' + esc(t.kefu_source || '策略中心明细') +
+            '」的「' + esc(t.kefu_column || '拍档客服') + '」列 · 已匹配 ' + fmt(ow, 0) + '/' + fmt(owT, 0) + ' 家客户' +
             (owT > ow ? '（未匹配 ' + fmt(owT - ow, 0) + ' 家显示 --）' : '') +
-            (t.owners_fallback ? '，其中 ' + fmt(t.owners_fallback, 0) + ' 家取自周频全量盘点兜底' : '') + '</div>'
+            (t.kefu_fallback ? '，其中 ' + fmt(t.kefu_fallback, 0) + ' 家取自另一份留存响应兜底' : '') + '</div>'
           : '');
         return cap + ownCap + '<div class="s9610-orders">' +
           '<div class="o-row o-head"><span>客户名称</span>' +
@@ -1373,7 +1374,7 @@
               '<span class="o-mid"><span>' + esc(r.line) + '</span>' +
               '<span>' + moneyOf(r.amount, r.currency) + '</span>' +
               '<span class="text-dim">' + esc(r.time || '--') + '</span></span>' +
-              '<span class="o-owner">' + (r.owner ? esc(r.owner) : '<span class="text-dim">--</span>') +
+              '<span class="o-owner">' + (r.kefu ? esc(r.kefu) : '<span class="text-dim">--</span>') +
               '</span></div>';
           }).join('') + '</div>';
       })() +
