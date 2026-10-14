@@ -324,7 +324,8 @@
        中间那一组再分三列固定宽度 → 一百多行数字纵向对齐。
        行数多（百来笔）→ 明细区自己做竖向滚动，表头 sticky 在里面（页面总高不被撑爆）。 */
     #sec-9 .s9610-orders { max-height: 520px; overflow-y: auto; border-top: 1px solid var(--line-soft); }
-    #sec-9 .o-row { display: grid; grid-template-columns: minmax(0, 1fr) 518px 88px;
+    /* 2026-10-14 加「归属销售」后是 4 列：客户名称 | 线路·金额·时间 | 归属客服 | 归属销售 */
+    #sec-9 .o-row { display: grid; grid-template-columns: minmax(0, 1fr) 518px 84px 84px;
       gap: 0 12px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--line-soft); }
     /* 列宽是**量出来的**（不是估的）：线路名最长「无忧全球9610小包DDP_标准(标准)」需 243px、
        成交时间「2026-10-12 12:00」需 125px —— 2026-10-12 首轮几何审计就是这两列被省略号截断，
@@ -335,6 +336,17 @@
     #sec-9 .o-owner { text-align: right; }
     #sec-9 .o-head { position: sticky; top: 0; z-index: 1; background: var(--panel-solid);
       color: var(--fg-faint); font-size: 11.5px; letter-spacing: .08em; padding: 6px 0; }
+    /* 筛选条（2026-10-14）：维度两个 chip + 取值下拉 + 筛选后小结，一行放下，窄屏自动换行 */
+    #sec-9 .o-filter { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px;
+      margin-top: 10px; }
+    #sec-9 .fchip { cursor: pointer; font-size: 12px; padding: 3px 11px; border-radius: 999px;
+      border: 1px solid var(--line); color: var(--fg-dim); user-select: none; }
+    #sec-9 .fchip.on { border-color: var(--cyan); color: #0B1424; background: var(--cyan);
+      font-weight: 700; }
+    #sec-9 .fsel { font-size: 12.5px; padding: 4px 8px; border-radius: 8px; max-width: 240px;
+      background: #0b1224; border: 1px solid var(--line); color: var(--fg); font-family: inherit; }
+    #sec-9 .fsel:focus { outline: none; border-color: var(--cyan); }
+    #sec-9 .fsum { font-size: 12.5px; color: var(--cyan); font-variant-numeric: tabular-nums; }
     /* Ⅰ·B AWB 客户盘点（2026-10-12 新增）：① 季度前三单高佣金奖励 三张等宽卡（已产生金色描边、醒目）
        ② 每日客户盘点：客户 | 销售 | 预计方案 | 日期，跟进说明另起一行（可换行，不挤扁客户名） */
     #sec-10 .awards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
@@ -365,10 +377,16 @@
       /* 窄屏：线路/金额/时间 整组换到第二行，客户名与归属客服留在第一行。
          这一组改用 flex-wrap（不用固定列宽）——375 宽时 252+118+128 放不下，
          固定列宽会把线路名挤成 0 宽；flex 下线路名先占一行、金额与时间跟到下一行，都不溢出。 */
-      #sec-9 .o-row { grid-template-columns: minmax(0, 1fr) 76px; }
-      #sec-9 .o-mid { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 2px 12px; }
+      /* 窄屏：客户名一行、线路/金额/时间一行（flex-wrap）、两个归属列再一行并右对齐。
+         固定 4 列在 375 宽下会把客户名挤成 0 宽（2026-10-12 那次截断就是这么来的）。 */
+      #sec-9 .o-row { display: flex; flex-wrap: wrap; gap: 2px 12px; }
+      #sec-9 .o-cust { flex: 1 1 100%; }
+      #sec-9 .o-mid { flex: 1 1 100%; display: flex; flex-wrap: wrap; gap: 2px 12px; }
       #sec-9 .o-mid > span { flex: 0 1 auto; min-width: 0; }
       #sec-9 .o-mid > span:nth-child(3) { margin-left: auto; }
+      #sec-9 .o-owner { flex: 0 0 auto; }
+      #sec-9 .o-mid + .o-owner { margin-left: auto; }
+      #sec-9 .o-owner + .o-owner { margin-left: 0; }
     }
    /* Ⅳ·B 商品成长（优品3.0）：公司级 / 商品结构两组卡片**等宽对称** ——
       5 张一组必须 5 等分。原来套通用 .kpi-grid 的 4 列 → 第 5 张落单占满第二行，
@@ -647,7 +665,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1791939065';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1791943178';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1398,41 +1416,127 @@
       }).join('') : '<div class="empty">暂无</div>') +
       // ── 成单明细（2026-10-12 用户要求：客户明细 → 成单明细；按成交时间倒序、最新在上；加「归属客服」列）──
       // 一行 = 一笔订单。⚠ 逐笔金额**各自带币种**（不跨币种求和只约束汇总行，见 docs §二十四）。
-      (function () {
-        const dt = s.detail || [];
-        const cap = '<div class="cap" style="margin-top:12px">成单明细 · 按成交时间倒序（最新在上）' +
-          (dt.length ? ' · 共 ' + fmt(dt.length, 0) + ' 笔' : '') + '</div>';
-        if (!dt.length) {
-          return cap + '<div class="empty">暂无</div>';
-        }
-        const moneyOf = (v, ccy) => (v == null ? '--'
-          : (ccy && ccy !== 'USD') ? fmt(v, 1) + '<small class="text-dim"> ' + esc(ccy) + '</small>'
-            : '$' + fmt(v, 1));
-        const ow = t.kefu_matched, owT = t.kefu_total;
-        // 归属客服的覆盖率**如实写在页面上**：贴不上的客户显示 --，并在小字里交代来源与缺口。
-        // ⚠ 这列取的是平台「拍档客服」列，**不是拍档销售**（2026-10-12 曾贴错销售被用户指出）。
-        const ownCap = (owT
-          ? '<div class="cap" style="margin-top:6px">归属客服 · 源：「' + esc(t.kefu_source || '策略中心明细') +
-            '」的「' + esc(t.kefu_column || '拍档客服') + '」列 · 已匹配 ' + fmt(ow, 0) + '/' + fmt(owT, 0) + ' 家客户' +
-            (owT > ow ? '（未匹配 ' + fmt(owT - ow, 0) + ' 家显示 --）' : '') +
-            (t.kefu_fallback ? '，其中 ' + fmt(t.kefu_fallback, 0) + ' 家取自另一份留存响应兜底' : '') + '</div>'
-          : '');
-        return cap + ownCap + '<div class="s9610-orders">' +
-          '<div class="o-row o-head"><span>客户名称</span>' +
-          '<span class="o-mid"><span>' + gl + '</span><span>申报金额</span><span>成交时间</span></span>' +
-          '<span>归属客服</span></div>' +
-          dt.map(function (r) {
-            return '<div class="o-row">' +
-              '<span class="o-cust">' + esc(r.customer) + '</span>' +
-              '<span class="o-mid"><span>' + esc(r.line) + '</span>' +
-              '<span>' + moneyOf(r.amount, r.currency) + '</span>' +
-              '<span class="text-dim">' + esc(r.time || '--') + '</span></span>' +
-              '<span class="o-owner">' + (r.kefu ? esc(r.kefu) : '<span class="text-dim">--</span>') +
-              '</span></div>';
-          }).join('') + '</div>';
-      })() +
+       (function () {
+         const dt = s.detail || [];
+         const cap = '<div class="cap" style="margin-top:12px">成单明细 · 按成交时间倒序（最新在上）' +
+           (dt.length ? ' · 共 ' + fmt(dt.length, 0) + ' 笔' : '') + '</div>';
+         if (!dt.length) {
+           return cap + '<div class="empty">暂无</div>';
+         }
+         const moneyOf = (v, ccy) => (v == null ? '--'
+           : (ccy && ccy !== 'USD') ? fmt(v, 1) + '<small class="text-dim"> ' + esc(ccy) + '</small>'
+             : '$' + fmt(v, 1));
+         // 两个归属列的覆盖率都**如实写在页面上**：贴不上的客户显示 --，并交代来源列与缺口。
+         // ⚠ 这是平台两张不同的列（「拍档客服」/「拍档销售」），2026-10-12 曾把客服贴成销售被用户指出。
+         const cov = (lab, col, src, got, tot, fb, extra) => (tot
+           ? '<div class="cap" style="margin-top:6px">' + lab + ' · 源：「' + esc(src || '策略中心明细（当月）') +
+             '」的「' + esc(col) + '」列 · 已匹配 ' + fmt(got, 0) + '/' + fmt(tot, 0) + ' 家客户' +
+             (tot > got ? '（未匹配 ' + fmt(tot - got, 0) + ' 家显示 --）' : '') +
+             (fb ? '，其中 ' + fmt(fb, 0) + ' 家取自另一份留存响应兜底' : '') +
+             (extra || '') + '</div>'
+           : '');
+         const ownCap = cov('归属客服', t.kefu_column || '拍档客服', t.kefu_source,
+                            t.kefu_matched, t.kefu_total, t.kefu_fallback) +
+           cov('归属销售', t.sales_column || '拍档销售', t.sales_source,
+               t.sales_matched, t.sales_total, t.sales_fallback,
+               (t.sales_persons ? '，共 ' + fmt(t.sales_persons, 0) + ' 位销售' +
+                 (t.sales_off_roster ? '（其中 ' + fmt(t.sales_off_roster, 0) + ' 位不在销售名单内：' +
+                   esc((t.sales_off_roster_names || []).join('、')) + '）' : '') : ''));
+         // 筛选（2026-10-14 用户要求：可按**销售**或按**客服**筛选）：本地过滤，不发新请求。
+         const fbar = '<div class="o-filter"><span class="cap">筛选</span>' +
+           '<b class="fchip on" data-dim="kefu">按客服</b>' +
+           '<b class="fchip" data-dim="sales">按销售</b>' +
+           '<select class="fsel"></select><span class="fsum"></span></div>';
+         return cap + ownCap + fbar + '<div class="s9610-orders">' +
+           '<div class="o-row o-head"><span>客户名称</span>' +
+           '<span class="o-mid"><span>' + gl + '</span><span>申报金额</span><span>成交时间</span></span>' +
+           '<span class="o-owner">归属客服</span><span class="o-owner">归属销售</span></div>' +
+           dt.map(function (r) {
+             return '<div class="o-row" data-cust="' + esc(r.customer) + '"' +
+               ' data-kefu="' + esc(r.kefu || '') + '" data-sales="' + esc(r.sales || '') + '"' +
+               ' data-amt="' + (num(r.amount) == null ? '' : num(r.amount)) + '"' +
+               ' data-ccy="' + esc(r.currency || '') + '">' +
+               '<span class="o-cust">' + esc(r.customer) + '</span>' +
+               '<span class="o-mid"><span>' + esc(r.line) + '</span>' +
+               '<span>' + moneyOf(r.amount, r.currency) + '</span>' +
+               '<span class="text-dim">' + esc(r.time || '--') + '</span></span>' +
+               '<span class="o-owner">' + (r.kefu ? esc(r.kefu) : '<span class="text-dim">--</span>') +
+               '</span>' +
+               '<span class="o-owner">' + (r.sales ? esc(r.sales) : '<span class="text-dim">--</span>') +
+               '</span></div>';
+           }).join('') + '</div>';
+       })() +
       '</div>';
+    wireS9610Filter();          // 明细筛选（按客服 / 按销售）
   }
+
+  /* Ⅸ 9610 成单明细的「按客服 / 按销售」筛选（2026-10-14 用户要求）。
+     纯前端本地过滤：每行带 data-kefu / data-sales / data-cust / data-amt / data-ccy，
+     只切 display，不发新请求。维度和取值都从 DOM 现取，所以后端加人加列都不用改这里。 */
+  function wireS9610Filter() {
+    const bar = document.querySelector('#topic-body .o-filter');
+    const box = document.querySelector('#topic-body .s9610-orders');
+    if (!bar || !box) return;
+    const rows = Array.prototype.slice.call(box.querySelectorAll('.o-row:not(.o-head)'));
+    const sel = bar.querySelector('.fsel');
+    const sum = bar.querySelector('.fsum');
+    const chips = Array.prototype.slice.call(bar.querySelectorAll('.fchip'));
+    let dim = 'kefu';
+    let val = '';
+    function fillSel() {
+      const seen = [];
+      const cnt = {};
+      rows.forEach(function (r) {
+        const v = r.getAttribute('data-' + dim) || '';
+        if (!v) return;
+        if (!cnt[v]) { cnt[v] = 0; seen.push(v); }
+        cnt[v] += 1;
+      });
+      seen.sort(function (a, b) { return a.localeCompare(b, 'zh-CN'); });
+      sel.innerHTML = '<option value="">全部（' + rows.length + ' 笔）</option>' +
+        seen.map(function (v) {
+          return '<option value="' + esc(v) + '">' + esc(v) + '（' + cnt[v] + ' 笔）</option>';
+        }).join('');
+      sel.value = '';
+      val = '';
+    }
+    function apply() {
+      let n = 0, amt = 0, noAmt = 0, hitCust = {}, ccy = {};
+      rows.forEach(function (r) {
+        const hit = !val || (r.getAttribute('data-' + dim) || '') === val;
+        r.style.display = hit ? '' : 'none';
+        if (!hit) return;
+        n += 1;
+        const c = r.getAttribute('data-cust');
+        if (c) hitCust[c] = 1;
+        const a = parseFloat(r.getAttribute('data-amt'));
+        if (isNaN(a)) noAmt += 1; else amt += a;
+        const k = r.getAttribute('data-ccy');
+        if (k) ccy[k] = 1;
+      });
+      const ccys = Object.keys(ccy);
+      // 金额只在**单一币种**时合计（跨币种不拼假总数，与后端口径一致）
+      const money = ccys.length === 1
+        ? (ccys[0] === 'USD' ? '$' + fmt(amt, 1) : fmt(amt, 1) + ' ' + ccys[0])
+        : (ccys.length > 1 ? '多币种不合计' : '');
+      if (!val) { sum.textContent = ''; return; }
+      sum.textContent = '筛选后 ' + (dim === 'kefu' ? '客服' : '销售') + '：' + val + ' · ' +
+        Object.keys(hitCust).length + ' 家客户 · ' + n + ' 笔' +
+        (money ? ' · ' + money : '') + (noAmt ? '（' + noAmt + ' 笔无申报金额）' : '');
+    }
+    chips.forEach(function (c) {
+      c.addEventListener('click', function () {
+        dim = c.getAttribute('data-dim') || 'kefu';
+        chips.forEach(function (x) { x.classList.toggle('on', x === c); });
+        fillSel();
+        apply();
+      });
+    });
+    sel.addEventListener('change', function () { val = sel.value || ''; apply(); });
+    fillSel();
+    apply();
+  }
+
 
   // ── Ⅰ·B AWB 客户盘点：季度前三单高佣金奖励（开头醒目）+ 每日客户盘点 ──
   // 数据源 awb-prospects.json ← 桌面「*AWB盘点.xlsx」（build/make_awb_prospects.py 转换）
