@@ -1,7 +1,7 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-14 08:50",
+  "update_time": "2026-10-14 09:59",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 18416322.94,
@@ -1173,7 +1173,15 @@
       "kefu_total": 36,
       "kefu_fallback": 0,
       "kefu_source": "策略中心明细（当月）",
-      "kefu_column": "拍档客服"
+      "kefu_column": "拍档客服",
+      "sales_matched": 36,
+      "sales_total": 36,
+      "sales_fallback": 0,
+      "sales_source": "策略中心明细（当月）",
+      "sales_column": "拍档销售",
+      "sales_persons": 14,
+      "sales_off_roster": 0,
+      "sales_off_roster_names": []
     },
     "by_line": [
       {
@@ -1205,7 +1213,9 @@
         "time_ms": 1791777609000,
         "time": "2026-10-12 12:00",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "汪伟",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -1216,7 +1226,9 @@
         "time_ms": 1791773613000,
         "time": "2026-10-12 10:53",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "汪伟",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -1227,7 +1239,9 @@
         "time_ms": 1791597103000,
         "time": "2026-10-10 09:51",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "汪伟",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -1238,7 +1252,9 @@
         "time_ms": 1791596832000,
         "time": "2026-10-10 09:47",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "汪伟",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市爱思考制冷设备有限公司",
@@ -1249,7 +1265,9 @@
         "time_ms": 1791544207000,
         "time": "2026-10-09 19:10",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "陈建国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市爱铂科技有限公司",
@@ -1260,7 +1278,9 @@
         "time_ms": 1791515522000,
         "time": "2026-10-09 11:12",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "漆螯童",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1271,7 +1291,9 @@
         "time_ms": 1791461562000,
         "time": "2026-10-08 20:12",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市新生力科技有限公司",
@@ -1282,7 +1304,9 @@
         "time_ms": 1791456908000,
         "time": "2026-10-08 18:55",
         "kefu": "罗洋清",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "夏锐",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市爱铂科技有限公司",
@@ -1293,7 +1317,9 @@
         "time_ms": 1791441822000,
         "time": "2026-10-08 14:43",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "漆螯童",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市百乐康科技有限公司",
@@ -1304,7 +1330,9 @@
         "time_ms": 1791426132000,
         "time": "2026-10-08 10:22",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "夏锐",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1315,7 +1343,9 @@
         "time_ms": 1791376398000,
         "time": "2026-10-07 20:33",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1326,7 +1356,9 @@
         "time_ms": 1791373562000,
         "time": "2026-10-07 19:46",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1337,7 +1369,9 @@
         "time_ms": 1791370984000,
         "time": "2026-10-07 19:03",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1348,7 +1382,9 @@
         "time_ms": 1791369231000,
         "time": "2026-10-07 18:33",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1359,7 +1395,9 @@
         "time_ms": 1791368383000,
         "time": "2026-10-07 18:19",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市润之行商标制作有限公司",
@@ -1370,7 +1408,9 @@
         "time_ms": 1791351734000,
         "time": "2026-10-07 13:42",
         "kefu": "苏梓梦",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "邓晓东",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市灵视创科技有限公司",
@@ -1381,7 +1421,9 @@
         "time_ms": 1791342850000,
         "time": "2026-10-07 11:14",
         "kefu": "农路源",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "陈建国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市爱铂科技有限公司",
@@ -1392,7 +1434,9 @@
         "time_ms": 1791342118000,
         "time": "2026-10-07 11:01",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "漆螯童",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市新生力科技有限公司",
@@ -1403,7 +1447,9 @@
         "time_ms": 1791276612000,
         "time": "2026-10-06 16:50",
         "kefu": "罗洋清",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "夏锐",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1414,7 +1460,9 @@
         "time_ms": 1791255964000,
         "time": "2026-10-06 11:06",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1425,7 +1473,9 @@
         "time_ms": 1791187998000,
         "time": "2026-10-05 16:13",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市龙腾特科技有限公司",
@@ -1436,7 +1486,9 @@
         "time_ms": 1791105854000,
         "time": "2026-10-04 17:24",
         "kefu": "农路源",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "李怡萍",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1447,7 +1499,9 @@
         "time_ms": 1790764334000,
         "time": "2026-09-30 18:32",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1458,7 +1512,9 @@
         "time_ms": 1790757915000,
         "time": "2026-09-30 16:45",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市辉波诚科技有限公司",
@@ -1469,7 +1525,9 @@
         "time_ms": 1790756028000,
         "time": "2026-09-30 16:13",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "罗金填",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市辉波诚科技有限公司",
@@ -1480,7 +1538,9 @@
         "time_ms": 1790755933000,
         "time": "2026-09-30 16:12",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "罗金填",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市威斯尼科技有限公司",
@@ -1491,7 +1551,9 @@
         "time_ms": 1790740162000,
         "time": "2026-09-30 11:49",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "陈建国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市圳烨科技有限公司",
@@ -1502,7 +1564,9 @@
         "time_ms": 1790739571000,
         "time": "2026-09-30 11:39",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "程碧瑶",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1513,7 +1577,9 @@
         "time_ms": 1790691178000,
         "time": "2026-09-29 22:12",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1524,7 +1590,9 @@
         "time_ms": 1790688580000,
         "time": "2026-09-29 21:29",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1535,7 +1603,9 @@
         "time_ms": 1790687436000,
         "time": "2026-09-29 21:10",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1546,7 +1616,9 @@
         "time_ms": 1790683406000,
         "time": "2026-09-29 20:03",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1557,7 +1629,9 @@
         "time_ms": 1790677708000,
         "time": "2026-09-29 18:28",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1568,7 +1642,9 @@
         "time_ms": 1790676111000,
         "time": "2026-09-29 18:01",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -1579,7 +1655,9 @@
         "time_ms": 1790672191000,
         "time": "2026-09-29 16:56",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "汪伟",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1590,7 +1668,9 @@
         "time_ms": 1790669859000,
         "time": "2026-09-29 16:17",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市德创纪元科技有限公司",
@@ -1601,7 +1681,9 @@
         "time_ms": 1790652706000,
         "time": "2026-09-29 11:31",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "陈建国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市德创纪元科技有限公司",
@@ -1612,7 +1694,9 @@
         "time_ms": 1790645417000,
         "time": "2026-09-29 09:30",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "陈建国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1623,7 +1707,9 @@
         "time_ms": 1790586957000,
         "time": "2026-09-28 17:15",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1634,7 +1720,9 @@
         "time_ms": 1790586576000,
         "time": "2026-09-28 17:09",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市百乐康科技有限公司",
@@ -1645,7 +1733,9 @@
         "time_ms": 1790577903000,
         "time": "2026-09-28 14:45",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "夏锐",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市路通电子有限公司",
@@ -1656,7 +1746,9 @@
         "time_ms": 1790566192000,
         "time": "2026-09-28 11:29",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "漆螯童",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1667,7 +1759,9 @@
         "time_ms": 1790250243000,
         "time": "2026-09-24 19:44",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1678,7 +1772,9 @@
         "time_ms": 1790249901000,
         "time": "2026-09-24 19:38",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1689,7 +1785,9 @@
         "time_ms": 1790249231000,
         "time": "2026-09-24 19:27",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1700,7 +1798,9 @@
         "time_ms": 1790248146000,
         "time": "2026-09-24 19:09",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市风都科技有限公司",
@@ -1711,7 +1811,9 @@
         "time_ms": 1790246474000,
         "time": "2026-09-24 18:41",
         "kefu": "庞婷婷",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "汪伟",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1722,7 +1824,9 @@
         "time_ms": 1790246352000,
         "time": "2026-09-24 18:39",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市风都科技有限公司",
@@ -1733,7 +1837,9 @@
         "time_ms": 1790246138000,
         "time": "2026-09-24 18:35",
         "kefu": "庞婷婷",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "汪伟",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1744,7 +1850,9 @@
         "time_ms": 1790245018000,
         "time": "2026-09-24 18:16",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1755,7 +1863,9 @@
         "time_ms": 1790241149000,
         "time": "2026-09-24 17:12",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1766,7 +1876,9 @@
         "time_ms": 1790240207000,
         "time": "2026-09-24 16:56",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1777,7 +1889,9 @@
         "time_ms": 1790239128000,
         "time": "2026-09-24 16:38",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1788,7 +1902,9 @@
         "time_ms": 1790238732000,
         "time": "2026-09-24 16:32",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1799,7 +1915,9 @@
         "time_ms": 1790237977000,
         "time": "2026-09-24 16:19",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市古石科技有限公司",
@@ -1810,7 +1928,9 @@
         "time_ms": 1790232878000,
         "time": "2026-09-24 14:54",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "汪伟",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1821,7 +1941,9 @@
         "time_ms": 1790232785000,
         "time": "2026-09-24 14:53",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1832,7 +1954,9 @@
         "time_ms": 1790232198000,
         "time": "2026-09-24 14:43",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1843,7 +1967,9 @@
         "time_ms": 1790231396000,
         "time": "2026-09-24 14:29",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市美昕实业有限公司",
@@ -1854,7 +1980,9 @@
         "time_ms": 1790221332000,
         "time": "2026-09-24 11:42",
         "kefu": "农路源",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "牛群",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳华声科技有限公司",
@@ -1865,7 +1993,9 @@
         "time_ms": 1790218130000,
         "time": "2026-09-24 10:48",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "漆螯童",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -1876,7 +2006,9 @@
         "time_ms": 1790218106000,
         "time": "2026-09-24 10:48",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "汪伟",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -1887,7 +2019,9 @@
         "time_ms": 1790213971000,
         "time": "2026-09-24 09:39",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "汪伟",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳鑫生力科技有限公司",
@@ -1898,7 +2032,9 @@
         "time_ms": 1790160658000,
         "time": "2026-09-23 18:50",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "高国权",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳大塘科技电子有限公司",
@@ -1909,7 +2045,9 @@
         "time_ms": 1790065530000,
         "time": "2026-09-22 16:25",
         "kefu": "苏梓梦",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "李彬",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市辉波诚科技有限公司",
@@ -1920,7 +2058,9 @@
         "time_ms": 1790056577000,
         "time": "2026-09-22 13:56",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "罗金填",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市布拉沃国际实业有限公司",
@@ -1931,7 +2071,9 @@
         "time_ms": 1790056546000,
         "time": "2026-09-22 13:55",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳信广鑫仪器设备有限公司",
@@ -1942,7 +2084,9 @@
         "time_ms": 1789969777000,
         "time": "2026-09-21 13:49",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "蒋汶桃",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市路通电子有限公司",
@@ -1953,7 +2097,9 @@
         "time_ms": 1789963085000,
         "time": "2026-09-21 11:58",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "漆螯童",
+        "sales_from": "strategy"
       },
       {
         "customer": "惠州奇锋商贸有限公司",
@@ -1964,7 +2110,9 @@
         "time_ms": 1789876235000,
         "time": "2026-09-20 11:50",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "蒋汶桃",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳大塘科技电子有限公司",
@@ -1975,7 +2123,9 @@
         "time_ms": 1789875288000,
         "time": "2026-09-20 11:34",
         "kefu": "苏梓梦",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "李彬",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -1986,7 +2136,9 @@
         "time_ms": 1789720144000,
         "time": "2026-09-18 16:29",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "汪伟",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市博悦展示品有限公司",
@@ -1997,7 +2149,9 @@
         "time_ms": 1789713711000,
         "time": "2026-09-18 14:41",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市博悦展示品有限公司",
@@ -2008,7 +2162,9 @@
         "time_ms": 1789713512000,
         "time": "2026-09-18 14:38",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市布拉沃国际实业有限公司",
@@ -2019,7 +2175,9 @@
         "time_ms": 1789701052000,
         "time": "2026-09-18 11:10",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市博悦展示品有限公司",
@@ -2030,7 +2188,9 @@
         "time_ms": 1789627149000,
         "time": "2026-09-17 14:39",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -2041,7 +2201,9 @@
         "time_ms": 1789627120000,
         "time": "2026-09-17 14:38",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "汪伟",
+        "sales_from": "strategy"
       },
       {
         "customer": "惠州奇锋商贸有限公司",
@@ -2052,7 +2214,9 @@
         "time_ms": 1789607146000,
         "time": "2026-09-17 09:05",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "蒋汶桃",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -2063,7 +2227,9 @@
         "time_ms": 1789552902000,
         "time": "2026-09-16 18:01",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "汪伟",
+        "sales_from": "strategy"
       },
       {
         "customer": "鸿晖(深圳)科技有限公司",
@@ -2074,7 +2240,9 @@
         "time_ms": 1789542141000,
         "time": "2026-09-16 15:02",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市百乐康科技有限公司",
@@ -2085,7 +2253,9 @@
         "time_ms": 1789532549000,
         "time": "2026-09-16 12:22",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "夏锐",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市百乐康科技有限公司",
@@ -2096,7 +2266,9 @@
         "time_ms": 1789532139000,
         "time": "2026-09-16 12:15",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "夏锐",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市哇哦暖通设备有限公司",
@@ -2107,7 +2279,9 @@
         "time_ms": 1789528833000,
         "time": "2026-09-16 11:20",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "程碧瑶",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市德创纪元科技有限公司",
@@ -2118,7 +2292,9 @@
         "time_ms": 1789526772000,
         "time": "2026-09-16 10:46",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "陈建国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市德创纪元科技有限公司",
@@ -2129,7 +2305,9 @@
         "time_ms": 1789459639000,
         "time": "2026-09-15 16:07",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "陈建国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市德创纪元科技有限公司",
@@ -2140,7 +2318,9 @@
         "time_ms": 1789438244000,
         "time": "2026-09-15 10:10",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "陈建国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市四通广行实业有限公司",
@@ -2151,7 +2331,9 @@
         "time_ms": 1789372672000,
         "time": "2026-09-14 15:57",
         "kefu": "罗洋清",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2162,7 +2344,9 @@
         "time_ms": 1789370313000,
         "time": "2026-09-14 15:18",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2173,7 +2357,9 @@
         "time_ms": 1789370312000,
         "time": "2026-09-14 15:18",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2184,7 +2370,9 @@
         "time_ms": 1789370257000,
         "time": "2026-09-14 15:17",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2195,7 +2383,9 @@
         "time_ms": 1789370163000,
         "time": "2026-09-14 15:16",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2206,7 +2396,9 @@
         "time_ms": 1789370091000,
         "time": "2026-09-14 15:14",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2217,7 +2409,9 @@
         "time_ms": 1789369948000,
         "time": "2026-09-14 15:12",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2228,7 +2422,9 @@
         "time_ms": 1789369885000,
         "time": "2026-09-14 15:11",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2239,7 +2435,9 @@
         "time_ms": 1789369883000,
         "time": "2026-09-14 15:11",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2250,7 +2448,9 @@
         "time_ms": 1789369679000,
         "time": "2026-09-14 15:07",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2261,7 +2461,9 @@
         "time_ms": 1789369679000,
         "time": "2026-09-14 15:07",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2272,7 +2474,9 @@
         "time_ms": 1789369571000,
         "time": "2026-09-14 15:06",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2283,7 +2487,9 @@
         "time_ms": 1789368201000,
         "time": "2026-09-14 14:43",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2294,7 +2500,9 @@
         "time_ms": 1789368145000,
         "time": "2026-09-14 14:42",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2305,7 +2513,9 @@
         "time_ms": 1789368003000,
         "time": "2026-09-14 14:40",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2316,7 +2526,9 @@
         "time_ms": 1789367700000,
         "time": "2026-09-14 14:35",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2327,7 +2539,9 @@
         "time_ms": 1789367626000,
         "time": "2026-09-14 14:33",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2338,7 +2552,9 @@
         "time_ms": 1789367465000,
         "time": "2026-09-14 14:31",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2349,7 +2565,9 @@
         "time_ms": 1789367409000,
         "time": "2026-09-14 14:30",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2360,7 +2578,9 @@
         "time_ms": 1789367213000,
         "time": "2026-09-14 14:26",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2371,7 +2591,9 @@
         "time_ms": 1789367102000,
         "time": "2026-09-14 14:25",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2382,7 +2604,9 @@
         "time_ms": 1789367023000,
         "time": "2026-09-14 14:23",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2393,7 +2617,9 @@
         "time_ms": 1789366880000,
         "time": "2026-09-14 14:21",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2404,7 +2630,9 @@
         "time_ms": 1789366840000,
         "time": "2026-09-14 14:20",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2415,7 +2643,9 @@
         "time_ms": 1789366061000,
         "time": "2026-09-14 14:07",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2426,7 +2656,9 @@
         "time_ms": 1789365838000,
         "time": "2026-09-14 14:03",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2437,7 +2669,9 @@
         "time_ms": 1789365775000,
         "time": "2026-09-14 14:02",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2448,7 +2682,9 @@
         "time_ms": 1789365764000,
         "time": "2026-09-14 14:02",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2459,7 +2695,9 @@
         "time_ms": 1789365459000,
         "time": "2026-09-14 13:57",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2470,7 +2708,9 @@
         "time_ms": 1789365126000,
         "time": "2026-09-14 13:52",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2481,7 +2721,9 @@
         "time_ms": 1789364833000,
         "time": "2026-09-14 13:47",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2492,7 +2734,9 @@
         "time_ms": 1789357613000,
         "time": "2026-09-14 11:46",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2503,7 +2747,9 @@
         "time_ms": 1789357545000,
         "time": "2026-09-14 11:45",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2514,7 +2760,9 @@
         "time_ms": 1789357423000,
         "time": "2026-09-14 11:43",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳大塘科技电子有限公司",
@@ -2525,7 +2773,9 @@
         "time_ms": 1789357357000,
         "time": "2026-09-14 11:42",
         "kefu": "苏梓梦",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "李彬",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2536,7 +2786,9 @@
         "time_ms": 1789357338000,
         "time": "2026-09-14 11:42",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2547,7 +2799,9 @@
         "time_ms": 1789356434000,
         "time": "2026-09-14 11:27",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2558,7 +2812,9 @@
         "time_ms": 1789355879000,
         "time": "2026-09-14 11:17",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2569,7 +2825,9 @@
         "time_ms": 1789354145000,
         "time": "2026-09-14 10:49",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市威斯尼科技有限公司",
@@ -2580,7 +2838,9 @@
         "time_ms": 1789128078000,
         "time": "2026-09-11 20:01",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "陈建国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市博悦展示品有限公司",
@@ -2591,7 +2851,9 @@
         "time_ms": 1789120081000,
         "time": "2026-09-11 17:48",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市百乐康科技有限公司",
@@ -2602,7 +2864,9 @@
         "time_ms": 1789097116000,
         "time": "2026-09-11 11:25",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "夏锐",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -2613,7 +2877,9 @@
         "time_ms": 1789033588000,
         "time": "2026-09-10 17:46",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "汪伟",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市威斯尼科技有限公司",
@@ -2624,7 +2890,9 @@
         "time_ms": 1788947288000,
         "time": "2026-09-09 17:48",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "陈建国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市元合诚科技有限公司",
@@ -2635,7 +2903,9 @@
         "time_ms": 1788839552000,
         "time": "2026-09-08 11:52",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -2646,7 +2916,9 @@
         "time_ms": 1788746550000,
         "time": "2026-09-07 10:02",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "汪伟",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市威斯尼科技有限公司",
@@ -2657,7 +2929,9 @@
         "time_ms": 1788666980000,
         "time": "2026-09-06 11:56",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "陈建国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市威斯尼科技有限公司",
@@ -2668,7 +2942,9 @@
         "time_ms": 1788603274000,
         "time": "2026-09-05 18:14",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "陈建国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市威斯尼科技有限公司",
@@ -2679,7 +2955,9 @@
         "time_ms": 1788601785000,
         "time": "2026-09-05 17:49",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "陈建国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市陆洋电子科技有限公司",
@@ -2690,7 +2968,9 @@
         "time_ms": 1788245218000,
         "time": "2026-09-01 14:46",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "汪伟",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳宏颖科技有限公司",
@@ -2701,7 +2981,9 @@
         "time_ms": 1788164040000,
         "time": "2026-08-31 16:14",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "漆螯童",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市百乐康科技有限公司",
@@ -2712,7 +2994,9 @@
         "time_ms": 1787626669000,
         "time": "2026-08-25 10:57",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "夏锐",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市百乐康科技有限公司",
@@ -2723,7 +3007,9 @@
         "time_ms": 1787555571000,
         "time": "2026-08-24 15:12",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "夏锐",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳大塘科技电子有限公司",
@@ -2734,7 +3020,9 @@
         "time_ms": 1787125837000,
         "time": "2026-08-19 15:50",
         "kefu": "苏梓梦",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "李彬",
+        "sales_from": "strategy"
       },
       {
         "customer": "鸿晖(深圳)科技有限公司",
@@ -2745,7 +3033,9 @@
         "time_ms": 1786930918000,
         "time": "2026-08-17 09:41",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市博悦展示品有限公司",
@@ -2756,7 +3046,9 @@
         "time_ms": 1786788782000,
         "time": "2026-08-15 18:13",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市泓泰印刷包装制品有限公司",
@@ -2767,7 +3059,9 @@
         "time_ms": 1786583850000,
         "time": "2026-08-13 09:17",
         "kefu": "李岩",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "李彬",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市泓泰印刷包装制品有限公司",
@@ -2778,7 +3072,9 @@
         "time_ms": 1786583554000,
         "time": "2026-08-13 09:12",
         "kefu": "李岩",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "李彬",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市润之行商标制作有限公司",
@@ -2789,7 +3085,9 @@
         "time_ms": 1786439896000,
         "time": "2026-08-11 17:18",
         "kefu": "苏梓梦",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "邓晓东",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市布拉沃国际实业有限公司",
@@ -2800,7 +3098,9 @@
         "time_ms": 1786182816000,
         "time": "2026-08-08 17:53",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳宏颖科技有限公司",
@@ -2811,7 +3111,9 @@
         "time_ms": 1786179458000,
         "time": "2026-08-08 16:57",
         "kefu": "邢欢欢",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "漆螯童",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市海飞源科技有限公司",
@@ -2822,7 +3124,9 @@
         "time_ms": 1786158476000,
         "time": "2026-08-08 11:07",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "李怡萍",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市思攀达科技有限公司",
@@ -2833,7 +3137,9 @@
         "time_ms": 1785977332000,
         "time": "2026-08-06 08:48",
         "kefu": "罗洋清",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "漆螯童",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市阿桌数码科技有限公司",
@@ -2844,7 +3150,9 @@
         "time_ms": 1785919544000,
         "time": "2026-08-05 16:45",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市阿桌数码科技有限公司",
@@ -2855,7 +3163,9 @@
         "time_ms": 1785918662000,
         "time": "2026-08-05 16:31",
         "kefu": "方琼",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市伟腾鑫科技有限公司",
@@ -2866,7 +3176,9 @@
         "time_ms": 1785563263000,
         "time": "2026-08-01 13:47",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "李彬",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市布拉沃国际实业有限公司",
@@ -2877,7 +3189,9 @@
         "time_ms": 1785490738000,
         "time": "2026-07-31 17:38",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市德创纪元科技有限公司",
@@ -2888,7 +3202,9 @@
         "time_ms": 1785481228000,
         "time": "2026-07-31 15:00",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "陈建国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市德创纪元科技有限公司",
@@ -2899,7 +3215,9 @@
         "time_ms": 1785480558000,
         "time": "2026-07-31 14:49",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "陈建国",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市日盛华科技有限公司",
@@ -2910,7 +3228,9 @@
         "time_ms": 1785403655000,
         "time": "2026-07-30 17:27",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "蒋汶桃",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市伟腾鑫科技有限公司",
@@ -2921,7 +3241,9 @@
         "time_ms": 1785399793000,
         "time": "2026-07-30 16:23",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "李彬",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市爱铂科技有限公司",
@@ -2932,7 +3254,9 @@
         "time_ms": 1785312096000,
         "time": "2026-07-29 16:01",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "漆螯童",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳大塘科技电子有限公司",
@@ -2943,7 +3267,9 @@
         "time_ms": 1784879055000,
         "time": "2026-07-24 15:44",
         "kefu": "苏梓梦",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "李彬",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳大塘科技电子有限公司",
@@ -2954,7 +3280,9 @@
         "time_ms": 1784878435000,
         "time": "2026-07-24 15:33",
         "kefu": "苏梓梦",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "李彬",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市海飞源科技有限公司",
@@ -2965,7 +3293,9 @@
         "time_ms": 1784790620000,
         "time": "2026-07-23 15:10",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "李怡萍",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市布拉沃国际实业有限公司",
@@ -2976,7 +3306,9 @@
         "time_ms": 1784705620000,
         "time": "2026-07-22 15:33",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市阿贝丝化妆用具有限公司",
@@ -2987,7 +3319,9 @@
         "time_ms": 1784531942000,
         "time": "2026-07-20 15:19",
         "kefu": "汤青芬",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "李怡萍",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市爱铂科技有限公司",
@@ -2998,7 +3332,9 @@
         "time_ms": 1784531412000,
         "time": "2026-07-20 15:10",
         "kefu": "曹丽",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "漆螯童",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市阿贝丝化妆用具有限公司",
@@ -3009,7 +3345,9 @@
         "time_ms": 1784530890000,
         "time": "2026-07-20 15:01",
         "kefu": "汤青芬",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "李怡萍",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳市新生力科技有限公司",
@@ -3020,7 +3358,9 @@
         "time_ms": 1784001057000,
         "time": "2026-07-14 11:50",
         "kefu": "罗洋清",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "夏锐",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3031,7 +3371,9 @@
         "time_ms": 1693462786000,
         "time": "2023-08-31 14:19",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3042,7 +3384,9 @@
         "time_ms": 1693462574000,
         "time": "2023-08-31 14:16",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3053,7 +3397,9 @@
         "time_ms": 1693462420000,
         "time": "2023-08-31 14:13",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3064,7 +3410,9 @@
         "time_ms": 1693461937000,
         "time": "2023-08-31 14:05",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3075,7 +3423,9 @@
         "time_ms": 1693461722000,
         "time": "2023-08-31 14:02",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3086,7 +3436,9 @@
         "time_ms": 1693461260000,
         "time": "2023-08-31 13:54",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3097,7 +3449,9 @@
         "time_ms": 1693461091000,
         "time": "2023-08-31 13:51",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3108,7 +3462,9 @@
         "time_ms": 1693460921000,
         "time": "2023-08-31 13:48",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3119,7 +3475,9 @@
         "time_ms": 1693460766000,
         "time": "2023-08-31 13:46",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3130,7 +3488,9 @@
         "time_ms": 1693460617000,
         "time": "2023-08-31 13:43",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3141,7 +3501,9 @@
         "time_ms": 1693460225000,
         "time": "2023-08-31 13:37",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3152,7 +3514,9 @@
         "time_ms": 1693375147000,
         "time": "2023-08-30 13:59",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       },
       {
         "customer": "深圳云飞扬化妆品有限公司",
@@ -3163,7 +3527,9 @@
         "time_ms": 1693374502000,
         "time": "2023-08-30 13:48",
         "kefu": "陈宇",
-        "kefu_from": "strategy"
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
       }
     ]
   },
