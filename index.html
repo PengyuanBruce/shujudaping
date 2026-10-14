@@ -373,6 +373,31 @@
       #sec-10 .a-row { grid-template-columns: minmax(0, 1fr) 84px; }
       #sec-10 .a-plan { grid-column: 1 / -1; }
     }
+    /* Ⅹ 销售拜访量过程（上门打卡，2026-10-14 新增）：个人级 7 列固定宽度 + 按天 chip + 当日明细 */
+    #sec-11 .v-days { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; margin: 6px 0 8px; }
+    #sec-11 .vchip { cursor: pointer; font-size: 12px; padding: 3px 11px; border-radius: 999px;
+      border: 1px solid var(--line); color: var(--fg-dim); user-select: none; }
+    #sec-11 .vchip.on { background: var(--cyan); border-color: var(--cyan); color: #04121A; font-weight: 700; }
+    #sec-11 .v-row { display: grid; grid-template-columns: 88px 84px 84px 76px 84px 76px minmax(0, 1fr);
+      gap: 0 10px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--line-soft); }
+    #sec-11 .v-row > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    #sec-11 .v-row.v-head { color: var(--fg-faint); font-size: 11.5px; letter-spacing: .08em;
+      border-bottom-color: var(--line); }
+    #sec-11 .v-row > span:last-child { text-align: right; }
+    #sec-11 .v-detail { max-height: 420px; overflow-y: auto; border-top: 1px solid var(--line-soft); }
+    #sec-11 .d-row { display: grid; grid-template-columns: 74px 84px minmax(0, 1fr) 104px minmax(0, 1.2fr);
+      gap: 0 10px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--line-soft); }
+    #sec-11 .d-row > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    #sec-11 .d-row.d-head { position: sticky; top: 0; z-index: 1; background: var(--panel-solid);
+      color: var(--fg-faint); font-size: 11.5px; letter-spacing: .08em; }
+    @media (max-width: 900px) {
+      /* 窄屏：表头与数据行**隐藏同样的列**（否则标签与数字错位），个人级留 姓名/次数/记录率 */
+      #sec-11 .v-row { grid-template-columns: minmax(0, 1fr) 72px 72px; }
+      #sec-11 .v-row > span:nth-child(3), #sec-11 .v-row > span:nth-child(4),
+      #sec-11 .v-row > span:nth-child(5), #sec-11 .v-row > span:nth-child(7) { display: none; }
+      #sec-11 .d-row { grid-template-columns: 68px minmax(0, 1fr) 96px; }
+      #sec-11 .d-row > span:nth-child(3), #sec-11 .d-row > span:nth-child(5) { display: none; }
+    }
     @media (max-width: 900px) {
       /* 窄屏：线路/金额/时间 整组换到第二行，客户名与归属客服留在第一行。
          这一组改用 flex-wrap（不用固定列宽）——375 宽时 252+118+128 放不下，
@@ -650,10 +675,16 @@
     <section id="sec-9">
       <div class="sec-head"><span class="sec-no">Ⅸ</span><h2 id="topic-title">9610 打标订单</h2>
         <span class="note" id="topic-note">按线路汇总 + 成单明细（一笔一行 · 按成交时间倒序 · 带归属客服） · 源：一拍档物流服务商后台订单列表</span></div>
-      <div id="topic-body"></div>
-    </section>
+<div id="topic-body"></div>
+</section>
 
-  <footer>
+<section id="sec-11">
+<div class="sec-head"><span class="sec-no">Ⅹ</span><h2 id="vp-title">销售拜访量过程</h2>
+<span class="note" id="vp-note">上门打卡 · 每人本月打卡量 + 按天明细</span></div>
+<div id="vp-body"></div>
+</section>
+
+<footer>
     <div>数据每日更新 · 若显示旧数字请按 <code>Ctrl + Shift + R</code> 强制刷新（跳过 CDN 缓存）</div>
     <div>数据源：<code>data_cur.json</code>（当月实时）· <code>data_prev.json</code>（上月固化，只读）· <code>data_breakdown.json</code>（指标拆解）</div>
     <div id="footer-status">—</div>
@@ -665,7 +696,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1791943178';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1791954594';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1596,6 +1627,92 @@
   }
 
   // ── 统一入口 ──
+  /* Ⅹ 销售拜访量过程（上门打卡）· 2026-10-14 用户要求：放在大屏最后，展示每个销售本月的拜访
+     （打卡）数据，并能按天筛选当日明细。数据源 = 客户管理 ▸ 拜访&打卡&沙龙明细 ▸ 打卡签到明细。 */
+  function renderVisitProcess(d) {
+    const v = d.visit_process;
+    if (!v) {
+      $('vp-body').innerHTML = '<div class="card"><div class="empty">待接（缺当月打卡件）</div></div>';
+      return;
+    }
+    const t = v.totals || {}, ps = v.persons || [], det = v.detail || [], days = v.days || [];
+    const m = v.month || '';
+    $('vp-title').textContent = '销售拜访量过程（' + m + '）';
+    $('vp-note').textContent = '上门打卡 · 每人本月打卡量 + 按天明细 · 源：' + (v.source || '打卡签到明细');
+    const K = (cap, num, unit, sub) => '<div class="card"><div class="cap">' + esc(cap) + '</div>' +
+      '<div class="big">' + num + '<span class="unit">' + esc(unit) + '</span></div>' +
+      '<div class="rowline"><span>' + esc(sub) + '</span></div></div>';
+    const kpi = '<div class="kpi-grid g4">' +
+      K('本月打卡次数', fmt(t.count, 0), '次', m + ' 累计') +
+      K('已打卡销售', fmt(t.persons, 0), '人', '名单 ' + fmt(t.roster, 0) + ' 人 · 未打卡 ' + fmt(t.idle, 0) + ' 人') +
+      K('覆盖客户', fmt(t.customers, 0), '家', fmt(t.days, 0) + ' 天有打卡') +
+      K('已录拜访记录', fmt(t.with_visit, 0), '次', '占打卡 ' + fmtPct(t.visit_pct, 1)) + '</div>';
+    $('vp-body').innerHTML = '<div class="card">' + kpi + '<div id="vp-rest"></div></div>';
+    renderVisitRest(v);
+    wireVisitDays();
+  }
+
+  function renderVisitRest(v) {
+    const t = v.totals || {}, ps = v.persons || [], det = v.detail || [], days = v.days || [];
+    const head = '<div class="v-row v-head"><span>姓名</span><span>打卡次数</span><span>打卡天数</span>' +
+      '<span>客户数</span><span>已录拜访</span><span>记录率</span><span>最近打卡</span></div>';
+    const rows = ps.map(p => '<div class="v-row"><span>' + esc(p.name) +
+      (p.in_roster === false ? '<small class="text-dim"> 非名单</small>' : '') + '</span>' +
+      '<span>' + fmt(p.count, 0) + '</span><span>' + fmt(p.days, 0) + '</span>' +
+      '<span>' + fmt(p.customers, 0) + '</span><span>' + fmt(p.with_visit, 0) + '</span>' +
+      '<span class="' + pctTextClass(p.visit_pct) + '">' + fmtPct(p.visit_pct, 1) + '</span>' +
+      '<span class="text-dim">' + esc(p.last) + '</span></div>').join('');
+    const idle = (t.idle_names || []).length
+      ? '<div class="cap" style="margin-top:10px">名单内本月未打卡 ' + fmt(t.idle, 0) + ' 人：' +
+        esc((t.idle_names || []).join('、')) + '</div>' : '';
+    const chips = '<div class="v-days"><span class="cap">按天筛选</span>' +
+      '<b class="vchip on" data-day="">全部（' + fmt(det.length, 0) + ' 次）</b>' +
+      days.map(x => '<b class="vchip" data-day="' + esc(x.day) + '">' + esc(x.day.slice(5)) +
+        '（' + fmt(x.count, 0) + '）</b>').join('') + '<span class="text-dim" id="vp-sum"></span></div>';
+    const dhead = '<div class="d-row d-head"><span>时间</span><span>姓名</span><span>客户名称</span>' +
+      '<span>签到状态</span><span>签到地址</span></div>';
+    const drows = det.map(r => '<div class="d-row" data-day="' + esc(r.day) + '"><span>' +
+      esc(String(r.time).slice(11)) + '</span><span>' + esc(r.name) + '</span><span>' +
+      esc(r.customer || '--') + '</span><span class="' + (/录了拜访记录/.test(String(r.status)) ? 'text-green' : 'text-orange') +
+      '">' + esc(r.status || '--') + '</span><span class="text-dim">' + esc(r.addr || '--') + '</span></div>').join('');
+    $('vp-rest').innerHTML = '<div class="cap" style="margin-top:14px">个人级 · 按打卡次数降序</div>' + head + rows + idle +
+      '<div class="cap" style="margin-top:14px">按天明细 · 点日期只看当天</div>' + chips +
+      '<div class="v-detail">' + dhead + drows + '</div>';
+  }
+
+  /* Ⅹ 的按天筛选：纯前端切 display，不发请求。维度和取值都在 DOM 里现取。 */
+  function wireVisitDays() {
+    const box = document.querySelector('#sec-11 .v-detail');
+    const bar = document.querySelector('#sec-11 .v-days');
+    if (!box || !bar) return;
+    const rows = Array.prototype.slice.call(box.querySelectorAll('.d-row:not(.d-head)'));
+    const sum = document.getElementById('vp-sum');
+    const chips = Array.prototype.slice.call(bar.querySelectorAll('.vchip'));
+    let day = '';
+    function apply() {
+      let n = 0;
+      const who = {};
+      rows.forEach(function (r) {
+        const hit = !day || r.getAttribute('data-day') === day;
+        r.style.display = hit ? '' : 'none';
+        if (hit) { n += 1; who[r.children[1].textContent] = 1; }
+      });
+      if (sum) {
+        sum.textContent = day
+          ? '当日 ' + n + ' 次 · ' + Object.keys(who).length + ' 人'
+          : '共 ' + n + ' 次 · ' + Object.keys(who).length + ' 人';
+      }
+    }
+    chips.forEach(function (c) {
+      c.addEventListener('click', function () {
+        day = c.getAttribute('data-day') || '';
+        chips.forEach(function (x) { x.classList.toggle('on', x === c); });
+        apply();
+      });
+    });
+    apply();
+  }
+
   function renderAll(d) {
     renderKPI(d);
     renderProgressCmp(d);
@@ -1610,6 +1727,7 @@
     renderYoy(d);
     renderTopic9610(d);
     renderTopicAwb(d);
+    renderVisitProcess(d);              // Ⅹ：销售拜访量过程（上门打卡，页面最后一块）
     updateLabels(d);
     const warns = d.warnings || [];
     if (warns.length) banner('<b>解析告警（已按规则沿用上次数据）</b><ul><li>' +
