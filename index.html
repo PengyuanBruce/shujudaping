@@ -381,7 +381,7 @@
       （原来 flex space-between 会随值的长短左右漂，行与行之间对不上） */
    #sec-4b .rank-row { height: auto; min-height: 37px; align-items: center; }
    #sec-4b .rank-row .rowline {
-     display: grid; grid-template-columns: 120px 128px 92px minmax(0, 1fr);
+     display: grid; grid-template-columns: 120px 128px 92px 104px minmax(0,1fr);
      gap: 0 10px; margin: 0; align-items: center; white-space: nowrap;
    }
    #sec-4b .rank-row .rowline > span { overflow: hidden; text-overflow: ellipsis; }
@@ -599,7 +599,7 @@
        故并为一个板块，不再分两处重复展示公司级数字。 -->
   <section id="sec-4b">
     <div class="sec-head"><span class="sec-no">Ⅳ·B</span><h2>商品成长（优品3.0）</h2>
-      <span class="note">公司级 5 指标 + 商品结构（在线品全量口径）+ 个人级（优爆品数 / 目标 / 推P率 / 完成率，按完成率降序） · 源：数据罗盘 ▸ 商品成长 ▸ 优品3.0总览（平台 T+2）</span></div>
+      <span class="note">公司级 5 指标 + 商品结构（在线品全量口径）+ 个人级（优爆品数 / 目标 / 推P率 / 本月新增 / 完成率，按完成率降序） ·「本月新增」= 当前优爆品数 − 本月1号快照（本工程按月留存基线） · 源：数据罗盘 ▸ 商品成长 ▸ 优品3.0总览（平台 T+2）</span></div>
     <div class="card" id="goods-rank-body"></div>
   </section>
 
@@ -647,7 +647,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1791890380';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1791939065';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -751,6 +751,17 @@
     if (n >= 80) return 'text-green';
     if (n >= 50) return 'text-orange';
     return 'text-red';
+  }
+  function fmtSigned(v) {          // 「本月新增」这类差值：+1,234 / -3,127 / 0 / --
+    const n = num(v);
+    if (n === null) return '--';
+    const s = Math.abs(n).toLocaleString('en-US', { maximumFractionDigits: 0 });
+    return (n > 0 ? '+' : n < 0 ? '-' : '') + s;
+  }
+  function deltaTextClass(v) {     // 增量：涨绿、跌红、零与缺值灰（缺值必须一眼看出是 -- 而不是 0）
+    const n = num(v);
+    if (n === null || n === 0) return 'text-gray';
+    return n > 0 ? 'text-green' : 'text-red';
   }
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, (c) =>
@@ -1266,7 +1277,8 @@
   // 两组都是**接口直接给的列**，不在前端做除法（见 docs §二十二）。
   // 2026-10-12 二次改版（用户：「这两个板块一样的，直接合并，排版对称下」）：
   //   原 Ⅵ 与本板块展示的是同一张「拍档公司」表的同一组指标 → 合并为一个板块；
-  //   排版：公司级 5 卡**等宽一行**、商品结构一组等宽、个人级 4 个指标列固定宽度（22 行纵向对齐）。
+  //   排版：公司级 5 卡**等宽一行**、商品结构一组等宽、个人级 5 个指标列固定宽度（各行纵向对齐）。
+  //   2026-10-14 用户要求加「本月新增」= 当前优爆品数 − 本月1号快照（接口无此列，基线按月留存）。
   //   ⚠ 公司级不能用通用 .kpi-grid（4 列）——第 5 张会落单到第二行，那正是用户截图里的「不对称」。
   function renderGoodsRank(d) {
     const rows = (d.goods_sales || []).slice();
@@ -1300,19 +1312,27 @@
     }
     if (!rows.length) {
       $('goods-rank-body').innerHTML = head + pendingPanel([
-        '个人级：每位销售的 优爆品数 / 当季度累计目标 / 推P率 / 完成率',
+        '个人级：每位销售的 优爆品数 / 当季度累计目标 / 推P率 / 本月新增 / 完成率',
         '需要 youpin3-sales-full.json（优品3.0总览·拍档销售表，已改为每日采集）']);
       return;
     }
     rows.sort(function (a, b) { return (num(b.pct) || 0) - (num(a.pct) || 0); });
-    // 4 个指标各占一列（列宽在 CSS 里固定），22 行的数字因此纵向对齐
+    // 5 个指标各占一列（列宽在 CSS 里固定），各行数字因此纵向对齐
     const cells = (r) => '<span class="rowline"><span>' + fmt(r.value, 0) + '</span>' +
       '<span>' + fmt(r.target, 0) + '</span><span>' + fmtPct(r.pct_p4p, 1) + '</span>' +
+      '<b class="' + deltaTextClass(r.new_month) + '">' + fmtSigned(r.new_month) + '</b>' +
       '<b class="' + pctTextClass(r.pct) + '">' + fmtPct(r.pct, 2) + '</b></span>';
+    // 「本月新增」的口径、基线日期从数据读（缺基线时写明原因，不写死日期）
+    const mb = d.goods_month_base || {};
+    const mbTip = mb.base_ds
+      ? '本月新增 = 当前优爆品数 − ' + mb.base_ds + ' 快照（当前值为平台最新可得日）'
+      : '缺月初基线（' + (mb.reason || '未生成') + '）→ 显示 --';
     $('goods-rank-body').innerHTML = head +
-      '<div class="cap" style="margin-top:14px">个人级 · 按完成率降序</div>' +
+      '<div class="cap" style="margin-top:14px">个人级 · 按完成率降序' +
+      (mb.base_ds ? ' · 本月新增 = 当前 − ' + esc(mb.base_ds) + ' 快照' : '') + '</div>' +
       '<div class="rank-row rank-head"><span>#</span><span>姓名</span>' +
       '<span class="rowline"><span>优爆品数</span><span>当季度累计目标</span><span>推P率</span>' +
+      '<span title="' + esc(mbTip) + '">本月新增</span>' +
       '<span>完成率</span></span><span>进度</span></div>' +
       rows.map(function (r, i) {
         const w = Math.max(0, Math.min(100, num(r.pct) || 0));
