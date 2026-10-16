@@ -717,7 +717,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1792114755';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1792115114';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1434,16 +1434,14 @@
             '%"></i></span></div>';
         }).join('') + '</div>';
     }
-    // 两军团没覆盖到的人：本板块不展示，但**如实写出来**（不静默吞掉）
-    const skipped = (ch.skip || []).filter(function (n) { return !!byName[n]; });
+    // 两军团没覆盖到的人：本板块不展示（用户 2026-10-16 明确「不进榜单」），
+    // 也**不写提示行**（用户 2026-10-16 二次要求去掉「另有 3 人不在挑战赛名单…」那句）。
     $('goods-rank-body').innerHTML = head +
       '<div class="cap" style="margin-top:14px">个人级 · ' + esc(chLabel) +
       (ch.base_ds ? ' = 当前优爆品数 − ' + esc(ch.base_ds) + ' 快照'
                   : '（缺基线：' + esc(ch.reason || '未生成') + ' → 显示 --）') +
       ' · 按军团分列、各自按新增降序</div>' +
-      '<div class="ch-groups">' + groups.map(panel).join('') + '</div>' +
-      (skipped.length ? '<div class="cap" style="margin-top:8px">另有 ' + skipped.length +
-        ' 人不在挑战赛名单（' + esc(skipped.join('、')) + '），本板块不展示</div>' : '');
+      '<div class="ch-groups">' + groups.map(panel).join('') + '</div>';
   }
 
   // ── Ⅸ 9610 打标订单（按线路）／Ⅹ AWB 待签约潜客（按销售）──
