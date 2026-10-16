@@ -437,6 +437,9 @@
       各自按「挑战赛期新增」降序。半宽列 → 指标列宽比单列时收窄，仍**固定宽度**保证纵向对齐。 */
    #sec-4b .ch-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
    #sec-4b .ch-panel { min-width: 0; }
+   /* 个人级唯一的标题（用户 2026-10-16：小字全去掉，只留「优爆品挑战赛10月19日-11月30日」） */
+   #sec-4b .ch-title { margin: 18px 0 10px; font-size: 14.5px; font-weight: 700;
+     letter-spacing: .02em; }
    #sec-4b .ch-head { display: flex; align-items: baseline; justify-content: space-between;
      gap: 10px; margin: 0 0 4px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
    #sec-4b .ch-head b { font-size: 13.5px; }
@@ -717,7 +720,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1792115247';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1792115454';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1420,8 +1423,7 @@
         return bv - av;
       });
       return '<div class="ch-panel" data-group="' + esc(g.name) + '">' +
-        '<div class="ch-head"><b>' + esc(g.name) + '</b><small class="text-dim">' +
-        list.length + ' 人 · 按' + esc(chLabel) + '降序</small></div>' +
+        '<div class="ch-head"><b>' + esc(g.name) + '</b></div>' +
         '<div class="rank-row rank-head"><span>#</span><span>姓名</span>' +
         '<span class="rowline"><span>优爆品数</span><span>当季度累计目标</span><span>推P率</span>' +
         '<span title="' + esc(chTip) + '">' + esc(chLabel) + '</span>' +
@@ -1437,11 +1439,12 @@
     // 两军团没覆盖到的人：本板块不展示（用户 2026-10-16 明确「不进榜单」）。
     // ⚠ 这里**不许**再写任何「谁不在名单里」的说明行 —— 用户 2026-10-16 二次要求删掉那句
     //   （所以这里连注释都不留原句，免得 grep 核验时把注释误判成渲染出的文字）。
+    // 个人级那一块**只留一个标题**（用户 2026-10-16 三次要求）：这些说明小字全去掉 ——
+    // 不写基线日、不写「缺基线」、不写「按…降序」、不写「谁不在名单里」。
+    // 标题 = 「优爆品挑战赛」+ 窗口（10月19日-11月30日），两者都从数据读、不写死。
+    const chTitleCn = esc(ch.panel_title || '优爆品挑战赛') + esc(ch.window_cn || '');
     $('goods-rank-body').innerHTML = head +
-      '<div class="cap" style="margin-top:14px">个人级 · ' + esc(chLabel) +
-      (ch.base_ds ? ' = 当前优爆品数 − ' + esc(ch.base_ds) + ' 快照'
-                  : '（缺基线：' + esc(ch.reason || '未生成') + ' → 显示 --）') +
-      ' · 按军团分列、各自按新增降序</div>' +
+      '<div class="ch-title">' + chTitleCn + '</div>' +
       '<div class="ch-groups">' + groups.map(panel).join('') + '</div>';
   }
 
