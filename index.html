@@ -445,11 +445,22 @@
    #sec-4b .ch-head b { font-size: 13.5px; }
    #sec-4b .ch-panel .rank-row { grid-template-columns: 24px 56px minmax(0, 1fr) 54px;
      gap: 6px; padding: 6px 0; }
+   /* 指标列宽**按表头文字量**配（12px 下）：优爆品数 4 字 / 当季度累计目标 7 字 ≈ 84px /
+      推P率 3 字 / 「10.19–11.30 新增」≈ 101px / 完成率 3 字。
+      原来 52/62/44/58 把「当季度累计目标」和「10.19–11.30 新增」都截成了省略号
+      （2026-10-16 用户报「把这里显示完全」）→ 加宽到刚好放得下，桌面端仍能塞进半宽。 */
    #sec-4b .ch-panel .rank-row .rowline {
-     grid-template-columns: 52px 62px 44px 58px minmax(46px, 1fr); gap: 0 6px; font-size: 12px;
+     grid-template-columns: 52px 98px 44px 106px minmax(46px, 1fr); gap: 0 6px; font-size: 12px;
    }
-   @media (max-width: 1080px) {
-     /* 半宽太挤就上下堆叠（两块仍等宽） */
+   /* 表头**绝不截断**：宽度万一算少了就换行，不许用省略号藏掉字（数据行仍单行省略号） */
+   #sec-4b .ch-panel .rank-row.rank-head .rowline { white-space: normal; }
+   #sec-4b .ch-panel .rank-row.rank-head .rowline > span {
+     overflow: visible; text-overflow: clip; line-height: 1.35;
+   }
+   @media (max-width: 1180px) {
+     /* 半宽放不下加宽后的指标列就上下堆叠（两块仍等宽）。
+        阈值按实测推：页面容器 ≈ 视口 − 97 → 半宽 = (视口 − 113)/2，
+        而「序号 24 + 姓名 56 + 指标列 346 + 进度 54 + 列间隙」≈ 522 → 视口 < 1157 放不下，留余量取 1180。 */
      #sec-4b .ch-groups { grid-template-columns: 1fr; }
    }
    @media (max-width: 700px) {
@@ -720,7 +731,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1792115454';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1792116312';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
