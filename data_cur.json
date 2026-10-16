@@ -1,7 +1,7 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-16 09:46",
+  "update_time": "2026-10-16 09:50",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 25962606.92,
@@ -1115,6 +1115,8 @@
     "base_ds": "",
     "reason": "基线里没有挑战赛 2026-10-19（现有：无）",
     "label": "10.19–11.30 新增",
+    "panel_title": "优爆品挑战赛",
+    "window_cn": "10月19日-11月30日",
     "groups": [
       {
         "key": "seal",
