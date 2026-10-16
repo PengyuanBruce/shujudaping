@@ -1,7 +1,7 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-16 08:56",
+  "update_time": "2026-10-16 09:38",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 25962606.92,
@@ -563,8 +563,8 @@
       "target": 3580.0,
       "pct": 42.70949720670391,
       "pct_p4p": 26.68410725964683,
-      "base_value": 1532.0,
-      "new_month": -3.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "王金国",
@@ -572,8 +572,8 @@
       "target": 4093.0,
       "pct": 61.39750794038602,
       "pct_p4p": 25.109430959013128,
-      "base_value": 2523.0,
-      "new_month": -10.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "程碧瑶",
@@ -581,8 +581,8 @@
       "target": 5027.0,
       "pct": 48.55778794509648,
       "pct_p4p": 18.39410077836952,
-      "base_value": 1904.0,
-      "new_month": 537.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "牛群",
@@ -590,8 +590,8 @@
       "target": 2882.0,
       "pct": 52.70645385149202,
       "pct_p4p": 29.03225806451613,
-      "base_value": 1553.0,
-      "new_month": -34.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "邓晓东",
@@ -599,8 +599,8 @@
       "target": 9803.0,
       "pct": 81.5260634499643,
       "pct_p4p": 14.98998998998999,
-      "base_value": 7779.0,
-      "new_month": 213.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "高国权",
@@ -608,8 +608,8 @@
       "target": 8165.0,
       "pct": 82.35150030618493,
       "pct_p4p": 17.444973230220107,
-      "base_value": 6702.0,
-      "new_month": 22.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "漆螯童",
@@ -617,8 +617,8 @@
       "target": 12404.0,
       "pct": 84.83553692357304,
       "pct_p4p": 32.66178846336596,
-      "base_value": 10591.0,
-      "new_month": -68.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "汪伟",
@@ -626,8 +626,8 @@
       "target": 9619.0,
       "pct": 68.80133069965693,
       "pct_p4p": 33.19734058627984,
-      "base_value": 12087.0,
-      "new_month": -5469.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "蒋汶桃",
@@ -635,8 +635,8 @@
       "target": 13361.0,
       "pct": 77.41187036898435,
       "pct_p4p": 35.43459344484192,
-      "base_value": 10367.0,
-      "new_month": -24.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "李彬",
@@ -644,8 +644,8 @@
       "target": 7954.0,
       "pct": 89.71586623082726,
       "pct_p4p": 45.75392376681614,
-      "base_value": 6204.0,
-      "new_month": 932.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "王子豪",
@@ -653,8 +653,8 @@
       "target": 15553.0,
       "pct": 73.31061531537324,
       "pct_p4p": 32.652166286616385,
-      "base_value": 11779.0,
-      "new_month": -377.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "罗金填",
@@ -662,8 +662,8 @@
       "target": 3498.0,
       "pct": 50.22870211549457,
       "pct_p4p": 28.40068298235629,
-      "base_value": 1808.0,
-      "new_month": -51.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "陈苑英",
@@ -671,8 +671,8 @@
       "target": 2019.0,
       "pct": 56.06736007924715,
       "pct_p4p": 14.487632508833922,
-      "base_value": 1089.0,
-      "new_month": 43.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "何尧玲",
@@ -680,8 +680,8 @@
       "target": 5401.0,
       "pct": 81.11460840585076,
       "pct_p4p": 14.288975119835653,
-      "base_value": 4332.0,
-      "new_month": 49.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "刘蓝琳",
@@ -689,8 +689,8 @@
       "target": 3517.0,
       "pct": 67.27324424225192,
       "pct_p4p": 19.146238377007606,
-      "base_value": 2434.0,
-      "new_month": -68.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "刘嘉艳",
@@ -698,8 +698,8 @@
       "target": 4155.0,
       "pct": 43.92298435619735,
       "pct_p4p": 34.24657534246575,
-      "base_value": 1881.0,
-      "new_month": -56.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "李怡萍",
@@ -707,8 +707,8 @@
       "target": 10360.0,
       "pct": 66.77606177606178,
       "pct_p4p": 18.806013298641226,
-      "base_value": 7545.0,
-      "new_month": -627.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "汤子豪",
@@ -716,8 +716,8 @@
       "target": 6821.0,
       "pct": 76.52836827444656,
       "pct_p4p": 39.770114942528735,
-      "base_value": 5133.0,
-      "new_month": 87.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "谢承杰",
@@ -725,8 +725,8 @@
       "target": 7062.0,
       "pct": 80.7278391390541,
       "pct_p4p": 27.398701982108403,
-      "base_value": 5806.0,
-      "new_month": -105.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "夏锐",
@@ -734,8 +734,8 @@
       "target": 14228.0,
       "pct": 72.70874332302502,
       "pct_p4p": 24.00193330111165,
-      "base_value": 10513.0,
-      "new_month": -168.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "王凡",
@@ -743,8 +743,8 @@
       "target": 9066.0,
       "pct": 80.25590116920361,
       "pct_p4p": 41.025288620120946,
-      "base_value": 5575.0,
-      "new_month": 1701.0
+      "ch_base": null,
+      "ch_add": null
     },
     {
       "name": "陈建国",
@@ -752,8 +752,8 @@
       "target": 11049.0,
       "pct": 78.3509819893203,
       "pct_p4p": 30.772785029455928,
-      "base_value": 9786.0,
-      "new_month": -1129.0
+      "ch_base": null,
+      "ch_add": null
     }
   ],
   "youpin_company": {
@@ -1108,9 +1108,51 @@
     }
   ],
   "yoy_compare": "本季度 vs 上季度（策略中心当月明细）",
-  "goods_month_base": {
-    "month": "2026-10",
-    "base_ds": "2026-10-01"
+  "goods_challenge": {
+    "title": "商品成长 / 优爆品挑战赛",
+    "start": "2026-10-19",
+    "end": "2026-11-30",
+    "base_ds": "",
+    "reason": "基线里没有挑战赛 2026-10-19（现有：无）",
+    "label": "10.19–11.30 新增",
+    "groups": [
+      {
+        "key": "seal",
+        "name": "海豹 / 掘金军团",
+        "members": [
+          "王凡",
+          "陈建国",
+          "漆螯童",
+          "谢承杰",
+          "高国权",
+          "邓晓东",
+          "李彬",
+          "蒋汶桃",
+          "王子豪",
+          "汤子豪",
+          "夏锐",
+          "李怡萍"
+        ]
+      },
+      {
+        "key": "wind",
+        "name": "乘风营",
+        "members": [
+          "刘蓝琳",
+          "王金国",
+          "牛群",
+          "刘嘉艳",
+          "梁诗琪",
+          "程碧瑶",
+          "何尧玲"
+        ]
+      }
+    ],
+    "skip": [
+      "汪伟",
+      "罗金填",
+      "陈苑英"
+    ]
   },
   "layers": [
     {
