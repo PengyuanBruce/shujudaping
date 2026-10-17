@@ -1,7 +1,7 @@
 {
   "month": "2026-10",
   "period": "MONTH",
-  "update_time": "2026-10-16 19:26",
+  "update_time": "2026-10-17 18:09",
   "source_file": "数据罗盘（拍档系统）·客户明细TOP20",
   "scope": "TOP20（按信保实收GMV降序，财年口径）",
   "sales": [
@@ -9,13 +9,13 @@
       "name": "李彬",
       "role": "销售",
       "month_target": null,
-      "gmv_month": 4144496.51,
+      "gmv_month": 4457213.59,
       "share_pct": null,
       "customers": [
         {
           "id": "798010",
           "name": "深圳市鑫锦泰贸易有限公司",
-          "gmv_month": 1884157.61,
+          "gmv_month": 1884736.01,
           "gmv_quarter": 11525762.17,
           "share_pct": null
         },
@@ -27,9 +27,16 @@
           "share_pct": null
         },
         {
+          "id": "649773",
+          "name": "广东德星微电子有限公司",
+          "gmv_month": 508302.38,
+          "gmv_quarter": 3213215.01,
+          "share_pct": null
+        },
+        {
           "id": "402879",
           "name": "深圳市天德普储能科技有限公司",
-          "gmv_month": 385156.6,
+          "gmv_month": 385701.6,
           "gmv_quarter": 2163989.8,
           "share_pct": null
         },
@@ -39,13 +46,6 @@
           "gmv_month": 353412.0,
           "gmv_quarter": null,
           "share_pct": null
-        },
-        {
-          "id": "364379",
-          "name": "深圳蓝丰电子有限公司",
-          "gmv_month": 196708.7,
-          "gmv_quarter": 1859399.16,
-          "share_pct": null
         }
       ]
     },
@@ -53,7 +53,7 @@
       "name": "陈建国",
       "role": "销售",
       "month_target": null,
-      "gmv_month": 1093835.53,
+      "gmv_month": 1401109.09,
       "share_pct": null,
       "customers": [
         {
@@ -64,6 +64,13 @@
           "share_pct": null
         },
         {
+          "id": "189534",
+          "name": "深圳市鸿泰门窗有限公司",
+          "gmv_month": 289247.95,
+          "gmv_quarter": 1940948.11,
+          "share_pct": null
+        },
+        {
           "id": "242180",
           "name": "深圳亿上光科技有限公司",
           "gmv_month": 271155.9,
@@ -71,54 +78,17 @@
           "share_pct": null
         },
         {
-          "id": "189534",
-          "name": "深圳市鸿泰门窗有限公司",
-          "gmv_month": 220872.79,
-          "gmv_quarter": 1940948.11,
+          "id": "420249",
+          "name": "深圳市零距离电子有限公司",
+          "gmv_month": 236221.4,
+          "gmv_quarter": null,
           "share_pct": null
         },
         {
           "id": "387799",
           "name": "深圳彩虹源科技有限责任公司",
-          "gmv_month": 201141.22,
+          "gmv_month": 203818.22,
           "gmv_quarter": 1608344.44,
-          "share_pct": null
-        }
-      ]
-    },
-    {
-      "name": "蒋汶桃",
-      "role": "销售",
-      "month_target": null,
-      "gmv_month": 903624.21,
-      "share_pct": null,
-      "customers": [
-        {
-          "id": "412882",
-          "name": "深圳市嘉易通电子有限公司",
-          "gmv_month": 271734.6,
-          "gmv_quarter": 1513021.07,
-          "share_pct": null
-        },
-        {
-          "id": "691930",
-          "name": "深圳市泽熹智能电子有限公司",
-          "gmv_month": 247922.78,
-          "gmv_quarter": null,
-          "share_pct": null
-        },
-        {
-          "id": "416059",
-          "name": "深圳市立泰能源科技有限公司",
-          "gmv_month": 198757.63,
-          "gmv_quarter": 2304988.2,
-          "share_pct": null
-        },
-        {
-          "id": "307513",
-          "name": "深圳市九晟光电通讯科技有限公司",
-          "gmv_month": 185209.2,
-          "gmv_quarter": null,
           "share_pct": null
         }
       ]
@@ -127,27 +97,27 @@
       "name": "王凡",
       "role": "销售",
       "month_target": null,
-      "gmv_month": 898699.86,
+      "gmv_month": 1220004.58,
       "share_pct": null,
       "customers": [
         {
           "id": "338556",
           "name": "深圳车泰斗科技有限公司",
-          "gmv_month": 392843.52,
+          "gmv_month": 709728.04,
           "gmv_quarter": 1710922.51,
           "share_pct": null
         },
         {
           "id": "474714",
           "name": "深圳宠信科技有限公司",
-          "gmv_month": 291025.44,
+          "gmv_month": 293531.64,
           "gmv_quarter": null,
           "share_pct": null
         },
         {
           "id": "172087",
           "name": "深圳微图科技有限公司",
-          "gmv_month": 214830.9,
+          "gmv_month": 216744.9,
           "gmv_quarter": null,
           "share_pct": null
         }
@@ -157,21 +127,51 @@
       "name": "夏锐",
       "role": "销售",
       "month_target": null,
-      "gmv_month": 663897.95,
+      "gmv_month": 965027.25,
       "share_pct": null,
       "customers": [
         {
+          "id": "411036",
+          "name": "深圳市中和盛科技有限公司",
+          "gmv_month": 508333.12,
+          "gmv_quarter": 2010618.33,
+          "share_pct": null
+        },
+        {
           "id": "232523",
           "name": "深圳市润泽五金技术有限公司",
-          "gmv_month": 364114.83,
+          "gmv_month": 456694.13,
+          "gmv_quarter": null,
+          "share_pct": null
+        }
+      ]
+    },
+    {
+      "name": "蒋汶桃",
+      "role": "销售",
+      "month_target": null,
+      "gmv_month": 730986.01,
+      "share_pct": null,
+      "customers": [
+        {
+          "id": "412882",
+          "name": "深圳市嘉易通电子有限公司",
+          "gmv_month": 282741.8,
+          "gmv_quarter": 1513021.07,
+          "share_pct": null
+        },
+        {
+          "id": "691930",
+          "name": "深圳市泽熹智能电子有限公司",
+          "gmv_month": 247984.58,
           "gmv_quarter": null,
           "share_pct": null
         },
         {
-          "id": "411036",
-          "name": "深圳市中和盛科技有限公司",
-          "gmv_month": 299783.12,
-          "gmv_quarter": 2010618.33,
+          "id": "416059",
+          "name": "深圳市立泰能源科技有限公司",
+          "gmv_month": 200259.63,
+          "gmv_quarter": 2304988.2,
           "share_pct": null
         }
       ]
@@ -196,13 +196,13 @@
       "name": "汤子豪",
       "role": "销售",
       "month_target": null,
-      "gmv_month": 236969.0,
+      "gmv_month": 237742.0,
       "share_pct": null,
       "customers": [
         {
           "id": "532721",
           "name": "深圳市科睿储能有限公司",
-          "gmv_month": 236969.0,
+          "gmv_month": 237742.0,
           "gmv_quarter": null,
           "share_pct": null
         }
