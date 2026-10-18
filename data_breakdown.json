@@ -1,7 +1,7 @@
 {
   "month": "2026-10",
   "period": "MONTH",
-  "update_time": "2026-10-17 18:09",
+  "update_time": "2026-10-18 09:00",
   "source_file": "数据罗盘（拍档系统）·客户明细TOP20",
   "scope": "TOP20（按信保实收GMV降序，财年口径）",
   "sales": [
@@ -97,7 +97,7 @@
       "name": "王凡",
       "role": "销售",
       "month_target": null,
-      "gmv_month": 1220004.58,
+      "gmv_month": 1221894.58,
       "share_pct": null,
       "customers": [
         {
@@ -110,7 +110,7 @@
         {
           "id": "474714",
           "name": "深圳宠信科技有限公司",
-          "gmv_month": 293531.64,
+          "gmv_month": 295421.64,
           "gmv_quarter": null,
           "share_pct": null
         },
@@ -127,7 +127,7 @@
       "name": "夏锐",
       "role": "销售",
       "month_target": null,
-      "gmv_month": 965027.25,
+      "gmv_month": 974728.48,
       "share_pct": null,
       "customers": [
         {
@@ -140,7 +140,7 @@
         {
           "id": "232523",
           "name": "深圳市润泽五金技术有限公司",
-          "gmv_month": 456694.13,
+          "gmv_month": 466395.36,
           "gmv_quarter": null,
           "share_pct": null
         }
@@ -150,7 +150,7 @@
       "name": "蒋汶桃",
       "role": "销售",
       "month_target": null,
-      "gmv_month": 730986.01,
+      "gmv_month": 733526.01,
       "share_pct": null,
       "customers": [
         {
@@ -170,8 +170,24 @@
         {
           "id": "416059",
           "name": "深圳市立泰能源科技有限公司",
-          "gmv_month": 200259.63,
+          "gmv_month": 202799.63,
           "gmv_quarter": 2304988.2,
+          "share_pct": null
+        }
+      ]
+    },
+    {
+      "name": "汤子豪",
+      "role": "销售",
+      "month_target": null,
+      "gmv_month": 310560.0,
+      "share_pct": null,
+      "customers": [
+        {
+          "id": "532721",
+          "name": "深圳市科睿储能有限公司",
+          "gmv_month": 310560.0,
+          "gmv_quarter": null,
           "share_pct": null
         }
       ]
@@ -187,22 +203,6 @@
           "id": "458953",
           "name": "深圳韦尔泰科科技有限公司",
           "gmv_month": 268943.6,
-          "gmv_quarter": null,
-          "share_pct": null
-        }
-      ]
-    },
-    {
-      "name": "汤子豪",
-      "role": "销售",
-      "month_target": null,
-      "gmv_month": 237742.0,
-      "share_pct": null,
-      "customers": [
-        {
-          "id": "532721",
-          "name": "深圳市科睿储能有限公司",
-          "gmv_month": 237742.0,
           "gmv_quarter": null,
           "share_pct": null
         }
