@@ -731,7 +731,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1792285232';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1792398943';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1219,7 +1219,9 @@
           (t === null ? '' : '<u class="tmark" style="left:' + Math.max(0, Math.min(100, t)) + '%"></u>') +
           '</div>' +
           '<div class="pval"><b class="' + pctTextClass(v) + '">' + fmtWan(r[1], 0) + '</b>' +
-          '<span class="text-dim"> / ' + fmtWan(r[2], 0) + '</span></div>' +
+          '<span class="text-dim"> / ' + fmtWan(r[2], 0) + '</span>' +
+          // 完成率必须显示出来（板块标题就是「时间进度 vs 完成率」；无目标时 fmtPct → --）
+          '<b class="' + pctTextClass(v) + '" style="margin-left:8px">' + fmtPct(v) + '</b></div>' +
           '</div>';
       }).join('');
   }
