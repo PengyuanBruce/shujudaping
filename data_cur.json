@@ -1,7 +1,7 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-22 09:00",
+  "update_time": "2026-10-22 09:08",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 40076797.19,
@@ -6351,10 +6351,10 @@
   },
   "awb": {
     "title": "AWB 客户盘点",
-    "note": "源：桌面「10月AWB盘点.xlsx」· 季度前三单高佣金奖励 + 每日客户盘点 · 表更新 2026-10-12 16:53 · 盘点区暂无数据行（表里还是空的）",
+    "note": "源：桌面「10月AWB盘点.xlsx」· 季度前三单高佣金奖励 + 每日客户盘点 · 表更新 2026-10-22 09:03 · 盘点区暂无数据行（表里还是空的）",
     "update": "2026-10-22",
     "source": "10月AWB盘点.xlsx",
-    "source_mtime": "2026-10-12 16:53",
+    "source_mtime": "2026-10-22 09:03",
     "awards": [
       {
         "label": "季度首单",
@@ -6368,13 +6368,13 @@
       },
       {
         "label": "季度第二单",
-        "pending": true,
-        "sales": "",
-        "bonus": null,
-        "bonus_text": "",
-        "plan": "",
-        "plan_text": "",
-        "amount": null
+        "pending": false,
+        "sales": "蒋汶桃",
+        "bonus": 4800.0,
+        "bonus_text": "4800（佣金80%）",
+        "plan": "入门版",
+        "plan_text": "入门版¥20000",
+        "amount": 20000.0
       },
       {
         "label": "季度第三单",
@@ -6389,7 +6389,7 @@
     ],
     "totals": {
       "awards": 3,
-      "awards_done": 1,
+      "awards_done": 2,
       "customers": 0,
       "sales": 0,
       "amount": 0,
