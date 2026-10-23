@@ -731,7 +731,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1792631898';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1792758800';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1456,13 +1456,8 @@
     // 不写基线日、不写「缺基线」、不写「按…降序」、不写「谁不在名单里」。
     // 标题 = 「优爆品挑战赛」+ 窗口（10月19日-11月30日），两者都从数据读、不写死。
     const chTitleCn = esc(ch.panel_title || '优爆品挑战赛') + esc(ch.window_cn || '');
-    const dataDate = c.date || ch.data_date || '—';
-    const updateTime = ch.update_time || d.update_time || '';
-    const updateHtml = '<span class="text-dim" style="font-size:12px; font-weight:normal; margin-left:12px;">' +
-      (updateTime ? '更新于 ' + esc(updateTime) : '') +
-      '（数据日期 ' + esc(dataDate) + ' · 平台 T+2）</span>';
     $('goods-rank-body').innerHTML = head +
-      '<div class="ch-title" style="display:flex; justify-content:space-between; align-items:center;"><span>' + chTitleCn + '</span>' + updateHtml + '</div>' +
+      '<div class="ch-title">' + chTitleCn + '</div>' +
       '<div class="ch-groups">' + groups.map(panel).join('') + '</div>';
   }
 
