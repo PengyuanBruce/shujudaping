@@ -375,11 +375,13 @@
       border-bottom: none; }
     #sec-10 .p-row.p-noperf > .p-names { white-space: normal; overflow: visible; line-height: 1.55;
       color: var(--red); font-weight: 800; }
-    #sec-10 .p-row.p-noperf > .p-label { color: var(--red); font-weight: 800; letter-spacing: .04em; }
+    #sec-10 .p-row.p-noperf > .p-label { color: var(--red); font-weight: 800; letter-spacing: .04em;
+      white-space: normal; overflow: visible; }
     @media (max-width: 900px) {
       #sec-10 .awards { grid-template-columns: 1fr; }
       #sec-10 .p-row { grid-template-columns: 40px minmax(0, 1fr) 110px; }
-      #sec-10 .p-row.p-noperf { grid-template-columns: 96px minmax(0, 1fr); }
+      /* 窄屏把「未破蛋 · N 人」抬到名单上方单独一行，避免标签被 96px 列宽截成「19…」 */
+      #sec-10 .p-row.p-noperf { grid-template-columns: minmax(0, 1fr); gap: 4px 0; }
     }
     /* Ⅹ 销售拜访量过程（上门打卡，2026-10-14 新增）：个人级 7 列固定宽度 + 按天 chip + 当日明细 */
     #sec-11 .v-days { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; margin: 6px 0 8px; }
@@ -739,7 +741,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1792805812';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1792806028';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
