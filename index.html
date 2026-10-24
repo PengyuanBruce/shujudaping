@@ -347,8 +347,9 @@
       background: #0b1224; border: 1px solid var(--line); color: var(--fg); font-family: inherit; }
     #sec-9 .fsel:focus { outline: none; border-color: var(--cyan); }
     #sec-9 .fsum { font-size: 12.5px; color: var(--cyan); font-variant-numeric: tabular-nums; }
-    /* Ⅰ·B AWB 客户盘点（2026-10-12 新增）：① 季度前三单高佣金奖励 三张等宽卡（已产生金色描边、醒目）
-       ② 每日客户盘点：客户 | 销售 | 预计方案 | 日期，跟进说明另起一行（可换行，不挤扁客户名） */
+    /* Ⅰ·B AWB：① 季度前三单高佣金奖励 三张等宽卡（已产生金色描边、醒目）
+       ② 个人业绩榜（2026-10-24 用户改版：**盘点区下线**，换成业绩榜；无业绩销售单列「未破蛋」，
+       红字加粗、允许换行）—— 序号 | 销售 | 总业绩，金额右对齐 */
     #sec-10 .awards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
     #sec-10 .award { border: 1px solid var(--line); border-radius: 12px; padding: 11px 14px;
       background: linear-gradient(160deg, #0F1830, #0C1322); }
@@ -360,18 +361,25 @@
     #sec-10 .award.done { border-color: var(--gold); box-shadow: 0 0 0 1px rgba(212,175,55,.18) inset; }
     #sec-10 .award.pending { border-style: dashed; opacity: .6; }
     #sec-10 .award .a-wait { font-size: 19px; font-weight: 700; color: var(--fg-faint); margin: 6px 0 2px; }
-    #sec-10 .a-table { border-top: 1px solid var(--line-soft); }
-    #sec-10 .a-row { display: grid; grid-template-columns: minmax(0, 1fr) 84px 150px 104px;
+    #sec-10 .p-table { border-top: 1px solid var(--line-soft); }
+    #sec-10 .p-row { display: grid; grid-template-columns: 48px minmax(0, 1fr) 150px;
       gap: 2px 12px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--line-soft); }
-    #sec-10 .a-row > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    #sec-10 .a-row .a-note { grid-column: 1 / -1; white-space: normal; overflow: visible;
-      font-size: 12px; color: var(--fg-dim); line-height: 1.4; }
-    #sec-10 .a-row.a-head { color: var(--fg-faint); font-size: 11.5px; letter-spacing: .08em;
+    #sec-10 .p-row > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    #sec-10 .p-row .p-rank { color: var(--fg-faint); font-variant-numeric: tabular-nums; }
+    #sec-10 .p-row .p-money { text-align: right; font-variant-numeric: tabular-nums; }
+    #sec-10 .p-row.p-head { color: var(--fg-faint); font-size: 11.5px; letter-spacing: .08em;
       border-bottom-color: var(--line); }
+    #sec-10 .p-row.p-top .p-money { color: var(--gold); font-weight: 700; }
+    /* 未破蛋行：只两列（标签 + 名单），名单红字加粗且可换行；不加金额列，避免被误读成 0 元业绩 */
+    #sec-10 .p-row.p-noperf { grid-template-columns: 120px minmax(0, 1fr); align-items: start;
+      border-bottom: none; }
+    #sec-10 .p-row.p-noperf > .p-names { white-space: normal; overflow: visible; line-height: 1.55;
+      color: var(--red); font-weight: 800; }
+    #sec-10 .p-row.p-noperf > .p-label { color: var(--red); font-weight: 800; letter-spacing: .04em; }
     @media (max-width: 900px) {
       #sec-10 .awards { grid-template-columns: 1fr; }
-      #sec-10 .a-row { grid-template-columns: minmax(0, 1fr) 84px; }
-      #sec-10 .a-plan { grid-column: 1 / -1; }
+      #sec-10 .p-row { grid-template-columns: 40px minmax(0, 1fr) 110px; }
+      #sec-10 .p-row.p-noperf { grid-template-columns: 96px minmax(0, 1fr); }
     }
     /* Ⅹ 销售拜访量过程（上门打卡，2026-10-14 新增）：个人级 7 列固定宽度 + 按天 chip + 当日明细 */
     #sec-11 .v-days { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; margin: 6px 0 8px; }
@@ -610,11 +618,11 @@
     </div>
   </section>
 
-  <!-- Ⅰ·B AWB 客户盘点（2026-10-12 用户要求：从页面末尾挪到公司概览下面，编号用页面既有的 ·B 惯例）
-       内容 = 开头醒目展示「季度前三单高佣金奖励」+ 下面「每日客户盘点」（源：桌面「*AWB盘点.xlsx」） -->
+  <!-- Ⅰ·B AWB（2026-10-24 用户改版：**盘点区下线**，只留「季度前三单高佣金奖励」+ 新增「个人业绩榜」）
+       数据源不变：桌面「*AWB盘点.xlsx」（奖励区 = awb客户盘点 表上方三行；业绩榜 = 同工作簿「个人业绩榜」表） -->
   <section id="sec-10">
     <div class="sec-head"><span class="sec-no">Ⅰ·B</span><h2 id="awb-title">AWB 客户盘点</h2>
-      <span class="note" id="awb-note">季度前三单高佣金奖励 + 每日客户盘点（上门意向客户 · 上门跟进） · 源：业务盘点表</span></div>
+      <span class="note" id="awb-note">季度前三单高佣金奖励 + 个人业绩榜（未破蛋单列） · 源：桌面 AWB 盘点表</span></div>
     <div id="awb-body"></div>
   </section>
 
@@ -731,7 +739,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1792804523';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1792805812';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1639,7 +1647,7 @@
   }
 
 
-  // ── Ⅰ·B AWB 客户盘点：季度前三单高佣金奖励（开头醒目）+ 每日客户盘点 ──
+  // ── Ⅰ·B AWB：季度前三单高佣金奖励（开头醒目）+ 个人业绩榜（2026-10-24 起盘点区下线）──
   // 数据源 awb-prospects.json ← 桌面「*AWB盘点.xlsx」（build/make_awb_prospects.py 转换）
   // ⚠「虚位以待」= 这一单还没产生：原样显示占位，**不许**填人/填金额/填方案（见 docs §二十五）。
   function renderTopicAwb(d) {
@@ -1647,12 +1655,11 @@
     if (!a) {
       $('awb-body').innerHTML = pendingPanel([
         '季度前三单高佣金奖励：奖金 / 签约方案金额 / 销售',
-        '每日客户盘点：日期 / 上门意向客户 / 销售 / 预计方案 / 上门跟进情况说明',
+        '个人业绩榜：销售 / 总业绩 + 未破蛋（名单内无业绩者）',
         '需要一件数据：awb-prospects.json —— 由桌面「*AWB盘点.xlsx」转换（build/make_awb_prospects.py）']);
       return;
     }
     const unit = TOPIC_H.unit, kpi = TOPIC_H.kpi, head = TOPIC_H.head;
-    const t = a.totals || {};
     // ① 奖励区：三张等宽卡；已产生的用金色描边突出，未产生的整卡弱化并写「虚位以待」
     const awardCards = (a.awards || []).length
       ? '<div class="awards">' + (a.awards || []).map(function (x) {
@@ -1669,30 +1676,38 @@
               ? '<div class="a-sub text-dim">' + esc(x.bonus_text) + '</div>' : '') + '</div>';
         }).join('') + '</div>'
       : '';
-    // ② 每日客户盘点：日期倒序（最新在上）
-    const rows = a.detail || [];
-    const tbl = rows.length
-      ? '<div class="a-table">' +
-        '<div class="a-row a-head"><span>上门意向客户</span><span>销售</span>' +
-        '<span>预计方案</span><span>日期</span></div>' +
-        rows.map(function (r) {
-          const plan = r.plan_text || (r.amount != null ? fmt(r.amount, 0) + ' 元' : '');
-          return '<div class="a-row"><span class="a-cust">' + esc(r.customer) + '</span>' +
-            '<span class="a-sale-c">' + (r.sale ? esc(r.sale) : '<span class="text-dim">--</span>') + '</span>' +
-            '<span class="a-plan">' + (plan ? esc(plan) : '<span class="text-dim">--</span>') + '</span>' +
-            '<span class="text-dim">' + esc(r.date || r.date_raw || '--') + '</span>' +
-            (r.note ? '<span class="a-note">跟进：' + esc(r.note) + '</span>' : '') + '</div>';
-        }).join('') + '</div>'
-      : '<div class="empty">盘点区暂无数据行（表格里还没填，不会编造）</div>';
+    // ② 个人业绩榜（2026-10-24：盘点区下线，改业绩榜）
+    //    · 有业绩的按总业绩降序，第 1 名金额标金；
+    //    · 「未破蛋」= 销售名单里没有业绩数据的人，单列一行、**红字加粗**，名单可换行。
+    const pf = a.perf || {};
+    const prs = pf.rows || [];
+    const noPerf = pf.no_perf || [];
+    const perfHead = '<div class="p-row p-head"><span>序号</span><span>销售</span>' +
+      '<span class="p-money">总业绩</span></div>';
+    const perfRows = prs.map(function (r, i) {
+      return '<div class="p-row' + (i === 0 ? ' p-top' : '') + '">' +
+        '<span class="p-rank">' + esc(String(r.rank || i + 1)) + '</span>' +
+        '<span class="p-name">' + esc(r.name) +
+        (r.off_roster ? '<small class="text-dim"> 非名单</small>' : '') + '</span>' +
+        '<span class="p-money">' + (r.total != null ? fmt(r.total, 0) + ' 元'
+          : '<span class="text-dim">--</span>') + '</span></div>';
+    }).join('');
+    const noPerfRow = noPerf.length
+      ? '<div class="p-row p-noperf"><span class="p-label">未破蛋 · ' + fmt(noPerf.length, 0) + ' 人</span>' +
+        '<span class="p-names">' + noPerf.map(esc).join('、') + '</span></div>'
+      : '';
+    const perfTable = (prs.length || noPerf.length)
+      ? '<div class="p-table">' + perfHead + perfRows + noPerfRow + '</div>'
+      : '<div class="empty">个人业绩榜暂无数据（「个人业绩榜」表未填，不会编造）</div>';
     $('awb-body').innerHTML = '<div class="card">' +
       head(a, 'AWB 客户盘点 · 季度前三单高佣金奖励', a.note) +
       (awardCards || pendingPanel(['季度前三单高佣金奖励（表格上方三行）'])) +
-      kpi([['盘点客户', unit(fmt(t.customers, 0), '家')],
-           ['覆盖销售', unit(fmt(t.sales, 0), '人')],
-           ['方案合计', fmt(t.amount, 0) + '<small class="text-dim"> 元</small>'],
-           ['最新盘点日', t.latest || '--']]) +
-      '<div class="cap" style="margin-top:12px">每日客户盘点 · 按日期倒序（最新在上）' +
-      (rows.length ? ' · 共 ' + fmt(rows.length, 0) + ' 行' : '') + '</div>' + tbl +
+      kpi([['个人业绩榜', unit(fmt(pf.count, 0), '人')],
+           ['业绩合计', fmt(pf.total, 0) + '<small class="text-dim"> 元</small>'],
+           ['未破蛋', unit(fmt(noPerf.length, 0), '人')],
+           ['销售名单', unit(fmt(pf.roster, 0), '人')]]) +
+      '<div class="cap" style="margin-top:12px">个人业绩榜 · 按总业绩降序' +
+      (prs.length ? ' · 上榜 ' + fmt(prs.length, 0) + ' 人' : '') + '</div>' + perfTable +
       '</div>';
   }
 
