@@ -455,22 +455,25 @@
    #sec-4b .ch-head b { font-size: 13.5px; }
    #sec-4b .ch-panel .rank-row { grid-template-columns: 24px 56px minmax(0, 1fr) 54px;
      gap: 6px; padding: 6px 0; }
-   /* 指标列宽**按表头文字量**配（12px 下）：优爆品数 4 字 / 当季度累计目标 7 字 ≈ 84px /
-      推P率 3 字 / 「10.19–11.30 新增」≈ 101px / 完成率 3 字。
-      原来 52/62/44/58 把「当季度累计目标」和「10.19–11.30 新增」都截成了省略号
-      （2026-10-16 用户报「把这里显示完全」）→ 加宽到刚好放得下，桌面端仍能塞进半宽。 */
-   #sec-4b .ch-panel .rank-row .rowline {
-     grid-template-columns: 52px 98px 44px 106px minmax(46px, 1fr); gap: 0 6px; font-size: 12px;
-   }
+    /* 指标列宽**按表头文字量**配（12px 下）：优爆品数 4 字 / 当季度累计目标 7 字 ≈ 84px /
+       推P率 3 字 / 「10.19–11.30 新增」≈ 101px / 每日需新增 5 字 ≈ 65px / 完成率 3 字。
+       原来 52/62/44/58 把「当季度累计目标」和「10.19–11.30 新增」都截成了省略号
+       （2026-10-16 用户报「把这里显示完全」）→ 加宽到刚好放得下，桌面端仍能塞进半宽。
+       2026-10-26 加「每日需新增」列（66px，5 字 + letter-spacing）→ 指标列合计 412，
+       军团行 = 24+56+412+54+间隙 48 ≈ 594 → 半宽要 594，断点随之从 1180 抬到 1320。 */
+    #sec-4b .ch-panel .rank-row .rowline {
+      grid-template-columns: 52px 98px 44px 106px 66px minmax(46px, 1fr); gap: 0 6px; font-size: 12px;
+    }
    /* 表头**绝不截断**：宽度万一算少了就换行，不许用省略号藏掉字（数据行仍单行省略号） */
    #sec-4b .ch-panel .rank-row.rank-head .rowline { white-space: normal; }
    #sec-4b .ch-panel .rank-row.rank-head .rowline > span {
      overflow: visible; text-overflow: clip; line-height: 1.35;
    }
-   @media (max-width: 1180px) {
-     /* 半宽放不下加宽后的指标列就上下堆叠（两块仍等宽）。
-        阈值按实测推：页面容器 ≈ 视口 − 97 → 半宽 = (视口 − 113)/2，
-        而「序号 24 + 姓名 56 + 指标列 346 + 进度 54 + 列间隙」≈ 522 → 视口 < 1157 放不下，留余量取 1180。 */
+    @media (max-width: 1320px) {
+      /* 半宽放不下加宽后的指标列就上下堆叠（两块仍等宽）。
+         阈值按实测推：页面容器 ≈ 视口 − 97 → 半宽 = (视口 − 113)/2，
+         而「序号 24 + 姓名 56 + 指标列 412 + 进度 54 + 列间隙」≈ 594 → 视口 < 1301 放不下，
+         留余量取 1320（1366 桌面仍并排，1280 走堆叠）。 */
      #sec-4b .ch-groups { grid-template-columns: 1fr; }
    }
    @media (max-width: 700px) {
@@ -741,7 +744,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1792910706';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1792980740';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1430,11 +1433,37 @@
     const chTip = ch.base_ds
       ? chLabel + ' = 当前优爆品数 − ' + ch.base_ds + ' 快照（当前值为平台最新可得日）'
       : '缺挑战赛基线（' + (ch.reason || '未生成') + '）→ 显示 --';
-    // 5 个指标各占一列（列宽在 CSS 里固定），各行数字因此纵向对齐
-    const cells = (r) => '<span class="rowline"><span>' + fmt(r.value, 0) + '</span>' +
-      '<span>' + fmt(r.target, 0) + '</span><span>' + fmtPct(r.pct_p4p, 1) + '</span>' +
-      '<b class="' + deltaTextClass(r.ch_add) + '">' + fmtSigned(r.ch_add) + '</b>' +
-      '<b class="' + pctTextClass(r.pct) + '">' + fmtPct(r.pct, 2) + '</b></span>';
+    // 2026-10-26 用户要求：两个军团都加一列「完成季度目标每日需要新增的优爆品数量」。
+    //   口径 = ⌈(当季度累计目标 − 当前优爆品数) ÷ 剩余天数⌉（差额 ≤ 0 → 已达成，目标缺失 → --）。
+    //   剩余天数**含当天**，终点日由数据下发（config.GOODS_CHALLENGE.perday_end：
+    //   "quarter" → 季度末 12-31；"window" → 挑战赛结束日 11-30），不在前端写死日期。
+    const pdEnd = ch.perday_end || ch.end || '';
+    const pdDaysLeft = (function (iso) {
+      const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(iso || ''));
+      if (!m) return null;
+      const end = new Date(+m[1], +m[2] - 1, +m[3]);
+      const now = new Date();
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      return Math.max(Math.round((end - today) / 86400000) + 1, 0);   // 含当天
+    })(pdEnd);
+    const perDay = function (r) {
+      const t = num(r.target), v = num(r.value);
+      if (t == null || v == null || pdDaysLeft == null) return { txt: '--', cls: 'text-gray' };
+      const gap = t - v;
+      if (gap <= 0) return { txt: '已达成', cls: 'text-green' };
+      return { txt: fmt(Math.ceil(gap / Math.max(pdDaysLeft, 1)), 0), cls: '' };
+    };
+    const pdTip = '完成季度目标每日需新增 = ⌈(当季度累计目标 − 当前优爆品数) ÷ 剩余天数⌉' +
+      (pdEnd ? '，剩余天数算到 ' + pdEnd + '（含当天）' : '');
+    // 6 个指标各占一列（列宽在 CSS 里固定），各行数字因此纵向对齐
+    const cells = (r) => {
+      const pd = perDay(r);
+      return '<span class="rowline"><span>' + fmt(r.value, 0) + '</span>' +
+        '<span>' + fmt(r.target, 0) + '</span><span>' + fmtPct(r.pct_p4p, 1) + '</span>' +
+        '<b class="' + deltaTextClass(r.ch_add) + '">' + fmtSigned(r.ch_add) + '</b>' +
+        '<b class="' + pd.cls + '">' + pd.txt + '</b>' +
+        '<b class="' + pctTextClass(r.pct) + '">' + fmtPct(r.pct, 2) + '</b></span>';
+    };
     // 军团块：只画该军团名单里的人；**按挑战赛期新增降序**（缺基线的人沉底，不拿 0 顶）
     function panel(g) {
       const list = (g.members || []).map(function (n) { return byName[n]; })
@@ -1450,6 +1479,7 @@
         '<div class="rank-row rank-head"><span>#</span><span>姓名</span>' +
         '<span class="rowline"><span>优爆品数</span><span>当季度累计目标</span><span>推P率</span>' +
         '<span title="' + esc(chTip) + '">' + esc(chLabel) + '</span>' +
+        '<span title="' + esc(pdTip) + '">每日需新增</span>' +
         '<span>完成率</span></span><span>进度</span></div>' +
         list.map(function (r, i) {
           const w = Math.max(0, Math.min(100, num(r.pct) || 0));
