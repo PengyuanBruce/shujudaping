@@ -1,7 +1,7 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-25 14:44",
+  "update_time": "2026-10-26 10:11",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 47538282.56,
@@ -395,7 +395,7 @@
       "active_clients": null,
       "active_clients_yoy": null,
       "hit_products": 2622.0,
-      "time_pct": 80.6,
+      "time_pct": 83.9,
       "hit_target": null,
       "hit_pct": null
     },
@@ -455,7 +455,7 @@
       "active_clients": null,
       "active_clients_yoy": null,
       "hit_products": 597.0,
-      "time_pct": 80.6,
+      "time_pct": 83.9,
       "hit_target": 23.0,
       "hit_pct": 26.0
     },
@@ -475,7 +475,7 @@
       "active_clients": null,
       "active_clients_yoy": null,
       "hit_products": 797.0,
-      "time_pct": 80.6,
+      "time_pct": 83.9,
       "hit_target": 29.0,
       "hit_pct": 27.5
     },
@@ -495,7 +495,7 @@
       "active_clients": null,
       "active_clients_yoy": null,
       "hit_products": 325.0,
-      "time_pct": 80.6,
+      "time_pct": 83.9,
       "hit_target": null,
       "hit_pct": null
     },
@@ -515,7 +515,7 @@
       "active_clients": null,
       "active_clients_yoy": null,
       "hit_products": 750.0,
-      "time_pct": 80.6,
+      "time_pct": 83.9,
       "hit_target": 123.0,
       "hit_pct": 6.1
     }
@@ -524,10 +524,10 @@
   "config_month_label": "2026-10",
   "config_quarter_label": "FY27Q3",
   "company": "深圳市鹏远企业服务有限公司",
-  "month_time_pct": 80.6,
+  "month_time_pct": 83.9,
   "month_time_pct_platform": 77.0,
-  "quarter_time_pct": 27.2,
-  "quarter_time_note": "FY27Q3 第 25/92 天（截至 2026-10-25）",
+  "quarter_time_pct": 28.3,
+  "quarter_time_note": "FY27Q3 第 26/92 天（截至 2026-10-26）",
   "trend": {
     "gmv": {
       "title": "信保月度趋势(万美元)",
@@ -1227,6 +1227,13 @@
     "label": "10.19–11.30 新增",
     "panel_title": "优爆品挑战赛",
     "window_cn": "10月19日-11月30日",
+    "quarter": {
+      "label": "FY27Q3",
+      "start": "2026-10-01",
+      "end": "2026-12-31"
+    },
+    "perday_basis": "quarter",
+    "perday_end": "2026-12-31",
     "groups": [
       {
         "key": "seal",
@@ -7225,7 +7232,7 @@
   "awb": {
     "title": "AWB 客户盘点",
     "note": "源：桌面「10月AWB盘点.xlsx」· 季度前三单高佣金奖励 + 个人业绩榜 · 表更新 2026-10-24 09:26",
-    "update": "2026-10-25",
+    "update": "2026-10-26",
     "source": "10月AWB盘点.xlsx",
     "source_mtime": "2026-10-24 09:26",
     "awards": [
@@ -7321,130 +7328,130 @@
   "month_no": "10",
   "source_note": "阿里一拍档·数据参谋，浏览器只读采集",
   "daily_add": {
-    "title": "每日新增（对比 2026-10-24 快照）",
-    "label": "对比 2026-10-24 快照",
-    "xb_recv": 1152297.79,
+    "title": "每日新增（对比 2026-10-25 快照）",
+    "label": "对比 2026-10-25 快照",
+    "xb_recv": 0.0,
     "active_3w": 0.0,
     "customers": 0.0
   },
   "persons_daily_add": {
     "李彬": {
-      "xb_recv": 429228.77,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "王凡": {
-      "xb_recv": 223585.56,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "陈建国": {
-      "xb_recv": 75826.2,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "蒋汶桃": {
-      "xb_recv": 49505.61,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "汤子豪": {
-      "xb_recv": 93101.68,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "漆螯童": {
-      "xb_recv": 49912.47,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "夏锐": {
-      "xb_recv": 56288.6,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "王子豪": {
-      "xb_recv": 85307.29,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "高国权": {
-      "xb_recv": 26805.92,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "谢承杰": {
-      "xb_recv": 22112.33,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "李怡萍": {
-      "xb_recv": 51868.65,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "邓晓东": {
-      "xb_recv": 28680.89,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "何尧玲": {
-      "xb_recv": 17737.18,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "梁诗琪": {
-      "xb_recv": 8265.67,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "罗金填": {
-      "xb_recv": 15062.56,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "程碧瑶": {
-      "xb_recv": 7914.39,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "刘蓝琳": {
-      "xb_recv": 782.33,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "张伟志": {
-      "xb_recv": 6093.73,
+      "xb_recv": 0.0,
       "active_3w": null,
       "no_base": false
     },
     "王金国": {
-      "xb_recv": 3732.46,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "牛群": {
-      "xb_recv": 2276.0,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "李金城": {
-      "xb_recv": 506.92,
+      "xb_recv": 0.0,
       "active_3w": null,
       "no_base": false
     },
     "王钢": {
-      "xb_recv": 140.0,
+      "xb_recv": 0.0,
       "active_3w": null,
       "no_base": false
     },
     "郭龙耀": {
-      "xb_recv": 412.91,
+      "xb_recv": 0.0,
       "active_3w": null,
       "no_base": false
     },
     "舒媛丹": {
-      "xb_recv": 447.42,
+      "xb_recv": 0.0,
       "active_3w": null,
       "no_base": false
     }
