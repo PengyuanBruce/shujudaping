@@ -1,400 +1,400 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-26 10:11",
+  "update_time": "2026-10-26 21:04",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
-    "month_val": 47538282.56,
+    "month_val": 50377853.54,
     "month_target": 74217652.10136247,
-    "month_pct": 64.05,
-    "quarter_val": 47538282.56,
+    "month_pct": 67.88,
+    "quarter_val": 50380233.04,
     "quarter_target": 246942914.0,
-    "quarter_pct": 19.25,
-    "month_gap": -26679370.0,
-    "quarter_gap": -199404631.0,
-    "month_val_acp": 7435296.95,
+    "quarter_pct": 20.4,
+    "month_gap": -23839799.0,
+    "quarter_gap": -196562681.0,
+    "month_val_acp": 7977195.4,
     "active_clients": 964.0,
     "active_clients_yoy": 1038.0,
-    "hit_products": 127076.0,
+    "hit_products": 126886.0,
     "hit_target": 175561.0,
-    "hit_pct": 72.4,
+    "hit_pct": 72.3,
     "caliber_note": "公司行=信保实收（数据罗盘首页 GMV实收卡）+ 目标（首页绩效目标卡）；个人行=信保实收（业务目标▸信保▸拍档销售）÷ 个人目标（激励▸激励进展▸FY27-10月激励进展▸小二激励）",
     "acp_month_target": 12797483.71,
-    "quarter_val_acp": 7435296.95,
+    "quarter_val_acp": 7740411.32,
     "quarter_acp_target": 44573553.74,
-    "acp_month_pct": 58.1,
-    "acp_quarter_pct": 16.7,
+    "acp_month_pct": 62.3,
+    "acp_quarter_pct": 17.4,
     "acp_caliber": "激励▸业务目标▸ACP▸拍档▸总实收（2026-10）",
-    "hit_p4p_products": 35899.0,
-    "hit_p4p_pct": 28.3
+    "hit_p4p_products": 33862.0,
+    "hit_p4p_pct": 26.7
   },
   "acp": {
-    "month_val": 6756618.62,
+    "month_val": 7041731.9,
     "month_target": null,
     "month_pct": null,
-    "quarter_val": 6756618.62,
+    "quarter_val": 7041731.9,
     "quarter_target": 44573553.74,
     "quarter_pct": null,
-    "month_gap": 6756619.0,
-    "quarter_gap": -37816935.0
+    "month_gap": 7041732.0,
+    "quarter_gap": -37531822.0
   },
   "persons": [
     {
       "name": "李彬",
       "role": "销售",
-      "month_val": 10840291.345226398,
+      "month_val": 10964070.0652264,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 10840291.0,
-      "quarter_val": 10840291.345226398,
+      "month_gap": 10964070.0,
+      "quarter_val": 10964070.0652264,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 10840291.0,
+      "incentive_gap": 10964070.0,
       "incentive_ok": false,
       "active_clients": 55.0,
       "active_clients_yoy": 54.0,
-      "hit_products": 7057.0,
-      "time_pct": 77.0,
+      "hit_products": 7064.0,
+      "time_pct": 81.0,
       "hit_target": 7954.0,
-      "hit_pct": 88.7
+      "hit_pct": 88.8
     },
     {
       "name": "王凡",
       "role": "销售",
-      "month_val": 5440659.9135711,
+      "month_val": 5572567.2035711,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 5440660.0,
-      "quarter_val": 5440659.9135711,
+      "month_gap": 5572567.0,
+      "quarter_val": 5572567.2035711,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 5440660.0,
+      "incentive_gap": 5572567.0,
       "incentive_ok": false,
       "active_clients": 46.0,
       "active_clients_yoy": 63.0,
-      "hit_products": 7534.0,
-      "time_pct": 77.0,
+      "hit_products": 7589.0,
+      "time_pct": 81.0,
       "hit_target": 9185.0,
-      "hit_pct": 82.0
+      "hit_pct": 82.6
     },
     {
       "name": "陈建国",
       "role": "销售",
-      "month_val": 5346724.81199761,
+      "month_val": 5441545.34652401,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 5346725.0,
-      "quarter_val": 5346724.81199761,
+      "month_gap": 5441545.0,
+      "quarter_val": 5441545.34652401,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 5346725.0,
+      "incentive_gap": 5441545.0,
       "incentive_ok": false,
       "active_clients": 93.0,
       "active_clients_yoy": 89.0,
-      "hit_products": 8725.0,
-      "time_pct": 77.0,
+      "hit_products": 8715.0,
+      "time_pct": 81.0,
       "hit_target": 11133.0,
-      "hit_pct": 78.4
+      "hit_pct": 78.3
     },
     {
       "name": "蒋汶桃",
       "role": "销售",
-      "month_val": 4625425.96,
+      "month_val": 4807424.790000001,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 4625426.0,
-      "quarter_val": 4625425.96,
+      "month_gap": 4807425.0,
+      "quarter_val": 4807424.790000001,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 4625426.0,
+      "incentive_gap": 4807425.0,
       "incentive_ok": false,
       "active_clients": 68.0,
       "active_clients_yoy": 73.0,
-      "hit_products": 9586.0,
-      "time_pct": 77.0,
+      "hit_products": 9531.0,
+      "time_pct": 81.0,
       "hit_target": 13361.0,
-      "hit_pct": 71.7
+      "hit_pct": 71.3
     },
     {
       "name": "汤子豪",
       "role": "销售",
-      "month_val": 3328787.464003361,
+      "month_val": 3437197.53400336,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 3328787.0,
-      "quarter_val": 3328787.464003361,
+      "month_gap": 3437198.0,
+      "quarter_val": 3437197.53400336,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 3328787.0,
+      "incentive_gap": 3437198.0,
       "incentive_ok": false,
       "active_clients": 52.0,
       "active_clients_yoy": 45.0,
-      "hit_products": 5390.0,
-      "time_pct": 77.0,
+      "hit_products": 5391.0,
+      "time_pct": 81.0,
       "hit_target": 6821.0,
       "hit_pct": 79.0
     },
     {
       "name": "漆螯童",
       "role": "销售",
-      "month_val": 3296959.9924400006,
+      "month_val": 3382784.79244,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 3296960.0,
-      "quarter_val": 3296959.9924400006,
+      "month_gap": 3382785.0,
+      "quarter_val": 3382784.79244,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 3296960.0,
+      "incentive_gap": 3382785.0,
       "incentive_ok": false,
       "active_clients": 82.0,
       "active_clients_yoy": 104.0,
-      "hit_products": 9873.0,
-      "time_pct": 77.0,
+      "hit_products": 9878.0,
+      "time_pct": 81.0,
       "hit_target": 12404.0,
       "hit_pct": 79.6
     },
     {
       "name": "夏锐",
       "role": "销售",
-      "month_val": 3183407.9058199995,
+      "month_val": 3294141.99582,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 3183408.0,
-      "quarter_val": 3183407.9058199995,
+      "month_gap": 3294142.0,
+      "quarter_val": 3294141.99582,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 3183408.0,
+      "incentive_gap": 3294142.0,
       "incentive_ok": false,
       "active_clients": 81.0,
       "active_clients_yoy": 90.0,
-      "hit_products": 9731.0,
-      "time_pct": 77.0,
+      "hit_products": 9727.0,
+      "time_pct": 81.0,
       "hit_target": 14228.0,
       "hit_pct": 68.4
     },
     {
       "name": "王子豪",
       "role": "销售",
-      "month_val": 3126814.6698570405,
+      "month_val": 3262742.35985704,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 3126815.0,
-      "quarter_val": 3126814.6698570405,
+      "month_gap": 3262742.0,
+      "quarter_val": 3262742.35985704,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 3126815.0,
+      "incentive_gap": 3262742.0,
       "incentive_ok": false,
       "active_clients": 90.0,
       "active_clients_yoy": 98.0,
-      "hit_products": 11728.0,
-      "time_pct": 77.0,
+      "hit_products": 11673.0,
+      "time_pct": 81.0,
       "hit_target": 15553.0,
-      "hit_pct": 75.4
+      "hit_pct": 75.1
     },
     {
       "name": "高国权",
       "role": "销售",
-      "month_val": 1385738.2414399998,
+      "month_val": 1485064.2314400005,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 1385738.0,
-      "quarter_val": 1385738.2414399998,
+      "month_gap": 1485064.0,
+      "quarter_val": 1485064.2314400005,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 1385738.0,
+      "incentive_gap": 1485064.0,
       "incentive_ok": false,
       "active_clients": 60.0,
       "active_clients_yoy": 52.0,
-      "hit_products": 6740.0,
-      "time_pct": 77.0,
+      "hit_products": 6756.0,
+      "time_pct": 81.0,
       "hit_target": 8165.0,
-      "hit_pct": 82.5
+      "hit_pct": 82.7
     },
     {
       "name": "谢承杰",
       "role": "销售",
-      "month_val": 1250907.6199999999,
+      "month_val": 1275502.3699999994,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 1250908.0,
-      "quarter_val": 1250907.6199999999,
+      "month_gap": 1275502.0,
+      "quarter_val": 1275502.3699999994,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 1250908.0,
+      "incentive_gap": 1275502.0,
       "incentive_ok": false,
       "active_clients": 61.0,
       "active_clients_yoy": 60.0,
-      "hit_products": 5602.0,
-      "time_pct": 77.0,
+      "hit_products": 5596.0,
+      "time_pct": 81.0,
       "hit_target": 7062.0,
-      "hit_pct": 79.3
+      "hit_pct": 79.2
     },
     {
       "name": "李怡萍",
       "role": "销售",
-      "month_val": 942022.9113999997,
+      "month_val": 998437.1314,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 942023.0,
-      "quarter_val": 942022.9113999997,
+      "month_gap": 998437.0,
+      "quarter_val": 998437.1314,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 942023.0,
+      "incentive_gap": 998437.0,
       "incentive_ok": false,
       "active_clients": 52.0,
       "active_clients_yoy": 47.0,
-      "hit_products": 6929.0,
-      "time_pct": 77.0,
+      "hit_products": 6909.0,
+      "time_pct": 81.0,
       "hit_target": 10360.0,
-      "hit_pct": 66.9
+      "hit_pct": 66.7
     },
     {
       "name": "邓晓东",
       "role": "销售",
-      "month_val": 842341.74,
+      "month_val": 860184.43,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 842342.0,
-      "quarter_val": 842341.74,
+      "month_gap": 860184.0,
+      "quarter_val": 860184.43,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 842342.0,
+      "incentive_gap": 860184.0,
       "incentive_ok": false,
       "active_clients": 44.0,
       "active_clients_yoy": 30.0,
-      "hit_products": 7808.0,
-      "time_pct": 77.0,
+      "hit_products": 7797.0,
+      "time_pct": 81.0,
       "hit_target": 9803.0,
-      "hit_pct": 79.6
+      "hit_pct": 79.5
     },
     {
       "name": "何尧玲",
       "role": "销售",
-      "month_val": 615897.5999999999,
+      "month_val": 620689.97,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 615898.0,
-      "quarter_val": 615897.5999999999,
+      "month_gap": 620690.0,
+      "quarter_val": 620689.97,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 615898.0,
+      "incentive_gap": 620690.0,
       "incentive_ok": false,
       "active_clients": 27.0,
       "active_clients_yoy": 14.0,
-      "hit_products": 4373.0,
-      "time_pct": 77.0,
+      "hit_products": 4364.0,
+      "time_pct": 81.0,
       "hit_target": 5350.0,
-      "hit_pct": 81.7
+      "hit_pct": 81.6
     },
     {
       "name": "梁诗琪",
       "role": "销售",
-      "month_val": 363389.92000000004,
+      "month_val": 370465.72,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 363390.0,
-      "quarter_val": 363389.92000000004,
+      "month_gap": 370466.0,
+      "quarter_val": 370465.72,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 363390.0,
+      "incentive_gap": 370466.0,
       "incentive_ok": false,
       "active_clients": 5.0,
       "active_clients_yoy": 15.0,
-      "hit_products": 2307.0,
-      "time_pct": 77.0,
+      "hit_products": 2286.0,
+      "time_pct": 81.0,
       "hit_target": 3580.0,
-      "hit_pct": 64.4
+      "hit_pct": 63.9
     },
     {
       "name": "罗金填",
       "role": "销售",
-      "month_val": 340250.43000000005,
+      "month_val": 350390.29,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 340250.0,
-      "quarter_val": 340250.43000000005,
+      "month_gap": 350390.0,
+      "quarter_val": 350390.29,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 340250.0,
+      "incentive_gap": 350390.0,
       "incentive_ok": false,
       "active_clients": 10.0,
       "active_clients_yoy": 15.0,
-      "hit_products": 1804.0,
-      "time_pct": 77.0,
+      "hit_products": 1815.0,
+      "time_pct": 81.0,
       "hit_target": 3498.0,
-      "hit_pct": 51.6
+      "hit_pct": 51.9
     },
     {
       "name": "程碧瑶",
       "role": "销售",
-      "month_val": 311593.89999999985,
+      "month_val": 318938.2799999999,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 311594.0,
-      "quarter_val": 311593.89999999985,
+      "month_gap": 318938.0,
+      "quarter_val": 318938.2799999999,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 311594.0,
+      "incentive_gap": 318938.0,
       "incentive_ok": false,
       "active_clients": 7.0,
       "active_clients_yoy": 17.0,
-      "hit_products": 2505.0,
-      "time_pct": 77.0,
+      "hit_products": 2501.0,
+      "time_pct": 81.0,
       "hit_target": 4950.0,
-      "hit_pct": 50.6
+      "hit_pct": 50.5
     },
     {
       "name": "刘蓝琳",
       "role": "销售",
-      "month_val": 306920.82870624,
+      "month_val": 310647.5687062401,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 306921.0,
-      "quarter_val": 306920.82870624,
+      "month_gap": 310648.0,
+      "quarter_val": 310647.5687062401,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 306921.0,
+      "incentive_gap": 310648.0,
       "incentive_ok": false,
       "active_clients": 15.0,
       "active_clients_yoy": 14.0,
       "hit_products": 2339.0,
-      "time_pct": 77.0,
+      "time_pct": 81.0,
       "hit_target": 3517.0,
       "hit_pct": 66.5
     },
     {
       "name": "张伟志",
       "role": "销售",
-      "month_val": 272084.81,
+      "month_val": 277404.96,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 272085.0,
-      "quarter_val": 272084.81,
+      "month_gap": 277405.0,
+      "quarter_val": 277404.96,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 272085.0,
+      "incentive_gap": 277405.0,
       "incentive_ok": false,
       "active_clients": null,
       "active_clients_yoy": null,
-      "hit_products": 2622.0,
+      "hit_products": 2604.0,
       "time_pct": 83.9,
       "hit_target": null,
       "hit_pct": null
@@ -402,122 +402,122 @@
     {
       "name": "王金国",
       "role": "销售",
-      "month_val": 190398.16999999998,
+      "month_val": 197004.35000000003,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 190398.0,
-      "quarter_val": 190398.16999999998,
+      "month_gap": 197004.0,
+      "quarter_val": 197004.35000000003,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 190398.0,
+      "incentive_gap": 197004.0,
       "incentive_ok": false,
       "active_clients": 7.0,
       "active_clients_yoy": 11.0,
-      "hit_products": 2504.0,
-      "time_pct": 77.0,
+      "hit_products": 2490.0,
+      "time_pct": 81.0,
       "hit_target": 4093.0,
-      "hit_pct": 61.2
+      "hit_pct": 60.8
     },
     {
       "name": "牛群",
       "role": "销售",
-      "month_val": 102380.03999999998,
+      "month_val": 102915.76999999997,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 102380.0,
-      "quarter_val": 102380.03999999998,
+      "month_gap": 102916.0,
+      "quarter_val": 102915.76999999997,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 102380.0,
+      "incentive_gap": 102916.0,
       "incentive_ok": false,
       "active_clients": 4.0,
       "active_clients_yoy": 6.0,
-      "hit_products": 1540.0,
-      "time_pct": 77.0,
+      "hit_products": 1538.0,
+      "time_pct": 81.0,
       "hit_target": 2882.0,
       "hit_pct": 53.4
     },
     {
       "name": "李金城",
       "role": "销售",
-      "month_val": 73200.26,
+      "month_val": 73443.26000000001,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 73200.0,
-      "quarter_val": 73200.26,
+      "month_gap": 73443.0,
+      "quarter_val": 73443.26000000001,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 73200.0,
+      "incentive_gap": 73443.0,
       "incentive_ok": false,
       "active_clients": null,
       "active_clients_yoy": null,
-      "hit_products": 597.0,
+      "hit_products": 594.0,
       "time_pct": 83.9,
       "hit_target": 23.0,
-      "hit_pct": 26.0
+      "hit_pct": 25.8
     },
     {
       "name": "王钢",
       "role": "销售",
-      "month_val": 50415.880000000005,
+      "month_val": 50894.85,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 50416.0,
-      "quarter_val": 50415.880000000005,
+      "month_gap": 50895.0,
+      "quarter_val": 50894.85,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 50416.0,
+      "incentive_gap": 50895.0,
       "incentive_ok": false,
       "active_clients": null,
       "active_clients_yoy": null,
-      "hit_products": 797.0,
+      "hit_products": 768.0,
       "time_pct": 83.9,
       "hit_target": 29.0,
-      "hit_pct": 27.5
-    },
-    {
-      "name": "郭龙耀",
-      "role": "销售",
-      "month_val": 45163.98999999999,
-      "month_target": null,
-      "month_pct": null,
-      "month_gap": 45164.0,
-      "quarter_val": 45163.98999999999,
-      "quarter_target": null,
-      "quarter_pct": null,
-      "incentive_target": null,
-      "incentive_gap": 45164.0,
-      "incentive_ok": false,
-      "active_clients": null,
-      "active_clients_yoy": null,
-      "hit_products": 325.0,
-      "time_pct": 83.9,
-      "hit_target": null,
-      "hit_pct": null
+      "hit_pct": 26.5
     },
     {
       "name": "舒媛丹",
       "role": "销售",
-      "month_val": 44349.25000000001,
+      "month_val": 48770.53,
       "month_target": null,
       "month_pct": null,
-      "month_gap": 44349.0,
-      "quarter_val": 44349.25000000001,
+      "month_gap": 48771.0,
+      "quarter_val": 48770.53,
       "quarter_target": null,
       "quarter_pct": null,
       "incentive_target": null,
-      "incentive_gap": 44349.0,
+      "incentive_gap": 48771.0,
       "incentive_ok": false,
       "active_clients": null,
       "active_clients_yoy": null,
-      "hit_products": 750.0,
+      "hit_products": 740.0,
       "time_pct": 83.9,
       "hit_target": 123.0,
-      "hit_pct": 6.1
+      "hit_pct": 6.0
+    },
+    {
+      "name": "郭龙耀",
+      "role": "销售",
+      "month_val": 45583.42,
+      "month_target": null,
+      "month_pct": null,
+      "month_gap": 45583.0,
+      "quarter_val": 45583.42,
+      "quarter_target": null,
+      "quarter_pct": null,
+      "incentive_target": null,
+      "incentive_gap": 45583.0,
+      "incentive_ok": false,
+      "active_clients": null,
+      "active_clients_yoy": null,
+      "hit_products": 326.0,
+      "time_pct": 83.9,
+      "hit_target": null,
+      "hit_pct": null
     }
   ],
   "warnings": [],
@@ -525,7 +525,7 @@
   "config_quarter_label": "FY27Q3",
   "company": "深圳市鹏远企业服务有限公司",
   "month_time_pct": 83.9,
-  "month_time_pct_platform": 77.0,
+  "month_time_pct_platform": 81.0,
   "quarter_time_pct": 28.3,
   "quarter_time_note": "FY27Q3 第 26/92 天（截至 2026-10-26）",
   "trend": {
@@ -546,9 +546,9 @@
         },
         {
           "label": "10月",
-          "val": 46054042.84,
+          "val": 47271406.26,
           "target": 74217652.1,
-          "pct": 62.1
+          "pct": 63.7
         }
       ]
     },
@@ -569,147 +569,147 @@
         },
         {
           "label": "10月",
-          "val": 7435296.95,
+          "val": 7977195.4,
           "target": 12797483.71,
-          "pct": 58.1
+          "pct": 62.3
         }
       ]
     }
   },
   "goods": {
-    "current": 127076.0,
+    "current": 126886.0,
     "target": 175561.0,
-    "pct": 72.3828185075273,
+    "pct": 72.27459401575521,
     "structure": [
       {
         "name": "在线品数",
-        "count": 2614373.0,
+        "count": 2589833.0,
         "unit": "个",
-        "pct": 4.860668313205499,
+        "pct": 4.89938926563991,
         "pct_label": "优爆品占比"
       },
       {
         "name": "当前有优爆品的客户数",
-        "count": 2138.0,
+        "count": 2137.0,
         "unit": "家",
-        "pct": 88.49337748344371,
+        "pct": 88.56195607128056,
         "pct_label": "占服务中客户"
       }
     ],
-    "date": "2026-10-23",
-    "p4p_products": 35899.0,
-    "p4p_pct": 28.250023607919672
+    "date": "2026-10-24",
+    "p4p_products": 33862.0,
+    "p4p_pct": 26.686947338555868
   },
   "goods_sales": [
     {
       "name": "罗金填",
-      "value": 1804.0,
+      "value": 1815.0,
       "base_ds": "2026-10-18",
       "late_join": false,
       "target": 3498.0,
-      "pct": 51.57232704402516,
-      "pct_p4p": 26.33037694013304,
+      "pct": 51.886792452830186,
+      "pct_p4p": 26.831955922865014,
       "ch_base": 1797.0,
-      "ch_add": 7.0
+      "ch_add": 18.0
     },
     {
       "name": "郭龙耀",
-      "value": 325.0,
+      "value": 326.0,
       "base_ds": "2026-10-22",
       "late_join": true,
       "target": null,
       "pct": null,
-      "pct_p4p": 46.15384615384615,
+      "pct_p4p": 46.31901840490797,
       "ch_base": 325.0,
-      "ch_add": 0.0
+      "ch_add": 1.0
     },
     {
       "name": "张伟志",
-      "value": 2622.0,
+      "value": 2604.0,
       "base_ds": "2026-10-22",
       "late_join": true,
       "target": null,
       "pct": null,
-      "pct_p4p": 30.282227307398934,
+      "pct_p4p": 30.52995391705069,
       "ch_base": 2617.0,
-      "ch_add": 5.0
+      "ch_add": -13.0
     },
     {
       "name": "王钢",
-      "value": 797.0,
+      "value": 768.0,
       "base_ds": "2026-10-22",
       "late_join": true,
       "target": 29.0,
-      "pct": 27.482758620689655,
-      "pct_p4p": 6.775407779171895,
+      "pct": 26.482758620689655,
+      "pct_p4p": 7.03125,
       "ch_base": 798.0,
-      "ch_add": -1.0
+      "ch_add": -30.0
     },
     {
       "name": "李金城",
-      "value": 597.0,
+      "value": 594.0,
       "base_ds": "2026-10-22",
       "late_join": true,
       "target": 23.0,
-      "pct": 25.956521739130434,
-      "pct_p4p": 38.358458961474035,
+      "pct": 25.82608695652174,
+      "pct_p4p": 35.52188552188552,
       "ch_base": 593.0,
-      "ch_add": 4.0
+      "ch_add": 1.0
     },
     {
       "name": "舒媛丹",
-      "value": 750.0,
+      "value": 740.0,
       "base_ds": "2026-10-22",
       "late_join": true,
       "target": 123.0,
-      "pct": 6.097560975609756,
-      "pct_p4p": 18.266666666666666,
+      "pct": 6.016260162601626,
+      "pct_p4p": 18.243243243243242,
       "ch_base": 747.0,
-      "ch_add": 3.0
+      "ch_add": -7.0
     },
     {
       "name": "梁诗琪",
-      "value": 2307.0,
+      "value": 2286.0,
       "base_ds": "2026-10-18",
       "late_join": false,
       "target": 3580.0,
-      "pct": 64.44134078212291,
-      "pct_p4p": 28.088426527958386,
+      "pct": 63.85474860335195,
+      "pct_p4p": 29.790026246719158,
       "ch_base": 1553.0,
-      "ch_add": 754.0
+      "ch_add": 733.0
     },
     {
       "name": "王金国",
-      "value": 2504.0,
+      "value": 2490.0,
       "base_ds": "2026-10-18",
       "late_join": false,
       "target": 4093.0,
-      "pct": 61.177620327388226,
-      "pct_p4p": 24.281150159744406,
+      "pct": 60.835572929391645,
+      "pct_p4p": 23.6144578313253,
       "ch_base": 2506.0,
-      "ch_add": -2.0
+      "ch_add": -16.0
     },
     {
       "name": "程碧瑶",
-      "value": 2505.0,
+      "value": 2501.0,
       "base_ds": "2026-10-18",
       "late_join": false,
       "target": 4950.0,
-      "pct": 50.60606060606061,
-      "pct_p4p": 19.04191616766467,
+      "pct": 50.525252525252526,
+      "pct_p4p": 17.832866853258697,
       "ch_base": 2442.0,
-      "ch_add": 63.0
+      "ch_add": 59.0
     },
     {
       "name": "何尧玲",
-      "value": 4373.0,
+      "value": 4364.0,
       "base_ds": "2026-10-18",
       "late_join": false,
       "target": 5350.0,
-      "pct": 81.73831775700936,
-      "pct_p4p": 13.377544020123485,
+      "pct": 81.57009345794393,
+      "pct_p4p": 12.23648029330889,
       "ch_base": 4369.0,
-      "ch_add": 4.0
+      "ch_add": -5.0
     },
     {
       "name": "刘蓝琳",
@@ -718,182 +718,190 @@
       "late_join": false,
       "target": 3517.0,
       "pct": 66.50554449815183,
-      "pct_p4p": 18.982471141513468,
+      "pct_p4p": 16.460025651988026,
       "ch_base": 2343.0,
       "ch_add": -4.0
     },
     {
       "name": "牛群",
-      "value": 1540.0,
+      "value": 1538.0,
       "base_ds": "2026-10-18",
       "late_join": false,
       "target": 2882.0,
-      "pct": 53.43511450381679,
-      "pct_p4p": 30.454545454545457,
+      "pct": 53.36571825121443,
+      "pct_p4p": 28.803641092327698,
       "ch_base": 1527.0,
-      "ch_add": 13.0
+      "ch_add": 11.0
     },
     {
       "name": "李彬",
-      "value": 7057.0,
+      "value": 7064.0,
       "base_ds": "2026-10-18",
       "late_join": false,
       "target": 7954.0,
-      "pct": 88.72265526778979,
-      "pct_p4p": 38.61414198667989,
+      "pct": 88.81066130248931,
+      "pct_p4p": 38.15118912797282,
       "ch_base": 7194.0,
-      "ch_add": -137.0
+      "ch_add": -130.0
     },
     {
       "name": "邓晓东",
-      "value": 7808.0,
+      "value": 7797.0,
       "base_ds": "2026-10-18",
       "late_join": false,
       "target": 9803.0,
-      "pct": 79.64908701417933,
-      "pct_p4p": 16.79047131147541,
+      "pct": 79.53687646638784,
+      "pct_p4p": 13.530845196870592,
       "ch_base": 7985.0,
-      "ch_add": -177.0
+      "ch_add": -188.0
     },
     {
       "name": "李怡萍",
-      "value": 6929.0,
+      "value": 6909.0,
       "base_ds": "2026-10-18",
       "late_join": false,
       "target": 10360.0,
-      "pct": 66.88223938223939,
-      "pct_p4p": 19.064800115456777,
+      "pct": 66.6891891891892,
+      "pct_p4p": 17.904182949775656,
       "ch_base": 6908.0,
-      "ch_add": 21.0
+      "ch_add": 1.0
     },
     {
       "name": "高国权",
-      "value": 6740.0,
+      "value": 6756.0,
       "base_ds": "2026-10-18",
       "late_join": false,
       "target": 8165.0,
-      "pct": 82.54745866503367,
-      "pct_p4p": 17.373887240356083,
+      "pct": 82.74341702388243,
+      "pct_p4p": 15.822972172883363,
       "ch_base": 6692.0,
-      "ch_add": 48.0
+      "ch_add": 64.0
     },
     {
       "name": "汤子豪",
-      "value": 5390.0,
+      "value": 5391.0,
       "base_ds": "2026-10-18",
       "late_join": false,
       "target": 6821.0,
-      "pct": 79.02067145579828,
-      "pct_p4p": 33.87755102040816,
+      "pct": 79.0353320627474,
+      "pct_p4p": 33.14783899091078,
       "ch_base": 5225.0,
-      "ch_add": 165.0
+      "ch_add": 166.0
     },
     {
       "name": "谢承杰",
-      "value": 5602.0,
+      "value": 5596.0,
       "base_ds": "2026-10-18",
       "late_join": false,
       "target": 7062.0,
-      "pct": 79.32596998017559,
-      "pct_p4p": 28.00785433773652,
+      "pct": 79.24100821297083,
+      "pct_p4p": 23.39170836311651,
       "ch_base": 5664.0,
-      "ch_add": -62.0
+      "ch_add": -68.0
     },
     {
       "name": "夏锐",
-      "value": 9731.0,
+      "value": 9727.0,
       "base_ds": "2026-10-18",
       "late_join": false,
       "target": 14228.0,
-      "pct": 68.39330896823166,
-      "pct_p4p": 24.868975439317644,
+      "pct": 68.36519538937307,
+      "pct_p4p": 24.108152565025186,
       "ch_base": 10284.0,
-      "ch_add": -553.0
+      "ch_add": -557.0
     },
     {
       "name": "漆螯童",
-      "value": 9873.0,
+      "value": 9878.0,
       "base_ds": "2026-10-18",
       "late_join": false,
       "target": 12404.0,
-      "pct": 79.59529184134149,
-      "pct_p4p": 32.837030284614606,
+      "pct": 79.63560141889712,
+      "pct_p4p": 29.358169669973677,
       "ch_base": 10375.0,
-      "ch_add": -502.0
+      "ch_add": -497.0
     },
     {
       "name": "王子豪",
-      "value": 11728.0,
+      "value": 11673.0,
       "base_ds": "2026-10-18",
       "late_join": false,
       "target": 15553.0,
-      "pct": 75.40667395357808,
-      "pct_p4p": 30.98567530695771,
+      "pct": 75.05304442872757,
+      "pct_p4p": 29.4440161055427,
       "ch_base": 11437.0,
-      "ch_add": 291.0
+      "ch_add": 236.0
     },
     {
       "name": "王凡",
-      "value": 7534.0,
+      "value": 7589.0,
       "base_ds": "2026-10-18",
       "late_join": false,
       "target": 9185.0,
-      "pct": 82.02504082743603,
-      "pct_p4p": 43.575789753119196,
+      "pct": 82.62384322264562,
+      "pct_p4p": 40.61141125312953,
       "ch_base": 7241.0,
-      "ch_add": 293.0
+      "ch_add": 348.0
     },
     {
       "name": "陈建国",
-      "value": 8725.0,
+      "value": 8715.0,
       "base_ds": "2026-10-18",
       "late_join": false,
       "target": 11133.0,
-      "pct": 78.37060989849995,
-      "pct_p4p": 32.51575931232092,
+      "pct": 78.28078684990568,
+      "pct_p4p": 30.889271371199083,
       "ch_base": 8654.0,
-      "ch_add": 71.0
+      "ch_add": 61.0
     },
     {
       "name": "蒋汶桃",
-      "value": 9586.0,
+      "value": 9531.0,
       "base_ds": "2026-10-18",
       "late_join": false,
       "target": 13361.0,
-      "pct": 71.74612678691715,
-      "pct_p4p": 33.87231379094513,
+      "pct": 71.33448095202455,
+      "pct_p4p": 33.12349176371839,
       "ch_base": 10316.0,
-      "ch_add": -730.0
+      "ch_add": -785.0
     }
   ],
   "youpin_company": {
     "structure": [
       {
         "name": "在线品数",
-        "count": 2614373.0,
+        "count": 2589833.0,
         "unit": "个",
-        "pct": 4.860668313205499,
+        "pct": 4.89938926563991,
         "pct_label": "优爆品占比"
       },
       {
         "name": "当前有优爆品的客户数",
-        "count": 2138.0,
+        "count": 2137.0,
         "unit": "家",
-        "pct": 88.49337748344371,
+        "pct": 88.56195607128056,
         "pct_label": "占服务中客户"
       }
     ],
-    "date": "2026-10-23",
-    "value": 127076.0,
+    "date": "2026-10-24",
+    "value": 126886.0,
     "target": 175561.0,
-    "pct": 72.3828185075273,
-    "p4p_products": 35899.0,
-    "p4p_pct": 28.250023607919672,
+    "pct": 72.27459401575521,
+    "p4p_products": 33862.0,
+    "p4p_pct": 26.686947338555868,
     "cols": 31,
     "rows": 1,
     "complete": true
   },
   "yoy_up": [
+    {
+      "name": "广东牧人王电器有限公司",
+      "industry": "Home Appliances",
+      "sales": "蒋汶桃",
+      "cur": 334527.81,
+      "prev": 135936.51,
+      "diff": 198591.3
+    },
     {
       "name": "深圳市百杰科技有限公司",
       "industry": "Electronic Components, Accessories & Telecommunications",
@@ -914,9 +922,9 @@
       "name": "深圳市优瑞恩科技有限公司",
       "industry": "Medical devices & Supplies",
       "sales": "蒋汶桃",
-      "cur": 115099.56000000001,
-      "prev": 64043.66,
-      "diff": 51055.9
+      "cur": 115123.96999999999,
+      "prev": 64043.659999999996,
+      "diff": 51080.31
     },
     {
       "name": "深圳沃德福科技有限公司",
@@ -930,9 +938,9 @@
       "name": "深圳市巨能达科技有限公司",
       "industry": "Gifts & Crafts",
       "sales": "王子豪",
-      "cur": 77670.44,
+      "cur": 77728.22000000002,
       "prev": 37249.22,
-      "diff": 40421.22
+      "diff": 40479.0
     },
     {
       "name": "深圳市星光彩科技有限公司",
@@ -941,6 +949,22 @@
       "cur": null,
       "prev": -36511.22,
       "diff": 36511.22
+    },
+    {
+      "name": "哈嘻嘻(深圳)贸易有限公司",
+      "industry": "Mother, Kids & Toys",
+      "sales": "李怡萍",
+      "cur": 35444.0,
+      "prev": null,
+      "diff": 35444.0
+    },
+    {
+      "name": "深圳市科扬万灏科技有限公司",
+      "industry": "Consumer Electronics",
+      "sales": "王凡",
+      "cur": 32520.5,
+      "prev": null,
+      "diff": 32520.5
     },
     {
       "name": "陕西互布库电子科技有限公司",
@@ -959,14 +983,6 @@
       "diff": 29534.57
     },
     {
-      "name": "深圳市科扬万灏科技有限公司",
-      "industry": "Consumer Electronics",
-      "sales": "王凡",
-      "cur": 28227.0,
-      "prev": null,
-      "diff": 28227.0
-    },
-    {
       "name": "深圳恒丰饰品有限公司",
       "industry": "Jewelry, Eyewear, Watches & Accessories",
       "sales": "王子豪",
@@ -978,17 +994,17 @@
       "name": "深圳市耳朵科技有限公司",
       "industry": "Consumer Electronics",
       "sales": "漆螯童",
-      "cur": 88419.14000000001,
-      "prev": 67816.89,
-      "diff": 20602.25
+      "cur": 88965.02000000002,
+      "prev": 67816.89000000001,
+      "diff": 21148.13
     },
     {
       "name": "深圳市寻余科技有限公司",
       "industry": "Consumer Electronics",
       "sales": "王凡",
-      "cur": 21062.2010103,
+      "cur": 21472.2010103,
       "prev": 686.0,
-      "diff": 20376.2
+      "diff": 20786.2
     },
     {
       "name": "深圳市小铁锤珠宝有限公司",
@@ -1037,22 +1053,6 @@
       "cur": null,
       "prev": -11172.65,
       "diff": 11172.65
-    },
-    {
-      "name": "深圳市爱坤电子科技有限公司",
-      "industry": "Consumer Electronics",
-      "sales": "夏锐",
-      "cur": 11625.0,
-      "prev": 579.5,
-      "diff": 11045.5
-    },
-    {
-      "name": "深圳市叁尚达科技有限公司",
-      "industry": "Beauty",
-      "sales": "高国权",
-      "cur": 10402.6,
-      "prev": null,
-      "diff": 10402.6
     }
   ],
   "yoy_down": [
@@ -1061,152 +1061,144 @@
       "industry": "Vehicle Accessories, Electronics & Tools",
       "sales": "李彬",
       "cur": null,
-      "prev": 17535732.820655696,
+      "prev": 17535732.820655704,
       "diff": -17535732.82
     },
     {
       "name": "深圳市鑫锦泰贸易有限公司",
       "industry": "Consumer Electronics",
       "sales": "李彬",
-      "cur": 2420196.1600000006,
-      "prev": 11528212.17,
+      "cur": 2420196.16,
+      "prev": 11528212.169999994,
       "diff": -9108016.01
     },
     {
       "name": "深圳亿上光科技有限公司",
       "industry": "Beauty",
       "sales": "陈建国",
-      "cur": 275401.4,
+      "cur": 277109.99,
       "prev": 2813446.55,
-      "diff": -2538045.15
+      "diff": -2536336.56
     },
     {
       "name": "东莞博格斯科技有限公司",
       "industry": "Pet Supplies",
       "sales": "陈建国",
       "cur": 400665.62,
-      "prev": 2900668.0099999993,
+      "prev": 2900668.0100000002,
       "diff": -2500002.39
     },
     {
       "name": "深圳市立泰能源科技有限公司",
       "industry": "Renewable Energy",
       "sales": "蒋汶桃",
-      "cur": 245168.53,
+      "cur": 305102.52999999997,
       "prev": 2455861.7599999993,
-      "diff": -2210693.23
+      "diff": -2150759.23
     },
     {
       "name": "深圳牧人行智能制造有限公司",
       "industry": "Home Appliances",
       "sales": "蒋汶桃",
-      "cur": 347610.54,
-      "prev": 2522957.5399999996,
-      "diff": -2175347.0
+      "cur": 476211.8999999999,
+      "prev": 2522957.540000001,
+      "diff": -2046745.64
     },
     {
       "name": "深圳市天德普储能科技有限公司",
       "industry": "Renewable Energy",
       "sales": "李彬",
-      "cur": 385941.6,
-      "prev": 2163989.7999999993,
-      "diff": -1778048.2
+      "cur": 386838.6,
+      "prev": 2163989.8,
+      "diff": -1777151.2
     },
     {
       "name": "深圳市鸿泰门窗有限公司",
       "industry": "Construction & Real Estate",
       "sales": "陈建国",
-      "cur": 319045.1999999999,
+      "cur": 334837.24000000005,
       "prev": 1996776.1500000004,
-      "diff": -1677730.95
+      "diff": -1661938.91
     },
     {
       "name": "深圳市迈斯奇科技有限公司",
       "industry": "Home Appliances",
       "sales": "蒋汶桃",
-      "cur": 280522.32,
+      "cur": 280911.01000000007,
       "prev": 1926156.839256,
-      "diff": -1645634.52
-    },
-    {
-      "name": "利辛实业（深圳）有限公司",
-      "industry": "Consumer Electronics",
-      "sales": "王凡",
-      "cur": 292688.2764,
-      "prev": 1924718.3001143993,
-      "diff": -1632030.02
+      "diff": -1645245.83
     },
     {
       "name": "深圳市福瑞诺科技有限公司",
       "industry": "Medical devices & Supplies",
       "sales": "李彬",
       "cur": 840797.1399999999,
-      "prev": 2457460.8499999996,
+      "prev": 2457460.85,
       "diff": -1616663.71
     },
     {
       "name": "深圳蓝丰电子有限公司",
       "industry": "Commercial Equipment & Machinery",
       "sales": "李彬",
-      "cur": 295787.33,
-      "prev": 1870869.66,
-      "diff": -1575082.33
+      "cur": 301363.33,
+      "prev": 1870869.6600000001,
+      "diff": -1569506.33
+    },
+    {
+      "name": "利辛实业（深圳）有限公司",
+      "industry": "Consumer Electronics",
+      "sales": "王凡",
+      "cur": 430033.15640000004,
+      "prev": 1924718.300114399,
+      "diff": -1494685.14
     },
     {
       "name": "深圳市中和盛科技有限公司",
       "industry": "Fabrication Services",
       "sales": "夏锐",
       "cur": 633340.6,
-      "prev": 2118173.1299999985,
+      "prev": 2118173.1299999994,
       "diff": -1484832.53
     },
     {
       "name": "深圳拉米酷科技有限公司",
       "industry": "Consumer Electronics",
       "sales": "王凡",
-      "cur": 9430.229999999998,
-      "prev": 1439086.7496502383,
-      "diff": -1429656.52
-    },
-    {
-      "name": "深圳彩虹源科技有限责任公司",
-      "industry": "Commercial Equipment & Machinery",
-      "sales": "陈建国",
-      "cur": 305693.74,
-      "prev": 1709397.8700000003,
-      "diff": -1403704.13
-    },
-    {
-      "name": "深圳市卓冠运动器材有限公司",
-      "industry": "Sports & Entertainment",
-      "sales": "李彬",
-      "cur": 63050.0,
-      "prev": 1449094.3699999999,
-      "diff": -1386044.37
+      "cur": 9470.23,
+      "prev": 1439086.7496502385,
+      "diff": -1429616.52
     },
     {
       "name": "深圳市鑫莱特照明有限公司",
       "industry": "Home & Garden",
       "sales": "陈建国",
-      "cur": 328665.60000000003,
-      "prev": 1668056.5300000003,
-      "diff": -1339390.93
+      "cur": 330299.23000000004,
+      "prev": 1668056.53,
+      "diff": -1337757.3
+    },
+    {
+      "name": "深圳彩虹源科技有限责任公司",
+      "industry": "Commercial Equipment & Machinery",
+      "sales": "陈建国",
+      "cur": 371777.3,
+      "prev": 1709397.87,
+      "diff": -1337620.57
     },
     {
       "name": "深圳市充向未来科技有限公司",
       "industry": "Consumer Electronics",
       "sales": "李彬",
       "cur": 207021.0,
-      "prev": 1429857.2399999998,
+      "prev": 1429857.24,
       "diff": -1222836.24
     },
     {
       "name": "深圳市利仕特建材有限公司",
       "industry": "Construction & Real Estate",
       "sales": "李彬",
-      "cur": 257998.74000000002,
+      "cur": 257998.50999999998,
       "prev": 1478695.37,
-      "diff": -1220696.63
+      "diff": -1220696.86
     },
     {
       "name": "深圳市云立电子有限公司",
@@ -1215,6 +1207,14 @@
       "cur": 684.0,
       "prev": 1108711.0,
       "diff": -1108027.0
+    },
+    {
+      "name": "深圳市金铂豪科技有限公司",
+      "industry": "Rubber & Plastics",
+      "sales": "漆螯童",
+      "cur": 26943.7,
+      "prev": 1078688.5099999998,
+      "diff": -1051744.81
     }
   ],
   "yoy_compare": "本季度 vs 上季度（策略中心当月明细）",
@@ -1289,38 +1289,38 @@
   "layers": [
     {
       "name": "已达3万",
-      "count": 298,
-      "pct": 12.3
+      "count": 323,
+      "pct": 13.3
     },
     {
       "name": "2-3万",
-      "count": 118,
-      "pct": 4.9
+      "count": 122,
+      "pct": 5.0
     },
     {
       "name": "1-2万",
-      "count": 279,
-      "pct": 11.5
+      "count": 282,
+      "pct": 11.6
     },
     {
       "name": "0-1万",
-      "count": 1199,
-      "pct": 49.3
+      "count": 1190,
+      "pct": 49.1
     },
     {
       "name": "未动销",
-      "count": 537,
-      "pct": 22.1
+      "count": 509,
+      "pct": 21.0
     }
   ],
   "layers_source": "策略中心·本季度GMV",
   "panel": {
-    "total": 2431.0,
-    "checked": 7503.0,
-    "full3w": 298,
-    "sprint": 118,
-    "inactive": 537,
-    "paid": 1894,
+    "total": 2426.0,
+    "checked": 7504.0,
+    "full3w": 323,
+    "sprint": 122,
+    "inactive": 509,
+    "paid": 1917,
     "sources": {
       "total": "策略中心",
       "checked": "全量客户盘点",
@@ -1330,26 +1330,26 @@
   "s9610": {
     "title": "9610 打标订单",
     "note": "9610 打标订单（来源：一拍档物流服务商后台订单列表；按线路汇总 · 全部历史）",
-    "update": "2026-10-25",
+    "update": "2026-10-26",
     "group_label": "线路",
     "detail_kind": "order",
     "totals": {
-      "customers": 41,
-      "orders": 212,
-      "declared": 70861.64,
+      "customers": 42,
+      "orders": 219,
+      "declared": 72934.44,
       "currency": "USD",
       "currencies": [
         "USD"
       ],
       "lines": 5,
       "lines_active": 3,
-      "kefu_matched": 41,
-      "kefu_total": 41,
+      "kefu_matched": 42,
+      "kefu_total": 42,
       "kefu_fallback": 0,
       "kefu_source": "策略中心明细（当月）",
       "kefu_column": "拍档客服",
-      "sales_matched": 41,
-      "sales_total": 41,
+      "sales_matched": 42,
+      "sales_total": 42,
       "sales_fallback": 0,
       "sales_source": "策略中心明细（当月）",
       "sales_column": "拍档销售",
@@ -1360,15 +1360,15 @@
     "by_line": [
       {
         "name": "无忧全球9610专线DDP(标准)",
-        "customers": 34,
-        "orders": 137,
-        "declared": 61840.22
+        "customers": 35,
+        "orders": 142,
+        "declared": 63855.42
       },
       {
         "name": "无忧全球9610小包DDP_标准(标准)",
         "customers": 6,
-        "orders": 62,
-        "declared": 6141.42
+        "orders": 64,
+        "declared": 6199.02
       },
       {
         "name": "无忧9610SKA专线(优选)",
@@ -1378,6 +1378,97 @@
       }
     ],
     "detail": [
+      {
+        "customer": "深圳市爱铂科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02048733455",
+        "amount": 990.0,
+        "currency": "USD",
+        "time_ms": 1793007142000,
+        "time": "2026-10-26 17:32",
+        "kefu": "曹丽",
+        "kefu_from": "strategy",
+        "sales": "漆螯童",
+        "sales_from": "strategy"
+      },
+      {
+        "customer": "深圳市博悦展示品有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02048895033",
+        "amount": 665.0,
+        "currency": "USD",
+        "time_ms": 1793007068000,
+        "time": "2026-10-26 17:31",
+        "kefu": "陈宇",
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
+      },
+      {
+        "customer": "深圳市爱铂科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02048490225",
+        "amount": 155.0,
+        "currency": "USD",
+        "time_ms": 1793002825000,
+        "time": "2026-10-26 16:20",
+        "kefu": "曹丽",
+        "kefu_from": "strategy",
+        "sales": "漆螯童",
+        "sales_from": "strategy"
+      },
+      {
+        "customer": "深圳市元合诚科技有限公司",
+        "line": "无忧全球9610小包DDP_标准(标准)",
+        "order_no": "ALS02048355829",
+        "amount": 44.0,
+        "currency": "USD",
+        "time_ms": 1793002439000,
+        "time": "2026-10-26 16:13",
+        "kefu": "方琼",
+        "kefu_from": "strategy",
+        "sales": "王金国",
+        "sales_from": "strategy"
+      },
+      {
+        "customer": "深圳市爱铂科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02047788373",
+        "amount": 145.2,
+        "currency": "USD",
+        "time_ms": 1792995411000,
+        "time": "2026-10-26 14:16",
+        "kefu": "曹丽",
+        "kefu_from": "strategy",
+        "sales": "漆螯童",
+        "sales_from": "strategy"
+      },
+      {
+        "customer": "深圳市振诚包装制品有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02047140952",
+        "amount": 60.0,
+        "currency": "USD",
+        "time_ms": 1792986980000,
+        "time": "2026-10-26 11:56",
+        "kefu": "陈宇",
+        "kefu_from": "strategy",
+        "sales": "王子豪",
+        "sales_from": "strategy"
+      },
+      {
+        "customer": "深圳市威斯尼科技有限公司",
+        "line": "无忧全球9610专线DDP(标准)",
+        "order_no": "ALS02045898563",
+        "amount": 13.6,
+        "currency": "USD",
+        "time_ms": 1792908603000,
+        "time": "2026-10-25 14:10",
+        "kefu": "曹丽",
+        "kefu_from": "strategy",
+        "sales": "陈建国",
+        "sales_from": "strategy"
+      },
       {
         "customer": "深圳市爱思考制冷设备有限公司",
         "line": "无忧全球9610专线DDP(标准)",
@@ -4286,11 +4377,11 @@
       {
         "name": "陈建国",
         "count": 18,
-        "with_visit": 8,
+        "with_visit": 15,
         "customers": 15,
         "days": 5,
         "last": "2026-10-22 23:47:31",
-        "visit_pct": 44.44,
+        "visit_pct": 83.33,
         "in_roster": true
       },
       {
@@ -6250,7 +6341,7 @@
         "post": "{安全专员,销售专员}",
         "customer": "深圳市富美时表业有限公司",
         "addr": "广东省深圳市宝安区西乡大道靠近满京华现代西谷大厦",
-        "status": "打卡成功"
+        "status": "录了拜访记录"
       },
       {
         "day": "2026-10-20",
@@ -6259,7 +6350,7 @@
         "post": "{安全专员,销售专员}",
         "customer": "深圳市零距离电子有限公司",
         "addr": "广东省深圳市宝安区西乡大道靠近满京华现代西谷大厦",
-        "status": "打卡成功"
+        "status": "录了拜访记录"
       },
       {
         "day": "2026-10-20",
@@ -6268,7 +6359,7 @@
         "post": "{安全专员,销售专员}",
         "customer": "深圳联飞国际货运代理有限公司",
         "addr": "广东省深圳市宝安区西乡大道靠近满京华现代西谷大厦",
-        "status": "打卡成功"
+        "status": "录了拜访记录"
       },
       {
         "day": "2026-10-20",
@@ -6871,7 +6962,7 @@
         "post": "{安全专员,销售专员}",
         "customer": "深圳邦盛通科技有限公司",
         "addr": "广东省深圳市宝安区中心路靠近中心名座",
-        "status": "打卡成功"
+        "status": "录了拜访记录"
       },
       {
         "day": "2026-10-22",
@@ -6880,7 +6971,7 @@
         "post": "{安全专员,销售专员}",
         "customer": "深圳市炜晨阳科技有限公司",
         "addr": "广东省深圳市宝安区中心路靠近中心名座",
-        "status": "打卡成功"
+        "status": "录了拜访记录"
       },
       {
         "day": "2026-10-22",
@@ -6889,7 +6980,7 @@
         "post": "{安全专员,销售专员}",
         "customer": "深圳市康本电器有限公司",
         "addr": "广东省深圳市宝安区中心路靠近中心名座",
-        "status": "打卡成功"
+        "status": "录了拜访记录"
       },
       {
         "day": "2026-10-22",
@@ -6898,7 +6989,7 @@
         "post": "{安全专员,销售专员}",
         "customer": "广东省康迈电器有限公司",
         "addr": "广东省深圳市宝安区中心路靠近中心名座",
-        "status": "打卡成功"
+        "status": "录了拜访记录"
       },
       {
         "day": "2026-10-22",
@@ -7211,8 +7302,8 @@
       "count": 309,
       "persons": 21,
       "customers": 279,
-      "with_visit": 263,
-      "visit_pct": 85.11,
+      "with_visit": 270,
+      "visit_pct": 87.38,
       "days": 14,
       "roster": 24,
       "idle": 4,
@@ -7330,128 +7421,128 @@
   "daily_add": {
     "title": "每日新增（对比 2026-10-25 快照）",
     "label": "对比 2026-10-25 快照",
-    "xb_recv": 0.0,
+    "xb_recv": 2839570.98,
     "active_3w": 0.0,
-    "customers": 0.0
+    "customers": -5.0
   },
   "persons_daily_add": {
     "李彬": {
-      "xb_recv": 0.0,
+      "xb_recv": 123778.72,
       "active_3w": 0.0,
       "no_base": false
     },
     "王凡": {
-      "xb_recv": 0.0,
+      "xb_recv": 131907.29,
       "active_3w": 0.0,
       "no_base": false
     },
     "陈建国": {
-      "xb_recv": 0.0,
+      "xb_recv": 94820.53,
       "active_3w": 0.0,
       "no_base": false
     },
     "蒋汶桃": {
-      "xb_recv": 0.0,
+      "xb_recv": 181998.83,
       "active_3w": 0.0,
       "no_base": false
     },
     "汤子豪": {
-      "xb_recv": 0.0,
+      "xb_recv": 108410.07,
       "active_3w": 0.0,
       "no_base": false
     },
     "漆螯童": {
-      "xb_recv": 0.0,
+      "xb_recv": 85824.8,
       "active_3w": 0.0,
       "no_base": false
     },
     "夏锐": {
-      "xb_recv": 0.0,
+      "xb_recv": 110734.09,
       "active_3w": 0.0,
       "no_base": false
     },
     "王子豪": {
-      "xb_recv": 0.0,
+      "xb_recv": 135927.69,
       "active_3w": 0.0,
       "no_base": false
     },
     "高国权": {
-      "xb_recv": 0.0,
+      "xb_recv": 99325.99,
       "active_3w": 0.0,
       "no_base": false
     },
     "谢承杰": {
-      "xb_recv": 0.0,
+      "xb_recv": 24594.75,
       "active_3w": 0.0,
       "no_base": false
     },
     "李怡萍": {
-      "xb_recv": 0.0,
+      "xb_recv": 56414.22,
       "active_3w": 0.0,
       "no_base": false
     },
     "邓晓东": {
-      "xb_recv": 0.0,
+      "xb_recv": 17842.69,
       "active_3w": 0.0,
       "no_base": false
     },
     "何尧玲": {
-      "xb_recv": 0.0,
+      "xb_recv": 4792.37,
       "active_3w": 0.0,
       "no_base": false
     },
     "梁诗琪": {
-      "xb_recv": 0.0,
+      "xb_recv": 7075.8,
       "active_3w": 0.0,
       "no_base": false
     },
     "罗金填": {
-      "xb_recv": 0.0,
+      "xb_recv": 10139.86,
       "active_3w": 0.0,
       "no_base": false
     },
     "程碧瑶": {
-      "xb_recv": 0.0,
+      "xb_recv": 7344.38,
       "active_3w": 0.0,
       "no_base": false
     },
     "刘蓝琳": {
-      "xb_recv": 0.0,
+      "xb_recv": 3726.74,
       "active_3w": 0.0,
       "no_base": false
     },
     "张伟志": {
-      "xb_recv": 0.0,
+      "xb_recv": 5320.15,
       "active_3w": null,
       "no_base": false
     },
     "王金国": {
-      "xb_recv": 0.0,
+      "xb_recv": 6606.18,
       "active_3w": 0.0,
       "no_base": false
     },
     "牛群": {
-      "xb_recv": 0.0,
+      "xb_recv": 535.73,
       "active_3w": 0.0,
       "no_base": false
     },
     "李金城": {
-      "xb_recv": 0.0,
+      "xb_recv": 243.0,
       "active_3w": null,
       "no_base": false
     },
     "王钢": {
-      "xb_recv": 0.0,
-      "active_3w": null,
-      "no_base": false
-    },
-    "郭龙耀": {
-      "xb_recv": 0.0,
+      "xb_recv": 478.97,
       "active_3w": null,
       "no_base": false
     },
     "舒媛丹": {
-      "xb_recv": 0.0,
+      "xb_recv": 4421.28,
+      "active_3w": null,
+      "no_base": false
+    },
+    "郭龙耀": {
+      "xb_recv": 419.43,
       "active_3w": null,
       "no_base": false
     }
