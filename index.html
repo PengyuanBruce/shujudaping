@@ -623,10 +623,11 @@
     </div>
   </section>
 
-  <!-- Ⅰ·B AWB（2026-10-24 用户改版：**盘点区下线**，只留「季度前三单高佣金奖励」+ 新增「个人业绩榜」）
-       数据源不变：桌面「*AWB盘点.xlsx」（奖励区 = awb客户盘点 表上方三行；业绩榜 = 同工作簿「个人业绩榜」表） -->
+  <!-- Ⅰ·B AWB（2026-10-24 改版：盘点区下线；2026-10-27 用户要求「盘点区直接去掉」→ 连数据层一起清）
+       只留「季度前三单高佣金奖励」+「个人业绩榜」两块
+       数据源：桌面「*AWB盘点.xlsx」（奖励区 = 表上方三行；业绩榜 = 同工作簿「个人业绩榜」表） -->
   <section id="sec-10">
-    <div class="sec-head"><span class="sec-no">Ⅰ·B</span><h2 id="awb-title">AWB 客户盘点</h2>
+    <div class="sec-head"><span class="sec-no">Ⅰ·B</span><h2 id="awb-title">AWB 季度奖励与业绩榜</h2>
       <span class="note" id="awb-note">季度前三单高佣金奖励 + 个人业绩榜（未破蛋单列） · 源：桌面 AWB 盘点表</span></div>
     <div id="awb-body"></div>
   </section>
@@ -744,7 +745,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1793075294';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1793075852';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1732,7 +1733,7 @@
       ? '<div class="p-table">' + perfHead + perfRows + noPerfRow + '</div>'
       : '<div class="empty">个人业绩榜暂无数据（「个人业绩榜」表未填，不会编造）</div>';
     $('awb-body').innerHTML = '<div class="card">' +
-      head(a, 'AWB 客户盘点 · 季度前三单高佣金奖励', a.note) +
+      head(a, '季度前三单高佣金奖励', a.note) +
       (awardCards || pendingPanel(['季度前三单高佣金奖励（表格上方三行）'])) +
       kpi([['个人业绩榜', unit(fmt(pf.count, 0), '人')],
            ['业绩合计', fmt(pf.total, 0) + '<small class="text-dim"> 元</small>'],
