@@ -1,7 +1,7 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-27 12:27",
+  "update_time": "2026-10-27 12:36",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 51365025.52,
@@ -7466,7 +7466,7 @@
     "incomplete": []
   },
   "awb": {
-    "title": "AWB 客户盘点",
+    "title": "AWB 季度奖励与业绩榜",
     "note": "源：桌面「10月AWB盘点.xlsx」· 季度前三单高佣金奖励 + 个人业绩榜 · 表更新 2026-10-27 12:24",
     "update": "2026-10-27",
     "source": "10月AWB盘点.xlsx",
@@ -7505,16 +7505,8 @@
     ],
     "totals": {
       "awards": 3,
-      "awards_done": 2,
-      "customers": 0,
-      "sales": 0,
-      "amount": 0,
-      "days": 0,
-      "latest": "",
-      "offroster": []
+      "awards_done": 2
     },
-    "by_sale": [],
-    "detail": [],
     "perf": {
       "sheet": "个人业绩榜",
       "rows": [
