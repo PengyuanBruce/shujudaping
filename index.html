@@ -745,7 +745,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1793275701';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1793276570';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1720,8 +1720,7 @@
     const perfRows = prs.map(function (r, i) {
       return '<div class="p-row' + (i === 0 ? ' p-top' : '') + '">' +
         '<span class="p-rank">' + esc(String(r.rank || i + 1)) + '</span>' +
-        '<span class="p-name">' + esc(r.name) +
-        (r.off_roster ? '<small class="text-dim"> 非名单</small>' : '') + '</span>' +
+        '<span class="p-name">' + esc(r.name) + '</span>' +
         '<span class="p-money">' + (r.total != null ? fmt(r.total, 0) + ' 元'
           : '<span class="text-dim">--</span>') + '</span></div>';
     }).join('');
@@ -1774,8 +1773,7 @@
     const t = v.totals || {}, ps = v.persons || [], det = v.detail || [], days = v.days || [];
     const head = '<div class="v-row v-head"><span>姓名</span><span>打卡次数</span><span>打卡天数</span>' +
       '<span>客户数</span><span>已录拜访</span><span>记录率</span><span>最近打卡</span></div>';
-    const rows = ps.map(p => '<div class="v-row"><span>' + esc(p.name) +
-      (p.in_roster === false ? '<small class="text-dim"> 非名单</small>' : '') + '</span>' +
+    const rows = ps.map(p => '<div class="v-row"><span>' + esc(p.name) + '</span>' +
       '<span>' + fmt(p.count, 0) + '</span><span>' + fmt(p.days, 0) + '</span>' +
       '<span>' + fmt(p.customers, 0) + '</span><span>' + fmt(p.with_visit, 0) + '</span>' +
       '<span class="' + pctTextClass(p.visit_pct) + '">' + fmtPct(p.visit_pct, 1) + '</span>' +
