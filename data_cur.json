@@ -1,7 +1,7 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-30 08:54",
+  "update_time": "2026-10-30 19:01",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 68562381.04,
@@ -8978,10 +8978,10 @@
   },
   "awb": {
     "title": "AWB 季度奖励与业绩榜",
-    "note": "源：桌面「10月AWB盘点.xlsx」· 季度前三单高佣金奖励 + 个人业绩榜 · 表更新 2026-10-30 08:24",
+    "note": "源：桌面「10月AWB盘点.xlsx」· 季度前三单高佣金奖励 + 个人业绩榜 · 表更新 2026-10-30 18:54",
     "update": "2026-10-30",
     "source": "10月AWB盘点.xlsx",
-    "source_mtime": "2026-10-30 08:24",
+    "source_mtime": "2026-10-30 18:54",
     "awards": [
       {
         "label": "季度首单",
@@ -9005,81 +9005,102 @@
       },
       {
         "label": "季度第三单",
-        "pending": true,
-        "sales": "",
-        "bonus": null,
-        "bonus_text": "",
-        "plan": "",
-        "plan_text": "",
-        "amount": null
+        "pending": false,
+        "sales": "李彬",
+        "bonus": 7200.0,
+        "bonus_text": "7200（佣金60%）",
+        "plan": "标准版",
+        "plan_text": "标准版¥20000",
+        "amount": 20000.0
       }
     ],
     "totals": {
       "awards": 3,
-      "awards_done": 2
+      "awards_done": 3
     },
     "perf": {
       "sheet": "个人业绩榜",
       "rows": [
         {
-          "name": "蒋汶桃",
+          "name": "李彬",
           "total": 40000.0,
           "off_roster": false,
           "rank": 1
         },
         {
+          "name": "蒋汶桃",
+          "total": 40000.0,
+          "off_roster": false,
+          "rank": 2
+        },
+        {
           "name": "陈建国",
           "total": 6000.0,
           "off_roster": false,
-          "rank": 2
+          "rank": 3
+        },
+        {
+          "name": "何尧玲",
+          "total": 4000.0,
+          "off_roster": false,
+          "rank": 4
         },
         {
           "name": "张伟志",
           "total": 2000.0,
           "off_roster": false,
-          "rank": 3
+          "rank": 5
         },
         {
           "name": "彭方方",
           "total": 2000.0,
           "off_roster": true,
-          "rank": 4
-        },
-        {
-          "name": "汤子豪",
-          "total": 2000.0,
-          "off_roster": false,
-          "rank": 5
-        },
-        {
-          "name": "漆螯童",
-          "total": 2000.0,
-          "off_roster": false,
           "rank": 6
         },
         {
-          "name": "王凡",
+          "name": "李金城",
           "total": 2000.0,
           "off_roster": false,
           "rank": 7
         },
         {
-          "name": "王子豪",
+          "name": "汤子豪",
           "total": 2000.0,
           "off_roster": false,
           "rank": 8
+        },
+        {
+          "name": "漆螯童",
+          "total": 2000.0,
+          "off_roster": false,
+          "rank": 9
+        },
+        {
+          "name": "王凡",
+          "total": 2000.0,
+          "off_roster": false,
+          "rank": 10
+        },
+        {
+          "name": "王子豪",
+          "total": 2000.0,
+          "off_roster": false,
+          "rank": 11
+        },
+        {
+          "name": "高国权",
+          "total": 2000.0,
+          "off_roster": false,
+          "rank": 12
         }
       ],
-      "count": 8,
-      "total": 58000.0,
+      "count": 12,
+      "total": 106000.0,
       "roster": 24,
       "no_perf": [
-        "何尧玲",
         "刘蓝琳",
         "夏锐",
-        "李彬",
         "李怡萍",
-        "李金城",
         "梁诗琪",
         "牛群",
         "王金国",
@@ -9089,10 +9110,9 @@
         "舒媛丹",
         "谢承杰",
         "邓晓东",
-        "郭龙耀",
-        "高国权"
+        "郭龙耀"
       ],
-      "no_perf_count": 17
+      "no_perf_count": 13
     }
   },
   "month_no": "10",
