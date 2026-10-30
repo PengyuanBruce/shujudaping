@@ -1,7 +1,7 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-30 19:01",
+  "update_time": "2026-10-30 19:08",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 68562381.04,
@@ -8978,10 +8978,10 @@
   },
   "awb": {
     "title": "AWB 季度奖励与业绩榜",
-    "note": "源：桌面「10月AWB盘点.xlsx」· 季度前三单高佣金奖励 + 个人业绩榜 · 表更新 2026-10-30 18:54",
+    "note": "源：桌面「10月AWB盘点.xlsx」· 季度前三单高佣金奖励 + 个人业绩榜 · 表更新 2026-10-30 19:07",
     "update": "2026-10-30",
     "source": "10月AWB盘点.xlsx",
-    "source_mtime": "2026-10-30 18:54",
+    "source_mtime": "2026-10-30 19:07",
     "awards": [
       {
         "label": "季度首单",
@@ -9046,60 +9046,71 @@
           "rank": 4
         },
         {
-          "name": "张伟志",
+          "name": "夏锐",
           "total": 2000.0,
           "off_roster": false,
           "rank": 5
         },
         {
+          "name": "张伟志",
+          "total": 2000.0,
+          "off_roster": false,
+          "rank": 6
+        },
+        {
           "name": "彭方方",
           "total": 2000.0,
           "off_roster": true,
-          "rank": 6
+          "rank": 7
         },
         {
           "name": "李金城",
           "total": 2000.0,
           "off_roster": false,
-          "rank": 7
+          "rank": 8
         },
         {
           "name": "汤子豪",
           "total": 2000.0,
           "off_roster": false,
-          "rank": 8
+          "rank": 9
         },
         {
           "name": "漆螯童",
           "total": 2000.0,
           "off_roster": false,
-          "rank": 9
+          "rank": 10
         },
         {
           "name": "王凡",
           "total": 2000.0,
           "off_roster": false,
-          "rank": 10
+          "rank": 11
         },
         {
           "name": "王子豪",
           "total": 2000.0,
           "off_roster": false,
-          "rank": 11
+          "rank": 12
+        },
+        {
+          "name": "邓晓东",
+          "total": 2000.0,
+          "off_roster": false,
+          "rank": 13
         },
         {
           "name": "高国权",
           "total": 2000.0,
           "off_roster": false,
-          "rank": 12
+          "rank": 14
         }
       ],
-      "count": 12,
-      "total": 106000.0,
+      "count": 14,
+      "total": 110000.0,
       "roster": 24,
       "no_perf": [
         "刘蓝琳",
-        "夏锐",
         "李怡萍",
         "梁诗琪",
         "牛群",
@@ -9109,10 +9120,9 @@
         "罗金填",
         "舒媛丹",
         "谢承杰",
-        "邓晓东",
         "郭龙耀"
       ],
-      "no_perf_count": 13
+      "no_perf_count": 11
     }
   },
   "month_no": "10",
