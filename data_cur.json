@@ -1,7 +1,7 @@
 {
   "month": "2026-10",
   "quarter": "FY27Q3",
-  "update_time": "2026-10-30 19:18",
+  "update_time": "2026-10-30 19:27",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 68562381.04,
@@ -9031,7 +9031,7 @@
           "name": "蒋汶桃",
           "total": 40000.0,
           "off_roster": false,
-          "rank": 2
+          "rank": 1
         },
         {
           "name": "陈建国",
@@ -9055,55 +9055,55 @@
           "name": "张伟志",
           "total": 2000.0,
           "off_roster": false,
-          "rank": 6
+          "rank": 5
         },
         {
           "name": "彭方方",
           "total": 2000.0,
           "off_roster": true,
-          "rank": 7
+          "rank": 5
         },
         {
           "name": "李金城",
           "total": 2000.0,
           "off_roster": false,
-          "rank": 8
+          "rank": 5
         },
         {
           "name": "汤子豪",
           "total": 2000.0,
           "off_roster": false,
-          "rank": 9
+          "rank": 5
         },
         {
           "name": "漆螯童",
           "total": 2000.0,
           "off_roster": false,
-          "rank": 10
+          "rank": 5
         },
         {
           "name": "王凡",
           "total": 2000.0,
           "off_roster": false,
-          "rank": 11
+          "rank": 5
         },
         {
           "name": "王子豪",
           "total": 2000.0,
           "off_roster": false,
-          "rank": 12
+          "rank": 5
         },
         {
           "name": "邓晓东",
           "total": 2000.0,
           "off_roster": false,
-          "rank": 13
+          "rank": 5
         },
         {
           "name": "高国权",
           "total": 2000.0,
           "off_roster": false,
-          "rank": 14
+          "rank": 5
         }
       ],
       "count": 14,
