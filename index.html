@@ -748,7 +748,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1793443950';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1793594299';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1733,9 +1733,12 @@
       ? '<div class="p-row p-noperf"><span class="p-label">未破蛋 · ' + fmt(noPerf.length, 0) + ' 人</span>' +
         '<span class="p-names">' + noPerf.map(esc).join('、') + '</span></div>'
       : '';
+    // 2026-11-02：业绩榜按**当月**工作表取（「11月个人业绩榜」这种）。表名从数据读，不写死月份；
+    // 当月表刚建、还没填 → 明确写「未填」，不拿上月数据顶替。
+    const perfSheet = esc(pf.sheet || '当月个人业绩榜');
     const perfTable = (prs.length || noPerf.length)
       ? '<div class="p-table">' + perfHead + perfRows + noPerfRow + '</div>'
-      : '<div class="empty">个人业绩榜暂无数据（「个人业绩榜」表未填，不会编造）</div>';
+      : '<div class="empty">个人业绩榜暂无数据（「' + perfSheet + '」表里还没填，不会编造）</div>';
     $('awb-body').innerHTML = '<div class="card">' +
       head(a, '季度前三单高佣金奖励', a.note) +
       (awardCards || pendingPanel(['季度前三单高佣金奖励（表格上方三行）'])) +
@@ -1743,8 +1746,9 @@
            ['业绩合计', fmt(pf.total, 0) + '<small class="text-dim"> 元</small>'],
            ['未破蛋', unit(fmt(noPerf.length, 0), '人')],
            ['销售名单', unit(fmt(pf.roster, 0), '人')]]) +
-      '<div class="cap" style="margin-top:12px">个人业绩榜 · 按总业绩降序' +
-      (prs.length ? ' · 上榜 ' + fmt(prs.length, 0) + ' 人' : '') + '</div>' + perfTable +
+       '<div class="cap" style="margin-top:12px">个人业绩榜（' + perfSheet + '）· 按总业绩降序' +
+       (prs.length ? ' · 上榜 ' + fmt(prs.length, 0) + ' 人' : '') +
+       (pf.note ? ' · ' + esc(pf.note) : '') + '</div>' + perfTable +
       '</div>';
   }
 
