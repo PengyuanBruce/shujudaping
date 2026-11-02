@@ -1,7 +1,7 @@
 {
   "month": "2026-11",
   "quarter": "FY27Q3",
-  "update_time": "2026-11-02 20:18",
+  "update_time": "2026-11-02 20:21",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 2853491.0,
@@ -521,7 +521,7 @@
     }
   ],
   "warnings": [],
-  "config_month_label": "2026-10",
+  "config_month_label": "2026-11",
   "config_quarter_label": "FY27Q3",
   "company": "深圳市鹏远企业服务有限公司",
   "month_time_pct": 6.7,
