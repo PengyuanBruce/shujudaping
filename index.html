@@ -749,7 +749,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1793673709';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1793674311';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1484,8 +1484,20 @@
     //   （所以这里连注释都不留原句，免得 grep 核验时把注释误判成渲染出的文字）。
     // 个人级那一块**只留一个标题**（用户 2026-10-16 三次要求）：这些说明小字全去掉 ——
     // 不写基线日、不写「缺基线」、不写「按…降序」、不写「谁不在名单里」。
-    // 标题 = 「优爆品挑战赛」+ 窗口（10月19日-11月30日），两者都从数据读、不写死。
-    const chTitleCn = esc(ch.panel_title || '优爆品挑战赛') + esc(ch.window_cn || '');
+     // 标题 = 「优爆品挑战赛」+ 窗口（10月19日-11月30日），两者都从数据读、不写死。
+     // 2026-11-03 用户要求标题后加括号标注「更新时间 / 数据时间」：
+     //   更新时间 = data.update_time（本轮抓取/解析时间）
+     //   数据时间 = goods_challenge.data_ds（优品3.0 表里的「日期」列，T+2 所以晚于更新时间）
+     //   两个都从数据现算成「11月3日」，缺哪个就不写哪个，绝不写死日期。
+     const cnMD = function (s) {
+       const m = /^(\d{4})-(\d{1,2})-(\d{1,2})/.exec(String(s || ''));
+       return m ? (+m[2]) + '月' + (+m[3]) + '日' : '';
+     };
+     const stampParts = [];
+     if (cnMD(d.update_time)) stampParts.push('更新时间' + cnMD(d.update_time));
+     if (cnMD(ch.data_ds)) stampParts.push('数据时间' + cnMD(ch.data_ds));
+     const chStamp = stampParts.length ? '（' + stampParts.join('，') + '）' : '';
+     const chTitleCn = esc(ch.panel_title || '优爆品挑战赛') + esc(ch.window_cn || '') + esc(chStamp);
     $('goods-rank-body').innerHTML = head +
       '<div class="ch-title">' + chTitleCn + '</div>' +
       '<div class="ch-groups">' + groups.map(panel).join('') + '</div>';
