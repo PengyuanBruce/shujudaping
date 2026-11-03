@@ -1,7 +1,7 @@
 {
   "month": "2026-11",
   "quarter": "FY27Q3",
-  "update_time": "2026-11-03 11:24",
+  "update_time": "2026-11-03 18:47",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 3375838.08,
@@ -1297,6 +1297,8 @@
       "target": 21960.0,
       "pct": 72.06739526411657,
       "pct_p4p": 37.160369013016556,
+      "pct_hot": null,
+      "pct_p4p_done": null,
       "data_ds": "2026-11-01",
       "day_base_ds": "2026-10-31",
       "day_add": -61.0
@@ -1307,6 +1309,8 @@
       "target": 16907.0,
       "pct": 70.95285976222866,
       "pct_p4p": 15.688562854284763,
+      "pct_hot": null,
+      "pct_p4p_done": null,
       "data_ds": "2026-11-01",
       "day_base_ds": "2026-10-31",
       "day_add": -28.0
@@ -1317,6 +1321,8 @@
       "target": 9735.0,
       "pct": 65.23882896764252,
       "pct_p4p": 26.090379467800346,
+      "pct_hot": null,
+      "pct_p4p_done": null,
       "data_ds": "2026-11-01",
       "day_base_ds": "2026-10-31",
       "day_add": 9.0
@@ -1327,6 +1333,8 @@
       "target": 11202.0,
       "pct": 68.71094447420103,
       "pct_p4p": 17.66922177471742,
+      "pct_hot": null,
+      "pct_p4p_done": null,
       "data_ds": "2026-11-01",
       "day_base_ds": "2026-10-31",
       "day_add": -20.0
@@ -1337,6 +1345,8 @@
       "target": 6404.0,
       "pct": 67.98875702685821,
       "pct_p4p": 17.01883325677538,
+      "pct_hot": null,
+      "pct_p4p_done": null,
       "data_ds": "2026-11-01",
       "day_base_ds": "2026-10-31",
       "day_add": 0.0
@@ -1347,6 +1357,8 @@
       "target": 13924.0,
       "pct": 76.24964090778512,
       "pct_p4p": 27.437129132523314,
+      "pct_hot": null,
+      "pct_p4p_done": null,
       "data_ds": "2026-11-01",
       "day_base_ds": "2026-10-31",
       "day_add": -75.0
@@ -1357,6 +1369,8 @@
       "target": 19028.0,
       "pct": 74.82657136850956,
       "pct_p4p": 39.801938474504844,
+      "pct_hot": null,
+      "pct_p4p_done": null,
       "data_ds": "2026-11-01",
       "day_base_ds": "2026-10-31",
       "day_add": -23.0
@@ -1367,6 +1381,8 @@
       "target": 22083.0,
       "pct": 79.12874156591043,
       "pct_p4p": 24.482087673114343,
+      "pct_hot": null,
+      "pct_p4p_done": null,
       "data_ds": "2026-11-01",
       "day_base_ds": "2026-10-31",
       "day_add": -145.0
@@ -1377,6 +1393,8 @@
       "target": 20936.0,
       "pct": 71.63259457393963,
       "pct_p4p": 28.832433153297327,
+      "pct_hot": null,
+      "pct_p4p_done": null,
       "data_ds": "2026-11-01",
       "day_base_ds": "2026-10-31",
       "day_add": -115.0
@@ -1387,6 +1405,8 @@
       "target": 12366.0,
       "pct": 69.71534853630924,
       "pct_p4p": 26.01786335691915,
+      "pct_hot": null,
+      "pct_p4p_done": null,
       "data_ds": "2026-11-01",
       "day_base_ds": "2026-10-31",
       "day_add": -5.0
@@ -1397,6 +1417,8 @@
       "target": 14834.0,
       "pct": 69.00364028582985,
       "pct_p4p": 17.61430246189918,
+      "pct_hot": null,
+      "pct_p4p_done": null,
       "data_ds": "2026-11-01",
       "day_base_ds": "2026-10-31",
       "day_add": -30.0
@@ -1407,6 +1429,8 @@
       "target": 6182.0,
       "pct": 62.21287609187966,
       "pct_p4p": 25.559022360894435,
+      "pct_hot": null,
+      "pct_p4p_done": null,
       "data_ds": "2026-11-01",
       "day_base_ds": "2026-10-31",
       "day_add": -7.0
