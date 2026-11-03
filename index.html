@@ -470,10 +470,31 @@
     }
    /* 表头**绝不截断**：宽度万一算少了就换行，不许用省略号藏掉字（数据行仍单行省略号） */
    #sec-4b .ch-panel .rank-row.rank-head .rowline { white-space: normal; }
-   #sec-4b .ch-panel .rank-row.rank-head .rowline > span {
-     overflow: visible; text-overflow: clip; line-height: 1.35;
-   }
-    @media (max-width: 1320px) {
+    #sec-4b .ch-panel .rank-row.rank-head .rowline > span {
+      overflow: visible; text-overflow: clip; line-height: 1.35;
+    }
+    /* ── 第三块：拍档客服（用户 2026-11-03）──
+       维度同两军团但**没有「10.19–11.30 新增」**，所以行内只有 5 个指标格；
+       仍按两列排布（与军团同宽），列宽复用军团的 52/98/44/66，进度列 minmax(46,1fr)。
+       块体单独用 .kf-* 类，不复用 .ch-panel —— 军团那几条列宽规则会把它压成 6 列。 */
+    #sec-4b .kf-block { margin-top: 22px; }
+    #sec-4b .kf-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    #sec-4b .kf-col { min-width: 0; }
+    #sec-4b .kf-col .rank-row { grid-template-columns: 24px 56px minmax(0, 1fr) 54px;
+      gap: 6px; padding: 6px 0; }
+    #sec-4b .kf-col .rank-row .rowline {
+      grid-template-columns: 52px 98px 44px 66px minmax(46px, 1fr); gap: 0 6px; font-size: 12px;
+    }
+    #sec-4b .kf-col .rank-row.rank-head .rowline { white-space: normal; }
+    #sec-4b .kf-col .rank-row.rank-head .rowline > span {
+      overflow: visible; text-overflow: clip; line-height: 1.35;
+    }
+     @media (max-width: 1100px) {
+       /* 客服行宽实测：序号 24 + 姓名 56 + 指标列（52+98+44+66+46+间隙 24 = 330）+ 进度 54 ≈ 482。
+          两列要 ≥ 980 的内容宽 → 视口 < ~1100 就改单列，免得列被压扁、数字被省略号截掉。 */
+      #sec-4b .kf-cols { grid-template-columns: 1fr; }
+    }
+     @media (max-width: 1320px) {
       /* 半宽放不下加宽后的指标列就上下堆叠（两块仍等宽）。
          阈值按实测推：页面容器 ≈ 视口 − 97 → 半宽 = (视口 − 113)/2，
          而「序号 24 + 姓名 56 + 指标列 412 + 进度 54 + 列间隙」≈ 594 → 视口 < 1301 放不下，
@@ -487,12 +508,18 @@
      #sec-4b .rank-row .rowline { display: flex; flex-wrap: wrap; justify-content: flex-end;
        gap: 2px 12px; }
      #sec-4b .rank-row .rowline > span { overflow: visible; text-overflow: clip; }
-     /* 军团榜的窄屏覆盖要**同样特异度**（.ch-panel 那三条优先级更高，不写就压不住） */
-     #sec-4b .ch-panel .rank-row { grid-template-columns: 22px 52px minmax(0, 1fr) 46px; }
-     #sec-4b .ch-panel .rank-row .rowline { display: flex; flex-wrap: wrap;
-       justify-content: flex-end; gap: 2px 10px; }
-     #sec-4b .ch-panel .rank-row .rowline > span { overflow: visible; text-overflow: clip; }
-   }
+      /* 军团榜的窄屏覆盖要**同样特异度**（.ch-panel 那三条优先级更高，不写就压不住） */
+      #sec-4b .ch-panel .rank-row { grid-template-columns: 22px 52px minmax(0, 1fr) 46px; }
+      #sec-4b .ch-panel .rank-row .rowline { display: flex; flex-wrap: wrap;
+        justify-content: flex-end; gap: 2px 10px; }
+      #sec-4b .ch-panel .rank-row .rowline > span { overflow: visible; text-overflow: clip; }
+      /* 客服块同理（同样特异度覆盖 .kf-col 的固定列宽） */
+      #sec-4b .kf-cols { grid-template-columns: 1fr; }
+      #sec-4b .kf-col .rank-row { grid-template-columns: 22px 52px minmax(0, 1fr) 46px; }
+      #sec-4b .kf-col .rank-row .rowline { display: flex; flex-wrap: wrap;
+        justify-content: flex-end; gap: 2px 10px; }
+      #sec-4b .kf-col .rank-row .rowline > span { overflow: visible; text-overflow: clip; }
+    }
   @media (max-width: 700px) {
     .kpi-grid { grid-template-columns: 1fr; }
     .kpi-grid > .card:nth-child(-n+2) { grid-column: auto; }
@@ -749,7 +776,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1793674311';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1793676039';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1498,10 +1525,56 @@
      if (cnMD(ch.data_ds)) stampParts.push('数据时间' + cnMD(ch.data_ds));
      const chStamp = stampParts.length ? '（' + stampParts.join('，') + '）' : '';
      const chTitleCn = esc(ch.panel_title || '优爆品挑战赛') + esc(ch.window_cn || '') + esc(chStamp);
-    $('goods-rank-body').innerHTML = head +
-      '<div class="ch-title">' + chTitleCn + '</div>' +
-      '<div class="ch-groups">' + groups.map(panel).join('') + '</div>';
-  }
+     // 2026-11-03 用户要求：两个军团后面再加一块「拍档客服」，维度同上，
+     //   但**没有「10.19–11.30 新增」**（客服不参加挑战赛）→ 行内 5 个指标格。
+     //   客服名单不过滤销售名单；数据日多半比军团晚一天，所以块头单独标「数据 M月D日」。
+     const kfRows = (d.goods_kefu || []);
+     const kfMeta = ch.kefu || {};
+     function kefuBlock() {
+       if (!kfRows.length) return '';
+       const list = kfRows.slice().sort(function (a, b) {
+         const av = num(a.value), bv = num(b.value);
+         if (av == null) return bv == null ? 0 : 1;
+         if (bv == null) return -1;
+         return bv - av;
+       });
+       const half = Math.max(Math.ceil(list.length / 2), 1);
+       const cols = [list.slice(0, half), list.slice(half)]
+         .filter(function (c) { return c.length > 0; });
+       const kfTip = (kfMeta.data_ds && kfMeta.day_base_ds)
+         ? '每日新增 = ' + kfMeta.data_ds + ' 的优爆品数 − ' + kfMeta.day_base_ds + ' 的优爆品数'
+         : '缺上一数据日快照（客服表数据日 ' + (kfMeta.data_ds || '—') + '）→ 显示 --';
+       const kfCells = function (r) {
+         return '<span class="rowline"><span>' + fmt(r.value, 0) + '</span>' +
+           '<span>' + fmt(r.target, 0) + '</span><span>' + fmtPct(r.pct_p4p, 1) + '</span>' +
+           '<b class="' + deltaTextClass(r.day_add) + '">' + fmtSigned(r.day_add) + '</b>' +
+           '<b class="' + pctTextClass(r.pct) + '">' + fmtPct(r.pct, 2) + '</b></span>';
+       };
+       let n = 0;
+       const body = cols.map(function (c) {
+         return '<div class="kf-col"><div class="rank-row rank-head"><span>#</span><span>姓名</span>' +
+           '<span class="rowline"><span>优爆品数</span><span>当季度累计目标</span><span>推P率</span>' +
+           '<span title="' + esc(kfTip) + '">每日新增</span><span>完成率</span></span>' +
+           '<span>进度</span></div>' +
+           c.map(function (r) {
+             n += 1;
+             const w = Math.max(0, Math.min(100, num(r.pct) || 0));
+             return '<div class="rank-row"><span class="text-dim">' + n + '</span>' +
+               '<span>' + esc(r.name) + '</span>' + kfCells(r) +
+               '<span class="bar"><i class="' + pctFillClass(r.pct) + '" style="width:' + w +
+               '%"></i></span></div>';
+           }).join('') + '</div>';
+       }).join('');
+       const kfDs = cnMD(kfMeta.data_ds);
+       return '<div class="kf-block"><div class="ch-head"><b>' + esc(kfMeta.name || '拍档客服') +
+         '</b>' + (kfDs ? '<span class="text-dim">数据 ' + esc(kfDs) + '</span>' : '') +
+         '</div><div class="kf-cols">' + body + '</div></div>';
+     }
+     $('goods-rank-body').innerHTML = head +
+       '<div class="ch-title">' + chTitleCn + '</div>' +
+       '<div class="ch-groups">' + groups.map(panel).join('') + '</div>' +
+       kefuBlock();
+   }
 
   // ── Ⅸ 9610 打标订单（按线路）／Ⅹ AWB 待签约潜客（按销售）──
   // 2026-10-12 把原来的单一「9610 / AWB 专题」拆成**两个独立板块**：各自标题、各自数据区，
