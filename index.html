@@ -782,7 +782,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1793878195';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1793923992';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1497,11 +1497,17 @@
         if (bv == null) return -1;
         return bv - av;
       });
+      // 2026-11-06：军团可各自起算（乘风营 11-01）→ 列名与 tooltip 按军团取，
+      //   没配 start 的军团沿用整队窗口（10.19–11.30）。
+      const gLabel = g.label || chLabel;
+      const gTip = g.base_ds
+        ? gLabel + ' = 当前优爆品数 − ' + g.base_ds + ' 快照（当前值为平台最新可得日）'
+        : chTip;
       return '<div class="ch-panel" data-group="' + esc(g.name) + '">' +
         '<div class="ch-head"><b>' + esc(g.name) + '</b></div>' +
         '<div class="rank-row rank-head"><span>#</span><span>姓名</span>' +
         '<span class="rowline"><span>优爆品数</span><span>当季度累计目标</span><span>推P率</span>' +
-        '<span title="' + esc(chTip) + '">' + esc(chLabel) + '</span>' +
+        '<span title="' + esc(gTip) + '">' + esc(gLabel) + '</span>' +
         '<span title="' + esc(dayTip) + '">每日新增</span>' +
         '<span>完成率</span></span><span>进度</span></div>' +
         list.map(function (r, i) {
