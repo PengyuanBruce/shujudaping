@@ -1,7 +1,7 @@
 {
   "month": "2026-11",
   "quarter": "FY27Q3",
-  "update_time": "2026-11-05 19:29",
+  "update_time": "2026-11-06 08:12",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 13246138.47,
@@ -391,7 +391,7 @@
       "active_clients": 1.0,
       "active_clients_yoy": 26.0,
       "hit_products": 2621.0,
-      "time_pct": 16.7,
+      "time_pct": 20.0,
       "incentive_quarter_target": 1783892.0,
       "hit_target": 3976.0,
       "hit_pct": 65.9
@@ -454,7 +454,7 @@
       "active_clients": 0.0,
       "active_clients_yoy": 4.0,
       "hit_products": 928.0,
-      "time_pct": 16.7,
+      "time_pct": 20.0,
       "incentive_quarter_target": 836928.0,
       "hit_target": 1508.0,
       "hit_pct": 61.5
@@ -496,7 +496,7 @@
       "active_clients": 1.0,
       "active_clients_yoy": 3.0,
       "hit_products": 917.0,
-      "time_pct": 16.7,
+      "time_pct": 20.0,
       "incentive_quarter_target": 959112.0,
       "hit_target": 1868.0,
       "hit_pct": 49.1
@@ -517,7 +517,7 @@
       "active_clients": 0.0,
       "active_clients_yoy": 7.0,
       "hit_products": 786.0,
-      "time_pct": 16.7,
+      "time_pct": 20.0,
       "incentive_quarter_target": 789022.0,
       "hit_target": 1589.0,
       "hit_pct": 49.5
@@ -538,7 +538,7 @@
       "active_clients": 1.0,
       "active_clients_yoy": 4.0,
       "hit_products": 868.0,
-      "time_pct": 16.7,
+      "time_pct": 20.0,
       "incentive_quarter_target": 725005.0,
       "hit_target": 1106.0,
       "hit_pct": 78.5
@@ -548,10 +548,10 @@
   "config_month_label": "2026-11",
   "config_quarter_label": "FY27Q3",
   "company": "深圳市鹏远企业服务有限公司",
-  "month_time_pct": 16.7,
+  "month_time_pct": 20.0,
   "month_time_pct_platform": 13.0,
-  "quarter_time_pct": 39.1,
-  "quarter_time_note": "FY27Q3 第 36/92 天（截至 2026-11-05）",
+  "quarter_time_pct": 40.2,
+  "quarter_time_note": "FY27Q3 第 37/92 天（截至 2026-11-06）",
   "trend": {
     "gmv": {
       "title": "信保月度趋势(万美元)",
@@ -628,13 +628,14 @@
     {
       "name": "牛群",
       "value": 1489.0,
-      "base_ds": "2026-10-18",
+      "base_ds": "2026-10-31",
+      "group_start": "2026-11-01",
       "late_join": false,
       "target": 2882.0,
       "pct": 51.66551006245663,
       "pct_p4p": 30.89321692411014,
-      "ch_base": 1527.0,
-      "ch_add": -38.0,
+      "ch_base": 1468.0,
+      "ch_add": 21.0,
       "data_ds": "2026-11-03",
       "day_base_ds": "2026-11-02",
       "day_add": 12.0
@@ -643,6 +644,7 @@
       "name": "罗金填",
       "value": 1807.0,
       "base_ds": "2026-10-18",
+      "group_start": "",
       "late_join": false,
       "target": 3489.0,
       "pct": 51.791344224706215,
@@ -656,13 +658,14 @@
     {
       "name": "郭龙耀",
       "value": 917.0,
-      "base_ds": "2026-10-22",
-      "late_join": true,
+      "base_ds": "2026-10-31",
+      "group_start": "2026-11-01",
+      "late_join": false,
       "target": 1868.0,
       "pct": 49.0899357601713,
       "pct_p4p": 25.627044711014175,
-      "ch_base": 325.0,
-      "ch_add": 592.0,
+      "ch_base": 917.0,
+      "ch_add": 0.0,
       "data_ds": "2026-11-03",
       "day_base_ds": "2026-11-02",
       "day_add": 0.0
@@ -670,13 +673,14 @@
     {
       "name": "张伟志",
       "value": 2621.0,
-      "base_ds": "2026-10-22",
-      "late_join": true,
+      "base_ds": "2026-10-31",
+      "group_start": "2026-11-01",
+      "late_join": false,
       "target": 3976.0,
       "pct": 65.920523138833,
       "pct_p4p": 21.632964517359788,
-      "ch_base": 2617.0,
-      "ch_add": 4.0,
+      "ch_base": 2656.0,
+      "ch_add": -35.0,
       "data_ds": "2026-11-03",
       "day_base_ds": "2026-11-02",
       "day_add": -5.0
@@ -684,13 +688,14 @@
     {
       "name": "王钢",
       "value": 868.0,
-      "base_ds": "2026-10-22",
-      "late_join": true,
+      "base_ds": "2026-10-31",
+      "group_start": "2026-11-01",
+      "late_join": false,
       "target": 1106.0,
       "pct": 78.48101265822784,
       "pct_p4p": 11.751152073732719,
-      "ch_base": 798.0,
-      "ch_add": 70.0,
+      "ch_base": 882.0,
+      "ch_add": -14.0,
       "data_ds": "2026-11-03",
       "day_base_ds": "2026-11-02",
       "day_add": -3.0
@@ -698,13 +703,14 @@
     {
       "name": "李金城",
       "value": 928.0,
-      "base_ds": "2026-10-22",
-      "late_join": true,
+      "base_ds": "2026-10-31",
+      "group_start": "2026-11-01",
+      "late_join": false,
       "target": 1508.0,
       "pct": 61.53846153846154,
       "pct_p4p": 39.224137931034484,
-      "ch_base": 593.0,
-      "ch_add": 335.0,
+      "ch_base": 927.0,
+      "ch_add": 1.0,
       "data_ds": "2026-11-03",
       "day_base_ds": "2026-11-02",
       "day_add": 6.0
@@ -712,13 +718,14 @@
     {
       "name": "舒媛丹",
       "value": 786.0,
-      "base_ds": "2026-10-22",
-      "late_join": true,
+      "base_ds": "2026-10-31",
+      "group_start": "2026-11-01",
+      "late_join": false,
       "target": 1589.0,
       "pct": 49.46507237256136,
       "pct_p4p": 19.21119592875318,
-      "ch_base": 747.0,
-      "ch_add": 39.0,
+      "ch_base": 793.0,
+      "ch_add": -7.0,
       "data_ds": "2026-11-03",
       "day_base_ds": "2026-11-02",
       "day_add": 0.0
@@ -726,13 +733,14 @@
     {
       "name": "梁诗琪",
       "value": 2194.0,
-      "base_ds": "2026-10-18",
+      "base_ds": "2026-10-31",
+      "group_start": "2026-11-01",
       "late_join": false,
       "target": 4544.0,
       "pct": 48.28345070422535,
       "pct_p4p": 27.848678213309025,
-      "ch_base": 1553.0,
-      "ch_add": 641.0,
+      "ch_base": 2187.0,
+      "ch_add": 7.0,
       "data_ds": "2026-11-03",
       "day_base_ds": "2026-11-02",
       "day_add": 0.0
@@ -740,13 +748,14 @@
     {
       "name": "王金国",
       "value": 2438.0,
-      "base_ds": "2026-10-18",
+      "base_ds": "2026-10-31",
+      "group_start": "2026-11-01",
       "late_join": false,
       "target": 4093.0,
       "pct": 59.565111165404346,
       "pct_p4p": 26.538146021328956,
-      "ch_base": 2506.0,
-      "ch_add": -68.0,
+      "ch_base": 2468.0,
+      "ch_add": -30.0,
       "data_ds": "2026-11-03",
       "day_base_ds": "2026-11-02",
       "day_add": 3.0
@@ -754,13 +763,14 @@
     {
       "name": "程碧瑶",
       "value": 2477.0,
-      "base_ds": "2026-10-18",
+      "base_ds": "2026-10-31",
+      "group_start": "2026-11-01",
       "late_join": false,
       "target": 4950.0,
       "pct": 50.04040404040404,
       "pct_p4p": 17.763423496164716,
-      "ch_base": 2442.0,
-      "ch_add": 35.0,
+      "ch_base": 2472.0,
+      "ch_add": 5.0,
       "data_ds": "2026-11-03",
       "day_base_ds": "2026-11-02",
       "day_add": 1.0
@@ -768,13 +778,14 @@
     {
       "name": "何尧玲",
       "value": 4267.0,
-      "base_ds": "2026-10-18",
+      "base_ds": "2026-10-31",
+      "group_start": "2026-11-01",
       "late_join": false,
       "target": 5350.0,
       "pct": 79.75700934579439,
       "pct_p4p": 14.389500820248418,
-      "ch_base": 4369.0,
-      "ch_add": -102.0,
+      "ch_base": 4335.0,
+      "ch_add": -68.0,
       "data_ds": "2026-11-03",
       "day_base_ds": "2026-11-02",
       "day_add": -18.0
@@ -782,13 +793,14 @@
     {
       "name": "刘蓝琳",
       "value": 2285.0,
-      "base_ds": "2026-10-18",
+      "base_ds": "2026-10-31",
+      "group_start": "2026-11-01",
       "late_join": false,
       "target": 3517.0,
       "pct": 64.97014500995166,
       "pct_p4p": 18.074398249452955,
-      "ch_base": 2343.0,
-      "ch_add": -58.0,
+      "ch_base": 2308.0,
+      "ch_add": -23.0,
       "data_ds": "2026-11-03",
       "day_base_ds": "2026-11-02",
       "day_add": -7.0
@@ -797,6 +809,7 @@
       "name": "李彬",
       "value": 6965.0,
       "base_ds": "2026-10-18",
+      "group_start": "",
       "late_join": false,
       "target": 7954.0,
       "pct": 87.56600452602464,
@@ -811,6 +824,7 @@
       "name": "邓晓东",
       "value": 7778.0,
       "base_ds": "2026-10-18",
+      "group_start": "",
       "late_join": false,
       "target": 9803.0,
       "pct": 79.34305824747526,
@@ -825,6 +839,7 @@
       "name": "李怡萍",
       "value": 6903.0,
       "base_ds": "2026-10-18",
+      "group_start": "",
       "late_join": false,
       "target": 10360.0,
       "pct": 66.63127413127413,
@@ -839,6 +854,7 @@
       "name": "高国权",
       "value": 6596.0,
       "base_ds": "2026-10-18",
+      "group_start": "",
       "late_join": false,
       "target": 8165.0,
       "pct": 80.78383343539498,
@@ -853,6 +869,7 @@
       "name": "汤子豪",
       "value": 5144.0,
       "base_ds": "2026-10-18",
+      "group_start": "",
       "late_join": false,
       "target": 7615.0,
       "pct": 67.55088640840447,
@@ -867,6 +884,7 @@
       "name": "谢承杰",
       "value": 5618.0,
       "base_ds": "2026-10-18",
+      "group_start": "",
       "late_join": false,
       "target": 7295.0,
       "pct": 77.01165181631254,
@@ -881,6 +899,7 @@
       "name": "夏锐",
       "value": 9628.0,
       "base_ds": "2026-10-18",
+      "group_start": "",
       "late_join": false,
       "target": 14228.0,
       "pct": 67.669384312623,
@@ -895,6 +914,7 @@
       "name": "漆螯童",
       "value": 10509.0,
       "base_ds": "2026-10-18",
+      "group_start": "",
       "late_join": false,
       "target": 12404.0,
       "pct": 84.72267010641728,
@@ -909,6 +929,7 @@
       "name": "王子豪",
       "value": 11515.0,
       "base_ds": "2026-10-18",
+      "group_start": "",
       "late_join": false,
       "target": 15553.0,
       "pct": 74.03716324824792,
@@ -923,6 +944,7 @@
       "name": "王凡",
       "value": 8219.0,
       "base_ds": "2026-10-18",
+      "group_start": "",
       "late_join": false,
       "target": 9360.0,
       "pct": 87.80982905982906,
@@ -937,6 +959,7 @@
       "name": "陈建国",
       "value": 8741.0,
       "base_ds": "2026-10-18",
+      "group_start": "",
       "late_join": false,
       "target": 11133.0,
       "pct": 78.51432677625078,
@@ -951,6 +974,7 @@
       "name": "蒋汶桃",
       "value": 9428.0,
       "base_ds": "2026-10-18",
+      "group_start": "",
       "late_join": false,
       "target": 12370.0,
       "pct": 76.21665319320938,
@@ -1519,7 +1543,10 @@
           "汤子豪",
           "夏锐",
           "李怡萍"
-        ]
+        ],
+        "start": "",
+        "label": "",
+        "base_ds": ""
       },
       {
         "key": "wind",
@@ -1536,7 +1563,10 @@
           "李金城",
           "张伟志",
           "郭龙耀"
-        ]
+        ],
+        "start": "2026-11-01",
+        "label": "11.1–11.30 新增",
+        "base_ds": "2026-10-31"
       }
     ],
     "skip": [
@@ -5950,7 +5980,7 @@
   "awb": {
     "title": "AWB 季度奖励与业绩榜",
     "note": "源：桌面「AWB盘点.xlsx」· 季度奖励（季度激励）+ 个人业绩（按月工作表） · 表更新 2026-11-02 12:23 · 业绩表 11月个人业绩榜",
-    "update": "2026-11-05",
+    "update": "2026-11-06",
     "source": "AWB盘点.xlsx",
     "source_mtime": "2026-11-02 12:23",
     "awards": [
@@ -6005,130 +6035,130 @@
   "source_note": "阿里一拍档·数据参谋，浏览器只读采集",
   "active_quarter": "20264",
   "daily_add": {
-    "title": "每日新增（对比 2026-11-04 快照）",
-    "label": "对比 2026-11-04 快照",
-    "xb_recv": 5312062.29,
+    "title": "每日新增（对比 2026-11-05 快照）",
+    "label": "对比 2026-11-05 快照",
+    "xb_recv": 0.0,
     "active_3w": 0.0,
     "customers": 0.0
   },
   "persons_daily_add": {
     "李彬": {
-      "xb_recv": 1372227.73,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "王凡": {
-      "xb_recv": 679959.54,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "陈建国": {
-      "xb_recv": 890070.02,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "蒋汶桃": {
-      "xb_recv": 328089.53,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "王子豪": {
-      "xb_recv": 216607.49,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "夏锐": {
-      "xb_recv": 257607.78,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "漆螯童": {
-      "xb_recv": 353697.76,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "汤子豪": {
-      "xb_recv": 400996.8,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "高国权": {
-      "xb_recv": 104891.65,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "谢承杰": {
-      "xb_recv": 137280.31,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "李怡萍": {
-      "xb_recv": 98497.24,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "邓晓东": {
-      "xb_recv": 89878.36,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "何尧玲": {
-      "xb_recv": 57144.4,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "梁诗琪": {
-      "xb_recv": 15326.85,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "罗金填": {
-      "xb_recv": 30299.26,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "刘蓝琳": {
-      "xb_recv": 38346.33,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "张伟志": {
-      "xb_recv": 27054.64,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "程碧瑶": {
-      "xb_recv": 12145.96,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "王金国": {
-      "xb_recv": 13852.53,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "李金城": {
-      "xb_recv": 4018.5,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "牛群": {
-      "xb_recv": 15368.72,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "郭龙耀": {
-      "xb_recv": 4024.44,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "舒媛丹": {
-      "xb_recv": 4552.05,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     },
     "王钢": {
-      "xb_recv": 2314.32,
+      "xb_recv": 0.0,
       "active_3w": 0.0,
       "no_base": false
     }
