@@ -1,7 +1,7 @@
 {
   "month": "2026-11",
   "period": "MONTH",
-  "update_time": "2026-11-06 08:16",
+  "update_time": "2026-11-06 08:41",
   "source_file": "数据罗盘（拍档系统）·客户明细TOP20",
   "scope": "TOP20（按信保实收GMV降序，财年口径）",
   "sales": [
@@ -9,15 +9,15 @@
       "name": "李彬",
       "role": "销售",
       "month_target": 18644326.0,
-      "gmv_month": 2446026.74,
-      "share_pct": 13.12,
+      "gmv_month": 2812270.9,
+      "share_pct": 15.08,
       "customers": [
         {
           "id": "413443",
           "name": "深圳市福瑞诺科技有限公司",
-          "gmv_month": 1283274.07,
+          "gmv_month": 1339194.93,
           "gmv_quarter": 2457413.55,
-          "share_pct": 6.88
+          "share_pct": 7.18
         },
         {
           "id": "178171",
@@ -27,11 +27,11 @@
           "share_pct": 5.69
         },
         {
-          "id": "364379",
-          "name": "深圳蓝丰电子有限公司",
-          "gmv_month": 101591.5,
-          "gmv_quarter": 1859399.16,
-          "share_pct": 0.54
+          "id": "649773",
+          "name": "广东德星微电子有限公司",
+          "gmv_month": 411914.8,
+          "gmv_quarter": 3213215.01,
+          "share_pct": 2.21
         }
       ]
     },
@@ -39,8 +39,8 @@
       "name": "王凡",
       "role": "销售",
       "month_target": 10075003.0,
-      "gmv_month": 1287818.55,
-      "share_pct": 12.78,
+      "gmv_month": 1577204.89,
+      "share_pct": 15.65,
       "customers": [
         {
           "id": "44403",
@@ -50,18 +50,18 @@
           "share_pct": 4.91
         },
         {
-          "id": "507920",
-          "name": "东莞微图科技有限公司",
-          "gmv_month": 312969.0,
-          "gmv_quarter": null,
-          "share_pct": 3.11
-        },
-        {
           "id": "172087",
           "name": "深圳微图科技有限公司",
-          "gmv_month": 209177.8,
+          "gmv_month": 359204.3,
           "gmv_quarter": null,
-          "share_pct": 2.08
+          "share_pct": 3.57
+        },
+        {
+          "id": "507920",
+          "name": "东莞微图科技有限公司",
+          "gmv_month": 316021.0,
+          "gmv_quarter": null,
+          "share_pct": 3.14
         },
         {
           "id": "486833",
@@ -73,9 +73,16 @@
         {
           "id": "412335",
           "name": "利辛实业(深圳)有限公司",
-          "gmv_month": 123206.5,
+          "gmv_month": 145177.34,
           "gmv_quarter": 1839446.89,
-          "share_pct": 1.22
+          "share_pct": 1.44
+        },
+        {
+          "id": "131296",
+          "name": "深圳市星创力实业有限公司",
+          "gmv_month": 114337.0,
+          "gmv_quarter": null,
+          "share_pct": 1.13
         }
       ]
     },
@@ -83,9 +90,16 @@
       "name": "陈建国",
       "role": "销售",
       "month_target": 7786761.0,
-      "gmv_month": 757701.47,
-      "share_pct": 9.73,
+      "gmv_month": 891892.92,
+      "share_pct": 11.45,
       "customers": [
+        {
+          "id": "189534",
+          "name": "深圳市鸿泰门窗有限公司",
+          "gmv_month": 318536.65,
+          "gmv_quarter": 1940948.11,
+          "share_pct": 4.09
+        },
         {
           "id": "811642",
           "name": "江门市绿靖阳光电有限公司",
@@ -94,16 +108,9 @@
           "share_pct": 3.39
         },
         {
-          "id": "189534",
-          "name": "深圳市鸿泰门窗有限公司",
-          "gmv_month": 184702.2,
-          "gmv_quarter": 1940948.11,
-          "share_pct": 2.37
-        },
-        {
           "id": "177882",
           "name": "深圳市精创智能实业有限公司",
-          "gmv_month": 165720.0,
+          "gmv_month": 166077.0,
           "gmv_quarter": null,
           "share_pct": 2.13
         },
@@ -117,55 +124,25 @@
       ]
     },
     {
-      "name": "王子豪",
-      "role": "销售",
-      "month_target": 4912086.0,
-      "gmv_month": 430727.35,
-      "share_pct": 8.77,
-      "customers": [
-        {
-          "id": "449258",
-          "name": "深圳市好盈科技股份有限公司",
-          "gmv_month": 231000.0,
-          "gmv_quarter": null,
-          "share_pct": 4.7
-        },
-        {
-          "id": "296977",
-          "name": "深圳市蓝畅科技有限公司",
-          "gmv_month": 102408.0,
-          "gmv_quarter": null,
-          "share_pct": 2.08
-        },
-        {
-          "id": "309631",
-          "name": "深圳市睿显熙电子有限公司",
-          "gmv_month": 97319.35,
-          "gmv_quarter": null,
-          "share_pct": 1.98
-        }
-      ]
-    },
-    {
       "name": "蒋汶桃",
       "role": "销售",
       "month_target": 7931681.0,
-      "gmv_month": 369953.58,
-      "share_pct": 4.66,
+      "gmv_month": 382433.08,
+      "share_pct": 4.82,
       "customers": [
         {
           "id": "416059",
           "name": "深圳市立泰能源科技有限公司",
-          "gmv_month": 238103.13,
+          "gmv_month": 242462.53,
           "gmv_quarter": 2304988.2,
-          "share_pct": 3.0
+          "share_pct": 3.06
         },
         {
           "id": "412882",
           "name": "深圳市嘉易通电子有限公司",
-          "gmv_month": 131850.45,
+          "gmv_month": 139970.55,
           "gmv_quarter": 1513021.07,
-          "share_pct": 1.66
+          "share_pct": 1.76
         }
       ]
     },
@@ -189,6 +166,54 @@
           "gmv_month": 118020.12,
           "gmv_quarter": null,
           "share_pct": 3.17
+        }
+      ]
+    },
+    {
+      "name": "王子豪",
+      "role": "销售",
+      "month_target": 4912086.0,
+      "gmv_month": 231000.0,
+      "share_pct": 4.7,
+      "customers": [
+        {
+          "id": "449258",
+          "name": "深圳市好盈科技股份有限公司",
+          "gmv_month": 231000.0,
+          "gmv_quarter": null,
+          "share_pct": 4.7
+        }
+      ]
+    },
+    {
+      "name": "汤子豪",
+      "role": "销售",
+      "month_target": 5067536.0,
+      "gmv_month": 113856.01,
+      "share_pct": 2.25,
+      "customers": [
+        {
+          "id": "136278",
+          "name": "深圳市宝佳利运动器材有限公司",
+          "gmv_month": 113856.01,
+          "gmv_quarter": null,
+          "share_pct": 2.25
+        }
+      ]
+    },
+    {
+      "name": "漆螯童",
+      "role": "销售",
+      "month_target": 5127545.0,
+      "gmv_month": 109017.4,
+      "share_pct": 2.13,
+      "customers": [
+        {
+          "id": "361421",
+          "name": "深圳市金铂豪科技有限公司",
+          "gmv_month": 109017.4,
+          "gmv_quarter": null,
+          "share_pct": 2.13
         }
       ]
     }
