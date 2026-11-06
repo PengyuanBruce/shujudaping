@@ -1,7 +1,7 @@
 {
   "month": "2026-11",
   "quarter": "FY27Q3",
-  "update_time": "2026-11-06 08:41",
+  "update_time": "2026-11-06 09:00",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 13793934.75,
@@ -12,7 +12,7 @@
     "quarter_pct": 34.85,
     "month_gap": -64982847.0,
     "quarter_gap": -160880743.0,
-    "month_val_acp": 3568372.22,
+    "month_val_acp": 3593763.55,
     "active_clients": 384.0,
     "active_clients_yoy": 992.0,
     "hit_products": 126483.0,
@@ -20,10 +20,10 @@
     "hit_pct": 72.0,
     "caliber_note": "公司行=信保实收（数据罗盘首页 GMV实收卡）+ 目标（首页绩效目标卡）；个人行=信保实收（业务目标▸信保▸拍档销售）÷ 个人目标（激励▸激励进展▸FY27-11月激励进展▸小二激励）",
     "acp_month_target": 15741947.04,
-    "quarter_val_acp": 15395345.8,
+    "quarter_val_acp": 15445166.19,
     "quarter_acp_target": 44573553.74,
-    "acp_month_pct": 22.7,
-    "acp_quarter_pct": 34.5,
+    "acp_month_pct": 22.8,
+    "acp_quarter_pct": 34.7,
     "acp_caliber": "激励▸业务目标▸ACP▸拍档▸总实收（2026-11）",
     "hit_p4p_products": 34388.0,
     "hit_p4p_pct": 27.2
@@ -591,9 +591,9 @@
         },
         {
           "label": "11月",
-          "val": 3568372.22,
+          "val": 3593763.55,
           "target": 15741947.04,
-          "pct": 22.7
+          "pct": 22.8
         }
       ]
     }
