@@ -474,18 +474,19 @@
       overflow: visible; text-overflow: clip; line-height: 1.35;
     }
     /* ── 第三块：拍档客服（用户 2026-11-03）──
-       维度同两军团但**没有「10.19–11.30 新增」**；2026-11-03 又要了 3 个完成率
-       （优爆品 / 市场热卖 / 优爆品推P），每格自带细进度条 → 一行 7 个指标格，
-       半宽放不下，所以客服块**整宽单列**（12 行，不再拆两列）。
+       维度同两军团但**没有「10.19–11.30 新增」**；每个完成率格自带细进度条
+        → 2026-11-07 去掉「优爆品推P完成率」后一行 6 个指标格，
+        半宽仍放不下，所以客服块**整宽单列**（12 行，不再拆两列）。
        块体单独用 .kf-* 类，不复用 .ch-panel —— 军团那几条列宽规则会把它压成 6 列。 */
     #sec-4b .kf-block { margin-top: 22px; }
     #sec-4b .kf-col { min-width: 0; }
     #sec-4b .kf-col .rank-row { grid-template-columns: 24px 64px minmax(0, 1fr);
       gap: 10px; padding: 7px 0; }
-    #sec-4b .kf-col .rank-row .rowline {
-      grid-template-columns: 56px 100px 50px 66px repeat(3, minmax(96px, 1fr));
-      gap: 0 10px; font-size: 12px;
-    }
+     #sec-4b .kf-col .rank-row .rowline {
+       /* 2026-11-07 起 7 格 → 6 格（去掉「优爆品推P完成率」），两个完成率格均分剩余宽度 */
+       grid-template-columns: 56px 100px 50px 66px repeat(2, minmax(120px, 1fr));
+       gap: 0 10px; font-size: 12px;
+     }
     #sec-4b .kf-col .rank-row.rank-head .rowline { white-space: normal; }
     #sec-4b .kf-col .rank-row.rank-head .rowline > span {
       overflow: visible; text-overflow: clip; line-height: 1.35;
@@ -497,8 +498,8 @@
       background: rgba(255, 255, 255, 0.10); overflow: hidden; }
     #sec-4b .kf-col .rbar > i { display: block; height: 100%; border-radius: 2px; }
      @media (max-width: 900px) {
-       /* 客服 7 格合计 ≈ 704（含序号/姓名/间隙）→ 页面容器 < 704 就改换行，
-          三个完成率格固定 78px 保持「数值 + 细条」竖排，不被压成一行两个字 */
+        /* 客服 6 格合计 ≈ 600（含序号/姓名/间隙）→ 页面容器 < 600 就改换行，
+           完成率格固定 78px 保持「数值 + 细条」竖排，不被压成一行两个字 */
       #sec-4b .kf-col .rank-row { grid-template-columns: 22px 52px minmax(0, 1fr); }
       #sec-4b .kf-col .rank-row .rowline { display: flex; flex-wrap: wrap;
         justify-content: flex-end; gap: 4px 10px; }
@@ -782,7 +783,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1794026345';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1794027030';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1553,9 +1554,8 @@
        const kfTip = (kfMeta.data_ds && kfMeta.day_base_ds)
          ? '每日新增 = ' + kfMeta.data_ds + ' 的优爆品数 − ' + kfMeta.day_base_ds + ' 的优爆品数'
          : '缺上一数据日快照（客服表数据日 ' + (kfMeta.data_ds || '—') + '）→ 显示 --';
-       // 2026-11-03 用户加的两个完成率还没接上数据源 → 显示 --，条不画（不编数字）
-       const kfTipHot = '市场热卖完成率 = 当季度市场热卖目标完成率（数据源待接入，缺值显示 --）';
-       const kfTipP4p = '优爆品推P完成率 = 当季度推P目标完成率（数据源待接入，缺值显示 --）';
+        // 2026-11-07 用户：客服块去掉「优爆品推P完成率」（长期无源，一直是 --）
+        const kfTipHot = '市场热卖完成率 = 当季度市场热卖目标完成率（缺值显示 --）';
        // 完成率格 = 百分比 + 细进度条；无值只留空槽，不画条
        const kfRate = function (v) {
          const n = num(v);
@@ -1568,14 +1568,13 @@
          return '<span class="rowline"><span>' + fmt(r.value, 0) + '</span>' +
            '<span>' + fmt(r.target, 0) + '</span><span>' + fmtPct(r.pct_p4p, 1) + '</span>' +
            '<b class="' + deltaTextClass(r.day_add) + '">' + fmtSigned(r.day_add) + '</b>' +
-           kfRate(r.pct) + kfRate(r.pct_hot) + kfRate(r.pct_p4p_done) + '</span>';
+            kfRate(r.pct) + kfRate(r.pct_hot) + '</span>';
        };
        const headRow = '<div class="rank-row rank-head"><span>#</span><span>姓名</span>' +
          '<span class="rowline"><span>优爆品数</span><span>当季度累计目标</span><span>推P率</span>' +
          '<span title="' + esc(kfTip) + '">每日新增</span>' +
          '<span>优爆品完成率</span>' +
-         '<span title="' + esc(kfTipHot) + '">市场热卖完成率</span>' +
-         '<span title="' + esc(kfTipP4p) + '">优爆品推P完成率</span></span></div>';
+          '<span title="' + esc(kfTipHot) + '">市场热卖完成率</span></span></div>';
        const body = '<div class="kf-col">' + headRow +
          list.map(function (r, i) {
            return '<div class="rank-row"><span class="text-dim">' + (i + 1) + '</span>' +
