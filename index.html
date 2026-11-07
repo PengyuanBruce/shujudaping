@@ -743,21 +743,6 @@
     </div>
   </section>
 
-  <!-- Ⅶ 销售指标拆解 -->
-  <section id="sec-7">
-    <div class="sec-head"><span class="sec-no">Ⅶ</span><h2>销售指标拆解</h2>
-      <span class="note">客户级 GMV 明细 · 口令分级：管理员看全部 · 销售仅本人客户明细</span></div>
-    <div class="card">
-      <div class="gate" id="gate-box">
-        <input id="gate-input" type="password" placeholder="输入口令查看客户级明细" autocomplete="off">
-        <button class="btn" id="gate-btn" type="button">进入</button>
-        <button class="btn ghost" id="clear-btn" type="button">清除已保存状态</button>
-        <span class="msg" id="gate-msg"></span>
-      </div>
-      <div class="custwrap" id="breakdown-content" style="display:none"></div>
-    </div>
-  </section>
-
     <!-- Ⅸ 9610 打标订单（2026-10-12 从原「9610 / AWB 专题」拆成独立板块） -->
     <section id="sec-9">
       <div class="sec-head"><span class="sec-no">Ⅸ</span><h2 id="topic-title">9610 打标订单</h2>
@@ -773,7 +758,7 @@
 
 <footer>
     <div>数据每日更新 · 若显示旧数字请按 <code>Ctrl + Shift + R</code> 强制刷新（跳过 CDN 缓存）</div>
-    <div>数据源：<code>data_cur.json</code>（当月实时）· <code>data_prev.json</code>（上月固化，只读）· <code>data_breakdown.json</code>（指标拆解）</div>
+    <div>数据源：<code>data_cur.json</code>（当月实时）· <code>data_prev.json</code>（上月固化，只读）</div>
     <div id="footer-status">—</div>
   </footer>
 </div>
@@ -783,19 +768,12 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1794027030';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1794028161';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
-  // 单一共享口令（管理员口径：可查看全部销售明细）。
-  // 如需按人隔离视图，在这里追加 '姓名': '口令' 行即可，前端会自动只显示该销售。
-  const PASSWORDS = {
-    admin: 'pengyuan'
-  };
-  const ADMIN = 'admin';
-  const LS_KEY = 'dash_role_v1';
-
-  const STATE = { data: null, month: 'cur', role: null, breakdown: null, loadedAt: null };
+  // 2026-11-07 用户要求删掉 Ⅶ「销售指标拆解」整块 → 口令门 / 客户级明细一并移除
+  const STATE = { data: null, month: 'cur', loadedAt: null };
 
   // ── 通用工具 ──
   const $ = (id) => document.getElementById(id);
@@ -943,10 +921,6 @@
       STATE.loadedAt = new Date();
     }
     return STATE.data;
-  }
-  async function ensureBreakdown() {
-    if (!STATE.breakdown) STATE.breakdown = await loadJson('data_breakdown.json');
-    return STATE.breakdown;
   }
 
   // ── 月份切换 ──
@@ -1134,79 +1108,6 @@
       : '<div class="empty">暂无环比数据（需策略中心当月明细的 本季度/上季度 GMV）</div>';
     $('yoy-down').innerHTML = down.length ? down.map(line).join('')
       : '<div class="empty">暂无环比数据</div>';
-  }
-
-  // ── Ⅵ 口径分级 ──
-  function hasPlaceholderPassword() {
-    return Object.keys(PASSWORDS).some((k) => String(PASSWORDS[k]).indexOf('【') >= 0);
-  }
-  function setRole(role) {
-    STATE.role = role;
-    try { localStorage.setItem(LS_KEY, role); } catch (e) { /* 隐私模式忽略 */ }
-  }
-  function getRole() {
-    if (STATE.role) return STATE.role;
-    try { return localStorage.getItem(LS_KEY); } catch (e) { return null; }
-  }
-  async function tryUnlock(input) {
-    const val = String(input || '').trim();
-    const msg = $('gate-msg');
-    if (!val) { msg.textContent = '请输入口令'; return; }
-    const names = Object.keys(PASSWORDS);
-    if (val === PASSWORDS.admin) {
-      setRole(ADMIN);
-    } else {
-      const hit = names.find((n) => n !== 'admin' && PASSWORDS[n] === val);
-      if (!hit) { msg.textContent = '口令错误'; return; }
-      setRole(hit);
-    }
-    msg.textContent = '';
-    await ensureBreakdown();
-    showContent();
-  }
-  function showContent() {
-    const role = getRole();
-    const box = $('breakdown-content');
-    const bd = STATE.breakdown;
-    if (!bd || !bd.sales || !bd.sales.length) {
-      box.style.display = 'block';
-      box.innerHTML = '<div class="empty">指标拆解数据未加载（需先运行 build_breakdown.py 推送 data_breakdown.json）</div>';
-      return;
-    }
-    const isAdmin = role === ADMIN;
-    const list = isAdmin ? bd.sales : bd.sales.filter((s) => s.name === role);
-    const per = periodLabel(bd.period);
-    const monthly = bd.period === 'MONTH';
-    const head = '<div class="rowline" style="margin-bottom:8px"><span class="text-dim">客户明细期间：' + per +
-      (monthly ? '' : '（与月度目标不是同一期间，故不计算占指标）') + '</span></div>';
-    box.style.display = 'block';
-    box.innerHTML = head + (isAdmin ? '' : '<div class="rowline" style="margin-bottom:8px"><span class="text-dim">个人视图：仅显示本人客户明细</span></div>') +
-      list.map((s) => {
-        const cust = (s.customers || []).map((c) =>
-          '<div class="cust-row"><span><span class="idn">' + esc(c.id) + '</span>' + esc(c.name) + '</span>' +
-          '<span><b>' + fmt(c.gmv_month) + '</b>' +
-          (c.share_pct == null ? '' : '<small class="text-dim"> 占指标 ' + fmtPct(c.share_pct) + '</small>') +
-          '</span></div>').join('');
-        const cmp = monthly
-          ? ' / 目标 ' + fmt(s.month_target) +
-            ' <b class="' + pctTextClass(s.share_pct) + '">' + fmtPct(s.share_pct) + '</b>'
-          : ' <small class="text-dim">（' + per + '累计）</small>';
-        return '<div class="card sales-card" style="margin-bottom:12px">' +
-          '<div class="rowline" style="margin:0 0 8px"><span><b>' + esc(s.name) + '</b> <small class="text-dim">' + esc(s.role || '') + '</small></span>' +
-          '<span>' + per + ' <b>' + fmt(s.gmv_month) + '</b>' + cmp + '</span></div>' +
-          (cust || '<div class="empty">无客户明细</div>') + '</div>';
-      }).join('') +
-      (list.length ? '' : '<div class="empty">该口令名下没有客户明细</div>');
-    if (!isAdmin) $('gate-box').style.display = 'none';
-  }
-  function resetGate() {
-    STATE.role = null;
-    try { localStorage.removeItem(LS_KEY); } catch (e) { /* ignore */ }
-    $('breakdown-content').style.display = 'none';
-    $('breakdown-content').innerHTML = '';
-    $('gate-box').style.display = 'flex';
-    $('gate-input').value = '';
-    $('gate-msg').textContent = '已清除本机保存的登录状态';
   }
 
   // ── 标签动态化（避免硬编码月份）──
@@ -1943,9 +1844,6 @@
     const warns = d.warnings || [];
     if (warns.length) banner('<b>解析告警（已按规则沿用上次数据）</b><ul><li>' +
       warns.map(esc).join('</li><li>') + '</li></ul>', false);
-    if (hasPlaceholderPassword()) {
-      banner((warns.length ? '' : '') + '<b>口令尚未配置</b>：index.html 里的 PASSWORDS 仍是占位符，请填入口令后再对外发布。', true);
-    }
     $('footer-status').textContent = '本次渲染 ' + new Date().toLocaleString('zh-CN') +
       (STATE.month === 'prev' ? ' · 正在查看上月固化数据（只读）' : '');
   }
@@ -1960,15 +1858,10 @@
     }
     banner('');
     renderAll(d);
-    const role = getRole();
-    if (role) { await ensureBreakdown(); showContent(); }
   }
 
   // ── 事件绑定 ──
   $('refresh-btn').addEventListener('click', () => { STATE.data = null; boot(STATE.month); });
-  $('gate-btn').addEventListener('click', () => tryUnlock($('gate-input').value));
-  $('gate-input').addEventListener('keydown', (e) => { if (e.key === 'Enter') tryUnlock($('gate-input').value); });
-  $('clear-btn').addEventListener('click', resetGate);
 
   renderTabs();
   boot('cur');
