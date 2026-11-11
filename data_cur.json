@@ -6004,10 +6004,10 @@
   },
   "awb": {
     "title": "AWB 季度奖励与业绩榜",
-    "note": "源：桌面「AWB盘点.xlsx」· 季度奖励（季度激励）+ 个人业绩（按月工作表） · 表更新 2026-11-06 09:58 · 业绩表 11月个人业绩榜",
-    "update": "2026-11-10",
+    "note": "源：桌面「AWB盘点.xlsx」· 季度奖励（季度激励）+ 个人业绩（按月工作表） · 表更新 2026-11-11 20:40 · 业绩表 11月个人业绩榜",
+    "update": "2026-11-11",
     "source": "AWB盘点.xlsx",
-    "source_mtime": "2026-11-06 09:58",
+    "source_mtime": "2026-11-11 20:40",
     "awards": [
       {
         "label": "季度首单",
@@ -6050,30 +6050,40 @@
       "note": "",
       "rows": [
         {
+          "name": "漆螯童",
+          "total": 20000.0,
+          "off_roster": false,
+          "rank": 1
+        },
+        {
+          "name": "李怡萍",
+          "total": 2000.0,
+          "off_roster": false,
+          "rank": 2
+        },
+        {
           "name": "李金城",
           "total": 2000.0,
           "off_roster": false,
-          "rank": 1
+          "rank": 2
         },
         {
           "name": "高国权",
           "total": 2000.0,
           "off_roster": false,
-          "rank": 1
+          "rank": 2
         }
       ],
-      "count": 2,
-      "total": 4000.0,
+      "count": 4,
+      "total": 26000.0,
       "roster": 23,
       "no_perf": [
         "何尧玲",
         "夏锐",
         "张伟志",
         "李彬",
-        "李怡萍",
         "梁诗琪",
         "汤子豪",
-        "漆螯童",
         "牛群",
         "王凡",
         "王子豪",
@@ -6088,7 +6098,7 @@
         "陈建国",
         "陈苑英"
       ],
-      "no_perf_count": 21
+      "no_perf_count": 19
     }
   },
   "month_no": "11",
