@@ -1,7 +1,7 @@
 {
   "month": "2026-11",
   "quarter": "FY27Q3",
-  "update_time": "2026-11-12 20:06",
+  "update_time": "2026-11-12 20:13",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 25120178.13,
@@ -327,11 +327,11 @@
       "incentive_ok": false,
       "active_clients": 1.0,
       "active_clients_yoy": 26.0,
-      "hit_products": null,
+      "hit_products": 3807.0,
       "time_pct": 40.0,
       "incentive_quarter_target": 2062172.0,
-      "hit_target": null,
-      "hit_pct": null
+      "hit_target": 4677.0,
+      "hit_pct": 81.4
     },
     {
       "name": "梁诗琪",
@@ -411,11 +411,11 @@
       "incentive_ok": false,
       "active_clients": 0.0,
       "active_clients_yoy": 4.0,
-      "hit_products": null,
+      "hit_products": 1322.0,
       "time_pct": 40.0,
       "incentive_quarter_target": 898973.0,
-      "hit_target": null,
-      "hit_pct": null
+      "hit_target": 2059.0,
+      "hit_pct": 64.2
     },
     {
       "name": "王金国",
@@ -453,11 +453,11 @@
       "incentive_ok": false,
       "active_clients": 0.0,
       "active_clients_yoy": 7.0,
-      "hit_products": null,
+      "hit_products": 1308.0,
       "time_pct": 40.0,
       "incentive_quarter_target": 978465.0,
-      "hit_target": null,
-      "hit_pct": null
+      "hit_target": 2726.0,
+      "hit_pct": 48.0
     },
     {
       "name": "牛群",
@@ -495,11 +495,11 @@
       "incentive_ok": false,
       "active_clients": 1.0,
       "active_clients_yoy": 4.0,
-      "hit_products": null,
+      "hit_products": 1152.0,
       "time_pct": 40.0,
       "incentive_quarter_target": 796545.0,
-      "hit_target": null,
-      "hit_pct": null
+      "hit_target": 2014.0,
+      "hit_pct": 57.2
     },
     {
       "name": "郭龙耀",
@@ -516,11 +516,11 @@
       "incentive_ok": false,
       "active_clients": 1.0,
       "active_clients_yoy": 3.0,
-      "hit_products": null,
+      "hit_products": 1025.0,
       "time_pct": 40.0,
       "incentive_quarter_target": 774727.0,
-      "hit_target": null,
-      "hit_pct": null
+      "hit_target": 2099.0,
+      "hit_pct": 48.8
     }
   ],
   "warnings": [],
@@ -647,13 +647,20 @@
       "target": null,
       "pct": null,
       "pct_p4p": null,
-      "ch_base": null,
-      "ch_since_base": null,
-      "ch_pre": null,
+      "ch_base": 1051.0,
+      "ch_since_base": -26.0,
+      "ch_pre": 592.0,
       "ch_add": null,
       "data_ds": "2026-11-10",
       "day_base_ds": "2026-11-09",
-      "day_add": null
+      "day_add": null,
+      "raw_value": 1025.0,
+      "raw_target": 2099.0,
+      "raw_pct": 48.832777513101476,
+      "raw_pct_p4p": 29.073170731707314,
+      "raw_ch_add": 566.0,
+      "raw_day_add": -16.0,
+      "no_stats": true
     },
     {
       "name": "张伟志",
@@ -664,13 +671,20 @@
       "target": null,
       "pct": null,
       "pct_p4p": null,
-      "ch_base": null,
-      "ch_since_base": null,
-      "ch_pre": null,
+      "ch_base": 3957.0,
+      "ch_since_base": -150.0,
+      "ch_pre": 9.0,
       "ch_add": null,
       "data_ds": "2026-11-10",
       "day_base_ds": "2026-11-09",
-      "day_add": null
+      "day_add": null,
+      "raw_value": 3807.0,
+      "raw_target": 4677.0,
+      "raw_pct": 81.39833226427197,
+      "raw_pct_p4p": 23.325453112687157,
+      "raw_ch_add": -141.0,
+      "raw_day_add": -9.0,
+      "no_stats": true
     },
     {
       "name": "王钢",
@@ -681,13 +695,20 @@
       "target": null,
       "pct": null,
       "pct_p4p": null,
-      "ch_base": null,
-      "ch_since_base": null,
-      "ch_pre": null,
+      "ch_base": 1149.0,
+      "ch_since_base": 3.0,
+      "ch_pre": 73.0,
       "ch_add": null,
       "data_ds": "2026-11-10",
       "day_base_ds": "2026-11-09",
-      "day_add": null
+      "day_add": null,
+      "raw_value": 1152.0,
+      "raw_target": 2014.0,
+      "raw_pct": 57.19960278053625,
+      "raw_pct_p4p": 13.020833333333334,
+      "raw_ch_add": 76.0,
+      "raw_day_add": 6.0,
+      "no_stats": true
     },
     {
       "name": "李金城",
@@ -698,13 +719,20 @@
       "target": null,
       "pct": null,
       "pct_p4p": null,
-      "ch_base": null,
-      "ch_since_base": null,
-      "ch_pre": null,
+      "ch_base": 1323.0,
+      "ch_since_base": -1.0,
+      "ch_pre": 329.0,
       "ch_add": null,
       "data_ds": "2026-11-10",
       "day_base_ds": "2026-11-09",
-      "day_add": null
+      "day_add": null,
+      "raw_value": 1322.0,
+      "raw_target": 2059.0,
+      "raw_pct": 64.20592520641087,
+      "raw_pct_p4p": 35.09833585476551,
+      "raw_ch_add": 328.0,
+      "raw_day_add": -8.0,
+      "no_stats": true
     },
     {
       "name": "舒媛丹",
@@ -715,13 +743,20 @@
       "target": null,
       "pct": null,
       "pct_p4p": null,
-      "ch_base": null,
-      "ch_since_base": null,
-      "ch_pre": null,
+      "ch_base": 1317.0,
+      "ch_since_base": -9.0,
+      "ch_pre": 39.0,
       "ch_add": null,
       "data_ds": "2026-11-10",
       "day_base_ds": "2026-11-09",
-      "day_add": null
+      "day_add": null,
+      "raw_value": 1308.0,
+      "raw_target": 2726.0,
+      "raw_pct": 47.98239178283199,
+      "raw_pct_p4p": 27.75229357798165,
+      "raw_ch_add": 30.0,
+      "raw_day_add": 12.0,
+      "no_stats": true
     },
     {
       "name": "梁诗琪",
