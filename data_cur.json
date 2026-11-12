@@ -1,7 +1,7 @@
 {
   "month": "2026-11",
   "quarter": "FY27Q3",
-  "update_time": "2026-11-12 20:13",
+  "update_time": "2026-11-12 20:16",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 25120178.13,
@@ -29,14 +29,14 @@
     "hit_p4p_pct": 29.5
   },
   "acp": {
-    "month_val": 4740529.19,
+    "month_val": 4724004.15,
     "month_target": null,
     "month_pct": null,
-    "quarter_val": 13968580.61,
+    "quarter_val": 13313751.27,
     "quarter_target": 40574060.03,
-    "quarter_pct": 34.43,
-    "month_gap": 4740529.0,
-    "quarter_gap": -26605479.0
+    "quarter_pct": 32.81,
+    "month_gap": 4724004.0,
+    "quarter_gap": -27260309.0
   },
   "persons": [
     {
@@ -334,27 +334,6 @@
       "hit_pct": 81.4
     },
     {
-      "name": "梁诗琪",
-      "role": "销售",
-      "month_val": 124557.54000000001,
-      "month_target": 689029.0,
-      "month_pct": 18.08,
-      "month_gap": -564471.0,
-      "quarter_val": 552514.04,
-      "quarter_target": 1189029.0,
-      "quarter_pct": 46.47,
-      "incentive_target": 689029.0,
-      "incentive_gap": -564471.0,
-      "incentive_ok": false,
-      "active_clients": 4.0,
-      "active_clients_yoy": 20.0,
-      "hit_products": 1849.0,
-      "time_pct": 37.0,
-      "incentive_quarter_target": 1189029.0,
-      "hit_target": 4011.0,
-      "hit_pct": 46.1
-    },
-    {
       "name": "罗金填",
       "role": "销售",
       "month_val": 154803.75,
@@ -537,21 +516,21 @@
       "points": [
         {
           "label": "9月",
-          "val": 81276359.44,
+          "val": 80818539.16,
           "target": 99434695.1,
-          "pct": 81.7
+          "pct": 81.3
         },
         {
           "label": "10月",
-          "val": 66570461.09,
+          "val": 66142504.59,
           "target": 69408281.47,
-          "pct": 95.9
+          "pct": 95.3
         },
         {
           "label": "11月",
-          "val": 22696025.64,
+          "val": 22571468.1,
           "target": 73671975.7,
-          "pct": 30.8
+          "pct": 30.6
         }
       ]
     },
@@ -757,23 +736,6 @@
       "raw_ch_add": 30.0,
       "raw_day_add": 12.0,
       "no_stats": true
-    },
-    {
-      "name": "梁诗琪",
-      "value": 1849.0,
-      "base_ds": "2026-11-08",
-      "group_start": "2026-11-08",
-      "late_join": false,
-      "target": 4011.0,
-      "pct": 46.098229867863374,
-      "pct_p4p": 32.28772309356409,
-      "ch_base": 1883.0,
-      "ch_since_base": -34.0,
-      "ch_pre": 641.0,
-      "ch_add": 607.0,
-      "data_ds": "2026-11-10",
-      "day_base_ds": "2026-11-09",
-      "day_add": -25.0
     },
     {
       "name": "王金国",
@@ -1072,7 +1034,6 @@
     "程碧瑶": 2294982.0,
     "何尧玲": 1223626.0,
     "王金国": 692397.0,
-    "梁诗琪": 1189029.0,
     "牛群": 1079078.0,
     "李金城": 898973.0,
     "舒媛丹": 978465.0,
@@ -1599,7 +1560,6 @@
         "members": [
           "王金国",
           "牛群",
-          "梁诗琪",
           "程碧瑶",
           "何尧玲",
           "王钢",
@@ -4464,13 +4424,13 @@
       },
       {
         "day": "2026-11-09",
-        "count": 14,
-        "persons": 9
+        "count": 13,
+        "persons": 8
       },
       {
         "day": "2026-11-10",
-        "count": 35,
-        "persons": 17
+        "count": 33,
+        "persons": 16
       }
     ],
     "persons": [
@@ -4662,16 +4622,6 @@
         "days": 3,
         "last": "2026-11-04 12:04:02",
         "visit_pct": 100.0,
-        "in_roster": true
-      },
-      {
-        "name": "梁诗琪",
-        "count": 3,
-        "with_visit": 2,
-        "customers": 3,
-        "days": 2,
-        "last": "2026-11-10 15:33:21",
-        "visit_pct": 66.67,
         "in_roster": true
       },
       {
@@ -6150,15 +6100,6 @@
       },
       {
         "day": "2026-11-09",
-        "time": "2026-11-09 14:59:18",
-        "name": "梁诗琪",
-        "post": "{销售专员}",
-        "customer": "深圳市森林兴五金制品有限公司",
-        "addr": "广东省深圳市宝安区宝安大道靠近航城智慧科技园",
-        "status": "录了拜访记录"
-      },
-      {
-        "day": "2026-11-09",
         "time": "2026-11-09 15:56:37",
         "name": "王凡",
         "post": "{销售专员,销售经理,销售主管}",
@@ -6327,24 +6268,6 @@
         "customer": "深圳市汉道印刷包装有限公司",
         "addr": "广东省深圳市宝安区共和工业路42号靠近宏鹏辉综合楼",
         "status": "录了拜访记录"
-      },
-      {
-        "day": "2026-11-10",
-        "time": "2026-11-10 10:29:57",
-        "name": "梁诗琪",
-        "post": "{销售专员}",
-        "customer": "深圳市珂尔科技有限公司",
-        "addr": "广东省深圳市宝安区新湖路靠近壹中心东座",
-        "status": "录了拜访记录"
-      },
-      {
-        "day": "2026-11-10",
-        "time": "2026-11-10 15:33:21",
-        "name": "梁诗琪",
-        "post": "{销售专员}",
-        "customer": "深圳市恪音科技有限公司",
-        "addr": "广东省深圳市宝安区航城大道靠近寓见酒店式公寓(易捷通新零售产业园店)",
-        "status": "打卡成功"
       },
       {
         "day": "2026-11-10",
@@ -6528,13 +6451,13 @@
       }
     ],
     "totals": {
-      "count": 200,
-      "persons": 25,
-      "customers": 193,
-      "with_visit": 168,
-      "visit_pct": 84.0,
+      "count": 197,
+      "persons": 24,
+      "customers": 190,
+      "with_visit": 166,
+      "visit_pct": 84.26,
       "days": 7,
-      "roster": 23,
+      "roster": 22,
       "idle": 1,
       "idle_names": [
         "汤子豪"
@@ -6628,13 +6551,12 @@
       ],
       "count": 5,
       "total": 28000.0,
-      "roster": 22,
+      "roster": 21,
       "no_perf": [
         "何尧玲",
         "夏锐",
         "张伟志",
         "李彬",
-        "梁诗琪",
         "汤子豪",
         "牛群",
         "王凡",
@@ -6648,7 +6570,7 @@
         "郭龙耀",
         "陈建国"
       ],
-      "no_perf_count": 17
+      "no_perf_count": 16
     }
   },
   "month_no": "11",
@@ -6729,11 +6651,6 @@
     },
     "张伟志": {
       "xb_recv": 32860.31,
-      "active_3w": 0.0,
-      "no_base": false
-    },
-    "梁诗琪": {
-      "xb_recv": 15465.83,
       "active_3w": 0.0,
       "no_base": false
     },
