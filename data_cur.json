@@ -1,7 +1,7 @@
 {
   "month": "2026-11",
   "quarter": "FY27Q3",
-  "update_time": "2026-11-16 08:27",
+  "update_time": "2026-11-16 10:34",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 29939322.68,
@@ -598,7 +598,10 @@
       "ch_add": -89.0,
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
-      "day_add": -3.0
+      "day_add": -3.0,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": -36.0
     },
     {
       "name": "罗金填",
@@ -615,7 +618,10 @@
       "ch_add": -32.0,
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
-      "day_add": -4.0
+      "day_add": -4.0,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": -28.0
     },
     {
       "name": "郭龙耀",
@@ -633,12 +639,16 @@
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
       "day_add": null,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": null,
       "raw_value": 933.0,
       "raw_target": 2099.0,
       "raw_pct": 44.449737970462124,
       "raw_pct_p4p": 30.760986066452308,
       "raw_ch_add": 474.0,
       "raw_day_add": 2.0,
+      "raw_week_add": -120.0,
       "no_stats": true
     },
     {
@@ -657,12 +667,16 @@
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
       "day_add": null,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": null,
       "raw_value": 3839.0,
       "raw_target": 4677.0,
       "raw_pct": 82.08253153731025,
       "raw_pct_p4p": 23.026829903620737,
       "raw_ch_add": -109.0,
       "raw_day_add": -6.0,
+      "raw_week_add": -112.0,
       "no_stats": true
     },
     {
@@ -681,12 +695,16 @@
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
       "day_add": null,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": null,
       "raw_value": 1138.0,
       "raw_target": 2014.0,
       "raw_pct": 56.504468718967225,
       "raw_pct_p4p": 11.511423550087873,
       "raw_ch_add": 62.0,
       "raw_day_add": -8.0,
+      "raw_week_add": -3.0,
       "no_stats": true
     },
     {
@@ -705,12 +723,16 @@
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
       "day_add": null,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": null,
       "raw_value": 1323.0,
       "raw_target": 2059.0,
       "raw_pct": 64.25449247207382,
       "raw_pct_p4p": 38.62433862433862,
       "raw_ch_add": 329.0,
       "raw_day_add": -1.0,
+      "raw_week_add": 1.0,
       "no_stats": true
     },
     {
@@ -729,12 +751,16 @@
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
       "day_add": null,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": null,
       "raw_value": 1319.0,
       "raw_target": 2726.0,
       "raw_pct": 48.38591342626559,
       "raw_pct_p4p": 23.12357846853677,
       "raw_ch_add": 41.0,
       "raw_day_add": 2.0,
+      "raw_week_add": 0.0,
       "no_stats": true
     },
     {
@@ -752,7 +778,10 @@
       "ch_add": -59.0,
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
-      "day_add": -12.0
+      "day_add": -12.0,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": 24.0
     },
     {
       "name": "程碧瑶",
@@ -769,7 +798,10 @@
       "ch_add": 36.0,
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
-      "day_add": 4.0
+      "day_add": 4.0,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": -2.0
     },
     {
       "name": "何尧玲",
@@ -786,7 +818,10 @@
       "ch_add": 74.0,
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
-      "day_add": -2.0
+      "day_add": -2.0,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": 160.0
     },
     {
       "name": "李彬",
@@ -803,7 +838,10 @@
       "ch_add": 236.0,
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
-      "day_add": -2.0
+      "day_add": -2.0,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": 474.0
     },
     {
       "name": "邓晓东",
@@ -820,7 +858,10 @@
       "ch_add": -86.0,
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
-      "day_add": -29.0
+      "day_add": -29.0,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": 168.0
     },
     {
       "name": "李怡萍",
@@ -837,7 +878,10 @@
       "ch_add": -81.0,
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
-      "day_add": -13.0
+      "day_add": -13.0,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": -61.0
     },
     {
       "name": "高国权",
@@ -854,7 +898,10 @@
       "ch_add": -72.0,
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
-      "day_add": 14.0
+      "day_add": 14.0,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": -12.0
     },
     {
       "name": "汤子豪",
@@ -871,7 +918,10 @@
       "ch_add": -114.0,
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
-      "day_add": -5.0
+      "day_add": -5.0,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": -27.0
     },
     {
       "name": "谢承杰",
@@ -888,7 +938,10 @@
       "ch_add": 45.0,
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
-      "day_add": 27.0
+      "day_add": 27.0,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": 78.0
     },
     {
       "name": "夏锐",
@@ -905,7 +958,10 @@
       "ch_add": -661.0,
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
-      "day_add": -60.0
+      "day_add": -60.0,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": 60.0
     },
     {
       "name": "漆螯童",
@@ -922,7 +978,10 @@
       "ch_add": 128.0,
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
-      "day_add": 10.0
+      "day_add": 10.0,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": 20.0
     },
     {
       "name": "王子豪",
@@ -939,7 +998,10 @@
       "ch_add": 248.0,
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
-      "day_add": 22.0
+      "day_add": 22.0,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": 133.0
     },
     {
       "name": "王凡",
@@ -956,7 +1018,10 @@
       "ch_add": 532.0,
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
-      "day_add": 18.0
+      "day_add": 18.0,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": -432.0
     },
     {
       "name": "陈建国",
@@ -973,7 +1038,10 @@
       "ch_add": -111.0,
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
-      "day_add": -23.0
+      "day_add": -23.0,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": -183.0
     },
     {
       "name": "蒋汶桃",
@@ -990,7 +1058,10 @@
       "ch_add": -907.0,
       "data_ds": "2026-11-14",
       "day_base_ds": "2026-11-13",
-      "day_add": -39.0
+      "day_add": -39.0,
+      "week_data_ds": "2026-11-13",
+      "week_base_ds": "2026-11-08",
+      "week_add": 23.0
     }
   ],
   "youpin_company": {
@@ -1527,6 +1598,8 @@
     "window_cn": "10月19日-11月30日",
     "data_ds": "2026-11-14",
     "day_base_ds": "2026-11-13",
+    "week_data_ds": "2026-11-13",
+    "week_base_ds": "2026-11-08",
     "quarter": {
       "label": "FY27Q3",
       "start": "2026-10-01",
