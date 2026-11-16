@@ -768,7 +768,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1794788871';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1794796528';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1373,20 +1373,20 @@
     const chTip = ch.base_ds
       ? chLabel + ' = 当前优爆品数 − ' + ch.base_ds + ' 快照（当前值为平台最新可得日）'
       : '缺挑战赛基线（' + (ch.reason || '未生成') + '）→ 显示 --';
-    // 2026-11-03 用户改口径：第 5 列由「完成季度目标每日需新增」改成「每日新增」，
-    //   = 当前数据日的优爆品数 − **上一个可用数据日**的优爆品数（后端按快照做差，字段 day_add）。
-    //   优品3.0 是 T+2，屏幕上的“最新”不是字面今天 → 两个日期都从数据读（data_ds / day_base_ds），
-    //   tooltip 直接写明是哪两天；缺上一日快照就 `--`，不拿 0 顶、不拿目标倒推。
-    const dayTip = (ch.data_ds && ch.day_base_ds)
-      ? '每日新增 = ' + ch.data_ds + ' 的优爆品数 − ' + ch.day_base_ds +
-        ' 的优爆品数（平台 T+2，取最近两个可用数据日）'
-      : '缺上一数据日快照（当前数据日 ' + (ch.data_ds || '—') + '）→ 显示 --';
+    // 2026-11-16 用户改口径：第 5 列由「每日新增」改成「上周新增」，
+    //   = 上周五的优爆品数 − 上周日（上周一前一天）的优爆品数，也就是上周一至周五的净增。
+    //   优品3.0 是 T+2，屏幕上的“最新”不是字面今天 → 两端数据日由后端按数据日回溯算出
+    //   （week_data_ds / week_base_ds），tooltip 直接写明是哪两天；缺任一端就 `--`。
+    const weekTip = (ch.week_data_ds && ch.week_base_ds)
+      ? '上周新增 = ' + ch.week_data_ds + ' 的优爆品数 − ' + ch.week_base_ds +
+        ' 的优爆品数（上周一至周五的净增）'
+      : '缺上周五或上周日快照（数据日 ' + (ch.data_ds || '—') + '）→ 显示 --';
     // 6 个指标各占一列（列宽在 CSS 里固定），各行数字因此纵向对齐
     const cells = (r) => {
       return '<span class="rowline"><span>' + fmt(r.value, 0) + '</span>' +
         '<span>' + fmt(r.target, 0) + '</span><span>' + fmtPct(r.pct_p4p, 1) + '</span>' +
         '<b class="' + deltaTextClass(r.ch_add) + '">' + fmtSigned(r.ch_add) + '</b>' +
-        '<b class="' + deltaTextClass(r.day_add) + '">' + fmtSigned(r.day_add) + '</b>' +
+        '<b class="' + deltaTextClass(r.week_add) + '">' + fmtSigned(r.week_add) + '</b>' +
         '<b class="' + pctTextClass(r.pct) + '">' + fmtPct(r.pct, 2) + '</b></span>';
     };
     // 军团块：只画该军团名单里的人；**按挑战赛期新增降序**（缺基线的人沉底，不拿 0 顶）
@@ -1410,7 +1410,7 @@
         '<div class="rank-row rank-head"><span>#</span><span>姓名</span>' +
         '<span class="rowline"><span>优爆品数</span><span>当季度累计目标</span><span>推P率</span>' +
         '<span title="' + esc(gTip) + '">' + esc(gLabel) + '</span>' +
-        '<span title="' + esc(dayTip) + '">每日新增</span>' +
+        '<span title="' + esc(weekTip) + '">上周新增</span>' +
         '<span>完成率</span></span><span>进度</span></div>' +
         list.map(function (r, i) {
           const w = Math.max(0, Math.min(100, num(r.pct) || 0));
