@@ -1,7 +1,7 @@
 {
   "month": "2026-11",
   "quarter": "FY27Q3",
-  "update_time": "2026-11-23 08:31",
+  "update_time": "2026-11-23 08:48",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 48374787.24,
@@ -1592,6 +1592,19 @@
       "day_add": 481.0
     }
   ],
+  "goods_kefu_total": {
+    "name": "全公司",
+    "value": 105382.0,
+    "target": 144921.0,
+    "pct": 72.71685953036481,
+    "pct_p4p": 27.357613254635517,
+    "pct_hot": 28.42428227043612,
+    "pct_p4p_done": null,
+    "day_add": 3121.0,
+    "data_ds": "2026-11-21",
+    "day_base_ds": "2026-11-18",
+    "total": true
+  },
   "goods_challenge": {
     "title": "商品成长 / 优爆品挑战赛",
     "start": "2026-10-19",
