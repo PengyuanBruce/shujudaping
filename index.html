@@ -497,6 +497,12 @@
     #sec-4b .kf-col .rbar { display: block; height: 4px; border-radius: 2px;
       background: rgba(255, 255, 255, 0.10); overflow: hidden; }
     #sec-4b .kf-col .rbar > i { display: block; height: 100%; border-radius: 2px; }
+     /* 2026-11-23 用户要求：客服表最后加一行「全公司」，维度同上 */
+     #sec-4b .kf-col .rank-row.kf-total {
+       border-top: 1px solid rgba(255, 255, 255, 0.14);
+       margin-top: 4px; padding-top: 9px;
+     }
+     #sec-4b .kf-col .rank-row.kf-total > span:nth-child(2) { font-weight: 700; }
      @media (max-width: 900px) {
         /* 客服 6 格合计 ≈ 600（含序号/姓名/间隙）→ 页面容器 < 600 就改换行，
            完成率格固定 78px 保持「数值 + 细条」竖排，不被压成一行两个字 */
@@ -768,7 +774,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1795393933';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1795394947';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1476,11 +1482,18 @@
          '<span title="' + esc(kfTip) + '">每日新增</span>' +
          '<span>优爆品完成率</span>' +
           '<span title="' + esc(kfTipHot) + '">市场热卖完成率</span></span></div>';
-       const body = '<div class="kf-col">' + headRow +
-         list.map(function (r, i) {
-           return '<div class="rank-row"><span class="text-dim">' + (i + 1) + '</span>' +
-             '<span>' + esc(r.name) + '</span>' + kfCells(r) + '</div>';
-         }).join('') + '</div>';
+        // 2026-11-23 用户要求：客服表最后再加一行「全公司（客服团队合计）」，
+        //   列与上面各行完全一致；目标取公司卡口径（含未分配到个人的部分），故会略大于各行之和。
+        const kfTot = d.goods_kefu_total;
+        const totalRow = kfTot
+          ? '<div class="rank-row kf-total"><span class="text-dim"></span>' +
+            '<span>' + esc(kfTot.name || '全公司') + '</span>' + kfCells(kfTot) + '</div>'
+          : '';
+        const body = '<div class="kf-col">' + headRow +
+          list.map(function (r, i) {
+            return '<div class="rank-row"><span class="text-dim">' + (i + 1) + '</span>' +
+              '<span>' + esc(r.name) + '</span>' + kfCells(r) + '</div>';
+          }).join('') + totalRow + '</div>';
        const kfDs = cnMD(kfMeta.data_ds);
        return '<div class="kf-block"><div class="ch-head"><b>' + esc(kfMeta.name || '拍档客服') +
          '</b>' + (kfDs ? '<span class="text-dim">数据 ' + esc(kfDs) + '</span>' : '') +
