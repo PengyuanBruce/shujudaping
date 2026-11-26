@@ -656,8 +656,8 @@
       </div>
     </div>
     <div class="grid stat-grid" style="margin-top:14px">
-      <div class="card"><div class="cap">活跃客户数</div><div class="big sm" id="kpi-active">--</div>
-        <div class="rowline"><span>同比同期 <b id="kpi-active-yoy">--</b></span></div></div>
+      <div class="card"><div class="cap">活跃客户数（本季度）</div><div class="big sm" id="kpi-active">--</div>
+        <div class="rowline"><span>去年同期 <b id="kpi-active-yoy">--</b></span></div></div>
       <div class="card"><div class="cap">优爆品数量</div><div class="big sm" id="kpi-hit">--</div>
         <div class="rowline"><span>达成率 <b id="kpi-hit-pct">--</b></span></div></div>
       <div class="card"><div class="cap">ACP 收入</div><div class="big sm" id="kpi-acp">--</div>
@@ -710,7 +710,7 @@
   <!-- Ⅲ-B 活跃客户个人 -->
   <section id="sec-3b">
     <div class="sec-head"><span class="sec-no">Ⅲ-B</span><h2>活跃客户（个人）</h2>
-      <span class="note">当前数 · vs 同比同期</span></div>
+      <span class="note">本季度 · vs 去年同期</span></div>
     <div class="card" id="active-list"><div class="empty">等待数据…</div></div>
   </section>
 
@@ -763,7 +763,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1795676929';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1795691226';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1000,8 +1000,8 @@
     }
 
     const behind = persons.filter((p) => num(p.month_pct) !== null && num(p.month_pct) < tp && !p.incentive_ok).map((p) => p.name);
-    const actText = '活跃客户 <span class="k">' + fmt(k.active_clients) + '</span>' +
-      (k.active_clients_yoy != null ? '（同比同期 ' + fmt(k.active_clients_yoy) + '）' : '') +
+    const actText = '本季度活跃客户 <span class="k">' + fmt(k.active_clients) + '</span>' +
+      (k.active_clients_yoy != null ? '（去年同期 ' + fmt(k.active_clients_yoy) + '）' : '') +
       '；优爆品 <span class="k">' + fmt(k.hit_products) + '</span>' +
       (k.hit_target != null ? ' / 目标 ' + fmt(k.hit_target) + '，达成率 ' + fmtPct(k.hit_pct) : '') + '。' +
       (behind.length ? '需关注进度落后人员：<span class="k">' + behind.join('、') + '</span>。' : '');
@@ -1054,6 +1054,15 @@
       $('active-list').innerHTML = '<div class="empty">暂无活跃客户数据</div>';
       return;
     }
+    // 本季度口径：名单内合计 vs 公司合计，差额点名「名单外人员名下」
+    const covered = rows.reduce((s, p) => s + (num(p.active_clients) || 0), 0);
+    const comp = num(d.kpi && d.kpi.active_clients);
+    const gap = (comp != null) ? comp - covered : null;
+    const foot = (gap != null && Math.abs(gap) >= 0.5)
+      ? '<div class="rowline" style="margin-top:10px"><span class="text-dim">本季度口径 · 名单内 ' +
+        rows.length + ' 人合计 ' + fmt(covered) + ' 家 / 公司合计 ' + fmt(comp) + ' 家 · 名单外人员 ' +
+        fmt(Math.abs(gap)) + ' 家未计入（不展示个人明细）</span></div>'
+      : '';
     // 每人一个方框（不用列表）
     $('active-list').innerHTML = '<div class="grid active-grid">' + rows.map((p) => {
       const cur = num(p.active_clients), yoy = num(p.active_clients_yoy);
@@ -1061,11 +1070,11 @@
       return '<div class="acard">' +
         '<span class="acard-nm">' + esc(p.name) + '</span>' +
         '<div class="acard-v">' + fmt(cur) + '<small class="text-dim"> 家</small></div>' +
-        '<div class="acard-sub"><span class="text-dim">vs 同比 ' + fmt(yoy) + '</span>' +
+        '<div class="acard-sub"><span class="text-dim">vs 去年 ' + fmt(yoy) + '</span>' +
         (diff != null ? '<b class="' + (diff >= 0 ? 'text-ok' : 'text-bad') + '">' +
           (diff > 0 ? '+' : '') + fmt(diff) + '</b>' : '') + '</div>' +
         '</div>';
-    }).join('') + '</div>';
+    }).join('') + '</div>' + foot;
   }
 
   // ── Ⅳ 进度榜 ──
