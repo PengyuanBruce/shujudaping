@@ -1,7 +1,7 @@
 {
   "month": "2026-11",
   "quarter": "FY27Q3",
-  "update_time": "2026-11-26 19:53",
+  "update_time": "2026-11-26 20:12",
   "source_file": "数据罗盘（拍档系统）",
   "kpi": {
     "month_val": 58807633.9,
@@ -13,7 +13,7 @@
     "month_gap": -14864342.0,
     "quarter_gap": -103920836.0,
     "month_val_acp": 11468884.68,
-    "active_clients": 511.0,
+    "active_clients": 587.0,
     "active_clients_yoy": 875.0,
     "hit_products": 107573.0,
     "hit_target": 144921.0,
@@ -52,8 +52,8 @@
       "incentive_target": 18417612.0,
       "incentive_gap": 149936.0,
       "incentive_ok": true,
-      "active_clients": 53.0,
-      "active_clients_yoy": 58.0,
+      "active_clients": 56.0,
+      "active_clients_yoy": 59.0,
       "hit_products": 6599.0,
       "time_pct": 83.0,
       "incentive_quarter_target": 34982915.0,
@@ -73,7 +73,7 @@
       "incentive_target": 7517471.0,
       "incentive_gap": -647203.0,
       "incentive_ok": false,
-      "active_clients": 60.0,
+      "active_clients": 64.0,
       "active_clients_yoy": 80.0,
       "hit_products": 7948.0,
       "time_pct": 83.0,
@@ -94,8 +94,8 @@
       "incentive_target": 9699119.0,
       "incentive_gap": -4187515.0,
       "incentive_ok": false,
-      "active_clients": 40.0,
-      "active_clients_yoy": 68.0,
+      "active_clients": 44.0,
+      "active_clients_yoy": 54.0,
       "hit_products": 7606.0,
       "time_pct": 83.0,
       "incentive_quarter_target": 16699119.0,
@@ -115,7 +115,7 @@
       "incentive_target": 7520353.0,
       "incentive_gap": -1700151.0,
       "incentive_ok": false,
-      "active_clients": 39.0,
+      "active_clients": 41.0,
       "active_clients_yoy": 56.0,
       "hit_products": 7795.0,
       "time_pct": 83.0,
@@ -136,7 +136,7 @@
       "incentive_target": 4431790.0,
       "incentive_gap": -245811.0,
       "incentive_ok": false,
-      "active_clients": 49.0,
+      "active_clients": 56.0,
       "active_clients_yoy": 89.0,
       "hit_products": 10883.0,
       "time_pct": 83.0,
@@ -157,7 +157,7 @@
       "incentive_target": 4961493.0,
       "incentive_gap": -958922.0,
       "incentive_ok": false,
-      "active_clients": 50.0,
+      "active_clients": 52.0,
       "active_clients_yoy": 52.0,
       "hit_products": 4653.0,
       "time_pct": 83.0,
@@ -178,7 +178,7 @@
       "incentive_target": 3514303.0,
       "incentive_gap": -14665.0,
       "incentive_ok": false,
-      "active_clients": 45.0,
+      "active_clients": 53.0,
       "active_clients_yoy": 81.0,
       "hit_products": 8642.0,
       "time_pct": 83.0,
@@ -199,7 +199,7 @@
       "incentive_target": 4505977.0,
       "incentive_gap": -1788485.0,
       "incentive_ok": false,
-      "active_clients": 49.0,
+      "active_clients": 55.0,
       "active_clients_yoy": 79.0,
       "hit_products": 8515.0,
       "time_pct": 83.0,
@@ -220,7 +220,7 @@
       "incentive_target": 1835667.0,
       "incentive_gap": -464270.0,
       "incentive_ok": false,
-      "active_clients": 23.0,
+      "active_clients": 32.0,
       "active_clients_yoy": 52.0,
       "hit_products": 4999.0,
       "time_pct": 83.0,
@@ -241,7 +241,7 @@
       "incentive_target": 1364433.0,
       "incentive_gap": -436661.0,
       "incentive_ok": false,
-      "active_clients": 22.0,
+      "active_clients": 26.0,
       "active_clients_yoy": 41.0,
       "hit_products": 4989.0,
       "time_pct": 83.0,
@@ -262,7 +262,7 @@
       "incentive_target": 1055746.0,
       "incentive_gap": -64742.0,
       "incentive_ok": false,
-      "active_clients": 17.0,
+      "active_clients": 27.0,
       "active_clients_yoy": 35.0,
       "hit_products": 5711.0,
       "time_pct": 83.0,
@@ -283,7 +283,7 @@
       "incentive_target": 895479.0,
       "incentive_gap": -119538.0,
       "incentive_ok": false,
-      "active_clients": 15.0,
+      "active_clients": 22.0,
       "active_clients_yoy": 26.0,
       "hit_products": 5527.0,
       "time_pct": 83.0,
@@ -304,7 +304,7 @@
       "incentive_target": 591487.0,
       "incentive_gap": -8253.0,
       "incentive_ok": false,
-      "active_clients": 11.0,
+      "active_clients": 12.0,
       "active_clients_yoy": 14.0,
       "hit_products": 3040.0,
       "time_pct": 83.0,
@@ -325,8 +325,8 @@
       "incentive_target": 990940.0,
       "incentive_gap": -360584.0,
       "incentive_ok": false,
-      "active_clients": 9.0,
-      "active_clients_yoy": 29.0,
+      "active_clients": 10.0,
+      "active_clients_yoy": 28.0,
       "hit_products": 3992.0,
       "time_pct": 86.7,
       "incentive_quarter_target": 1940940.0,
@@ -346,7 +346,7 @@
       "incentive_target": 373119.0,
       "incentive_gap": -65116.0,
       "incentive_ok": false,
-      "active_clients": 1.0,
+      "active_clients": 2.0,
       "active_clients_yoy": 9.0,
       "hit_products": 1278.0,
       "time_pct": 86.7,
@@ -367,8 +367,8 @@
       "incentive_target": 1043875.0,
       "incentive_gap": -813086.0,
       "incentive_ok": false,
-      "active_clients": 1.0,
-      "active_clients_yoy": 17.0,
+      "active_clients": 2.0,
+      "active_clients_yoy": 14.0,
       "hit_products": 2195.0,
       "time_pct": 83.0,
       "incentive_quarter_target": 2222651.0,
@@ -430,7 +430,7 @@
       "incentive_target": 449385.0,
       "incentive_gap": -299522.0,
       "incentive_ok": false,
-      "active_clients": 2.0,
+      "active_clients": 3.0,
       "active_clients_yoy": 9.0,
       "hit_products": 1208.0,
       "time_pct": 83.0,
@@ -472,7 +472,7 @@
       "incentive_target": 277328.0,
       "incentive_gap": -173897.0,
       "incentive_ok": false,
-      "active_clients": 1.0,
+      "active_clients": 2.0,
       "active_clients_yoy": 5.0,
       "hit_products": 1065.0,
       "time_pct": 86.7,
@@ -514,8 +514,8 @@
       "incentive_target": null,
       "incentive_gap": 86862.0,
       "incentive_ok": false,
-      "active_clients": null,
-      "active_clients_yoy": null,
+      "active_clients": 1.0,
+      "active_clients_yoy": 3.0,
       "hit_products": 69.0,
       "time_pct": 83.0,
       "hit_target": null,
@@ -10041,88 +10041,88 @@
     "title": "每日新增（对比 2026-11-25 快照）",
     "label": "对比 2026-11-25 快照",
     "xb_recv": 5019788.66,
-    "active_3w": 0.0,
+    "active_3w": 76.0,
     "customers": 3.0
   },
   "persons_daily_add": {
     "李彬": {
       "xb_recv": 3009841.66,
-      "active_3w": 0.0,
+      "active_3w": 3.0,
       "no_base": false
     },
     "陈建国": {
       "xb_recv": 261999.83,
-      "active_3w": 0.0,
+      "active_3w": 4.0,
       "no_base": false
     },
     "王凡": {
       "xb_recv": 136348.65,
-      "active_3w": 0.0,
+      "active_3w": 4.0,
       "no_base": false
     },
     "蒋汶桃": {
       "xb_recv": 344989.93,
-      "active_3w": 0.0,
+      "active_3w": 2.0,
       "no_base": false
     },
     "王子豪": {
       "xb_recv": 152524.99,
-      "active_3w": 0.0,
+      "active_3w": 7.0,
       "no_base": false
     },
     "汤子豪": {
       "xb_recv": 214432.46,
-      "active_3w": 0.0,
+      "active_3w": 2.0,
       "no_base": false
     },
     "夏锐": {
       "xb_recv": 144543.8,
-      "active_3w": 0.0,
+      "active_3w": 8.0,
       "no_base": false
     },
     "漆螯童": {
       "xb_recv": 293337.59,
-      "active_3w": 0.0,
+      "active_3w": 6.0,
       "no_base": false
     },
     "谢承杰": {
       "xb_recv": 56370.03,
-      "active_3w": 0.0,
+      "active_3w": 9.0,
       "no_base": false
     },
     "高国权": {
       "xb_recv": 48678.31,
-      "active_3w": 0.0,
+      "active_3w": 4.0,
       "no_base": false
     },
     "李怡萍": {
       "xb_recv": 49888.77,
-      "active_3w": 0.0,
+      "active_3w": 10.0,
       "no_base": false
     },
     "邓晓东": {
       "xb_recv": 37375.14,
-      "active_3w": 0.0,
+      "active_3w": 7.0,
       "no_base": false
     },
     "何尧玲": {
       "xb_recv": 46952.19,
-      "active_3w": 0.0,
+      "active_3w": 1.0,
       "no_base": false
     },
     "张伟志": {
       "xb_recv": 90706.51,
-      "active_3w": 0.0,
+      "active_3w": 1.0,
       "no_base": false
     },
     "李金城": {
       "xb_recv": 81455.38,
-      "active_3w": 0.0,
+      "active_3w": 1.0,
       "no_base": false
     },
     "程碧瑶": {
       "xb_recv": 7615.96,
-      "active_3w": 0.0,
+      "active_3w": 1.0,
       "no_base": false
     },
     "王金国": {
@@ -10137,7 +10137,7 @@
     },
     "罗金填": {
       "xb_recv": -138469.72,
-      "active_3w": 0.0,
+      "active_3w": 1.0,
       "no_base": false
     },
     "牛群": {
@@ -10147,7 +10147,7 @@
     },
     "王钢": {
       "xb_recv": 5022.08,
-      "active_3w": 0.0,
+      "active_3w": 1.0,
       "no_base": false
     },
     "郭龙耀": {
