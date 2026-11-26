@@ -656,8 +656,8 @@
       </div>
     </div>
     <div class="grid stat-grid" style="margin-top:14px">
-      <div class="card"><div class="cap">活跃客户数（本季度）</div><div class="big sm" id="kpi-active">--</div>
-        <div class="rowline"><span>去年同期 <b id="kpi-active-yoy">--</b></span></div></div>
+      <div class="card"><div class="cap">3万客户数（本季度）</div><div class="big sm" id="kpi-active">--</div>
+        <div class="rowline"><span>同比季度 <b id="kpi-active-yoy">--</b></span></div></div>
       <div class="card"><div class="cap">优爆品数量</div><div class="big sm" id="kpi-hit">--</div>
         <div class="rowline"><span>达成率 <b id="kpi-hit-pct">--</b></span></div></div>
       <div class="card"><div class="cap">ACP 收入</div><div class="big sm" id="kpi-acp">--</div>
@@ -709,8 +709,8 @@
 
   <!-- Ⅲ-B 活跃客户个人 -->
   <section id="sec-3b">
-    <div class="sec-head"><span class="sec-no">Ⅲ-B</span><h2>活跃客户（个人）</h2>
-      <span class="note">本季度 · vs 去年同期</span></div>
+     <div class="sec-head"><span class="sec-no">Ⅲ-B</span><h2>3万客户数（个人）</h2>
+       <span class="note">本季度口径 · vs 去年同期</span></div>
     <div class="card" id="active-list"><div class="empty">等待数据…</div></div>
   </section>
 
@@ -722,7 +722,7 @@
       <table>
         <thead><tr>
           <th>#</th><th>姓名</th><th>角色</th><th>月实收</th><th>月目标</th>
-          <th>月完成率</th><th>季完成率</th><th>激励状态</th><th>活跃客户</th><th>优爆品</th>
+          <th>月完成率</th><th>季完成率</th><th>激励状态</th><th>3万客户数(本季度)</th><th>优爆品</th>
         </tr></thead>
         <tbody id="rank-body"><tr><td colspan="10" class="empty">等待数据…</td></tr></tbody>
       </table>
@@ -763,7 +763,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1795691226';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1795694016';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
