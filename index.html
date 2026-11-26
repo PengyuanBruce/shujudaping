@@ -729,17 +729,6 @@
     </div>
   </section>
 
-  <!-- Ⅳ·B 商品成长（优品3.0）
-       2026-10-12 合并：原 Ⅵ「商品成长（优品3.0）」与 Ⅳ·B「商品成长排名」展示的是同一张
-       「优品3.0总览 ▸ 拍档公司」表的同一组指标（用户：「这两个板块一样的，直接合并」），
-       故并为一个板块，不再分两处重复展示公司级数字。 -->
-  <section id="sec-4b">
-    <div class="sec-head"><span class="sec-no">Ⅳ·B</span><h2>商品成长 / 优爆品挑战赛</h2>
-      <span class="note">公司级 5 指标 + 商品结构（在线品全量口径）+ 个人级两个军团榜（优爆品数 / 当季度累计目标 / 推P率 / 挑战赛期新增 / 完成率，各自按新增降序） ·「挑战赛期新增」= 当前优爆品数 − 挑战赛起始日快照（窗口与基线日从数据读，本工程自存） · 源：数据罗盘 ▸ 商品成长 ▸ 优品3.0总览（平台 T+2）</span></div>
-    <div class="card" id="goods-rank-body"></div>
-  </section>
-
-  <!-- Ⅴ 客户同比 TOP20 -->
   <section id="sec-5">
     <div class="sec-head"><span class="sec-no">Ⅴ</span><h2>客户环比 TOP20</h2>
       <span class="note" id="yoy-note">本季度 vs 上季度 · 客户级 GMV</span></div>
@@ -774,7 +763,7 @@
   'use strict';
 
   // ── 配置区（与 project/config.py 同步）──
-  const ASSET_VERSION = '1795664118';           // release_html.py 发布时替换为时间戳
+  const ASSET_VERSION = '1795676929';           // release_html.py 发布时替换为时间戳
   const V = ASSET_VERSION.indexOf('__') === 0 ? String(Date.now()) : ASSET_VERSION;
   const DATA_FILES = { cur: 'data_cur.json', prev: 'data_prev.json' };
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/PengyuanBruce/shujudaping/main/';
@@ -1316,196 +1305,6 @@
       : '';
   }
 
-  // ── Ⅳ·B 商品成长（优品3.0）——公司级 5 指标 + 商品结构 + 个人级排名 ──
-  // 公司级 / 商品结构 ← youpin3-company.json（优品3.0总览「拍档公司」表，2026-10-12 起走接口）
-  // 个人级 4 指标 ← youpin3-sales-full.json（同名报表「拍档销售」表）
-  // 两组都是**接口直接给的列**，不在前端做除法（见 docs §二十二）。
-  // 2026-10-12 二次改版（用户：「这两个板块一样的，直接合并，排版对称下」）：
-  //   原 Ⅵ 与本板块展示的是同一张「拍档公司」表的同一组指标 → 合并为一个板块；
-  //   排版：公司级 5 卡**等宽一行**、商品结构一组等宽、个人级 5 个指标列固定宽度（各行纵向对齐）。
-  //   2026-10-14 用户要求加「本月新增」= 当前优爆品数 − 本月1号快照（接口无此列，基线按月留存）。
-   //   2026-10-16 三次改版（用户）：板块改名「商品成长 / 优爆品挑战赛」；个人级维度由「本月新增」
-   //     换成「挑战赛期新增」（当前 − 起始日快照）并**按它排名**；个人榜拆成两个并排军团
-   //     （配置见 config.GOODS_CHALLENGE；两军团没覆盖到的人本板块不展示，其余板块照旧算）。
-   //   ⚠ 公司级不能用通用 .kpi-grid（4 列）——第 5 张会落单到第二行，那正是用户截图里的「不对称」。
-   function renderGoodsRank(d) {
-     const rows = (d.goods_sales || []).slice();
-     // 板块名跟着数据走（config.GOODS_CHALLENGE.title），静态 h2 只是兜底
-     const _chTitle = (d.goods_challenge || {}).title;
-     if (_chTitle) {
-       const _h2 = document.querySelector('#sec-4b h2');
-       if (_h2) _h2.textContent = _chTitle;
-     }
-    const c = (d.youpin_company && d.youpin_company.value != null) ? d.youpin_company : (d.goods || {});
-    const unit = (v, u) => (u ? v + '<small class="unit"> ' + u + '</small>' : v);
-    const kcard = (cap, big, sub) => '<div class="card"><span class="cap">' + cap + '</span>' +
-      '<div class="big sm">' + big + '</div>' +
-      (sub ? '<div class="rowline"><span>' + sub + '</span></div>' : '') + '</div>';
-    const kgrid = (items) => '<div class="grid kpi-grid g' + items.length + '">' + items.join('') + '</div>';
-    let head = '';
-    if (c.value != null || c.target != null) {
-      const cards = [kcard('当前优爆品数', unit(fmt(c.value, 0), '个')),
-                     kcard('当季度累计目标', unit(fmt(c.target, 0), '个')),
-                     kcard('当季度累计目标达成率',
-                       '<b class="' + pctTextClass(c.pct) + '">' + fmtPct(c.pct, 1) + '</b>')];
-      if (c.p4p_products != null) cards.push(kcard('p4p推广中优爆品数', unit(fmt(c.p4p_products, 0), '个')));
-      if (c.p4p_pct != null) cards.push(kcard('优爆品p4p推广中比例', fmtPct(c.p4p_pct, 1)));
-      head = '<div class="cap">公司级 · 优品3.0总览「拍档公司」表 · 数据日期 ' +
-        esc(c.date || '—') + '（平台 T+2）</div>' + kgrid(cards);
-      // 商品结构：优先用**同一张表、同一天**的列（youpin3-company.json 的 在线品数 /
-      // 当前有优爆品的客户数 + 对应比例），缺列才退回 pivot/DOM 口径 —— 同屏两块必须同源，
-      // 否则会出现「公司级 127,517 / 在线品数却是十几天前的 pivot 值」这种自相矛盾。
-      const st = ((c.structure || []).length ? c.structure : ((d.goods || {}).structure || []));
-      head += '<div class="cap" style="margin-top:14px">商品结构（在线品全量口径）</div>' +
-        (st.length
-          ? kgrid(st.map(function (s) {
-              return kcard(esc(s.name), unit(fmt(s.count, 0), s.unit || ''),
-                s.pct == null ? '' : esc(s.pct_label || '占比') + ' <b>' + fmtPct(s.pct, 1) + '</b>');
-            }))
-          : pendingPanel(['在线品数 / 当前有优爆品的客户数 —— 需 youpin3-company.json（拍档公司表）']));
-    }
-    const ch = d.goods_challenge || {};
-    const groups = (ch.groups || []);
-    if (!rows.length || !groups.length) {
-      $('goods-rank-body').innerHTML = head + pendingPanel([
-        '个人级挑战赛榜：每位销售的 优爆品数 / 当季度累计目标 / 推P率 / 挑战赛期新增 / 完成率',
-        '需要 youpin3-sales-full.json（优品3.0总览·拍档销售表）+ config.GOODS_CHALLENGE 的军团名单']);
-      return;
-    }
-    const byName = {};
-    rows.forEach(function (r) { byName[r.name] = r; });
-    // 口径名与基线日期都从数据读（缺基线时写明原因，绝不写死日期）
-    const chLabel = ch.label || '挑战赛期新增';
-    const chTip = ch.base_ds
-      ? chLabel + ' = 当前优爆品数 − ' + ch.base_ds + ' 快照（当前值为平台最新可得日）'
-      : '缺挑战赛基线（' + (ch.reason || '未生成') + '）→ 显示 --';
-    // 2026-11-16 用户改口径：第 5 列由「每日新增」改成「上周新增」，
-    //   = 上周五的优爆品数 − 上周日（上周一前一天）的优爆品数，也就是上周一至周五的净增。
-    //   优品3.0 是 T+2，屏幕上的“最新”不是字面今天 → 两端数据日由后端按数据日回溯算出
-    //   （week_data_ds / week_base_ds），tooltip 直接写明是哪两天；缺任一端就 `--`。
-    const weekTip = (ch.week_data_ds && ch.week_base_ds)
-      ? '上周新增 = ' + ch.week_data_ds + ' 的优爆品数 − ' + ch.week_base_ds +
-        ' 的优爆品数（上周一至周五的净增）'
-      : '缺上周五或上周日快照（数据日 ' + (ch.data_ds || '—') + '）→ 显示 --';
-    // 6 个指标各占一列（列宽在 CSS 里固定），各行数字因此纵向对齐
-    const cells = (r) => {
-      return '<span class="rowline"><span>' + fmt(r.value, 0) + '</span>' +
-        '<span>' + fmt(r.target, 0) + '</span><span>' + fmtPct(r.pct_p4p, 1) + '</span>' +
-        '<b class="' + deltaTextClass(r.ch_add) + '">' + fmtSigned(r.ch_add) + '</b>' +
-        '<b class="' + deltaTextClass(r.week_add) + '">' + fmtSigned(r.week_add) + '</b>' +
-        '<b class="' + pctTextClass(r.pct) + '">' + fmtPct(r.pct, 2) + '</b></span>';
-    };
-    // 军团块：只画该军团名单里的人；**按挑战赛期新增降序**（缺基线的人沉底，不拿 0 顶）
-    function panel(g) {
-      const list = (g.members || []).map(function (n) { return byName[n]; })
-        .filter(function (r) { return !!r; });
-      list.sort(function (a, b) {
-        const av = num(a.ch_add), bv = num(b.ch_add);
-        if (av == null) return bv == null ? 0 : 1;
-        if (bv == null) return -1;
-        return bv - av;
-      });
-      // 2026-11-06：军团可各自起算（乘风营 11-01）→ 列名与 tooltip 按军团取，
-      //   没配 start 的军团沿用整队窗口（10.19–11.30）。
-      const gLabel = g.label || chLabel;
-      const gTip = g.base_ds
-        ? gLabel + ' = 当前优爆品数 − ' + g.base_ds + ' 快照（当前值为平台最新可得日）'
-        : chTip;
-      return '<div class="ch-panel" data-group="' + esc(g.name) + '">' +
-        '<div class="ch-head"><b>' + esc(g.name) + '</b></div>' +
-        '<div class="rank-row rank-head"><span>#</span><span>姓名</span>' +
-        '<span class="rowline"><span>优爆品数</span><span>当季度累计目标</span><span>推P率</span>' +
-        '<span title="' + esc(gTip) + '">' + esc(gLabel) + '</span>' +
-        '<span title="' + esc(weekTip) + '">上周新增</span>' +
-        '<span>完成率</span></span><span>进度</span></div>' +
-        list.map(function (r, i) {
-          const w = Math.max(0, Math.min(100, num(r.pct) || 0));
-          return '<div class="rank-row"><span class="text-dim">' + (i + 1) + '</span>' +
-            '<span>' + esc(r.name) + '</span>' + cells(r) +
-            '<span class="bar"><i class="' + pctFillClass(r.pct) + '" style="width:' + w +
-            '%"></i></span></div>';
-        }).join('') + '</div>';
-    }
-    // 两军团没覆盖到的人：本板块不展示（用户 2026-10-16 明确「不进榜单」）。
-    // ⚠ 这里**不许**再写任何「谁不在名单里」的说明行 —— 用户 2026-10-16 二次要求删掉那句
-    //   （所以这里连注释都不留原句，免得 grep 核验时把注释误判成渲染出的文字）。
-    // 个人级那一块**只留一个标题**（用户 2026-10-16 三次要求）：这些说明小字全去掉 ——
-    // 不写基线日、不写「缺基线」、不写「按…降序」、不写「谁不在名单里」。
-     // 标题 = 「优爆品挑战赛」+ 窗口（10月19日-11月30日），两者都从数据读、不写死。
-     // 2026-11-03 用户要求标题后加括号标注「更新时间 / 数据时间」：
-     //   更新时间 = data.update_time（本轮抓取/解析时间）
-     //   数据时间 = goods_challenge.data_ds（优品3.0 表里的「日期」列，T+2 所以晚于更新时间）
-     //   两个都从数据现算成「11月3日」，缺哪个就不写哪个，绝不写死日期。
-     const cnMD = function (s) {
-       const m = /^(\d{4})-(\d{1,2})-(\d{1,2})/.exec(String(s || ''));
-       return m ? (+m[2]) + '月' + (+m[3]) + '日' : '';
-     };
-     const stampParts = [];
-     if (cnMD(d.update_time)) stampParts.push('更新时间' + cnMD(d.update_time));
-     if (cnMD(ch.data_ds)) stampParts.push('数据时间' + cnMD(ch.data_ds));
-     const chStamp = stampParts.length ? '（' + stampParts.join('，') + '）' : '';
-     const chTitleCn = esc(ch.panel_title || '优爆品挑战赛') + esc(ch.window_cn || '') + esc(chStamp);
-     // 2026-11-03 用户要求：两个军团后面再加一块「拍档客服」，维度同上，
-     //   但**没有「10.19–11.30 新增」**（客服不参加挑战赛）→ 行内 5 个指标格。
-     //   客服名单不过滤销售名单；数据日多半比军团晚一天，所以块头单独标「数据 M月D日」。
-     const kfRows = (d.goods_kefu || []);
-     const kfMeta = ch.kefu || {};
-     function kefuBlock() {
-       if (!kfRows.length) return '';
-       const list = kfRows.slice().sort(function (a, b) {
-         const av = num(a.value), bv = num(b.value);
-         if (av == null) return bv == null ? 0 : 1;
-         if (bv == null) return -1;
-         return bv - av;
-       });
-       const kfTip = (kfMeta.data_ds && kfMeta.day_base_ds)
-         ? '每日新增 = ' + kfMeta.data_ds + ' 的优爆品数 − ' + kfMeta.day_base_ds + ' 的优爆品数'
-         : '缺上一数据日快照（客服表数据日 ' + (kfMeta.data_ds || '—') + '）→ 显示 --';
-        // 2026-11-07 用户：客服块去掉「优爆品推P完成率」（长期无源，一直是 --）
-        const kfTipHot = '市场热卖完成率 = 当季度市场热卖目标完成率（缺值显示 --）';
-       // 完成率格 = 百分比 + 细进度条；无值只留空槽，不画条
-       const kfRate = function (v) {
-         const n = num(v);
-         const w = n == null ? 0 : Math.max(0, Math.min(100, n));
-         return '<span class="rate"><b class="' + (n == null ? 'text-gray' : pctTextClass(n)) + '">' +
-           fmtPct(n, 2) + '</b><i class="rbar"><i class="' + (n == null ? '' : pctFillClass(n)) +
-           '" style="width:' + w + '%"></i></i></span>';
-       };
-       const kfCells = function (r) {
-         return '<span class="rowline"><span>' + fmt(r.value, 0) + '</span>' +
-           '<span>' + fmt(r.target, 0) + '</span><span>' + fmtPct(r.pct_p4p, 1) + '</span>' +
-           '<b class="' + deltaTextClass(r.day_add) + '">' + fmtSigned(r.day_add) + '</b>' +
-            kfRate(r.pct) + kfRate(r.pct_hot) + '</span>';
-       };
-       const headRow = '<div class="rank-row rank-head"><span>#</span><span>姓名</span>' +
-         '<span class="rowline"><span>优爆品数</span><span>当季度累计目标</span><span>推P率</span>' +
-         '<span title="' + esc(kfTip) + '">每日新增</span>' +
-         '<span>优爆品完成率</span>' +
-          '<span title="' + esc(kfTipHot) + '">市场热卖完成率</span></span></div>';
-        // 2026-11-23 用户要求：客服表最后再加一行「全公司（客服团队合计）」，
-        //   列与上面各行完全一致；目标取公司卡口径（含未分配到个人的部分），故会略大于各行之和。
-        const kfTot = d.goods_kefu_total;
-        const totalRow = kfTot
-          ? '<div class="rank-row kf-total"><span class="text-dim"></span>' +
-            '<span>' + esc(kfTot.name || '全公司') + '</span>' + kfCells(kfTot) + '</div>'
-          : '';
-        const body = '<div class="kf-col">' + headRow +
-          list.map(function (r, i) {
-            return '<div class="rank-row"><span class="text-dim">' + (i + 1) + '</span>' +
-              '<span>' + esc(r.name) + '</span>' + kfCells(r) + '</div>';
-          }).join('') + totalRow + '</div>';
-       const kfDs = cnMD(kfMeta.data_ds);
-       return '<div class="kf-block"><div class="ch-head"><b>' + esc(kfMeta.name || '拍档客服') +
-         '</b>' + (kfDs ? '<span class="text-dim">数据 ' + esc(kfDs) + '</span>' : '') +
-         '</div>' + body + '</div>';
-     }
-     $('goods-rank-body').innerHTML = head +
-       '<div class="ch-title">' + chTitleCn + '</div>' +
-       '<div class="ch-groups">' + groups.map(panel).join('') + '</div>' +
-       kefuBlock();
-   }
-
-  // ── Ⅸ 9610 打标订单（按线路）／Ⅹ AWB 待签约潜客（按销售）──
   // 2026-10-12 把原来的单一「9610 / AWB 专题」拆成**两个独立板块**：各自标题、各自数据区，
   // 各自缺件时各自显示「待接」，绝不用旧数据兜底。
   const TOPIC_H = {
@@ -1848,7 +1647,6 @@
     renderPersons(d);
     renderActiveList(d);
     renderRank(d);
-    renderGoodsRank(d);                 // Ⅳ·B：合并后的商品成长（公司级 + 商品结构 + 个人级）
     renderYoy(d);
     renderTopic9610(d);
     renderTopicAwb(d);
